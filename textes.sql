@@ -29,8 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `textes` (
   `id` int(255) NOT NULL,
-  `word_original` varchar(255) NOT NULL,
-  `trans_ru` varchar(255) NOT NULL,
+  `original` varchar(255) NOT NULL,
+  `translate` varchar(255) NOT NULL,
   `trans_en` varchar(255) NOT NULL,
   `name_tfila` varchar(255) NOT NULL COMMENT 'waharit',
   `name_abzac` varchar(255) NOT NULL COMMENT 'amida',
@@ -43,7 +43,7 @@ CREATE TABLE `textes` (
 -- Dumping data for table `textes`
 --
 
-INSERT INTO `textes` (`id`, `word_original`, `trans_ru`, `trans_en`, `name_tfila`, `name_abzac`, `name_mikum`, `name_selected_date`, `text_style`) VALUES
+INSERT INTO `textes` (`id`, `original`, `translate`, `trans_en`, `name_tfila`, `name_abzac`, `name_mikum`, `name_selected_date`, `text_style`) VALUES
 (1, 'מודֶה', 'Благодарен', '', '', '', '', '', '');
 
 --

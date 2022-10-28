@@ -1,11 +1,14 @@
 import React from 'react'
 import { Link } from 'components'
 import axios from 'axios'
-
-import { DeleteButton, ShowButton, ExportButton,UpdateButton } from './styledButtons'
+import IconButton from '@mui/material/IconButton'
+ import DeleteIcon from '@mui/icons-material/Delete';
+import RefreshIcon from '@mui/icons-material/Refresh';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import { DeleteButton, ShowButton, ExportButton, UpdateButton } from './styledButtons'
 
 export const WordItem = ({ word }) => {
-	const { id, word_original, trans_ru } = word
+	const { id, original, translate } = word
 
 	// const deleteWord = id => {
 	//     axios
@@ -22,54 +25,33 @@ export const WordItem = ({ word }) => {
 	return (
 		<td className='cell'>
 			<div className='edit'>
+				<Link href={`/words/update/${id}`} style={{ textDecoration: 'none' }}>
+					{/* <UpdateButton variant='contained'>Update</UpdateButton> */}
+
+					<IconButton color='primary' aria-label='upload picture' component='label'>
+						<RefreshIcon />
+					</IconButton>
+				</Link>
+
+				{/* <DeleteButton onClick={() => deleteWord(id)} variant='contained'>
+					Delete
+				</DeleteButton> */}
+
+				<IconButton  onClick={() => deleteWord(id)}  color='primary' aria-label='upload picture' component='label'>
+						<DeleteIcon />
+					</IconButton>
 
 
-				{/* <Link to={'/edit/' + props.word._id}>edit</Link> |{' '} */}
-
-                <Link href={`/words/update/${id}`} style={{ textDecoration: 'none' }}>
-				<UpdateButton variant='contained'>Update</UpdateButton>
-			</Link>
-
-
-				{/* <a
-					href='#'
-					onClick={() => {
-						props.deleteWord(props.word._id)
-					}}
-				>
-					delete
-				</a> */}
+				<Link href={`/words/show/${id}`} style={{ textDecoration: 'none' }}>
+					{/* <ShowButton variant='contained'>Show</ShowButton> */}
+					<IconButton color='primary' aria-label='upload picture' component='label'>
+						<OpenInNewIcon />
+					</IconButton>
+				</Link>
 			</div>
 
-			<div className='description'>{word_original}</div>
-			<div className='translate'>{trans_ru}</div>
+			<div className='original_text'>{original}</div>
+			<div className='translate'>{translate}</div>
 		</td>
-
-		// <div className='wrapperWord'>
-		//     <div className='wrapperImage'>
-		//         <span className='idTitle'>{id}</span>
-		//         <img src={image} alt='word' />
-		//         <div className='shadowWordName'>{name}</div>
-		//     </div>
-
-		//     <h4>JSON:</h4>
-		//     <div className='wrapperInfo'>
-		//         <pre> {json} </pre>
-		//     </div>
-
-		//     <div className='wrapperStaticButtons'>
-		//         <DeleteButton onClick={() => deleteWord(id)} variant='contained'>
-		//             Delete
-		//         </DeleteButton>
-
-		//         <Link href={`/words/show/${id}`} style={{ textDecoration: 'none' }}>
-		//             <ShowButton variant='contained'>Show</ShowButton>
-		//         </Link>
-
-		//         <Link href={`/words/export/${id}`} style={{ textDecoration: 'none' }}>
-		//             <ExportButton variant='contained'>Export</ExportButton>
-		//         </Link>
-		//     </div>
-		// </div>
 	)
 }
