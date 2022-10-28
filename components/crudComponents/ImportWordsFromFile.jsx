@@ -94,13 +94,15 @@ export const ImportWordsFromFile = () => {
 			axios
 				.post('http://localhost:5000/', { ...newWord })
 				.then((res) => {
-					setJsonFile(res.data)
+					// setJsonFile(res.data)
+					// res.send(rows)
+					console.log('res.status :>> ', res.status)
 					if (res.status === 200) {
-						console.log(`word successfully imported with id = ${newId}`)
+						console.log(`word successfully imported `)
 						// alert(`Graph successfully imported with id = ${newId}`)
 					} else Promise.reject()
 				})
-				.catch((err) => console.log('Something went wrong'))
+				.catch((err) => console.log('Something went wrong---err==',err))
 			// alert('Something went wrong'))
 		}
 	}
