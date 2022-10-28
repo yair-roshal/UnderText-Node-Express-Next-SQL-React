@@ -27,11 +27,7 @@ export const AddWord = () => {
 	}, [])
 
 	const onSubmitAddWord = (data) => {
-		if (!isJsonString(data.json)) {
-			alert('json not correct!')
-			return false
-		}
-
+		 
 		//checking last id
 		let maxId = 0
 		for (let index in words) {

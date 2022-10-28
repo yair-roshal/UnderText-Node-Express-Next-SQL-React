@@ -36,6 +36,11 @@ export const AllWords = ({ words }) => {
 					<span>Import Word </span>
 				</Link>
 			</div>
+			<div className='wrapperButton'>
+				<Link href='/words/ImportWordsFromFile' className='button'>
+					<span>ImportWordsFromFile </span>
+				</Link>
+			</div>
 		</>
 	)
 }
