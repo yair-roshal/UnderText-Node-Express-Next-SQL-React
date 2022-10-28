@@ -31,16 +31,9 @@ export default function Index() {
                 <Header />
                 <AllWords words={words} />
 
-                <div className='wrapperButton'>
-                    <Link href='/words/add' className='button'>
-                        <span>Add Word </span>
-                    </Link>
-                </div>
-                <div className='wrapperButton'>
-                    <Link href='/words/import' className='button'>
-                        <span>Import Word </span>
-                    </Link>
-                </div>
+
+
+
             </div>
         </div>
     )

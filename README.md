@@ -2,15 +2,15 @@
 
 # Demo of App :
 
-![alt text](client/src/img/img_for_github.png "Illustration for the project")
+![alt text](img/img_for_github.png "Illustration for the project")
 
 ## What I want to do:
 
 ### Russian version
-<img src="client/src/img/tehilimRu.jpg"  width="400"/>
+<img src="img/tehilimRu.jpg"  width="400"/>
 
 ### French version
- <img src="client/src/img/tehilFr.jpg"  width="400"/>
+ <img src="img/tehilFr.jpg"  width="400"/>
 
 ### Tasks
 1. Replace class component with functional component using hooks.
@@ -67,7 +67,7 @@ https://www.freecodecamp.org/news/how-to-contribute-to-open-source-projects-begi
 3. React
 4. Node
 
- <img src="client/src/img/mern.jpg"  width="300"/> 
+ <img src="img/mern.jpg"  width="300"/> 
 
   
 <!-- Check it on https://cloud.mongodb.com/

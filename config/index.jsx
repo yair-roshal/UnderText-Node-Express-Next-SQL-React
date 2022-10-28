@@ -1,2 +1,2 @@
-export * from './_styled.js'
+export * from './styledButtons.js'
 export * from './config.js'

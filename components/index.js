@@ -6,4 +6,5 @@ export * from './Link'
 export * from './Loading'
 export * from './NavBar'
 export * from './NavLink'
-export * from './_styled'
+export * from './styledButtons'
+
