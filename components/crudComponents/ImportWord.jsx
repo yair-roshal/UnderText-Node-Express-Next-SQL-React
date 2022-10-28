@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form'
 import { UpdateButton } from 'components'
 import axios from 'axios'
 
-export const ImportGraph = graphProp => {
+export const ImportWord = wordProp => {
     const [fileName, setFileName] = useState(null)
     const [jsonFile, setJsonFile] = useState(null)
 
@@ -14,27 +14,27 @@ export const ImportGraph = graphProp => {
         handleSubmit,
     } = useForm()
 
-    const [graphs, setGraphs] = useState([])
+    const [words, setWords] = useState([])
     const URL = 'http://localhost:5000/'
 
     useEffect(() => {
         axios
             .get(URL)
             .then(response => {
-                setGraphs(response.data)
+                setWords(response.data)
             })
             .catch(error => {
                 console.log(error)
             })
     }, [jsonFile])
 
-    const onSubmitImportGraph = data => {
+    const onSubmitImportWord = data => {
         //checking last id
         let maxId = 0
 
-        for (let index in graphs) {
-            if (+graphs[index].id > maxId) {
-                maxId = +graphs[index].id
+        for (let index in words) {
+            if (+words[index].id > maxId) {
+                maxId = +words[index].id
             }
         }
 
@@ -45,7 +45,7 @@ export const ImportGraph = graphProp => {
             .then(res => {
                 setJsonFile(res.data)
                 if (res.status === 200) {
-                    alert(`Graph successfully imported with id = ${newId}`)
+                    alert(`Word successfully imported with id = ${newId}`)
                 } else Promise.reject()
             })
 
@@ -57,7 +57,7 @@ export const ImportGraph = graphProp => {
             <h1 className='titlePage'>Import files {fileName}</h1>
 
             <div className='formWrapper'>
-                <form onSubmit={handleSubmit(onSubmitImportGraph)}>
+                <form onSubmit={handleSubmit(onSubmitImportWord)}>
                     <label htmlFor='name'>File File</label>
                     <input
                         name='name'
@@ -70,7 +70,7 @@ export const ImportGraph = graphProp => {
                     <input type='submit' />
                 </form>
             </div>
-            <Link href='/graphs' style={{ textDecoration: 'none' }}>
+            <Link href='/words' style={{ textDecoration: 'none' }}>
                 <UpdateButton variant='contained'>Back</UpdateButton>
             </Link>
         </>

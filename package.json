@@ -32,7 +32,7 @@
 			"last 1 safari version"
 		]
 	},
-	"description": "Graph-Node-CRUD-Next-GrafQL-MySql-React",
+	"description": "Word-Node-CRUD-Next-GrafQL-MySql-React",
 	"main": "index.js",
 	"author": "Yair",
 	"license": "ISC",

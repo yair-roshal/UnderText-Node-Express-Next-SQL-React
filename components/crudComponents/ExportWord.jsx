@@ -3,12 +3,12 @@ import { Link } from 'components'
 import { UpdateButton } from 'components'
 import axios from 'axios'
 
-export const ExportGraph = graphProp => {
+export const ExportWord = wordProp => {
     const [fileName, setFileName] = useState(null)
 
     useEffect(() => {
         axios
-            .post(`http://localhost:5000/files/${graphProp.id}`, graphProp)
+            .post(`http://localhost:5000/files/${wordProp.id}`, wordProp)
             .then(res => {
                 setFileName(res.data)
                 if (res.status === 200) {
@@ -20,9 +20,9 @@ export const ExportGraph = graphProp => {
 
     return (
         <>
-            <h1 className='titlePage'>Graph saved in file {fileName}</h1>
+            <h1 className='titlePage'>Word saved in file {fileName}</h1>
 
-            <Link href='/graphs' style={{ textDecoration: 'none' }}>
+            <Link href='/words' style={{ textDecoration: 'none' }}>
                 <UpdateButton variant='contained'>Back</UpdateButton>
             </Link>
         </>

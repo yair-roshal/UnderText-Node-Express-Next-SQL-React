@@ -1,7 +1,7 @@
-import { UpdateGraph } from 'components/crudComponents'
+import { UpdateWord } from 'components/crudComponents'
 import axios from 'axios'
 
-export default UpdateGraph
+export default UpdateWord
 
 export async function getServerSideProps({ params }) {
     let res = await axios.get(`http://localhost:5000/${params.id}`).catch(error => {

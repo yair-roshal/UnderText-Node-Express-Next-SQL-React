@@ -12,16 +12,17 @@ app.use(bodyParser.json())
 app.use(cors())
 
 app.post('/files/:id', (req, res) => {
-    let graph = {
+    let word = {
         id: req.body.id,
         name: req.body.name,
         image: req.body.image,
         json: req.body.json,
     }
 
+    
     let file_name = `${req.body.id}-${req.body.name}.json`
 
-    fs.writeFileSync(file_name, JSON.stringify(graph, null, 2), err => {
+    fs.writeFileSync(file_name, JSON.stringify(word, null, 2), err => {
         if (err) throw err
         console.log(`Data written to file ${file_name}`)
     })
@@ -36,15 +37,15 @@ const pool = mysql.createPool({
     host: 'localhost',
     user: 'foo',
     password: 'foo',
-    database: 'graphs-d3',
+    database: 'under-text',
 })
 
-// Get all graphs==============================================
+// Get all words==============================================
 app.get('', (req, res) => {
     pool.getConnection((err, connection) => {
         if (err) throw err
 
-        connection.query('SELECT * from graphs', (err, rows) => {
+        connection.query('SELECT * from words', (err, rows) => {
             connection.release()
 
             if (!err) {
@@ -56,12 +57,12 @@ app.get('', (req, res) => {
     })
 })
 
-// Get a graph by ID==============================================
+// Get a word by ID==============================================
 app.get('/:id', (req, res) => {
     pool.getConnection((err, connection) => {
         if (err) throw err
 
-        connection.query('SELECT * from graphs WHERE id = ?', [req.params.id], (err, rows) => {
+        connection.query('SELECT * from words WHERE id = ?', [req.params.id], (err, rows) => {
             connection.release()
 
             if (!err) {
@@ -73,15 +74,15 @@ app.get('/:id', (req, res) => {
     })
 })
 
-// Delete a graph
+// Delete a word
 app.delete('/:id', (req, res) => {
     pool.getConnection((err, connection) => {
         if (err) throw err
-        connection.query('DELETE from graphs WHERE id = ?', [req.params.id], (err, rows) => {
+        connection.query('DELETE from words WHERE id = ?', [req.params.id], (err, rows) => {
             connection.release()
 
             if (!err) {
-                res.send(`Graph with ID: ${[req.params.id]} has been removed.`)
+                res.send(`Word with ID: ${[req.params.id]} has been removed.`)
             } else {
                 console.log(err)
             }
@@ -89,12 +90,12 @@ app.delete('/:id', (req, res) => {
     })
 })
 
-// Add a graph  ==============================================
+// Add a word  ==============================================
 const con = mysql.createConnection({
     host: 'localhost',
     user: 'foo',
     password: 'foo',
-    database: 'graphs-d3',
+    database: 'under-text',
 })
 
 con.connect(err => {
@@ -120,46 +121,46 @@ app.post('/import/', (req, res) => {
 
     newObject = { ...data, id: newId }
 
-    let sqlQuery = 'INSERT INTO graphs SET ?'
+    let sqlQuery = 'INSERT INTO words SET ?'
 
     con.query(sqlQuery, newObject, (err, results) => {
         if (err) throw err
-        console.log('graph added')
+        console.log('word added')
         res.send(results)
     })
 })
 
 app.post('', (req, res) => {
-    let graph = {
+    let word = {
         id: req.body.id,
         name: req.body.name,
         image: req.body.image,
         json: req.body.json,
     }
 
-    let sqlQuery = 'INSERT INTO graphs SET ?'
+    let sqlQuery = 'INSERT INTO words SET ?'
 
-    con.query(sqlQuery, graph, (err, results) => {
+    con.query(sqlQuery, word, (err, results) => {
         if (err) throw err
-        console.log('graph added')
+        console.log('word added')
         res.send(results)
     })
 })
 
-// Update a graph ===========================================
+// Update a word ===========================================
 app.put('/:id', (req, res) => {
     pool.getConnection((err, connection) => {
         if (err) throw err
         const { id, name, image, json } = req.body
         connection.query(
-            'UPDATE graphs SET name = ?,  image = ?,  json = ?  WHERE id = ?',
+            'UPDATE words SET name = ?,  image = ?,  json = ?  WHERE id = ?',
             [name, image, json, id],
 
             (err, rows) => {
                 connection.release()
 
                 if (!err) {
-                    res.send(`Graph with the name: ${name} has been added.`)
+                    res.send(`Word with the name: ${name} has been added.`)
                 } else {
                     console.log(err)
                 }

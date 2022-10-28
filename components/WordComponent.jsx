@@ -1,40 +1,39 @@
 import React, { useState, useEffect } from 'react'
-import { myConfig } from 'config/config.js'
+// import { myConfig } from 'config/config.js'
 import { Link } from 'components'
-import { prepareData } from 'utils'
 import { isJsonString } from 'utils'
 import { UpdateButton } from 'components'
 
-export const GraphComponent = (graph) => {
-	const { id, json } = graph
+export const WordComponent = (word) => {
+	const { id, json } = word
 	const [preparedData, setPreparedData] = useState([])
 	const [error, setError] = useState(false)
 
-	useEffect(() => {
-		if (!error) {
-			if (isJsonString(json)) {
-				setPreparedData(prepareData(JSON.parse(json)))
-			} else {
-				setError(true)
-			}
-		}
-	}, [])
+	// useEffect(() => {
+	// 	if (!error) {
+	// 		if (isJsonString(json)) {
+	// 			setPreparedData(prepareData(JSON.parse(json)))
+	// 		} else {
+	// 			setError(true)
+	// 		}
+	// 	}
+	// }, [])
 
 	return (
 		<>
-			<Link href={`/graphs/update/${id}`} style={{ textDecoration: 'none' }}>
+			<Link href={`/words/update/${id}`} style={{ textDecoration: 'none' }}>
 				<UpdateButton variant='contained'>Update</UpdateButton>
 			</Link>
-			<Link href={`/graphs/`} style={{ textDecoration: 'none' }}>
+			<Link href={`/words/`} style={{ textDecoration: 'none' }}>
 				<UpdateButton variant='contained'>Back</UpdateButton>
 			</Link>
 
-			<h1 className='subTitle'>{`Graph id: ${id} `}</h1>
+			<h1 className='subTitle'>{`Word id: ${id} `}</h1>
 
 			{!error && (
 				<div>
-					<div className='graphWrapper'>
-						<Graph id='graph-id' data={preparedData} config={myConfig} />
+					<div className='wordWrapper'>
+						{/* <Word id='word-id' data={preparedData} config={myConfig} /> */}
 					</div>
 
 					<div className='flexWrapper'>

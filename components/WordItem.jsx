@@ -4,15 +4,15 @@ import axios from 'axios'
 
 import { DeleteButton, ShowButton, ExportButton } from './_styled'
 
-export const GraphItem = ({ graph }) => {
-    const { id, name, image, json } = graph
+export const WordItem = ({ word }) => {
+    const { id, name, image, json } = word
 
-    const deleteGraph = id => {
+    const deleteWord = id => {
         axios
             .delete('http://localhost:5000/' + id)
             .then(res => {
                 if (res.status === 200) {
-                    alert('Graph successfully deleted')
+                    alert('Word successfully deleted')
                     window.location.reload()
                 } else Promise.reject()
             })
@@ -20,11 +20,11 @@ export const GraphItem = ({ graph }) => {
     }
 
     return (
-        <div className='wrapperGraph'>
+        <div className='wrapperWord'>
             <div className='wrapperImage'>
                 <span className='idTitle'>{id}</span>
-                <img src={image} alt='graph' />
-                <div className='shadowGraphName'>{name}</div>
+                <img src={image} alt='word' />
+                <div className='shadowWordName'>{name}</div>
             </div>
 
             <h4>JSON:</h4>
@@ -33,15 +33,15 @@ export const GraphItem = ({ graph }) => {
             </div>
 
             <div className='wrapperStaticButtons'>
-                <DeleteButton onClick={() => deleteGraph(id)} variant='contained'>
+                <DeleteButton onClick={() => deleteWord(id)} variant='contained'>
                     Delete
                 </DeleteButton>
 
-                <Link href={`/graphs/show/${id}`} style={{ textDecoration: 'none' }}>
+                <Link href={`/words/show/${id}`} style={{ textDecoration: 'none' }}>
                     <ShowButton variant='contained'>Show</ShowButton>
                 </Link>
 
-                <Link href={`/graphs/export/${id}`} style={{ textDecoration: 'none' }}>
+                <Link href={`/words/export/${id}`} style={{ textDecoration: 'none' }}>
                     <ExportButton variant='contained'>Export</ExportButton>
                 </Link>
             </div>

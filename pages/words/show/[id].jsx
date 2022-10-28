@@ -1,7 +1,7 @@
-import { GraphComponent } from 'components'
+import { WordComponent } from 'components'
 import axios from 'axios'
 
-export default GraphComponent
+export default WordComponent
 
 export async function getServerSideProps({ params }) {
     let res = await axios.get(`http://localhost:5000/${params.id}`)

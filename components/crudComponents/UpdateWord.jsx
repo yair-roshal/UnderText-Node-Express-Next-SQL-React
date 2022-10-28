@@ -7,7 +7,7 @@ import { UpdateButton } from 'components'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 
-export const UpdateGraph = graphProp => {
+export const UpdateWord = wordProp => {
     const validationSchema = Yup.object().shape({
         name: Yup.string().required('Title is required'),
         image: Yup.string().required('First Name is required'),
@@ -16,7 +16,7 @@ export const UpdateGraph = graphProp => {
 
     const formOptions = { resolver: yupResolver(validationSchema) }
 
-    formOptions.defaultValues = graphProp
+    formOptions.defaultValues = wordProp
     const {
         register,
         formState: { errors },
@@ -24,17 +24,17 @@ export const UpdateGraph = graphProp => {
         watch,
     } = useForm(formOptions)
 
-    const updateGraphItem = graphObject => {
-        if (!isJsonString(graphObject.json)) {
+    const updateWordItem = wordObject => {
+        if (!isJsonString(wordObject.json)) {
             alert('json not correct!')
             return false
         }
 
         axios
-            .put('http://localhost:5000/' + graphProp.id, graphObject)
+            .put('http://localhost:5000/' + wordProp.id, wordObject)
             .then(res => {
                 if (res.status === 200) {
-                    alert('Graph successfully updated')
+                    alert('Word successfully updated')
                 } else Promise.reject()
             })
             .catch(err => alert('Something went wrong'))
@@ -42,11 +42,11 @@ export const UpdateGraph = graphProp => {
 
     return (
         <>
-            {graphProp && (
+            {wordProp && (
                 <>
-                    <div className='titlePage'>Update Graph</div>
+                    <div className='titlePage'>Update Word</div>
                     <div className='formWrapper'>
-                        <form onSubmit={handleSubmit(updateGraphItem)}>
+                        <form onSubmit={handleSubmit(updateWordItem)}>
                             <input
                                 style={{ display: 'none' }}
                                 placeholder='Id'
@@ -63,8 +63,8 @@ export const UpdateGraph = graphProp => {
                                     required: true,
                                     message: 'Please Enter your Name',
                                     onChange: e => {
-                                        setGraph({
-                                            ...graph,
+                                        setWord({
+                                            ...word,
                                             name: e.target.value,
                                         })
                                     },
@@ -82,8 +82,8 @@ export const UpdateGraph = graphProp => {
                                     required: true,
                                     minLength: 5,
                                     onChange: e =>
-                                        setGraph({
-                                            ...graph,
+                                        setWord({
+                                            ...word,
                                             image: e.target.value,
                                         }),
                                     pattern: {
@@ -105,8 +105,8 @@ export const UpdateGraph = graphProp => {
                                 {...register('json', {
                                     required: true,
                                     onChange: e =>
-                                        setGraph({
-                                            ...graph,
+                                        setWord({
+                                            ...word,
                                             json: e.target.value,
                                         }),
                                 })}
@@ -119,7 +119,7 @@ export const UpdateGraph = graphProp => {
                         <h3>Content form: </h3>
                         <pre>{JSON.stringify(watch(), null, 2)}</pre>
 
-                        <Link href='/graphs' style={{ textDecoration: 'none' }}>
+                        <Link href='/words' style={{ textDecoration: 'none' }}>
                             <UpdateButton variant='contained'>Back</UpdateButton>
                         </Link>
                     </div>
