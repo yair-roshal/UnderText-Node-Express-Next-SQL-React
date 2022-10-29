@@ -11,6 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(cors())
 
+
 // MySQL=============================================
 const pool = mysql.createPool({
 	connectionLimit: 10,
@@ -20,7 +21,7 @@ const pool = mysql.createPool({
 	database: 'under-text',
 })
 
-// Get all words==============================================
+// Get all words ==============================================
 app.get('', (req, res) => {
 	pool.getConnection((err, connection) => {
 		if (err) throw err
@@ -37,7 +38,7 @@ app.get('', (req, res) => {
 	})
 })
 
-// Get a word by ID==============================================
+// Get a word by ID ==============================================
 app.get('/:id', (req, res) => {
 	pool.getConnection((err, connection) => {
 		if (err) throw err
@@ -54,7 +55,8 @@ app.get('/:id', (req, res) => {
 	})
 })
 
-// Delete a word
+
+// Delete a word =============================================
 app.delete('/:id', (req, res) => {
 	pool.getConnection((err, connection) => {
 		if (err) throw err
@@ -93,6 +95,7 @@ app.post('', (req, res) => {
 		translate: req.body.translate,
 		description: req.body.description,
 	}
+
 
 	let sqlQuery = 'INSERT INTO words SET ?'
 

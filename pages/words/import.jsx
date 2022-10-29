@@ -1,3 +1,3 @@
-import { ImportWordsFromFile } from 'components/crudComponents'
+import { ImportWords } from 'components/crudComponents'
 
-export default ImportWordsFromFile
+export default ImportWords
