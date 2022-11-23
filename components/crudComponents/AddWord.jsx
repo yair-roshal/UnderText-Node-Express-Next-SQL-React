@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'components'
 import { useForm } from 'react-hook-form'
 import { UpdateButton } from 'components'
