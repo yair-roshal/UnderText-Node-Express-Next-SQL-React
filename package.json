@@ -1,45 +1,43 @@
 {
-	"name": "next-crud",
-	"version": "7.7.0",
-	"private": true,
-	"scripts": {
-		"dev": "next dev"
-	},
-	"dependencies": {
-		"@emotion/react": "^11.10.5",
-		"@emotion/styled": "^11.10.5",
-		"@hookform/resolvers": "^2.0.0",
-		"@mui/icons-material": "^5.10.9",
-		"@mui/material": "^5.10.11",
-		"axios": "^0.27.2",
-		"next": "^10.1.3",
-		"react": "^17.0.2",
-		"react-dom": "^17.0.2",
-		"react-hook-form": "^7.0.4",
-		"react-router-dom": "^5.2.0",
-		"react-scripts": "4.0.1",
-		"sass": "^1.55.0",
-		"yup": "^0.32.9"
-	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
-	},
-	"description": "Word-Node-CRUD-Next-GrafQL-MySql-React",
-	"main": "index.js",
-	"author": "Yair",
-	"license": "ISC",
-	"browser": {
-		"fs": false,
-		"path": false,
-		"os": false
-	}
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": [
+        "eslint:recommended",
+
+        "plugin:react/recommended",
+        "plugin:react/jsx-runtime",
+
+        "plugin:react-hooks/recommended",
+        "plugin:jsx-ally/recommended",
+        "plugin:import/recommended",
+
+        "prettier"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": ["react"],
+    "rules": {
+        "no-var": "error",
+        "no-mixed-spaces-and-tabs": "off",
+
+        "semi": "off",
+        "no-multi-spaces": "warn",
+        "space-in-parens": "warn",
+        "no-multiple-empty-lines": "warn",
+        "prefer-const": "warn",
+        "no-use-before-define": "error",
+        "no-extra-boolean-cast": 1,
+        "new-parens": 1,
+
+        "no-unused-vars": "warn"
+    }
 }
