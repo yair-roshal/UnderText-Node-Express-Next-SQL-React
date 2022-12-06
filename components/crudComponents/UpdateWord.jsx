@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+
 import { Link } from 'components'
 import { useForm } from 'react-hook-form'
-import { isJsonString } from 'utils'
 import axios from 'axios'
 import { UpdateButton } from 'components'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 
-export const UpdateWord = wordProp => {
+export const UpdateWord = (wordProp) => {
+    const [word, setWord] = useState(null)
+
     const validationSchema = Yup.object().shape({
         name: Yup.string().required('Title is required'),
         image: Yup.string().required('First Name is required'),
@@ -24,20 +26,15 @@ export const UpdateWord = wordProp => {
         watch,
     } = useForm(formOptions)
 
-    const updateWordItem = wordObject => {
-        if (!isJsonString(wordObject.json)) {
-            alert('json not correct!')
-            return false
-        }
-
+    const updateWordItem = (wordObject) => {
         axios
             .put('http://localhost:5000/' + wordProp.id, wordObject)
-            .then(res => {
+            .then((res) => {
                 if (res.status === 200) {
                     alert('Word successfully updated')
                 } else Promise.reject()
             })
-            .catch(err => alert('Something went wrong'))
+            .catch((err) => alert('Something went wrong'))
     }
 
     return (
@@ -62,7 +59,7 @@ export const UpdateWord = wordProp => {
                                 {...register('name', {
                                     required: true,
                                     message: 'Please Enter your Name',
-                                    onChange: e => {
+                                    onChange: (e) => {
                                         setWord({
                                             ...word,
                                             name: e.target.value,
@@ -81,7 +78,7 @@ export const UpdateWord = wordProp => {
                                 {...register('image', {
                                     required: true,
                                     minLength: 5,
-                                    onChange: e =>
+                                    onChange: (e) =>
                                         setWord({
                                             ...word,
                                             image: e.target.value,
@@ -104,7 +101,7 @@ export const UpdateWord = wordProp => {
                                 placeholder='JSON'
                                 {...register('json', {
                                     required: true,
-                                    onChange: e =>
+                                    onChange: (e) =>
                                         setWord({
                                             ...word,
                                             json: e.target.value,

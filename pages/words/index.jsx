@@ -1,40 +1,30 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'components'
-import { AllWords } from 'components'
-import { Loading } from 'components'
-import { Header } from 'components'
-import axios from 'axios'
+import { useState, useEffect } from 'react'
+import { AllWords, Loading, Header } from 'components'
 import store from '../../redux/store'
 import { Provider } from 'react-redux'
+import { URL } from '../../constants/allConstants'
+import { axiosWrappers } from '../../helpers/axios-wrappers'
 
 export default function Index() {
-	const [words, setWords] = useState(null)
-	const URL = 'http://localhost:5000/'
+    const [words, setWords] = useState(null)
 
-	useEffect(() => {
-		axios
-			.get(URL)
-			.then((response) => {
-				setWords(response.data)
-			})
-			.catch((error) => {
-				console.log(error)
-			})
-	}, [])
+    useEffect(() => {
+        axiosWrappers.getAxios(URL, setWords)
+    }, [])
 
-	if (!words) {
-		return <Loading />
-	}
+    if (!words) {
+        return <Loading />
+    }
 
-	return (
-		<Provider store={store}>
-			<div>
-				<h1 className='titlePage'>Word</h1>
-				<div className='wrapperAllWords'>
-					<Header />
-					<AllWords words={words} />
-				</div>
-			</div>
-		</Provider>
-	)
+    return (
+        <Provider store={store}>
+            <div>
+                <h1 className='titlePage'>Word</h1>
+                <div className='wrapperAllWords'>
+                    <Header />
+                    <AllWords words={words} />
+                </div>
+            </div>
+        </Provider>
+    )
 }

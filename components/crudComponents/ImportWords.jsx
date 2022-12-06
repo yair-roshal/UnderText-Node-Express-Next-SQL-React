@@ -1,28 +1,14 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'components'
+import { Link, UpdateButton } from 'components'
 import { useForm } from 'react-hook-form'
-import { UpdateButton } from 'components'
-import axios from 'axios'
+import { axiosWrappers } from '../../helpers/axios-wrappers'
+import { URL } from '../../constants/allConstants'
 
 export const ImportWords = () => {
-    // const [words, setWords] = useState(null)
-    const URL = 'http://localhost:5000/'
     const {
         register,
         formState: { errors },
         handleSubmit,
     } = useForm()
-
-    // useEffect(() => {
-    //     axios
-    //         .get(URL)
-    //         .then((response) => {
-    //             setWords(response.data)
-    //         })
-    //         .catch((error) => {
-    //             console.log(error)
-    //         })
-    // }, [])
 
     const onSubmitImportWords = (data) => {
         console.log('data', data)
@@ -35,19 +21,7 @@ export const ImportWords = () => {
                 translate: '',
                 description: '',
             }
-            axios
-                .post(URL, { ...newWord })
-                .then((res) => {
-                    // setJsonFile(res.data)
-                    // res.send(rows)
-                    console.log('res.status :>> ', res.status)
-                    if (res.status === 200) {
-                        console.log(`word successfully imported `)
-                    } else Promise.reject()
-                })
-
-                // .catch((err) => console.log('Something went wrong---err==', err))
-                .catch((err) => alert('Something went wrong :', err))
+            axiosWrappers.postAxios(URL, { ...newWord })
         }
         alert(`all words successfully imported `)
     }

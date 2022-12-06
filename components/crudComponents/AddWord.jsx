@@ -3,7 +3,7 @@ import { Link } from 'components'
 import { useForm } from 'react-hook-form'
 import { UpdateButton } from 'components'
 import axios from 'axios'
-import { isJsonString } from 'utils'
+import { URL } from '../../constants/allConstants'
 
 export const AddWord = () => {
 	const {
@@ -13,8 +13,7 @@ export const AddWord = () => {
 	} = useForm()
 
 	const [words, setWords] = useState([])
-	const URL = 'http://localhost:5000/'
-
+ 
 	useEffect(() => {
 		axios
 			.get(URL)
