@@ -37,8 +37,8 @@ export const AllWords = ({ words }) => {
 				</Link>
 			</div>
 			<div className='wrapperButton'>
-				<Link href='/words/ImportWords' className='button'>
-					<span>ImportWords </span>
+				<Link href='/words/ImportWordsFrom' className='button'>
+					<span>ImportWordsFrom </span>
 				</Link>
 			</div>
 		</>
