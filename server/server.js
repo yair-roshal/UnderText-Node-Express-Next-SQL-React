@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const mysql = require('mysql')
-var cors = require('cors')
+const cors = require('cors')
 const fs = require('fs')
 
 const app = express()
@@ -89,7 +89,7 @@ con.connect((err) => {
 })
 
 app.post('', (req, res) => {
-	let word = {
+	const word = {
 		id: req.body.id,
 		original: req.body.original,
 		translate: req.body.translate,
@@ -97,7 +97,7 @@ app.post('', (req, res) => {
 	}
 
 
-	let sqlQuery = 'INSERT INTO words SET ?'
+	const sqlQuery = 'INSERT INTO words SET ?'
 
 	con.query(sqlQuery, word, (err, results) => {
 		if (err) throw err

@@ -4,7 +4,7 @@ import { AllWords } from 'components'
 import { Loading } from 'components'
 import { Header } from 'components'
 import axios from 'axios'
-import store from './redux/store'
+import store from '../../redux/store'
 import { Provider } from 'react-redux'
 
 export default function Index() {
