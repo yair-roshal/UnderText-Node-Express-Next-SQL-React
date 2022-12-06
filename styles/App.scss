@@ -37,6 +37,7 @@ $backgroundHeader: #2c2c2c;
 	background: #fbeed5;
 	border-color: #c09853;
 	height: 100px;
+	border: 1px solid #d0d0d0;
 }
 
 /* td{
@@ -266,12 +267,14 @@ $backgroundHeader: #2c2c2c;
 }
 
 .wrapperAllWords {
+	position: relative;
+	overflow: hidden;
+	// width: 970px;
+	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
 
-	position: relative;
-	overflow: hidden;
-	width: 970px;
+
 
 	transition: translate;
 	transition-property: transform;
@@ -324,6 +327,9 @@ $backgroundHeader: #2c2c2c;
 
 	.allWords {
 		display: flex;
+		flex-direction:   row-reverse  ;
+		flex-wrap:  wrap  ;
+
 		-webkit-transition: all 0.6s ease-out;
 		transition: all 0.6s ease-out;
 

@@ -1,33 +1,4 @@
 {
-    "env": {
-        "browser": true,
-        "commonjs": true,
-        "es6": true,
-        "node": true
-    },
-    "extends": [
-        "eslint:recommended",
-
-        "plugin:react/recommended",
-        "plugin:react/jsx-runtime",
-
-        "plugin:react-hooks/recommended",
-        "plugin:jsx-a11y/recommended",
-
-
-        // "plugin:import/recommended",
-        "plugin:import/recommended"
-
-        // "prettier"
-    ],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 2018,
-        "sourceType": "module"
-    },
-    "plugins": ["react"],
     "rules": {
         "no-var": "error",
         "no-mixed-spaces-and-tabs": "off",
@@ -40,7 +11,34 @@
         "no-use-before-define": "error",
         "no-extra-boolean-cast": 1,
         "new-parens": 1,
+        "react/prop-types": "off",
+        "no-unused-vars": "warn",
+        "import/no-unresolved": "off"
+    },
 
-        "no-unused-vars": "warn"
-    }
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:react/jsx-runtime",
+        "plugin:react-hooks/recommended",
+        "plugin:jsx-a11y/recommended",
+        "plugin:import/recommended"
+
+        // "prettier"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": ["react"]
+   
 }
