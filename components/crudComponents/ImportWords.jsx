@@ -36,12 +36,11 @@ export const ImportWords = () => {
 			})
 	}, [newId])
 
- 
 	const onSubmitImportWords = (data) => {
 		console.log('data', data)
 		//checking last id==========
 		let maxId = 0
-		console.log('words :>> ', words);
+		console.log('words :>> ', words)
 		for (let index in words) {
 			if (+words[index].id > maxId) {
 				maxId = +words[index].id
@@ -75,10 +74,54 @@ export const ImportWords = () => {
 		}
 	}
 
+	const showFile = (e) => {
+		e.preventDefault()
+		const reader = new FileReader()
+
+		//checking last id==========
+		let maxId = 0
+		for (let index in words) {
+			if (+words[index].id > maxId) {
+				maxId = +words[index].id
+			}
+		}
+		let newId = maxId + 1
+
+		reader.onload = (e) => {
+			const text = e.target.result
+			const elements = text.split(' ')
+
+			const temp = elements.map((element, index) => {
+				console.log('index==', index)
+				const word = {
+					id: newId + index,
+					original: element,
+					translate: '',
+				}
+
+				axios
+					.post('http://localhost:5000/', { ...word })
+					.then((res) => {
+						if (res.status === 200) {
+							alert('Word successfully added')
+						} else Promise.reject()
+					})
+					.catch((err) => alert('Something went wrong'))
+
+				// arrayNewWords.push(word)
+
+				console.log(`word---`, word)
+				// console.log(`arrayNewWords---`, arrayNewWords)
+			})
+
+			// window.location = '/';
+		}
+
+		reader.readAsText(e.target.files[0])
+	}
+
 	return (
 		<>
-			<h1 className='titlePage'>Import words </h1>
-
 			<div className='formWrapper'>
 				<h2 className='titlePage'>Import words from text</h2>
 
@@ -86,15 +129,16 @@ export const ImportWords = () => {
 					<textarea
 						name='text'
 						type='text'
-						placeholder='text'
+						placeholder='Please Enter your text'
 						{...register('text', { required: true })}
 					/>
-					{errors.name && <p style={{ color: 'red' }}>Please Enter text</p>}
+					{errors.name && <p style={{ color: 'red' }}>Please Enter your text</p>}
 					<input type='submit' />
 				</form>
-				{/* <h2 className='titlePage'>Import words from file</h2>
 
-				<input type='file' onChange={(e) => showFile(e)} /> */}
+				<h2 className='titlePage'>Import words from file</h2>
+
+				<input type='file' onChange={(e) => showFile(e)} />
 			</div>
 
 			<Link href='/words' style={{ textDecoration: 'none' }}>
@@ -103,60 +147,3 @@ export const ImportWords = () => {
 		</>
 	)
 }
-
-
-
-
-
-
-
-
-
-
-
-
-	// const showFile = (e) => {
-	// 	e.preventDefault()
-	// 	const reader = new FileReader()
-
-	// 	//checking last id==========
-	// 	let maxId = 0
-	// 	for (let index in words) {
-	// 		if (+words[index].id > maxId) {
-	// 			maxId = +words[index].id
-	// 		}
-	// 	}
-	// 	let newId = maxId + 1
-
-	// 	reader.onload = (e) => {
-	// 		const text = e.target.result
-	// 		const elements = text.split(' ')
-
-	// 		const temp = elements.map((element, index) => {
-	// 			console.log('index==', index)
-	// 			const word = {
-	// 				id: newId + index,
-	// 				original: element,
-	// 				translate: '',
-	// 			}
-
-	// 			axios
-	// 				.post('http://localhost:5000/', { ...word })
-	// 				.then((res) => {
-	// 					if (res.status === 200) {
-	// 						alert('Word successfully added')
-	// 					} else Promise.reject()
-	// 				})
-	// 				.catch((err) => alert('Something went wrong'))
-
-	// 			// arrayNewWords.push(word)
-
-	// 			console.log(`word---`, word)
-	// 			// console.log(`arrayNewWords---`, arrayNewWords)
-	// 		})
-
-	// 		// window.location = '/';
-	// 	}
-
-	// 	reader.readAsText(e.target.files[0])
-	// }
