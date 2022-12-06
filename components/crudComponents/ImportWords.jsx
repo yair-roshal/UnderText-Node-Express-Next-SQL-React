@@ -38,22 +38,11 @@ export const ImportWords = () => {
 
     const onSubmitImportWords = (data) => {
         console.log('data', data)
-        //checking last id==========
-        // let maxId = 0
-        // console.log('words :>> ', words)
-        // for (let index in words) {
-        //     if (+words[index].id > maxId) {
-        //         maxId = +words[index].id
-        //     }
-        // }
-        // newId = maxId + 1
-        // console.log('newId', newId)
 
         const newWords = data.text.split(' ')
 
         for (let i = 0; i < newWords.length; i++) {
             const newWord = {
-                // id: newId + i,
                 original: newWords[i],
                 translate: '',
                 description: '',
@@ -66,12 +55,13 @@ export const ImportWords = () => {
                     console.log('res.status :>> ', res.status)
                     if (res.status === 200) {
                         console.log(`word successfully imported `)
-                        // alert(`Graph successfully imported with id = ${newId}`)
                     } else Promise.reject()
                 })
-                .catch((err) => console.log('Something went wrong---err==', err))
-            // alert('Something went wrong'))
+
+                // .catch((err) => console.log('Something went wrong---err==', err))
+                .catch((err) => alert('Something went wrong :', err))
         }
+        alert(`all words successfully imported `)
     }
 
     return (
