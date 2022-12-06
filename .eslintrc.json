@@ -6,7 +6,6 @@
         "semi": "off",
         "no-multi-spaces": "warn",
         "space-in-parens": "warn",
-        "no-multiple-empty-lines": "warn",
         "prefer-const": "warn",
         "no-use-before-define": "error",
         "no-extra-boolean-cast": 1,
@@ -40,5 +39,4 @@
         "sourceType": "module"
     },
     "plugins": ["react"]
-   
 }

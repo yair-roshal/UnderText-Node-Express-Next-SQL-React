@@ -5,36 +5,24 @@ import { UpdateButton } from 'components'
 import axios from 'axios'
 
 export const ImportWords = () => {
-    const [words, setWords] = useState(null)
+    // const [words, setWords] = useState(null)
     const URL = 'http://localhost:5000/'
-    let newId = 0
     const {
         register,
         formState: { errors },
         handleSubmit,
     } = useForm()
 
-    useEffect(() => {
-        axios
-            .get(URL)
-            .then((response) => {
-                setWords(response.data)
-            })
-            .catch((error) => {
-                console.log(error)
-            })
-    }, [])
-
-    useEffect(() => {
-        axios
-            .get(URL)
-            .then((response) => {
-                setWords(response.data)
-            })
-            .catch((error) => {
-                console.log(error)
-            })
-    }, [newId])
+    // useEffect(() => {
+    //     axios
+    //         .get(URL)
+    //         .then((response) => {
+    //             setWords(response.data)
+    //         })
+    //         .catch((error) => {
+    //             console.log(error)
+    //         })
+    // }, [])
 
     const onSubmitImportWords = (data) => {
         console.log('data', data)
@@ -48,7 +36,7 @@ export const ImportWords = () => {
                 description: '',
             }
             axios
-                .post('http://localhost:5000/', { ...newWord })
+                .post(URL, { ...newWord })
                 .then((res) => {
                     // setJsonFile(res.data)
                     // res.send(rows)

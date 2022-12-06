@@ -1,7 +1,6 @@
-# UnderText- - Translation Under Text for any texts
+# UnderText- - Translation Under Text
 
-# Demo of App :
-
+# Demo of App : 
 ![alt text](img/img_for_github.png "Illustration for the project")
 
 ## What I want to do:
@@ -12,8 +11,7 @@
 ### French version
  <img src="img/tehilFr.jpg"  width="400"/>
 
-### Tasks
-1. Replace class component with functional component using hooks.
+### Tasks (What I need TODO)
 2. Connect a translator (Google, Yandex) via the API to translate individual words.
 3. Create a system of registration and accounts.
 4. Make it possible to select text.
@@ -49,21 +47,17 @@ https://www.freecodecamp.org/news/how-to-contribute-to-open-source-projects-begi
 ## Installation instructions
 
 1. in main folder, text in the terminal `npm install`
-2. after that go to the `client` folder ,text in the terminal `cd client`
-3. text in the terminal `npm install`
-4. after that go to the `server` folder ,text in the terminal `cd..` and `cd server`
-5. text in the terminal `npm install`
-
- 
-8. `npm run start_npm` -start of the project
-
-
+2. `npm run dev` -start of the project
+3. after that go to the `server` folder ,text in the terminal `cd..` and `cd server`
+4. text in the terminal `npm install`
+5. `npm run dev` -start of the project
+  
 ## This project used
 
 1. Next
-2. Express
+2. Node
 3. React
-4. Sql
+4. SQL
 
  
  
