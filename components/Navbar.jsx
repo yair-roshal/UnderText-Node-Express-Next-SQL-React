@@ -11,8 +11,15 @@ export const Navbar = () => {
 						<NavLink href='/' exact className='link' style={{ textDecoration: 'none' }}>
 							Home
 						</NavLink>
+
 						<NavLink href='/words' className='link' style={{ textDecoration: 'none' }}>
-							Words
+							Tehilim
+						</NavLink>
+						<NavLink href='/words' className='link' style={{ textDecoration: 'none' }}>
+							Shaharit
+						</NavLink>
+						<NavLink href='/words' className='link' style={{ textDecoration: 'none' }}>
+							Minha
 						</NavLink>
 					</div>
 				</Toolbar>

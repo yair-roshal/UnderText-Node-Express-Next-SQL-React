@@ -6,7 +6,7 @@ export default function App({ Component, pageProps }) {
     return (
         <>
             <Head>
-                <title>Next.js - CRUD </title>
+                <title>Under Text</title>
             </Head>
 
             <div>

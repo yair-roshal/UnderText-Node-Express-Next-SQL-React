@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'components'
 import axios from 'axios'
 import IconButton from '@mui/material/IconButton'
@@ -18,11 +17,11 @@ export const WordItem = ({ word }) => {
 					window.location.reload()
 				} else Promise.reject()
 			})
-			.catch((err) => alert('Something went wrong'))
+			.catch((err) => alert('Something went wrong: ' + err))
 	}
 
 	return (
-		<td className='cell'>
+		<div className='cell'>
 			<div className='edit'>
 				<Link href={`/words/update/${id}`} style={{ textDecoration: 'none' }}>
 					<IconButton color='secondary' component='label'>
@@ -43,6 +42,6 @@ export const WordItem = ({ word }) => {
 
 			<div className='original_text'>{original}</div>
 			<div className='translate'>{translate}</div>
-		</td>
+		</div>
 	)
 }

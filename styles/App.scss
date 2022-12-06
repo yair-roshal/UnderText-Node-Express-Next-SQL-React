@@ -10,57 +10,25 @@ $backgroundHeader: #2c2c2c;
 
 .edit {
 	text-align: right;
-	/* color: blueviolet; */
 	font-size: calc(5px + 1vmin);
 }
 
-.table_text {
-	direction: rtl;
-	text-align: right;
-}
-
-.table_text caption,
-.table_text th,
-.table_text td {
-	direction: ltr;
-}
-
-.row {
-	/* float: right; */
-	display: table-row;
-	background: #f2dede;
-	border-color: #b94a48;
-}
-
 .cell {
-	display: inline-block;
+	// display: inline-block;
+	min-height: 100px;
 	background: #fbeed5;
 	border-color: #c09853;
-	height: 100px;
 	border: 1px solid #d0d0d0;
 }
-
-/* td{
-      display: inline-block;
-  
-  
-    }
-    tr{
-      display:block;
-      
-    } */
 
 .original_text {
 	text-align: center;
 	font-weight: 600;
-	/* color: blueviolet; */
 	font-size: calc(15px + 1vmin);
 }
 
 .translate {
-	/* text-align: right; */
 	text-align: center;
-	/* color: blueviolet; */
 	font-size: calc(6px + 1vmin);
 }
 
@@ -283,8 +251,7 @@ $backgroundHeader: #2c2c2c;
 
 	.wrapperHeader {
 		position: relative;
-		height: 44px;
-		width: 960px;
+		height: 44px; 
 		border-right: 10px solid $redSection;
 		margin: 16px 0px;
 		border-radius: 3px;
