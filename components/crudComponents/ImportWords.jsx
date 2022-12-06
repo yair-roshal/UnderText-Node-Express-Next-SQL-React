@@ -39,21 +39,21 @@ export const ImportWords = () => {
     const onSubmitImportWords = (data) => {
         console.log('data', data)
         //checking last id==========
-        let maxId = 0
-        console.log('words :>> ', words)
-        for (let index in words) {
-            if (+words[index].id > maxId) {
-                maxId = +words[index].id
-            }
-        }
-        newId = maxId + 1
-        console.log('newId', newId)
+        // let maxId = 0
+        // console.log('words :>> ', words)
+        // for (let index in words) {
+        //     if (+words[index].id > maxId) {
+        //         maxId = +words[index].id
+        //     }
+        // }
+        // newId = maxId + 1
+        // console.log('newId', newId)
 
         const newWords = data.text.split(' ')
 
         for (let i = 0; i < newWords.length; i++) {
-            let newWord = {
-                id: newId + i,
+            const newWord = {
+                // id: newId + i,
                 original: newWords[i],
                 translate: '',
                 description: '',
