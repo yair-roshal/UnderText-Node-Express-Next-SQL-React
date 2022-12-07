@@ -1,15 +1,15 @@
 # UnderText- - Translation Under Text
 
 # Demo of App : 
-![alt text](img/img_for_github.png "Illustration for the project")
+![alt text]( images/img_for_github.png "Illustration for the project")
 
 ## What I want to do:
 
 ### Russian version
-<img src="img/tehilimRu.jpg"  width="400"/>
+<img src=" images/tehilimRu.jpg"  width="400"/>
 
 ### French version
- <img src="img/tehilFr.jpg"  width="400"/>
+ <img src=" images/tehilFr.jpg"  width="400"/>
 
 ### Tasks (What I need TODO)
 2. Connect a translator (Google, Yandex) via the API to translate individual words.

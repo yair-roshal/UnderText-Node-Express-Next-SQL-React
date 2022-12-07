@@ -44,12 +44,6 @@ app.get('/:id', (req, res) => {
     poolConnection(req, res, sqlQuery, [req.params.id])
 })
 
-// Delete a word =============================================
-app.delete('/:id', (req, res) => {
-    const sqlQuery = 'DELETE from words WHERE id = ?'
-    poolConnection(req, res, sqlQuery, [req.params.id])
-})
-
 // Add a new word =============================================
 app.post('', (req, res) => {
     const sqlQuery = 'INSERT INTO words SET ?'
@@ -66,6 +60,12 @@ app.put('/:id', (req, res) => {
     const { id, original, translate, description } = req.body
     const sqlQuery = 'UPDATE words SET original = ?,  translate = ?,  description = ?  WHERE id = ?'
     poolConnection(req, res, sqlQuery, [original, translate, description, id])
+})
+
+// Delete a word =============================================
+app.delete('/:id', (req, res) => {
+    const sqlQuery = 'DELETE from words WHERE id = ?'
+    poolConnection(req, res, sqlQuery, [req.params.id])
 })
 
 // Listen on environment port or 5000
