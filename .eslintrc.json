@@ -4,7 +4,7 @@
         "no-mixed-spaces-and-tabs": "off",
 
         "semi": "off",
-        "no-multi-spaces": "warn",
+        "no-multi-spaces": "off",
         "space-in-parens": "warn",
         "prefer-const": "warn",
         "no-use-before-define": "error",

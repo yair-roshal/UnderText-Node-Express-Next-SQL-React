@@ -17,7 +17,7 @@ export const WordItem = ({ word }) => {
 					window.location.reload()
 				} else Promise.reject()
 			})
-			.catch((err) => alert('Something went wrong: ' + err))
+			.catch((err) => alert('Something went wrong (maybe you need restart server), error: ' + err))
 	}
 
 	return (

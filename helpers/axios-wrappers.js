@@ -1,21 +1,12 @@
 import axios from 'axios'
 
-// axios
-// .get(URL)
-// .then((response) => {
-//     setWords(response.data)
-// })
-// .catch((error) => {
-//     console.log(error)
-// })
-
-function getAxios(url,callback) {
+function getAxios(url, callback) {
     return axios
         .get(url)
         .then((res) => {
             callback(res.data)
         })
-        .catch((err) => alert('Something went wrong: ', err))
+        .catch((err) => alert('Something went wrong (maybe you need restart server), error: ', err))
 }
 
 function postAxios(url, body) {
@@ -26,7 +17,7 @@ function postAxios(url, body) {
                 alert('Product successfully added to DB')
             } else Promise.reject()
         })
-        .catch((err) => alert('Something went wrong: ', err))
+        .catch((err) => alert('Something went wrong (maybe you need restart server), error: ', err))
 }
 
 function putAxios(url, body) {
@@ -37,7 +28,7 @@ function putAxios(url, body) {
                 alert('Product successfully added to DB')
             } else Promise.reject()
         })
-        .catch((err) => alert('Something went wrong: ', err))
+        .catch((err) => alert('Something went wrong (maybe you need restart server), error: ', err))
 }
 
 export const axiosWrappers = {

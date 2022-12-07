@@ -20,7 +20,7 @@ export default function Index() {
         <Provider store={store}>
             <div>
                 <h1 className='titlePage'>Word</h1>
-                <div className='wrapperAllWords'>
+                <div className='wrapperTextBlock'>
                     <Header />
                     <AllWords words={words} />
                 </div>

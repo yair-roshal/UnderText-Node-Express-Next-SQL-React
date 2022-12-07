@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import { useState } from 'react'
 
-import { Link } from 'components'
+import { Link, UpdateButton } from 'components'
 import { useForm } from 'react-hook-form'
-import axios from 'axios'
-import { UpdateButton } from 'components'
+// import axios from 'axios'
+import { axiosWrappers } from '../../helpers/axios-wrappers'
+
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 
@@ -27,14 +28,7 @@ export const UpdateWord = (wordProp) => {
     } = useForm(formOptions)
 
     const updateWordItem = (wordObject) => {
-        axios
-            .put('http://localhost:5000/' + wordProp.id, wordObject)
-            .then((res) => {
-                if (res.status === 200) {
-                    alert('Word successfully updated')
-                } else Promise.reject()
-            })
-            .catch((err) => alert('Something went wrong'))
+        axiosWrappers.putAxios(URL + wordProp.id, wordObject)
     }
 
     return (
