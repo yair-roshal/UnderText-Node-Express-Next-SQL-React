@@ -3,11 +3,47 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const mysql = require('mysql')
 const app = express()
+const axios = require('axios')
+const { IAM_TOKEN, folder_id, target_language } = require('./constants/serverConstants')
+const jose = require('node-jose');
+const fs = require('fs');
+require('dotenv').config()
+  
 const port = process.env.PORT || 5000
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(cors())
+
+
+const private_key = process.env.PRIVATE_KEY.replace(/\\n/g, '\n');
+
+// const private_key = fs.readFileSync(require.resolve('<файл_закрытого_ключа>'));
+// const private_key = fs.readFileSync(require.resolve('../backup/private_key.txt'));
+
+const serviceAccountId = 'ajevcdl1b9jfuusnkjpk';
+// var keyId = '<идентификатор_открытого_ключа>';
+const keyId = 'ajemnal6paejthgq8v3s';
+
+const now = Math.floor(new Date().getTime() / 1000);
+
+const payload = { aud: "https://iam.api.cloud.yandex.net/iam/v1/tokens",
+                iss: serviceAccountId,
+                iat: now,
+                exp: now + 3600 };
+
+jose.JWK.asKey(private_key, 'pem', { kid: keyId, alg: 'PS256' })
+    .then(function(result) {
+        jose.JWS.createSign({ format: 'compact' }, result)
+            .update(JSON.stringify(payload))
+            .final()
+            .then(function(result) {
+                // result — это сформированный JWT.
+				console.log('result', result)
+            });
+    });
+
+
 
 // MySQL=============================================
 const pool = mysql.createPool({
@@ -32,6 +68,45 @@ function poolConnection(req, res, sqlQuery, params) {
     })
 }
 
+// Add a new word =============================================
+app.post('', (req, res) => {
+    const texts = [req.body.original]
+    // const texts = ['Hello', 'World']
+
+    const body = {
+        targetLanguageCode: target_language,
+        texts: texts,
+        folderId: folder_id,
+    }
+
+    const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + IAM_TOKEN,
+    }
+
+    console.log('IAM_TOKEN', IAM_TOKEN)
+    console.log('body', body)
+
+    axios
+        .post('https://translate.api.cloud.yandex.net/translate/v2/translate', body, headers)
+        .then((response) => {
+            console.log('RESPONSE RECEIVED: ', response.data)
+        })
+        .catch((error) => {
+            // console.log('AXIOS ERROR: ')
+            console.log('AXIOS ERROR: ', error.response)
+        })
+
+    // const sqlQuery = 'INSERT INTO words SET ?'
+
+    // const word = {
+    //     original: req.body.original,
+    //     translate: req.body.translate,
+    //     description: req.body.description,
+    // }
+    // poolConnection(req, res, sqlQuery, word)
+})
+
 // Get all words ==============================================
 app.get('', (req, res) => {
     const sqlQuery = 'SELECT * from words'
@@ -42,17 +117,6 @@ app.get('', (req, res) => {
 app.get('/:id', (req, res) => {
     const sqlQuery = 'SELECT * from words WHERE id = ?'
     poolConnection(req, res, sqlQuery, [req.params.id])
-})
-
-// Add a new word =============================================
-app.post('', (req, res) => {
-    const sqlQuery = 'INSERT INTO words SET ?'
-    const word = {
-        original: req.body.original,
-        translate: req.body.translate,
-        description: req.body.description,
-    }
-    poolConnection(req, res, sqlQuery, word)
 })
 
 // Update a word ===========================================
