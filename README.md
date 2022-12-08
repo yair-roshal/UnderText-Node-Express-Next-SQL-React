@@ -47,10 +47,10 @@ https://www.freecodecamp.org/news/how-to-contribute-to-open-source-projects-begi
 ## Installation instructions
 
 1. in main folder, text in the terminal `npm install`
-2. `npm run dev` -start of the project
+2. `npm run start-client` -start of the project
 3. after that go to the `server` folder ,text in the terminal `cd..` and `cd server`
 4. text in the terminal `npm install`
-5. `npm run dev` -start of the project
+5. `npm run start-server` -start of the project
   
 ## This project used
 
