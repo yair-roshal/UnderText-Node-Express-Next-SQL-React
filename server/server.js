@@ -78,9 +78,8 @@ function poolConnection(req, res, sqlQuery, params) {
 }
 
 // Add a new word =============================================
-app.post('', (req, res) => {
+app.post('', async (req, res) => {
     const texts = [req.body.original]
-    // const texts = ['Hello', 'World']
 
     const body = {
         targetLanguageCode: process.env.target_language,
@@ -89,17 +88,23 @@ app.post('', (req, res) => {
     }
 
     const headers = { headers: { Authorization: `Bearer ${IAM_TOKEN}` } }
-let translate 
-    axios
+    let translate
+
+    // const resultAxios = 
+    await axios
         .post('https://translate.api.cloud.yandex.net/translate/v2/translate', body, headers)
         .then((response) => {
             console.log('response.data: ', response.data)
             console.log(' response.data[0]: ', response.data.translations[0].text)
             translate = response.data.translations[0].text
-         })
+        })
         .catch((error) => {
             console.log('AXIOS ERROR: ', error.response)
         })
+
+
+// console.log('resultAxios', resultAxios)
+
 
     const sqlQuery = 'INSERT INTO words SET ?'
 
@@ -108,6 +113,7 @@ let translate
         translate: translate,
         description: req.body.description,
     }
+    console.log('word', word)
     poolConnection(req, res, sqlQuery, word)
 })
 
