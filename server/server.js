@@ -5,45 +5,59 @@ const mysql = require('mysql')
 const app = express()
 const axios = require('axios')
 const { IAM_TOKEN, folder_id, target_language } = require('./constants/serverConstants')
-const jose = require('node-jose');
-const fs = require('fs');
+const jose = require('node-jose')
+const fs = require('fs')
 require('dotenv').config()
-  
+
 const port = process.env.PORT || 5000
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(cors())
 
-
-const private_key = process.env.PRIVATE_KEY.replace(/\\n/g, '\n');
+const private_key = process.env.PRIVATE_KEY.replace(/\\n/g, '\n')
 
 // const private_key = fs.readFileSync(require.resolve('<файл_закрытого_ключа>'));
 // const private_key = fs.readFileSync(require.resolve('../backup/private_key.txt'));
 
-const serviceAccountId = 'ajevcdl1b9jfuusnkjpk';
+const serviceAccountId = 'ajevcdl1b9jfuusnkjpk'
 // var keyId = '<идентификатор_открытого_ключа>';
-const keyId = 'ajemnal6paejthgq8v3s';
+const keyId = 'ajemnal6paejthgq8v3s'
 
-const now = Math.floor(new Date().getTime() / 1000);
+const now = Math.floor(new Date().getTime() / 1000)
 
-const payload = { aud: "https://iam.api.cloud.yandex.net/iam/v1/tokens",
-                iss: serviceAccountId,
-                iat: now,
-                exp: now + 3600 };
+const payload = {
+    aud: 'https://iam.api.cloud.yandex.net/iam/v1/tokens',
+    iss: serviceAccountId,
+    iat: now,
+    exp: now + 3600,
+}
 
-jose.JWK.asKey(private_key, 'pem', { kid: keyId, alg: 'PS256' })
-    .then(function(result) {
-        jose.JWS.createSign({ format: 'compact' }, result)
-            .update(JSON.stringify(payload))
-            .final()
-            .then(function(result) {
-                // result — это сформированный JWT.
-				console.log('result', result)
-            });
-    });
+jose.JWK.asKey(private_key, 'pem', { kid: keyId, alg: 'PS256' }).then(function (result) {
+    jose.JWS.createSign({ format: 'compact' }, result)
+        .update(JSON.stringify(payload))
+        .final()
+        .then(function (result) {
+            // result — это сформированный JWT.
+            console.log('result', result)
 
+            const body = {
+                //  includes only one of the fields `yandexPassportOauthToken`, `jwt`
+                // "yandexPassportOauthToken": process.env.OAUTH_TOKEN,
+                jwt: result,
+                // end of the list of possible fields
+            }
 
+            axios
+                .post('https://iam.api.cloud.yandex.net/iam/v1/tokens', body)
+                .then((response) => {
+                    console.log('iamToken: ', response.data.iamToken)
+                })
+                .catch((error) => {
+                    console.log('AXIOS ERROR: ', error.response)
+                })
+        })
+})
 
 // MySQL=============================================
 const pool = mysql.createPool({
