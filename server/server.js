@@ -4,9 +4,7 @@ const cors = require('cors')
 const mysql = require('mysql')
 const app = express()
 const axios = require('axios')
-const { IAM_TOKEN, folder_id, target_language } = require('./constants/serverConstants')
 const jose = require('node-jose')
-const fs = require('fs')
 require('dotenv').config()
 
 const port = process.env.PORT || 5000
@@ -17,12 +15,8 @@ app.use(cors())
 
 const private_key = process.env.PRIVATE_KEY.replace(/\\n/g, '\n')
 
-// const private_key = fs.readFileSync(require.resolve('<файл_закрытого_ключа>'));
-// const private_key = fs.readFileSync(require.resolve('../backup/private_key.txt'));
-
-const serviceAccountId = 'ajevcdl1b9jfuusnkjpk'
-// var keyId = '<идентификатор_открытого_ключа>';
-const keyId = 'ajemnal6paejthgq8v3s'
+const serviceAccountId = process.env.SERVICE_ACCOUNT_ID
+const keyId = process.env.KEY_ID
 
 const now = Math.floor(new Date().getTime() / 1000)
 
@@ -33,25 +27,28 @@ const payload = {
     exp: now + 3600,
 }
 
+let IAM_TOKEN
+
 jose.JWK.asKey(private_key, 'pem', { kid: keyId, alg: 'PS256' }).then(function (result) {
     jose.JWS.createSign({ format: 'compact' }, result)
         .update(JSON.stringify(payload))
         .final()
         .then(function (result) {
             // result — это сформированный JWT.
-            console.log('result', result)
+            const jwt_token = result
+            // console.log('result', result)
 
             const body = {
                 //  includes only one of the fields `yandexPassportOauthToken`, `jwt`
                 // "yandexPassportOauthToken": process.env.OAUTH_TOKEN,
-                jwt: result,
+                jwt: jwt_token,
                 // end of the list of possible fields
             }
 
             axios
                 .post('https://iam.api.cloud.yandex.net/iam/v1/tokens', body)
                 .then((response) => {
-                    console.log('iamToken: ', response.data.iamToken)
+                    IAM_TOKEN = response.data.iamToken
                 })
                 .catch((error) => {
                     console.log('AXIOS ERROR: ', error.response)
@@ -88,9 +85,9 @@ app.post('', (req, res) => {
     // const texts = ['Hello', 'World']
 
     const body = {
-        targetLanguageCode: target_language,
+        targetLanguageCode: process.env.target_language,
         texts: texts,
-        folderId: folder_id,
+        folderId: process.env.folder_id,
     }
 
     const headers = {
