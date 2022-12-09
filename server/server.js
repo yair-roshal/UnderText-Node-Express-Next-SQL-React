@@ -34,9 +34,7 @@ jose.JWK.asKey(private_key, 'pem', { kid: keyId, alg: 'PS256' }).then(function (
         .update(JSON.stringify(payload))
         .final()
         .then(function (result) {
-            // result — это сформированный JWT.
             const jwt_token = result
-            // console.log('result', result)
 
             const body = {
                 //  includes only one of the fields `yandexPassportOauthToken`, `jwt`
@@ -91,28 +89,26 @@ app.post('', (req, res) => {
     }
 
     const headers = { headers: { Authorization: `Bearer ${IAM_TOKEN}` } }
-
-    console.log('IAM_TOKEN', IAM_TOKEN)
-    console.log('body', body)
-
+let translate 
     axios
         .post('https://translate.api.cloud.yandex.net/translate/v2/translate', body, headers)
         .then((response) => {
-            console.log('RESPONSE RECEIVED: ', response.data)
-        })
+            console.log('response.data: ', response.data)
+            console.log(' response.data[0]: ', response.data.translations[0].text)
+            translate = response.data.translations[0].text
+         })
         .catch((error) => {
-            // console.log('AXIOS ERROR: ')
             console.log('AXIOS ERROR: ', error.response)
         })
 
-    // const sqlQuery = 'INSERT INTO words SET ?'
+    const sqlQuery = 'INSERT INTO words SET ?'
 
-    // const word = {
-    //     original: req.body.original,
-    //     translate: req.body.translate,
-    //     description: req.body.description,
-    // }
-    // poolConnection(req, res, sqlQuery, word)
+    const word = {
+        original: req.body.original,
+        translate: translate,
+        description: req.body.description,
+    }
+    poolConnection(req, res, sqlQuery, word)
 })
 
 // Get all words ==============================================
