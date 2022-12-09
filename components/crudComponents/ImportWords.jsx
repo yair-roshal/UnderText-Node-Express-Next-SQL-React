@@ -10,19 +10,23 @@ export const ImportWords = () => {
         handleSubmit,
     } = useForm()
 
-    const onSubmitImportWords = (data) => {
-        console.log('data', data)
-
-        const newWords = data.text.split(' ')
-
-        for (let i = 0; i < newWords.length; i++) {
+    const syncPosting = async (newWords) => {
+        for (const word of newWords) {
             const newWord = {
-                original: newWords[i],
+                original: word,
                 translate: '',
                 description: '',
             }
-            axiosWrappers.postAxios(URL, { ...newWord })
+
+            await axiosWrappers.postAxios(URL, { ...newWord })
         }
+    }
+
+    const onSubmitImportWords = (data) => {
+        const newWords = data.text.split(' ')
+
+        syncPosting(newWords)
+
         alert(`all words successfully imported `)
     }
 
