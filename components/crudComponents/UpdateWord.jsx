@@ -28,7 +28,7 @@ export const UpdateWord = (wordProp) => {
         console.log('wordObject', wordObject)
         console.log('URL + wordProp.id', URL + wordProp.id)
         await axiosWrappers.putAxios(URL + wordProp.id, wordObject)
-        alert('word updated')
+
         Router.push('/words')
     }
 

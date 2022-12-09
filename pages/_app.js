@@ -7,7 +7,7 @@ export default function App({ Component, pageProps }) {
         <>
             <Head>
                 <title>Under Text</title>
-                <link rel="shortcut icon" href="/images/favicon.ico" />
+                <link rel='shortcut icon' href='/favicon.ico' />
             </Head>
 
             <div>
