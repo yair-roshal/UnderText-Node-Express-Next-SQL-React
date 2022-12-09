@@ -99,7 +99,8 @@ app.post('', (req, res) => {
     console.log('body', body)
 
     axios
-        .post('https://translate.api.cloud.yandex.net/translate/v2/translate', body, headers)
+        .post('https://translate.api.cloud.yandex.net/translate/v2/translate', body,  { headers: { Authorization: `Bearer ${IAM_TOKEN}` } })
+        // .post('https://translate.api.cloud.yandex.net/translate/v2/translate', body, headers)
         .then((response) => {
             console.log('RESPONSE RECEIVED: ', response.data)
         })
