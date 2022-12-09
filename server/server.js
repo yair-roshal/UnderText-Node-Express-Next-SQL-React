@@ -90,7 +90,6 @@ app.post('', async (req, res) => {
     const headers = { headers: { Authorization: `Bearer ${IAM_TOKEN}` } }
     let translate
 
-    // const resultAxios = 
     await axios
         .post('https://translate.api.cloud.yandex.net/translate/v2/translate', body, headers)
         .then((response) => {
@@ -101,10 +100,6 @@ app.post('', async (req, res) => {
         .catch((error) => {
             console.log('AXIOS ERROR: ', error.response)
         })
-
-
-// console.log('resultAxios', resultAxios)
-
 
     const sqlQuery = 'INSERT INTO words SET ?'
 
