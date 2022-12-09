@@ -11,7 +11,6 @@ export const UpdateWord = (wordProp) => {
     const validationSchema = Yup.object().shape({
         original: Yup.string().required('original is required'),
         translate: Yup.string().required('translate is required'),
-        description: Yup.string().required('Last Name is required'),
     })
 
     const formOptions = { resolver: yupResolver(validationSchema) }
@@ -25,6 +24,8 @@ export const UpdateWord = (wordProp) => {
     } = useForm(formOptions)
 
     const updateWordItem = (wordObject) => {
+        console.log('wordObject', wordObject)
+        console.log('URL + wordProp.id', URL + wordProp.id)
         axiosWrappers.putAxios(URL + wordProp.id, wordObject)
     }
 
@@ -83,7 +84,6 @@ export const UpdateWord = (wordProp) => {
                                 type='text'
                                 placeholder='description'
                                 {...register('description', {
-                                    required: true,
                                     onChange: (e) =>
                                         setWord({
                                             ...word,
@@ -91,9 +91,7 @@ export const UpdateWord = (wordProp) => {
                                         }),
                                 })}
                             />
-                            {errors.description && (
-                                <p style={{ color: 'red' }}>Please Enter A description</p>
-                            )}
+
                             <br />
                             <input type='submit' />
                         </form>
