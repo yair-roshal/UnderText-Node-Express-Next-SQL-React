@@ -5,6 +5,7 @@ import { axiosWrappers } from '../../helpers/axios-wrappers'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 import Router from 'next/router'
+import { URL } from '../../constants/clientConstants'
 
 export const UpdateWord = (wordProp) => {
     const [word, setWord] = useState(null)
