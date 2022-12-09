@@ -23,21 +23,22 @@ export const WordItem = ({ word }) => {
 	return (
 		<div className='cell'>
 			<div className='edit'>
+
 				<Link href={`/words/update/${id}`} style={{ textDecoration: 'none' }}>
 					<IconButton color='secondary' component='label'>
 						<RefreshIcon />
 					</IconButton>
 				</Link>
 
-				<IconButton onClick={() => deleteWord(id)} aria-label='delete'>
+				{/* <IconButton onClick={() => deleteWord(id)} aria-label='delete'>
 					<DeleteIcon />
-				</IconButton>
+				</IconButton> */}
 
-				<Link href={`/words/show/${id}`} style={{ textDecoration: 'none' }}>
+				{/* <Link href={`/words/show/${id}`} style={{ textDecoration: 'none' }}>
 					<IconButton color='primary' aria-label='upload picture' component='label'>
 						<OpenInNewIcon />
 					</IconButton>
-				</Link>
+				</Link> */}
 			</div>
 
 			<div className='original_text'>{original}</div>

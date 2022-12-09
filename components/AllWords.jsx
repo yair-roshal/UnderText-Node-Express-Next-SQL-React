@@ -28,17 +28,17 @@ export const AllWords = ({ words }) => {
 
 			<div className='wrapperButton'>
 				<Link href='/words/add' className='button'>
-					<span>Add Word </span>
+					<span>Add 1 Word </span>
 				</Link>
 			</div>
-			<div className='wrapperButton'>
+			{/* <div className='wrapperButton'>
 				<Link href='/words/import' className='button'>
-					<span>Import Word </span>
+					<span>Import 1 Word </span>
 				</Link>
-			</div>
+			</div> */}
 			<div className='wrapperButton'>
 				<Link href='/words/ImportWordsFrom' className='button'>
-					<span>ImportWordsFrom </span>
+					<span>Import Words From... </span>
 				</Link>
 			</div>
 		</>

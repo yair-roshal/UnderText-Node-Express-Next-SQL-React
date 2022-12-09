@@ -8,11 +8,12 @@ $backgroundHeader: #2c2c2c;
 
 // cell ============================================
 .cell {
-    // display: inline-block;
-    min-height: 100px;
+    padding: 5px;
     background: #fbeed5;
     border-color: #c09853;
     border: 1px solid #d0d0d0;
+    // display: inline-block;
+    // min-height: 100px;
 }
 
 .edit {
