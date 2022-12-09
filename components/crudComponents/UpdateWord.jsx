@@ -26,10 +26,10 @@ export const UpdateWord = (wordProp) => {
     } = useForm(formOptions)
 
     const updateWordItem = async (wordObject) => {
-        console.log('wordObject', wordObject)
-        console.log('URL + wordProp.id', URL + wordProp.id)
+        // console.log('wordObject', wordObject)
+        // console.log('URL + wordProp.id', URL + wordProp.id)
         await axiosWrappers.putAxios(URL + wordProp.id, wordObject)
-
+        // alert('word updated successfully ')
         Router.push('/words')
     }
 
