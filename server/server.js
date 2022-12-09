@@ -90,17 +90,13 @@ app.post('', (req, res) => {
         folderId: process.env.folder_id,
     }
 
-    const headers = {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + IAM_TOKEN,
-    }
+    const headers = { headers: { Authorization: `Bearer ${IAM_TOKEN}` } }
 
     console.log('IAM_TOKEN', IAM_TOKEN)
     console.log('body', body)
 
     axios
-        .post('https://translate.api.cloud.yandex.net/translate/v2/translate', body,  { headers: { Authorization: `Bearer ${IAM_TOKEN}` } })
-        // .post('https://translate.api.cloud.yandex.net/translate/v2/translate', body, headers)
+        .post('https://translate.api.cloud.yandex.net/translate/v2/translate', body, headers)
         .then((response) => {
             console.log('RESPONSE RECEIVED: ', response.data)
         })
