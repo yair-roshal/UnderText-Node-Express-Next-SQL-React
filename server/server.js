@@ -46,6 +46,7 @@ jose.JWK.asKey(private_key, 'pem', { kid: keyId, alg: 'PS256' }).then(function (
             axios
                 .post('https://iam.api.cloud.yandex.net/iam/v1/tokens', body)
                 .then((response) => {
+                console.log('response.data', response.data)
                     IAM_TOKEN = response.data.iamToken
                 })
                 .catch((error) => {
@@ -67,7 +68,7 @@ function poolConnection(req, res, sqlQuery, params) {
     return pool.getConnection((err, connection) => {
         if (err) throw err
         connection.query(sqlQuery, params, (err, rows) => {
-            // connection.release()
+            connection.release()
             if (!err) {
                 res.send(rows)
             } else {
@@ -94,8 +95,7 @@ app.post('', async (req, res) => {
         .post('https://translate.api.cloud.yandex.net/translate/v2/translate', body, headers)
         .then((response) => {
             console.log('response.data: ', response.data)
-            console.log(' response.data[0]: ', response.data.translations[0].text)
-            translate = response.data.translations[0].text
+             translate = response.data.translations[0].text
         })
         .catch((error) => {
             console.log('AXIOS ERROR: ', error.response)
