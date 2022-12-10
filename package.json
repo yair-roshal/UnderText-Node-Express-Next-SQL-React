@@ -26,6 +26,7 @@
         "sass": "^1.55.0",
         "yup": "^0.32.9"
     },
+    "proxy": "https://translate.api.cloud.yandex.net/translate/v2/translate",
     "browserslist": {
         "production": [
             ">0.2%",
@@ -42,10 +43,23 @@
     "main": "index.js",
     "author": "Yair",
     "license": "ISC",
+    "keywords": [
+        "node",
+        "react",
+        "CRUD",
+        "Next",
+        "SQL",
+        "jwt",
+        "cors",
+        "dotenv",
+        "express",
+        "fs",
+        "mysql",
+        "node-jose"
+    ],
     "browser": {
         "fs": false,
         "path": false,
         "os": false
-    },
-    "proxy": "https://translate.api.cloud.yandex.net/translate/v2/translate"
+    }
 }

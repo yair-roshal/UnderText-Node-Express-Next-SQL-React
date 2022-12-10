@@ -5,3 +5,7 @@ export const allTfilot = {
     minha: 'Minha',
     tehilim: 'Tehilim',
 }
+export const CellVariants = {
+    CellSimple: 'CellSimple',
+    CellNewLine: 'CellNewLine',
+}

@@ -1,24 +1,34 @@
 {
-	"name": "server",
-	"version": "7.7.0",
-	"description": "",
-	"main": "server.js",
-	"scripts": {
-		"start-server": "nodemon server.js"
-	},
-	"dependencies": {
-		"body-parser": "^1.19.0",
-		"cors": "^2.8.5",
-		"dotenv": "^16.0.3",
-		"express": "^4.17.1",
-		"fs": "^0.0.1-security",
-		"mysql": "^2.18.1",
-		"node-jose": "^2.1.1"
-	},
-	"devDependencies": {
-		"nodemon": "^2.0.5"
-	},
-	"keywords": [],
-	"author": "Yair",
-	"license": "ISC"
+    "name": "server",
+    "version": "7.7.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "start-server": "nodemon server.js"
+    },
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.3",
+        "express": "^4.17.1",
+        "fs": "^0.0.1-security",
+        "mysql": "^2.18.1",
+        "node-jose": "^2.1.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.5"
+    },
+    "keywords": [
+        "node",
+        "react",
+        "jwt",
+        "cors",
+        "dotenv",
+        "express",
+        "fs",
+        "mysql",
+        "node-jose"
+    ],
+    "author": "Yair",
+    "license": "ISC"
 }

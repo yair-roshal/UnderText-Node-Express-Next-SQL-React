@@ -1,46 +1,62 @@
-import React, { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { WordItem } from './WordItem'
+import { CellComponent } from './CellComponent/CellComponent'
+import { CellVariants } from '../constants/clientConstants'
 import { Link } from 'components'
 
 export const AllWords = ({ words }) => {
-	useEffect(() => {
-		// setSlides(words.length)
-		console.log('words', words)
-	}, [words])
+    useEffect(() => {
+        // setSlides(words.length)
+        console.log('words', words)
+    }, [words])
 
-	// deleteWord(id) {
-	// 	axios.delete('http://localhost:5000/words/' + id)
-	// 	  .then(response => {console.log(response.data)});
+    // deleteWord(id) {
+    // 	axios.delete('http://localhost:5000/words/' + id)
+    // 	  .then(response => {console.log(response.data)});
 
-	// 	this.setState({
-	// 	  words: this.state.words.filter(el => el._id !== id)
-	// 	})
-	//   }
+    // 	this.setState({
+    // 	  words: this.state.words.filter(el => el._id !== id)
+    // 	})
+    //   }
 
-	return (
-		<>
-			<div className='allWords'>
-				{words.map((word, index) => (
-					<WordItem key={index} word={word} />
-					// <WordItem key={index} word={word} deleteWord={deleteWord}/>
-				))}
-			</div>
+    return (
+        <>
+            <div className='allWords'>
+                {words.map(
+                    (word, index) =>
+                        word.original != 'newline' ? (
+                            <CellComponent
+                                key={index}
+                                variant={CellVariants.CellSimple}
+                                {...word}
+                            />
+                        ) : (
+                            <CellComponent
+                                key={index}
+                                variant={CellVariants.CellNewLine}
+                                {...word}
+                            />
+                        ),
 
-			<div className='wrapperButton'>
-				<Link href='/words/add' className='button'>
-					<span>Add 1 Word </span>
-				</Link>
-			</div>
-			{/* <div className='wrapperButton'>
+                    // <WordItem key={index} word={word} deleteWord={deleteWord}/>
+                )}
+            </div>
+
+            <div className='wrapperButton'>
+                <Link href='/words/add' className='button'>
+                    <span>Add 1 Word </span>
+                </Link>
+            </div>
+            {/* <div className='wrapperButton'>
 				<Link href='/words/import' className='button'>
 					<span>Import 1 Word </span>
 				</Link>
 			</div> */}
-			<div className='wrapperButton'>
-				<Link href='/words/ImportWordsFrom' className='button'>
-					<span>Import Words From... </span>
-				</Link>
-			</div>
-		</>
-	)
+            <div className='wrapperButton'>
+                <Link href='/words/ImportWordsFrom' className='button'>
+                    <span>Import Words From... </span>
+                </Link>
+            </div>
+        </>
+    )
 }

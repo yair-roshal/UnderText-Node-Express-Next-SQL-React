@@ -10,10 +10,10 @@ $backgroundHeader: #2c2c2c;
 .cell {
     padding: 5px;
     background: #fbeed5;
-    border-color: #c09853;
     border: 1px solid #d0d0d0;
-    // display: inline-block;
-    // min-height: 100px;
+}
+.cellFullWidth {
+    width: 100%;
 }
 
 .edit {
@@ -238,7 +238,7 @@ $backgroundHeader: #2c2c2c;
     position: relative;
     overflow: hidden;
     // width: 970px;
-    width: 90%;
+    // width: 90%;
     margin-left: auto;
     margin-right: auto;
 
