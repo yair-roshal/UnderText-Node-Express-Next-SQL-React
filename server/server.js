@@ -46,7 +46,7 @@ jose.JWK.asKey(private_key, 'pem', { kid: keyId, alg: 'PS256' }).then(function (
             axios
                 .post('https://iam.api.cloud.yandex.net/iam/v1/tokens', body)
                 .then((response) => {
-                console.log('response.data', response.data)
+                    console.log('response.data', response.data)
                     IAM_TOKEN = response.data.iamToken
                 })
                 .catch((error) => {
@@ -91,17 +91,17 @@ app.post('', async (req, res) => {
     const headers = { headers: { Authorization: `Bearer ${IAM_TOKEN}` } }
     let translate
 
+    const sqlQuery = 'INSERT INTO words SET ?'
+
     await axios
         .post('https://translate.api.cloud.yandex.net/translate/v2/translate', body, headers)
         .then((response) => {
             console.log('response.data: ', response.data)
-             translate = response.data.translations[0].text
+            translate = response.data.translations[0].text
         })
         .catch((error) => {
             console.log('AXIOS ERROR: ', error.response)
         })
-
-    const sqlQuery = 'INSERT INTO words SET ?'
 
     const word = {
         original: req.body.original,
@@ -109,7 +109,7 @@ app.post('', async (req, res) => {
         description: req.body.description,
     }
     console.log('word', word)
-    poolConnection(req, res, sqlQuery, word)
+    if (translate != undefined) poolConnection(req, res, sqlQuery, word)
 })
 
 // Get all words ==============================================

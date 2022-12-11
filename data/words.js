@@ -1,0 +1,16 @@
+export const words = [
+    { id: 1, original: 'מודֶה', translate: 'Благодарен', description: '' },
+    { id: 2, original: 'אֲנִי', translate: 'я', description: '' },
+    { id: 3, original: 'מוֹדֶה', translate: '', description: '' },
+    { id: 4, original: 'אֲנִי', translate: '', description: '' },
+    { id: 5, original: 'לְפָנֶיךָ', translate: '', description: '' },
+    { id: 6, original: 'מֶלֶךְ', translate: '', description: '' },
+    { id: 7, original: 'חַי', translate: '', description: '' },
+    { id: 8, original: 'וְקַיָּם.', translate: '', description: '' },
+    { id: 9, original: 'שֶׁהֶחֱזַרְתָּ', translate: '', description: '' },
+    { id: 10, original: 'בִּי', translate: '', description: '' },
+    { id: 11, original: 'נִשְׁמָתִי', translate: '', description: '' },
+    { id: 12, original: 'בְּחֶמְלָה', translate: '', description: '' },
+    { id: 13, original: 'רַבָּה', translate: '', description: '' },
+    { id: 14, original: 'אֱמוּנָתֶךָ', translate: '', description: '' },
+]

@@ -1,5 +1,5 @@
-import {ActionTypes} from "../actions/action-types";
-import wordsJson from "../../data/words.json"
+import {ActionTypes} from "@reduxFolder";
+import wordsJson from "../../data/words.js"
 
 const initialState = {
     words: wordsJson,

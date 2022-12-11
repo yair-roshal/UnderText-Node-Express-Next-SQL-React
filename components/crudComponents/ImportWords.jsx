@@ -2,6 +2,9 @@ import { Link, UpdateButton } from 'components'
 import { useForm } from 'react-hook-form'
 import { axiosWrappers } from 'helpers'
 import { URL } from 'constants'
+
+let newWords = []
+
 export const ImportWords = () => {
     const {
         register,
@@ -22,11 +25,25 @@ export const ImportWords = () => {
     }
 
     const onSubmitImportWords = (data) => {
-        const newWords = data.text.split(' ')
-
+        newWords = data.text.trim().split(' ')
         syncPosting(newWords)
+        alert(`All words successfully imported `)
+    }
 
-        alert(`all words successfully imported `)
+    // ==================================
+
+    const showFile = (e) => {
+        // e.preventDefault()
+        const fileReader = new FileReader()
+
+        fileReader.onload = (e) => {
+            const text = e.target.result
+            newWords = text.trim().split(' ')
+            syncPosting(newWords)
+        }
+
+        fileReader.readAsText(e.target.files[0])
+        alert(`All words from this file successfully imported `)
     }
 
     return (
@@ -45,10 +62,10 @@ export const ImportWords = () => {
                     <input type='submit' />
                 </form>
 
-                {/* finish it later============================================ */}
-
-                {/* <h2 className='titlePage'>Import words from file</h2>
-				<input type='file' onChange={(e) => showFile(e)} /> */}
+                {/* Import words from file ============
+                finish it later================= */}
+                <h2 className='titlePage'>Import words from file</h2>
+                <input type='file' onChange={(e) => showFile(e)} />
             </div>
 
             <Link href='/words' style={{ textDecoration: 'none' }}>
@@ -57,50 +74,3 @@ export const ImportWords = () => {
         </>
     )
 }
-
-//  finish it later
-// const showFile = (e) => {
-// 	e.preventDefault()
-// 	const reader = new FileReader()
-
-// 	//checking last id==========
-// 	let maxId = 0
-// 	for (let index in words) {
-// 		if (+words[index].id > maxId) {
-// 			maxId = +words[index].id
-// 		}
-// 	}
-// 	let newId = maxId + 1
-
-// 	reader.onload = (e) => {
-// 		const text = e.target.result
-// 		const elements = text.split(' ')
-
-// 		const temp = elements.map((element, index) => {
-// 			console.log('index==', index)
-// 			const word = {
-// 				id: newId + index,
-// 				original: element,
-// 				translate: '',
-// 			}
-
-// 			axios
-// 				.post('http://localhost:5000/', { ...word })
-// 				.then((res) => {
-// 					if (res.status === 200) {
-// 						alert('Word successfully added')
-// 					} else Promise.reject()
-// 				})
-// 				.catch((err) => alert('Something went wrong'))
-
-// 			// arrayNewWords.push(word)
-
-// 			console.log(`word---`, word)
-// 			// console.log(`arrayNewWords---`, arrayNewWords)
-// 		})
-
-// 		// window.location = '/';
-// 	}
-
-// 	reader.readAsText(e.target.files[0])
-// }
