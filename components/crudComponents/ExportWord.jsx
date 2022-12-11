@@ -1,20 +1,12 @@
 import { useState, useEffect } from 'react'
 import { Link, UpdateButton } from 'components'
-import axios from 'axios'
+import { axiosWrappers } from 'helpers'
 
 export const ExportWord = (wordProp) => {
     const [fileName, setFileName] = useState(null)
 
     useEffect(() => {
-        axios
-            .post(`http://localhost:5000/files/${wordProp.id}`, wordProp)
-            .then((res) => {
-                setFileName(res.data)
-                if (res.status === 200) {
-                    alert('Object successfully saved')
-                } else Promise.reject()
-            })
-            .catch((err) => alert('Something went wrong'))
+        axiosWrappers.postAxios(URL + '/files/' + wordProp.id, wordProp, setFileName)
     }, [])
 
     return (

@@ -1,12 +1,11 @@
 import { useState } from 'react'
 import { Link, UpdateButton } from 'components'
 import { useForm } from 'react-hook-form'
-import { axiosWrappers } from '../../helpers/axios-wrappers'
+import { axiosWrappers } from 'helpers'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 import Router from 'next/router'
-import { URL } from '../../constants/clientConstants'
-
+import { URL } from 'constants'
 export const UpdateWord = (wordProp) => {
     const [word, setWord] = useState(null)
 

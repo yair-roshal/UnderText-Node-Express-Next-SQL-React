@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import { AllWords, Loading, Header } from 'components'
 import store from '../../redux/store'
 import { Provider } from 'react-redux'
-import { URL } from '../../constants/clientConstants'
-import { axiosWrappers } from '../../helpers/axios-wrappers'
+import { URL } from 'constants'
+import { axiosWrappers } from 'helpers'
 
 export default function Index() {
     const [words, setWords] = useState(null)

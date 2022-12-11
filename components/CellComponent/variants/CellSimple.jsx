@@ -1,10 +1,9 @@
 import { Link } from 'components'
-import axios from 'axios'
 import IconButton from '@mui/material/IconButton'
 import DeleteIcon from '@mui/icons-material/Delete'
 import RefreshIcon from '@mui/icons-material/Refresh'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew'
-
+import { axiosWrappers } from 'helpers'
 export const CellSimple = (word) => {
     // console.log('props :>> ', props)
 
@@ -13,17 +12,7 @@ export const CellSimple = (word) => {
     const { id, original, translate } = word
 
     const deleteWord = (id) => {
-        axios
-            .delete('http://localhost:5000/' + id)
-            .then((res) => {
-                if (res.status === 200) {
-                    alert('Word successfully deleted')
-                    window.location.reload()
-                } else Promise.reject()
-            })
-            .catch((err) =>
-                alert('Something went wrong (maybe you need restart server), error: ' + err),
-            )
+        axiosWrappers.deleteAxios(URL, id)
     }
 
     return (

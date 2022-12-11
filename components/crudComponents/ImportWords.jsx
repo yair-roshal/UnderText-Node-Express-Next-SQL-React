@@ -1,8 +1,7 @@
 import { Link, UpdateButton } from 'components'
 import { useForm } from 'react-hook-form'
-import { axiosWrappers } from '../../helpers/axios-wrappers'
-import { URL } from '../../constants/clientConstants'
-
+import { axiosWrappers } from 'helpers'
+import { URL } from 'constants'
 export const ImportWords = () => {
     const {
         register,
