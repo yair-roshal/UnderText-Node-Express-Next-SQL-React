@@ -1,70 +1,70 @@
-import { addProduct, getProduct, getProducts, deleteProduct, updateProduct } from './actions'
+import { addWord, getWord, getWords, deleteWord, updateWord } from './actions'
 import wordsDB from '../../data/words.json'
 
-const findProduct = (id) => {
-	let words = JSON.parse(localStorage.getItem('words'))
-	let word = words.find((word) => word.id == id)
-	return word
+const findWord = (id) => {
+    const words = JSON.parse(localStorage.getItem('words'))
+    const word = words.find((word) => word.id == id)
+    return word
 }
 
-export const addProductAction = (word) => {
-	let words = JSON.parse(localStorage.getItem('words'))
+export const addWordAction = (word) => {
+    const words = JSON.parse(localStorage.getItem('words'))
 
-	var maxID = 0
-	const values = Object.values(words)
-	for (const value of values) {
-		if (value.id > maxID) {
-			maxID = value.id
-		}
-	}
+    let maxID = 0
+    const values = Object.values(words)
+    for (const value of values) {
+        if (value.id > maxID) {
+            maxID = value.id
+        }
+    }
 
-	return (dispatch) => {
-		word.id = maxID + 1
-		words.push(word)
-		window.localStorage.setItem('words', JSON.stringify(words))
+    return (dispatch) => {
+        word.id = maxID + 1
+        words.push(word)
+        window.localStorage.setItem('words', JSON.stringify(words))
 
-		dispatch(addProduct(word))
-	}
+        dispatch(addWord(word))
+    }
 }
 
-//get 1 Product+++
-export const getProductAction = (id) => {
-	return (dispatch) => {
-		dispatch(getProduct(findProduct(id)))
-	}
+//get 1 Word+++
+export const getWordAction = (id) => {
+    return (dispatch) => {
+        dispatch(getWord(findWord(id)))
+    }
 }
 
-// get all Products+++
-export const getAllProductsAction = () => {
-	let words = JSON.parse(localStorage.getItem('words'))
+// get all Words+++
+export const getAllWordsAction = () => {
+    let words = JSON.parse(localStorage.getItem('words'))
 
-	if (words == null) {
-		words = wordsDB
-		window.localStorage.setItem('words', JSON.stringify(words))
-	}
+    if (words == null) {
+        words = wordsDB
+        window.localStorage.setItem('words', JSON.stringify(words))
+    }
 
-	return (dispatch) => {
-		dispatch(getProducts(words))
-	}
+    return (dispatch) => {
+        dispatch(getWords(words))
+    }
 }
 
-export const deleteProductAction = (id) => {
-	return (dispatch) => {
-		let words = JSON.parse(localStorage.getItem('words'))
-		var newArray = words.filter((item) => item.id != id)
-		window.localStorage.setItem('words', JSON.stringify(newArray))
-		dispatch(deleteProduct())
-		dispatch(getAllProductsAction())
-	}
+export const deleteWordAction = (id) => {
+    return (dispatch) => {
+        const words = JSON.parse(localStorage.getItem('words'))
+        const newArray = words.filter((item) => item.id != id)
+        window.localStorage.setItem('words', JSON.stringify(newArray))
+        dispatch(deleteWord())
+        dispatch(getAllWordsAction())
+    }
 }
 
-export const updateProductAction = (word, id) => {
-	return (dispatch) => {
-		let words = JSON.parse(localStorage.getItem('words'))
-		var newArray = words.filter((item) => item.id != id)
-		newArray.push(word)
-		window.localStorage.setItem('words', JSON.stringify(newArray))
-		dispatch(updateProduct())
-		dispatch(getAllProductsAction())
-	}
+export const updateWordAction = (word, id) => {
+    return (dispatch) => {
+        const words = JSON.parse(localStorage.getItem('words'))
+        const newArray = words.filter((item) => item.id != id)
+        newArray.push(word)
+        window.localStorage.setItem('words', JSON.stringify(newArray))
+        dispatch(updateWord())
+        dispatch(getAllWordsAction())
+    }
 }

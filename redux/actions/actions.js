@@ -1,33 +1,33 @@
 import { ActionTypes } from './action-types'
 
-export const getProducts = (words) => {
+export const getWords = (words) => {
 	return {
 		type: ActionTypes.GET_WORDS,
 		payload: words,
 	}
 }
 
-export const getProduct = (word) => {
+export const getWord = (word) => {
 	return {
 		type: ActionTypes.GET_WORD,
 		payload: word,
 	}
 }
 
-export const addProduct = (word) => {
+export const addWord = (word) => {
 	return {
 		type: ActionTypes.ADD_WORD,
 		payload: word,
 	}
 }
 
-export const updateProduct = () => {
+export const updateWord = () => {
 	return {
 		type: ActionTypes.UPDATE_WORD,
 	}
 }
 
-export const deleteProduct = () => {
+export const deleteWord = () => {
 	return {
 		type: ActionTypes.DELETE_WORD,
 	}

@@ -16,7 +16,7 @@ function postAxios(url, body, callback) {
         .then((res) => {
             if (res.status === 200) {
                 callback(res.data)
-                console.log('Product successfully added to DB')
+                console.log('Word successfully added to DB')
             } else Promise.reject()
         })
         .catch((err) => alert('Something went wrong (maybe you need restart server), error: ', err))
@@ -27,7 +27,7 @@ function putAxios(url, body) {
         .put(url, body)
         .then((res) => {
             if (res.status === 200) {
-                console.log('Product successfully added to DB')
+                console.log('Word successfully added to DB')
             } else Promise.reject()
         })
         .catch((err) => alert('Something went wrong (maybe you need restart server), error: ', err))
