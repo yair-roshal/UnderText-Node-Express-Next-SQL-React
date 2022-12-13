@@ -1,8 +1,8 @@
 {
     "name": "server",
     "version": "7.7.0",
-    "description": "",
-    "main": "server.js",
+    "description": "UnderText - Translation Under Text",
+    "private": false,
     "scripts": {
         "start-server": "nodemon server.js"
     },
@@ -21,6 +21,9 @@
     "keywords": [
         "node",
         "react",
+        "CRUD",
+        "Next",
+        "SQL",
         "jwt",
         "cors",
         "dotenv",
@@ -30,5 +33,6 @@
         "node-jose"
     ],
     "author": "Yair",
+    "main": "server.js",
     "license": "ISC"
 }

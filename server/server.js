@@ -112,35 +112,46 @@ app.post('', async (req, res) => {
     if (translate != undefined) poolConnection(req, res, sqlQuery, word)
 })
 
-// Get all words ==============================================
-app.get('', (req, res) => {
-    const sqlQuery = 'SELECT * from words'
-    poolConnection(req, res, sqlQuery)
-})
+// // Get all words ==============================================
+// app.get('', (req, res) => {
+//     const sqlQuery = 'SELECT * from words'
+//     poolConnection(req, res, sqlQuery)
+// })
 
-// Get a word by ID ==============================================
+//  Get all words by table ==============================================
 app.get('/:table', (req, res) => {
     const tableName = req.params.table
     const sqlQuery = `SELECT * from ${tableName}`
+
+    console.log('req.params111 :>> ', req.params)
+    console.log('sqlQuery :>> ', sqlQuery)
+
     poolConnection(req, res, sqlQuery)
 })
 
-// Get a word by ID ==============================================
-app.get('/:id', (req, res) => {
-    const sqlQuery = 'SELECT * from words WHERE id = ?'
+// Get a word by table and by ID ==============================================
+app.get('/:table/:id', (req, res) => {
+    const tableName = req.params.table
+    const sqlQuery = `SELECT * from ${tableName} WHERE id = ?`
+
+    console.log('req.params222 :>> ', req.params)
+    console.log('sqlQuery :>> ', sqlQuery)
+
     poolConnection(req, res, sqlQuery, [req.params.id])
 })
 
-// Update a word ===========================================
-app.put('/:id', (req, res) => {
+// Update a word by table and by ID ===========================================
+app.put('/:table/:id', (req, res) => {
     const { id, original, translate, description } = req.body
-    const sqlQuery = 'UPDATE words SET original = ?,  translate = ?,  description = ?  WHERE id = ?'
+    const tableName = req.params.table
+    const sqlQuery = `UPDATE ${tableName} SET original = ?,  translate = ?,  description = ?  WHERE id = ?`
     poolConnection(req, res, sqlQuery, [original, translate, description, id])
 })
 
-// Delete a word =============================================
-app.delete('/:id', (req, res) => {
-    const sqlQuery = 'DELETE from words WHERE id = ?'
+// Delete a word by table and by ID =============================================
+app.delete('/:table/:id', (req, res) => {
+    const tableName = req.params.table
+    const sqlQuery = `DELETE from ${tableName} WHERE id = ?`
     poolConnection(req, res, sqlQuery, [req.params.id])
 })
 

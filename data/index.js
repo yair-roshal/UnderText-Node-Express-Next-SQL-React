@@ -1,3 +1,3 @@
-export * from './words.js
+export * from './words.js'
  
 

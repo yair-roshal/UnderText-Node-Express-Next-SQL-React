@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, StyledButton } from 'components'
 import { axiosWrappers } from 'helpers'
+import { URL } from 'constants'
 
 export const ExportWord = (wordProp) => {
     const [fileName, setFileName] = useState(null)

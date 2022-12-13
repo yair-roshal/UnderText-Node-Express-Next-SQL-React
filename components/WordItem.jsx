@@ -4,6 +4,7 @@ import IconButton from '@mui/material/IconButton'
 import RefreshIcon from '@mui/icons-material/Refresh'
 // import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 // import { axiosWrappers } from 'helpers'
+import { URL } from 'constants'
 
 
 export const WordItem = ({ word }) => {

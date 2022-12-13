@@ -1,11 +1,9 @@
 import NextLink from 'next/link'
 
-function Link({ href, children, ...props }) {
+export function Link({ href, children, ...props }) {
     return (
         <NextLink href={href}>
-            <a {...props}>{children}</a>
+            <a className='styledLink' {...props}>{children}</a>
         </NextLink>
     )
 }
-
-export { Link }

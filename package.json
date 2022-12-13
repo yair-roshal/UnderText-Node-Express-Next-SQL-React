@@ -1,7 +1,8 @@
 {
-    "name": "next-crud",
+    "name": "client",
     "version": "7.7.0",
-    "private": true,
+    "description": "UnderText - Translation Under Text",
+    "private": false,
     "scripts": {
         "start-client": "next dev"
     },
@@ -26,7 +27,6 @@
         "sass": "^1.55.0",
         "yup": "^0.32.9"
     },
-    "proxy": "https://translate.api.cloud.yandex.net/translate/v2/translate",
     "browserslist": {
         "production": [
             ">0.2%",
@@ -39,7 +39,6 @@
             "last 1 safari version"
         ]
     },
-    "description": "Word-Node-CRUD-Next-MySql-React",
     "main": "index.js",
     "author": "Yair",
     "license": "ISC",
@@ -57,6 +56,7 @@
         "mysql",
         "node-jose"
     ],
+    "proxy": "https://translate.api.cloud.yandex.net/translate/v2/translate",
     "browser": {
         "fs": false,
         "path": false,

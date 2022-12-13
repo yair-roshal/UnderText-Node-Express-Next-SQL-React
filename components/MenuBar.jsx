@@ -20,6 +20,7 @@ import InboxIcon from '@mui/icons-material/MoveToInbox'
 import MailIcon from '@mui/icons-material/Mail'
 import { pagesPrayers } from '../constants/clientConstants'
 import { Link } from 'components'
+import { useRouter } from 'next/router'
 
 const drawerWidth = 240
 
@@ -79,14 +80,20 @@ export function MenuBar() {
     const handleDrawerClose = () => {
         setOpen(false)
     }
+    const router = useRouter()
 
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
             <AppBar position='fixed' open={open}>
                 <Toolbar>
-                    <Typography variant='h6' noWrap sx={{ flexGrow: 1 }} component='div'>
-                        Under Text
+                    <Typography
+                        variant='h6'
+                        noWrap
+                        sx={{ flexGrow: 1, textAlign: 'center' }}
+                        component='div'
+                    >
+                        {router.pathname.slice(1).toUpperCase()}
                     </Typography>
                     <IconButton
                         color='inherit'
@@ -100,7 +107,7 @@ export function MenuBar() {
                 </Toolbar>
             </AppBar>
             <DrawerHeader />
-           
+
             <Drawer
                 sx={{
                     'width': drawerWidth,

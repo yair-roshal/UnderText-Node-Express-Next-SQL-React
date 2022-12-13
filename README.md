@@ -1,4 +1,4 @@
-# UnderText- - Translation Under Text
+# UnderText - Translation Under Text
 
 # Demo of App : 
 ![alt text]( images/img_for_github.png "Illustration for the project")

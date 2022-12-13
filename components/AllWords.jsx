@@ -1,10 +1,17 @@
 import { useEffect } from 'react'
-import { WordItem } from './WordItem'
+// import { WordItem } from './WordItem'
 import { CellComponent } from './CellComponent/CellComponent'
 import { CellVariants } from '../constants/clientConstants'
 import { Link } from 'components'
+import { useRouter } from 'next/router'
 
 export const AllWords = ({ words }) => {
+    const router = useRouter()
+    console.log('router.pathname :>> ', router.pathname)
+
+    const hrefLinkAdd = router.pathname + '/add'
+    const hrefLinkImport = router.pathname + '/ImportWordsFrom'
+
     useEffect(() => {
         // setSlides(words.length)
         console.log('words', words)
@@ -43,17 +50,12 @@ export const AllWords = ({ words }) => {
             </div>
 
             <div className='wrapperButton'>
-                <Link href='/words/add' className='button'>
+                <Link href={hrefLinkAdd} className='button'>
                     <span>Add 1 Word </span>
                 </Link>
             </div>
-            {/* <div className='wrapperButton'>
-				<Link href='/words/import' className='button'>
-					<span>Import 1 Word </span>
-				</Link>
-			</div> */}
             <div className='wrapperButton'>
-                <Link href='/words/ImportWordsFrom' className='button'>
+                <Link href={hrefLinkImport} className='button'>
                     <span>Import Words From... </span>
                 </Link>
             </div>

@@ -4,21 +4,25 @@ import DeleteIcon from '@mui/icons-material/Delete'
 import RefreshIcon from '@mui/icons-material/Refresh'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 import { axiosWrappers } from 'helpers'
-export const CellSimple = (word) => {
-    // console.log('props :>> ', props)
+import { useRouter } from 'next/router'
+import { URL } from 'constants'
 
-    // const { word } = props
+export const CellSimple = (word) => {
     // export const CellSimple = ({ word }) => {
     const { id, original, translate } = word
 
-    const deleteWord = (id) => {
-        axiosWrappers.deleteAxios(URL, id)
-    }
+    // const deleteWord = (id) => {
+    //     axiosWrappers.deleteAxios(URL, id)
+    // }
+
+    const router = useRouter()
+    const hrefLinkUpdate = `${router.pathname}/update/${id}`
+    const hrefLinkShow = `${router.pathname}/show/${id}`
 
     return (
         <div className='cell'>
             <div className='edit'>
-                <Link href={`/words/update/${id}`} style={{ textDecoration: 'none' }}>
+                <Link href={hrefLinkUpdate} style={{ textDecoration: 'none' }}>
                     <IconButton color='secondary' component='label'>
                         <RefreshIcon />
                     </IconButton>
@@ -35,8 +39,10 @@ export const CellSimple = (word) => {
 				</Link> */}
             </div>
 
-            <div className='original_text'>{original}</div>
-            <div className='translate'>{translate}</div>
+            <Link href={hrefLinkShow} style={{ textDecoration: 'none' }}>
+                <div className='original_text'>{original}</div>
+                <div className='translate'>{translate}</div>
+            </Link>
         </div>
     )
 }

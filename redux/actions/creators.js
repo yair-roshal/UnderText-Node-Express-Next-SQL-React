@@ -1,5 +1,5 @@
 import { addWord, getWord, getWords, deleteWord, updateWord } from '@reduxFolder'
-import wordsDB from '../../data/words.js'
+import wordsDB from 'data'
 
 const findWord = (id) => {
     const words = JSON.parse(localStorage.getItem('words'))

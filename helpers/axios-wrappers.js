@@ -1,6 +1,7 @@
 import axios from 'axios'
 
 function getAxios(url, callback) {
+    console.log('url :>>getAxios ', url)
     return axios
         .get(url)
         .then((res) => {

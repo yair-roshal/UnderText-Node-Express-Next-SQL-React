@@ -1,11 +1,13 @@
 import { useState } from 'react'
-import { Link, UpdateButton } from 'components'
+import { Link, StyledButton } from 'components'
 import { useForm } from 'react-hook-form'
 import { axiosWrappers } from 'helpers'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
-import Router from 'next/router'
+// import Router from 'next/router'
 import { URL } from 'constants'
+import { useRouter } from 'next/router'
+
 export const UpdateWord = (wordProp) => {
     const [word, setWord] = useState(null)
 
@@ -24,12 +26,16 @@ export const UpdateWord = (wordProp) => {
         watch,
     } = useForm(formOptions)
 
+    const router = useRouter()
+
     const updateWordItem = async (wordObject) => {
-        // console.log('wordObject', wordObject)
-        // console.log('URL + wordProp.id', URL + wordProp.id)
-        await axiosWrappers.putAxios(URL + wordProp.id, wordObject)
-        // alert('word updated successfully ')
-        Router.push('/words')
+        console.log('router.pathname :>> ', router.pathname);
+        console.log('router.asPath :>> ', router.asPath);
+        console.log('router.query :>> ',router.query);
+        console.log('router.query.slug :>> ',router.query.slug);
+
+        await axiosWrappers.putAxios(URL + router.pathname + wordProp.id, wordObject)
+        //  Router.push('/words')
     }
 
     return (
@@ -103,7 +109,7 @@ export const UpdateWord = (wordProp) => {
                         <pre>{JSON.stringify(watch(), null, 2)}</pre>
 
                         <Link href='/words' style={{ textDecoration: 'none' }}>
-                            <UpdateButton variant='contained'>Back</UpdateButton>
+                            <StyledButton variant='contained'>Back</StyledButton>
                         </Link>
                     </div>
                 </>
