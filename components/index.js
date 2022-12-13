@@ -1,6 +1,5 @@
 export * from './AllWords'
 export * from './WordPage'
-export * from './WordItem'
 export * from './Header'
 export * from './Link'
 export * from './Loading'

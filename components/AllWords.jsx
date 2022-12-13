@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
-// import { WordItem } from './WordItem'
-import { CellComponent } from './CellComponent/CellComponent'
+ import { CellComponent } from './CellComponent/CellComponent'
 import { CellVariants } from '../constants/clientConstants'
 import { Link } from 'components'
 import { useRouter } from 'next/router'

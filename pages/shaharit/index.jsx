@@ -9,7 +9,7 @@ export default function Index() {
     const [words, setWords] = useState(null)
 
     useEffect(() => {
-        axiosWrappers.getAxios(URL + 'shaharit', setWords)
+        axiosWrappers.getAxios(URL + '/shaharit', setWords)
     }, [])
 
     if (!words) {

@@ -9,6 +9,9 @@ import { URL } from 'constants'
 import { useRouter } from 'next/router'
 
 export const UpdateWord = (wordProp) => {
+    const router = useRouter()
+    const hrefMainPage = `/${router.asPath.split('/')[1]}`
+
     const [word, setWord] = useState(null)
 
     const validationSchema = Yup.object().shape({
@@ -26,23 +29,29 @@ export const UpdateWord = (wordProp) => {
         watch,
     } = useForm(formOptions)
 
-    const router = useRouter()
-
     const updateWordItem = async (wordObject) => {
-        console.log('router.pathname :>> ', router.pathname);
-        console.log('router.asPath :>> ', router.asPath);
-        console.log('router.query :>> ',router.query);
-        console.log('router.query.slug :>> ',router.query.slug);
+        console.log(
+            'URL + `/${router.asPath.split(' / ')[1]}` + wordProp.id ',
+            URL + hrefMainPage + wordProp.id,
+        )
 
-        await axiosWrappers.putAxios(URL + router.pathname + wordProp.id, wordObject)
+        await axiosWrappers.putAxios(
+            URL + `/${router.asPath.split('/')[1]}/` + wordProp.id,
+            wordObject,
+        )
         //  Router.push('/words')
     }
 
     return (
         <>
+            <Link href={hrefMainPage} style={{ textDecoration: 'none' }}>
+                <StyledButton variant='contained'>Back</StyledButton>
+            </Link>
+
             {wordProp && (
                 <>
                     <div className='titlePage'>Update Word</div>
+
                     <div className='formWrapper'>
                         <form onSubmit={handleSubmit(updateWordItem)}>
                             <input style={{ display: 'none' }} {...register('id')} />
@@ -107,10 +116,6 @@ export const UpdateWord = (wordProp) => {
 
                         <h3>Content form: </h3>
                         <pre>{JSON.stringify(watch(), null, 2)}</pre>
-
-                        <Link href='/words' style={{ textDecoration: 'none' }}>
-                            <StyledButton variant='contained'>Back</StyledButton>
-                        </Link>
                     </div>
                 </>
             )}
