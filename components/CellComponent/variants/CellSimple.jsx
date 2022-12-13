@@ -8,9 +8,8 @@ import { useRouter } from 'next/router'
 import { URL } from 'constants/clientConstants'
 
 export const CellSimple = (props) => {
-    // export const CellSimple = ({ word }) => {
     console.log('props :>> ', props)
-    const { id, original, translate, color } = props
+    const { id, original, translate } = props
 
     // const deleteWord = (id) => {
     //     axiosWrappers.deleteAxios(URL, id)
@@ -22,7 +21,10 @@ export const CellSimple = (props) => {
 
     return (
         <div className='cell'>
+            {/* <div className='cell' style={styleObject}> */}
             <div className='edit'>
+                {/* buttons================================ */}
+
                 <Link href={hrefLinkUpdate} style={{ textDecoration: 'none' }}>
                     <IconButton color='secondary' component='label'>
                         <RefreshIcon />
@@ -40,8 +42,12 @@ export const CellSimple = (props) => {
 				</Link> */}
             </div>
 
+            {/* text ================================ */}
+
             <Link href={hrefLinkShow} style={{ textDecoration: 'none' }}>
-                <div className='original_text' style={{ color: props.color }}>
+                <div className='original_text'>
+                    {/* <div className='original_text' style={styleObject}> */}
+                    {/* <div className='original_text' style={{ color: props.color }}> */}
                     {original}
                 </div>
                 <div className='translate'>{translate}</div>

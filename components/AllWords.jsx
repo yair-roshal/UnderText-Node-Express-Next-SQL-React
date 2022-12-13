@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
- import { CellComponent } from './CellComponent/CellComponent'
+import { CellComponent } from './CellComponent/CellComponent'
 import { CellVariants } from '../constants/clientConstants'
 import { Link } from 'components'
 import { useRouter } from 'next/router'
@@ -30,7 +30,7 @@ export const AllWords = ({ words }) => {
             <div className='allWords'>
                 {words.map(
                     (word, index) =>
-                        word.original != 'newline' ? (
+                        word.description != 'last' ? (
                             <CellComponent
                                 key={index}
                                 variant={CellVariants.CellSimple}
