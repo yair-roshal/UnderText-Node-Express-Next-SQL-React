@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'components'
 import { UpdateButton } from 'components'
 
-export const WordComponent = (word) => {
+export const WordPage = (word) => {
     const { id, json } = word
     const [preparedData, setPreparedData] = useState([])
     const [error, setError] = useState(false)

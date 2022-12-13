@@ -21,7 +21,7 @@ export default function Index() {
             <div>
                 <h1 className='titlePage'>Word</h1>
                 <div className='wrapperTextBlock'>
-                    <Header />
+                    <Header name={'Brachot aBoker'} />
                     <AllWords words={words} />
                 </div>
             </div>

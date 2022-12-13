@@ -1,10 +1,4 @@
-import { Link } from '.'
-
-export { NavLink }
-
-NavLink.defaultProps = {
-    exact: false,
-}
+import { Link } from 'components'
 
 function NavLink({ children, href, exact, ...props }) {
     return (
@@ -13,3 +7,9 @@ function NavLink({ children, href, exact, ...props }) {
         </Link>
     )
 }
+
+NavLink.defaultProps = {
+    exact: false,
+}
+
+export { NavLink }

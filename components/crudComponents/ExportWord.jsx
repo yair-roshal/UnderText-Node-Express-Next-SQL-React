@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link, UpdateButton } from 'components'
+import { Link, StyledButton } from 'components'
 import { axiosWrappers } from 'helpers'
 
 export const ExportWord = (wordProp) => {
@@ -14,7 +14,7 @@ export const ExportWord = (wordProp) => {
             <h1 className='titlePage'>Word saved in file {fileName}</h1>
 
             <Link href='/words' style={{ textDecoration: 'none' }}>
-                <UpdateButton variant='contained'>Back</UpdateButton>
+                <StyledButton variant='contained'>Back</StyledButton>
             </Link>
         </>
     )
