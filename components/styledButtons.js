@@ -1,23 +1,23 @@
-import { Button } from "@mui/material"
-import { styled } from "@mui/material/styles"
+import { Button } from '@mui/material'
+import { styled } from '@mui/material/styles'
 
 export const StyledButton = styled(Button)({
-    backgroundColor: "blue",
-    margin: "0 10px",
+    backgroundColor: '#0077B5',
+    margin: '0 10px',
 })
 export const ShowButton = styled(Button)({
-    backgroundColor: "blue",
-    margin: "0 10px",
+    backgroundColor: 'blue',
+    margin: '0 10px',
 })
 export const ExportButton = styled(Button)({
-    backgroundColor: "#b436ac",
-    margin: "0 10px",
+    backgroundColor: '#b436ac',
+    margin: '0 10px',
 })
 export const UpdateButton = styled(Button)({
-    backgroundColor: "#2c2c2c",
-    margin: "20px",
+    backgroundColor: '#2c2c2c',
+    margin: '20px',
 })
 export const DeleteButton = styled(Button)({
-    backgroundColor: "red",
-    margin: "0 10px",
+    backgroundColor: 'red',
+    margin: '0 10px',
 })

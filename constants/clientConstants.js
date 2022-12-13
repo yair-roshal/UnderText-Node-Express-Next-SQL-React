@@ -1,7 +1,6 @@
 export const URL = 'http://localhost:5000/'
 
 export const pagesPrayers = [
-    { name: 'Home', href: '/' },
     { name: 'Shaharit', href: '/shaharit' },
     { name: 'Minha', href: '/minha' },
     { name: 'Maariv', href: '/maariv' },
