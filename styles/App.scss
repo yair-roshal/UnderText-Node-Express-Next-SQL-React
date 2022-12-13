@@ -12,6 +12,13 @@ $backgroundHeader: #2c2c2c;
     background: #fbeed5;
     border: 1px solid #d0d0d0;
 }
+.wrapperTitles {
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
 .cellFullWidth {
     width: 100%;
 }

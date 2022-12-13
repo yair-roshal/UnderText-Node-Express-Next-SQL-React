@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import 'styles/App.scss'
-import { Navbar } from 'components'
+import { MenuBar } from 'components'
+// import { Navbar } from 'components'
 
 export default function App({ Component, pageProps }) {
     return (
@@ -11,7 +12,8 @@ export default function App({ Component, pageProps }) {
             </Head>
 
             <div>
-                <Navbar />
+                <MenuBar />
+                {/* <Navbar /> */}
                 <div>
                     <Component {...pageProps} />
                 </div>
