@@ -30,16 +30,10 @@ export const UpdateWord = (wordProp) => {
     } = useForm(formOptions)
 
     const updateWordItem = async (wordObject) => {
-        console.log(
-            'URL + `/${router.asPath.split(' / ')[1]}` + wordProp.id ',
-            URL + hrefMainPage + wordProp.id,
-        )
-
         await axiosWrappers.putAxios(
             URL + `/${router.asPath.split('/')[1]}/` + wordProp.id,
             wordObject,
         )
-        //  Router.push('/words')
     }
 
     return (

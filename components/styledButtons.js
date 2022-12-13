@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles'
 
 export const StyledButton = styled(Button)({
     backgroundColor: '#0077B5',
-    margin: '0 10px',
+    margin: '10px',
 })
 export const ShowButton = styled(Button)({
     backgroundColor: 'blue',

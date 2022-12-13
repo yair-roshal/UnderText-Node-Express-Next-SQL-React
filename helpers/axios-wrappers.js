@@ -56,7 +56,8 @@ function putAxios(url, body) {
         .put(url, body)
         .then((res) => {
             if (res.status === 200) {
-                console.log('Word successfully added to DB')
+                alert('Word successfully updated')
+                // console.log('Word successfully updated')
             } else Promise.reject()
         })
         .catch(
