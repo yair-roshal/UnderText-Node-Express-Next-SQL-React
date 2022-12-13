@@ -2,6 +2,8 @@ import { useMemo } from 'react'
 import { CellSimple } from './variants/CellSimple'
 import { CellNewLine } from './variants/CellNewLine'
 import { CellVariants } from '../../constants/clientConstants'
+import { useGetStyle } from '../../helpers/useGetStyle'
+// import { useGetStyle } from 'helpers';
 
 export function CellComponent({ variant, ...props }) {
     const Component = useMemo(() => {
@@ -22,5 +24,7 @@ export function CellComponent({ variant, ...props }) {
         return Component
     }, [variant])
 
-    return <Component {...props} />
+    const color = useGetStyle(props.description)
+
+    return <Component {...props} color={color} />
 }

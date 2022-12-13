@@ -7,9 +7,10 @@ import { axiosWrappers } from 'helpers'
 import { useRouter } from 'next/router'
 import { URL } from 'constants/clientConstants'
 
-export const CellSimple = (word) => {
+export const CellSimple = (props) => {
     // export const CellSimple = ({ word }) => {
-    const { id, original, translate } = word
+    console.log('props :>> ', props)
+    const { id, original, translate, color } = props
 
     // const deleteWord = (id) => {
     //     axiosWrappers.deleteAxios(URL, id)
@@ -40,7 +41,9 @@ export const CellSimple = (word) => {
             </div>
 
             <Link href={hrefLinkShow} style={{ textDecoration: 'none' }}>
-                <div className='original_text'>{original}</div>
+                <div className='original_text' style={{ color: props.color }}>
+                    {original}
+                </div>
                 <div className='translate'>{translate}</div>
             </Link>
         </div>
