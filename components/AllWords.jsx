@@ -25,27 +25,23 @@ export const AllWords = ({ words }) => {
     // 	})
     //   }
 
+    const getVariant = (word) => {
+        if (word.description == 'last') {
+            return CellVariants.CellNewLine
+        }
+        if (word.description == 'bold') {
+            return CellVariants.CellBold
+        }
+
+        return CellVariants.CellSimple
+    }
+
     return (
         <>
             <div className='allWords'>
-                {words.map(
-                    (word, index) =>
-                        word.description != 'last' ? (
-                            <CellComponent
-                                key={index}
-                                variant={CellVariants.CellSimple}
-                                {...word}
-                            />
-                        ) : (
-                            <CellComponent
-                                key={index}
-                                variant={CellVariants.CellNewLine}
-                                {...word}
-                            />
-                        ),
-
-                    // <WordItem key={index} word={word} deleteWord={deleteWord}/>
-                )}
+                {words.map((word, index) => (
+                    <CellComponent key={index} variant={getVariant(word)} {...word} />
+                ))}
             </div>
 
             <div className='wrapperButton'>
