@@ -27,7 +27,9 @@ export const ImportWords = () => {
     const onSubmitImportWords = (data) => {
         newWords = data.text.trim().split(' ')
         syncPosting(newWords)
-        alert(`All words successfully imported `)
+        // alert(`All words successfully imported `)
+        console.log(`All words successfully imported `)
+
     }
 
     // ==================================
@@ -43,7 +45,8 @@ export const ImportWords = () => {
         }
 
         fileReader.readAsText(e.target.files[0])
-        alert(`All words from this file successfully imported `)
+        console.log(`All words from this file successfully imported `)
+        // alert(`All words from this file successfully imported `)
     }
 
     return (

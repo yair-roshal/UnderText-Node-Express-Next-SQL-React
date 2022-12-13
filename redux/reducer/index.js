@@ -1,7 +1,7 @@
-import { combineReducers } from "redux";
-import { wordReducers } from "@reduxFolder";
+import { combineReducers } from 'redux'
+import { wordReducers } from '@reduxFolder'
 
 export const reducers = combineReducers({
-    word: wordReducers
-});
- 
+    shaharit: wordReducers,
+    minha: wordReducers,
+})

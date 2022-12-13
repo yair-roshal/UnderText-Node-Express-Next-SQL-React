@@ -1,28 +1,20 @@
 import axios from 'axios'
 
-function getAxios(url, callback) {
+const getAxios = (url, callback) => {
+    // function getAxios(url, callback) {
     console.log('url :>>getAxios ', url)
     return axios
         .get(url)
         .then((res) => {
             callback(res.data)
         })
-        .catch((err) =>
-            alert('getAxios - Something went wrong (maybe you need restart server), error: ', err),
-        )
-}
 
-function postAxios(url, body, callback) {
-    return axios
-        .post(url, body)
-        .then((res) => {
-            if (res.status === 200) {
-                callback(res.data)
-                console.log('Word successfully added to DB')
-            } else Promise.reject()
-        })
         .catch((err) =>
-            alert('getAxios - Something went wrong (maybe you need restart server), error: ', err),
+            // alert('getAxios - Something went wrong (maybe you need restart server), error: ', err),
+            console.log(
+                'getAxios - Something went wrong (maybe you need restart server), error: ',
+                err,
+            ),
         )
 
     // .catch(function (error) {
@@ -41,6 +33,24 @@ function postAxios(url, body, callback) {
     // })
 }
 
+function postAxios(url, body, callback) {
+    return axios
+        .post(url, body)
+        .then((res) => {
+            if (res.status === 200) {
+                callback(res.data)
+                console.log('Word successfully added to DB')
+            } else Promise.reject()
+        })
+        .catch((err) =>
+            // alert('getAxios - Something went wrong (maybe you need restart server), error: ', err),
+            console.log(
+                'getAxios - Something went wrong (maybe you need restart server), error: ',
+                err,
+            ),
+        )
+}
+
 function putAxios(url, body) {
     return axios
         .put(url, body)
@@ -49,8 +59,13 @@ function putAxios(url, body) {
                 console.log('Word successfully added to DB')
             } else Promise.reject()
         })
-        .catch((err) =>
-            alert('putAxios - Something went wrong (maybe you need restart server), error: ', err),
+        .catch(
+            (err) =>
+                console.log(
+                    'putAxios - Something went wrong (maybe you need restart server), error: ',
+                    err,
+                ),
+            // alert('putAxios - Something went wrong (maybe you need restart server), error: ', err),
         )
 }
 
@@ -59,14 +74,20 @@ function deleteAxios(url, id) {
         .delete(url + id)
         .then((res) => {
             if (res.status === 200) {
-                alert('Word successfully deleted')
+                console.log('Word successfully deleted')
+                // alert('Word successfully deleted')
                 window.location.reload()
             } else Promise.reject()
         })
-        .catch((err) =>
-            alert(
-                'deleteAxios - Something went wrong (maybe you need restart server), error: ' + err,
-            ),
+        .catch(
+            (err) =>
+                console.log(
+                    'deleteAxios - Something went wrong (maybe you need restart server), error: ' +
+                        err,
+                ),
+            // alert(
+            //     'deleteAxios - Something went wrong (maybe you need restart server), error: ' + err,
+            // ),
         )
 }
 

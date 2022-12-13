@@ -1,14 +1,9 @@
 import { WordPage } from 'components'
-import { axiosWrappers } from 'helpers'
-// import { URL } from 'constants'
-import { URL } from '../../../constants/clientConstants'
+import { URL } from 'constants/clientConstants'
+import axios from 'axios'
 
-
-export async function getServerSideProps(context) {
-    console.log('context :>> ', context)
-    console.log('context.params :>> ', context.params)
-    const id = context.params.id
-    const response = await axiosWrappers.getAxios(URL + 'minha/' + id)
+export async function getServerSideProps({ params }) {
+    const response = await axios.get(`${URL}minha/${params.id}`)
     return {
         props: { ...response.data }[0],
     }

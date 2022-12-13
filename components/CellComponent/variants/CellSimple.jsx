@@ -5,7 +5,7 @@ import RefreshIcon from '@mui/icons-material/Refresh'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 import { axiosWrappers } from 'helpers'
 import { useRouter } from 'next/router'
-import { URL } from 'constants'
+import { URL } from 'constants/clientConstants'
 
 export const CellSimple = (word) => {
     // export const CellSimple = ({ word }) => {

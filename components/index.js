@@ -4,7 +4,6 @@ export * from './WordItem'
 export * from './Header'
 export * from './Link'
 export * from './Loading'
- export * from './MenuBar'
+export * from './MenuBar'
 export * from './NavLink'
 export * from './styledButtons'
-

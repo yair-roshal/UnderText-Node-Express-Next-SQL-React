@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, UpdateButton } from 'components'
 import { useForm } from 'react-hook-form'
-import { URL } from 'constants'
+import { URL } from 'constants/clientConstants'
 import { axiosWrappers } from 'helpers'
 
 export const AddWord = () => {

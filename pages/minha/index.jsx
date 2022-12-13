@@ -3,9 +3,8 @@ import { AllWords, Loading, Header } from 'components'
 import { store } from '@reduxFolder'
 import { Provider } from 'react-redux'
 import { axiosWrappers } from 'helpers'
-
-// import { URL } from 'constants'
-import { URL } from '../../constants/clientConstants'
+ 
+import { URL } from 'constants/clientConstants'
 
 export default function Index() {
     const [words, setWords] = useState(null)
