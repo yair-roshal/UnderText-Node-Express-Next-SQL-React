@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import 'styles/App.scss'
 import { MenuBar } from 'components'
-// import { Navbar } from 'components'
 
 export default function App({ Component, pageProps }) {
     return (
@@ -13,7 +12,6 @@ export default function App({ Component, pageProps }) {
 
             <div>
                 <MenuBar />
-                {/* <Navbar /> */}
                 <div>
                     <Component {...pageProps} />
                 </div>

@@ -19,7 +19,6 @@ export default function Index() {
     return (
         <Provider store={store}>
             <div>
-                <h1 className='titlePage'>Word</h1>
                 <div className='wrapperTextBlock'>
                     <Header name={'Brachot aBoker'} />
                     <AllWords words={words} />

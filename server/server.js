@@ -119,6 +119,13 @@ app.get('', (req, res) => {
 })
 
 // Get a word by ID ==============================================
+app.get('/:table', (req, res) => {
+    const tableName = req.params.table
+    const sqlQuery = `SELECT * from ${tableName}`
+    poolConnection(req, res, sqlQuery)
+})
+
+// Get a word by ID ==============================================
 app.get('/:id', (req, res) => {
     const sqlQuery = 'SELECT * from words WHERE id = ?'
     poolConnection(req, res, sqlQuery, [req.params.id])

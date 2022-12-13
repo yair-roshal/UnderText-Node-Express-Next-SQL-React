@@ -9,7 +9,7 @@ export default function Index() {
     const [words, setWords] = useState(null)
 
     useEffect(() => {
-        axiosWrappers.getAxios(URL, setWords)
+        axiosWrappers.getAxios(URL+"shaharit", setWords)
     }, [])
 
     if (!words) {
@@ -19,8 +19,7 @@ export default function Index() {
     return (
         <Provider store={store}>
             <div>
-                <h1 className='titlePage'>Word</h1>
-                <div className='wrapperTextBlock'>
+                 <div className='wrapperTextBlock'>
                     <Header name={'Brachot aBoker'} />
                     <AllWords words={words} />
                 </div>

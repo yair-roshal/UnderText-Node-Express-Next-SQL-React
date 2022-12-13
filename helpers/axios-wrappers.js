@@ -1,5 +1,4 @@
 import axios from 'axios'
-// import { URL } from 'constants'
 
 function getAxios(url, callback) {
     return axios

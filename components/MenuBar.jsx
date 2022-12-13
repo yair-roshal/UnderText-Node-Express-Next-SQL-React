@@ -99,9 +99,8 @@ export function MenuBar() {
                     </IconButton>
                 </Toolbar>
             </AppBar>
-            <Main open={open}>
-                <DrawerHeader />
-            </Main>
+            <DrawerHeader />
+           
             <Drawer
                 sx={{
                     'width': drawerWidth,
