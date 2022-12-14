@@ -46,11 +46,11 @@ jose.JWK.asKey(private_key, 'pem', { kid: keyId, alg: 'PS256' }).then(function (
             axios
                 .post('https://iam.api.cloud.yandex.net/iam/v1/tokens', body)
                 .then((response) => {
-                    console.log('response.data', response.data)
+                    // console.log('response.data', response.data)
                     IAM_TOKEN = response.data.iamToken
                 })
                 .catch((error) => {
-                    console.log('AXIOS ERROR: ', error.response)
+                    console.log('AXIOS ERROR_jwt: ', error.response)
                 })
         })
 })
@@ -79,7 +79,7 @@ function poolConnection(req, res, sqlQuery, params) {
 }
 
 // Add a new word =============================================
-app.post('', async (req, res) => {
+app.post('/:table', async (req, res) => {
     const texts = [req.body.original]
 
     const body = {
@@ -92,7 +92,9 @@ app.post('', async (req, res) => {
     const headers = { headers: { Authorization: `Bearer ${IAM_TOKEN}` } }
     let translate
 
-    const sqlQuery = 'INSERT INTO words SET ?'
+    const tableName = req.params.table
+    console.log('req.params :>> ', req.params)
+    const sqlQuery = `INSERT INTO ${tableName} SET ?`
 
     await axios
         .post('https://translate.api.cloud.yandex.net/translate/v2/translate', body, headers)
@@ -101,7 +103,7 @@ app.post('', async (req, res) => {
             translate = response.data.translations[0].text
         })
         .catch((error) => {
-            console.log('AXIOS ERROR: ', error.response)
+            console.log('AXIOS ERROR_post_translate: ', error.response)
         })
 
     const word = {
@@ -109,7 +111,7 @@ app.post('', async (req, res) => {
         translate: translate,
         description: req.body.description,
     }
-    console.log('word', word)
+    console.log('New word posted after translate', word)
     if (translate != undefined) poolConnection(req, res, sqlQuery, word)
 })
 

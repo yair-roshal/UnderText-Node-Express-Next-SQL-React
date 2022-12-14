@@ -2,10 +2,14 @@ import { Link, UpdateButton } from 'components'
 import { useForm } from 'react-hook-form'
 import { axiosWrappers } from 'helpers'
 import { URL } from 'constants'
+import { useRouter } from 'next/router'
 
 let newWords = []
 
 export const ImportWords = () => {
+    const router = useRouter()
+    const hrefMainPage = `/${router.asPath.split('/')[1]}`
+
     const {
         register,
         formState: { errors },
@@ -20,7 +24,7 @@ export const ImportWords = () => {
                 description: '',
             }
 
-            await axiosWrappers.postAxios(URL, { ...newWord })
+            await axiosWrappers.postAxios(`${URL}${hrefMainPage}`, { ...newWord })
         }
     }
 
@@ -29,7 +33,6 @@ export const ImportWords = () => {
         syncPosting(newWords)
         // alert(`All words successfully imported `)
         console.log(`All words successfully imported `)
-
     }
 
     // ==================================

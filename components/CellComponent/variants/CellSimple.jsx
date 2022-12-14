@@ -15,13 +15,14 @@ export const CellSimple = (props) => {
     //     axiosWrappers.deleteAxios(URL, id)
     // }
 
+    // TODO check pathname
     const router = useRouter()
     const hrefLinkUpdate = `${router.pathname}/update/${id}`
     const hrefLinkShow = `${router.pathname}/show/${id}`
 
     return (
         <div className='cell'>
-             <div className='edit'>
+            <div className='edit'>
                 {/* buttons================================ */}
 
                 <Link href={hrefLinkUpdate} style={{ textDecoration: 'none' }}>

@@ -34,13 +34,15 @@ const getAxios = (url, callback) => {
 }
 
 function postAxios(url, body) {
-// function postAxios(url, body, callback) {
+    // function postAxios(url, body, callback) {
     return axios
         .post(url, body)
         .then((res) => {
             if (res.status === 200) {
                 // callback(res.data)
-                console.log('Word successfully added to DB')
+                // console.log('body :>> ', body)
+                // console.log('res :>> ', res)
+                console.log(`${body.original} successfully added to DB`)
             } else Promise.reject()
         })
         .catch((err) =>
