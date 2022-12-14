@@ -3,14 +3,17 @@ import { AllWords, Loading, Header } from 'components'
 import { store } from '@reduxFolder'
 import { Provider } from 'react-redux'
 import { axiosWrappers } from 'helpers'
- 
+
 import { URL } from 'constants/clientConstants'
+import { useRouter } from 'next/router'
 
 export default function Index() {
+    const router = useRouter()
+    const hrefMainPage = `/${router.asPath.split('/')[1]}`
     const [words, setWords] = useState(null)
 
     useEffect(() => {
-        axiosWrappers.getAxios(URL + '/minha', setWords)
+        axiosWrappers.getAxios(URL + hrefMainPage, setWords)
     }, [])
 
     if (!words) {
@@ -21,7 +24,6 @@ export default function Index() {
         <Provider store={store}>
             <div>
                 <div className='wrapperTextBlock'>
-                    {/* <Header name={'Brachot aBoker'} /> */}
                     <AllWords words={words} />
                 </div>
             </div>
