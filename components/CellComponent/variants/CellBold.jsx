@@ -43,7 +43,7 @@ export const CellBold = (props) => {
             <Link href={hrefLinkShow} style={{ textDecoration: 'none' }}>
                 {/* <div className='original_text'> */}
                 {/* <div className='original_text' style={styleObject}> */}
-                <div className='original_text' style={{ color: 'red' }}>
+                <div className='original_text' style={{ 'font-weight': '900' }}>
                     {original}
                 </div>
                 <div className='translate'>{translate}</div>

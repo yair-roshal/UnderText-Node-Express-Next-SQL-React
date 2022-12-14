@@ -1,5 +1,7 @@
 import { useState } from 'react'
-import { Link, StyledButton } from 'components'
+import { Link } from 'components'
+import { StyledButton } from 'styles'
+
 import { useForm } from 'react-hook-form'
 import { axiosWrappers } from 'helpers'
 import { yupResolver } from '@hookform/resolvers/yup'

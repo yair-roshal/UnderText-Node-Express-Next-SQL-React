@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import { Link, StyledButton } from 'components'
+import { Link } from 'components'
+import { StyledButton } from 'styles'
 import { axiosWrappers } from 'helpers'
 import { URL } from 'constants/clientConstants'
 

@@ -83,6 +83,7 @@ app.post('', async (req, res) => {
     const texts = [req.body.original]
 
     const body = {
+        sourceLanguageCode: process.env.source_language,
         targetLanguageCode: process.env.target_language,
         texts: texts,
         folderId: process.env.folder_id,

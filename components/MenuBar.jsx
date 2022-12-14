@@ -128,37 +128,50 @@ export function MenuBar() {
                 <Divider />
 
                 <List>
-                    {pagesPrayers.map((pagesPrayer) => (
-                        <ListItem key={pagesPrayer.name} disablePadding>
-                            <ListItemButton>
-                                <ListItemIcon>
-                                    <InboxIcon />
-                                </ListItemIcon>
+                    {pagesPrayers.map(
+                        (pagesPrayer) =>
+                            pagesPrayer.prayer == true && (
+                                <ListItem key={pagesPrayer.name} disablePadding>
+                                    <ListItemButton>
+                                        <ListItemIcon>
+                                            <InboxIcon />
+                                        </ListItemIcon>
 
-                                <Link
-                                    onClick={handleDrawerClose}
-                                    href={pagesPrayer.href}
-                                    style={{ textDecoration: 'none' }}
-                                >
-                                    <ListItemText primary={pagesPrayer.name} />
-                                </Link>
-                            </ListItemButton>
-                        </ListItem>
-                    ))}
+                                        <Link
+                                            onClick={handleDrawerClose}
+                                            href={pagesPrayer.href}
+                                            style={{ textDecoration: 'none' }}
+                                        >
+                                            <ListItemText primary={pagesPrayer.name} />
+                                        </Link>
+                                    </ListItemButton>
+                                </ListItem>
+                            ),
+                    )}
                 </List>
 
                 <Divider />
                 <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                        <ListItem key={text} disablePadding>
-                            <ListItemButton>
-                                <ListItemIcon>
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                </ListItemIcon>
-                                <ListItemText primary={text} />
-                            </ListItemButton>
-                        </ListItem>
-                    ))}
+                    {pagesPrayers.map(
+                        (pagesPrayer) =>
+                            pagesPrayer.prayer == false && (
+                                <ListItem key={pagesPrayer.name} disablePadding>
+                                    <ListItemButton>
+                                        <ListItemIcon>
+                                            <InboxIcon />
+                                        </ListItemIcon>
+
+                                        <Link
+                                            onClick={handleDrawerClose}
+                                            href={pagesPrayer.href}
+                                            style={{ textDecoration: 'none' }}
+                                        >
+                                            <ListItemText primary={pagesPrayer.name} />
+                                        </Link>
+                                    </ListItemButton>
+                                </ListItem>
+                            ),
+                    )}
                 </List>
             </Drawer>
         </Box>

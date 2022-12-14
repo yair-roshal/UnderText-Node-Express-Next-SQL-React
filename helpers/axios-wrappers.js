@@ -33,19 +33,20 @@ const getAxios = (url, callback) => {
     // })
 }
 
-function postAxios(url, body, callback) {
+function postAxios(url, body) {
+// function postAxios(url, body, callback) {
     return axios
         .post(url, body)
         .then((res) => {
             if (res.status === 200) {
-                callback(res.data)
+                // callback(res.data)
                 console.log('Word successfully added to DB')
             } else Promise.reject()
         })
         .catch((err) =>
-            // alert('getAxios - Something went wrong (maybe you need restart server), error: ', err),
+            // alert('postAxios - Something went wrong (maybe you need restart server), error: ', err),
             console.log(
-                'getAxios - Something went wrong (maybe you need restart server), error: ',
+                'postAxios - Something went wrong (maybe you need restart server), error: ',
                 err,
             ),
         )

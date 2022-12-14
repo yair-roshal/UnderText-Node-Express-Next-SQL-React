@@ -21,8 +21,7 @@ export const CellSimple = (props) => {
 
     return (
         <div className='cell'>
-            {/* <div className='cell' style={styleObject}> */}
-            <div className='edit'>
+             <div className='edit'>
                 {/* buttons================================ */}
 
                 <Link href={hrefLinkUpdate} style={{ textDecoration: 'none' }}>
