@@ -24,25 +24,6 @@ import { useRouter } from 'next/router'
 
 const drawerWidth = 240
 
-const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
-    ({ theme, open }) => ({
-        flexGrow: 1,
-        padding: theme.spacing(3),
-        transition: theme.transitions.create('margin', {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
-        }),
-        marginRight: -drawerWidth,
-        ...(open && {
-            transition: theme.transitions.create('margin', {
-                easing: theme.transitions.easing.easeOut,
-                duration: theme.transitions.duration.enteringScreen,
-            }),
-            marginRight: 0,
-        }),
-    }),
-)
-
 const AppBar = styled(MuiAppBar, {
     shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
@@ -51,7 +32,8 @@ const AppBar = styled(MuiAppBar, {
         duration: theme.transitions.duration.leavingScreen,
     }),
     ...(open && {
-        width: `calc(100% - ${drawerWidth}px)`,
+        width: '100%',
+        // width: `calc(100% - ${drawerWidth}px)`,
         transition: theme.transitions.create(['margin', 'width'], {
             easing: theme.transitions.easing.easeOut,
             duration: theme.transitions.duration.enteringScreen,
@@ -70,6 +52,9 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 }))
 
 export function MenuBar() {
+    const router = useRouter()
+    const nameHeader = router.asPath.slice(1).toUpperCase()
+
     const theme = useTheme()
     const [open, setOpen] = React.useState(false)
 
@@ -80,7 +65,6 @@ export function MenuBar() {
     const handleDrawerClose = () => {
         setOpen(false)
     }
-    const router = useRouter()
 
     return (
         <Box sx={{ display: 'flex' }}>
@@ -93,7 +77,7 @@ export function MenuBar() {
                         sx={{ flexGrow: 1, textAlign: 'center' }}
                         component='div'
                     >
-                        {router.pathname.slice(1).toUpperCase()}
+                        {nameHeader}
                     </Typography>
                     <IconButton
                         color='inherit'

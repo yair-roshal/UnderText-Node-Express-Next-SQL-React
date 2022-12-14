@@ -18,40 +18,36 @@ export const CellSimple = (props) => {
     // TODO check pathname
     const router = useRouter()
     const hrefLinkUpdate = `${router.pathname}/update/${id}`
-    const hrefLinkShow = `${router.pathname}/show/${id}`
+    // const hrefLinkShow = `${router.pathname}/show/${id}`
 
     return (
-        <div className='cell'>
-            <div className='edit'>
-                {/* buttons================================ */}
+        <>
+            <Link href={hrefLinkUpdate} style={{ textDecoration: 'none' }}>
+                <div className='cell'>
+                    <div className='original_text'>{original}</div>
+                    <div className='translate'>{translate}</div>
+                </div>
+            </Link>
+        </>
+    )
+}
 
+{
+    /* <div className='edit'> 
                 <Link href={hrefLinkUpdate} style={{ textDecoration: 'none' }}>
                     <IconButton color='secondary' component='label'>
                         <RefreshIcon />
                     </IconButton>
                 </Link>
 
-                {/* <IconButton onClick={() => deleteWord(id)} aria-label='delete'>
+                <IconButton onClick={() => deleteWord(id)} aria-label='delete'>
 					<DeleteIcon />
-				</IconButton> */}
+				</IconButton>
 
-                {/* <Link href={`/words/show/${id}`} style={{ textDecoration: 'none' }}>
+                <Link href={`/words/show/${id}`} style={{ textDecoration: 'none' }}>
 					<IconButton color='primary' aria-label='upload picture' component='label'>
 						<OpenInNewIcon />
 					</IconButton>
-				</Link> */}
-            </div>
-
-            {/* text ================================ */}
-
-            <Link href={hrefLinkShow} style={{ textDecoration: 'none' }}>
-                <div className='original_text'>
-                    {/* <div className='original_text' style={styleObject}> */}
-                    {/* <div className='original_text' style={{ color: props.color }}> */}
-                    {original}
-                </div>
-                <div className='translate'>{translate}</div>
-            </Link>
-        </div>
-    )
+				</Link>
+            </div> */
 }

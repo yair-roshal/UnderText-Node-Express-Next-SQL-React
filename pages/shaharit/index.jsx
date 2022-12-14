@@ -9,7 +9,7 @@ import { useRouter } from 'next/router'
 export default function Index() {
     const router = useRouter()
     const hrefMainPage = `/${router.asPath.split('/')[1]}`
- 
+
     const [words, setWords] = useState(null)
 
     useEffect(() => {
@@ -24,7 +24,6 @@ export default function Index() {
         <Provider store={store}>
             <div>
                 <div className='wrapperTextBlock'>
-                    {/* <Header name={'Brachot aBoker'} /> */}
                     <AllWords words={words} />
                 </div>
             </div>

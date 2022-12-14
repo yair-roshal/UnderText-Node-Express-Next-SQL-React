@@ -17,40 +17,12 @@ export const CellNewLine = (props) => {
 
     const router = useRouter()
     const hrefLinkUpdate = `${router.pathname}/update/${id}`
-    const hrefLinkShow = `${router.pathname}/show/${id}`
-
+ 
     return (
         <>
             <div className='cell'>
-                {/* <div className='cell' style={styleObject}> */}
-                <div className='edit'>
-                    {/* buttons================================ */}
-
-                    <Link href={hrefLinkUpdate} style={{ textDecoration: 'none' }}>
-                        <IconButton color='secondary' component='label'>
-                            <RefreshIcon />
-                        </IconButton>
-                    </Link>
-
-                    {/* <IconButton onClick={() => deleteWord(id)} aria-label='delete'>
-					<DeleteIcon />
-				</IconButton> */}
-
-                    {/* <Link href={`/words/show/${id}`} style={{ textDecoration: 'none' }}>
-					<IconButton color='primary' aria-label='upload picture' component='label'>
-						<OpenInNewIcon />
-					</IconButton>
-				</Link> */}
-                </div>
-
-                {/* text ================================ */}
-
-                <Link href={hrefLinkShow} style={{ textDecoration: 'none' }}>
-                    <div className='original_text'>
-                        {/* <div className='original_text' style={styleObject}> */}
-                        {/* <div className='original_text' style={{ color: props.color }}> */}
-                        {original}
-                    </div>
+                <Link href={hrefLinkUpdate} style={{ textDecoration: 'none' }}>
+                    <div className='original_text'>{original}</div>
                     <div className='translate'>{translate}</div>
                 </Link>
             </div>
