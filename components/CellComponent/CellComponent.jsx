@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import { CellSimple } from './variants/CellSimple'
 import { CellNewLine } from './variants/CellNewLine'
 import { CellBold } from './variants/CellBold'
+import { CellTitle } from './variants/CellTitle'
 
 // import { CellVariants } from 'constants'
 import { CellVariants } from '../../constants/clientConstants'
@@ -21,6 +22,10 @@ export function CellComponent({ variant, ...props }) {
 
             case CellVariants.CellBold:
                 Component = CellBold
+                break
+
+            case CellVariants.CellTitle:
+                Component = CellTitle
                 break
 
             default:

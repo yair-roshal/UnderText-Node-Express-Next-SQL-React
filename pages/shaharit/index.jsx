@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { AllWords, Loading, Header } from 'components'
 import { store } from '@reduxFolder'
 import { Provider } from 'react-redux'
-import { axiosWrappers } from 'helpers' 
+import { axiosWrappers } from 'helpers'
 import { URL } from 'constants/clientConstants'
 
 export default function Index() {
@@ -20,7 +20,7 @@ export default function Index() {
         <Provider store={store}>
             <div>
                 <div className='wrapperTextBlock'>
-                    <Header name={'Brachot aBoker'} />
+                    {/* <Header name={'Brachot aBoker'} /> */}
                     <AllWords words={words} />
                 </div>
             </div>

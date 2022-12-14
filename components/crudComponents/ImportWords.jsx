@@ -54,6 +54,9 @@ export const ImportWords = () => {
 
     return (
         <>
+            <Link href={hrefMainPage} style={{ textDecoration: 'none' }}>
+                <UpdateButton variant='contained'>Back</UpdateButton>
+            </Link>
             <div className='formWrapper'>
                 <h2 className='titlePage'>Import words from text</h2>
 
@@ -73,10 +76,6 @@ export const ImportWords = () => {
                 <h2 className='titlePage'>Import words from file</h2>
                 <input type='file' onChange={(e) => showFile(e)} />
             </div>
-
-            <Link href='/words' style={{ textDecoration: 'none' }}>
-                <UpdateButton variant='contained'>Back</UpdateButton>
-            </Link>
         </>
     )
 }

@@ -14,4 +14,5 @@ export const CellVariants = {
     CellSimple: 'CellSimple',
     CellNewLine: 'CellNewLine',
     CellBold: 'CellBold',
+    CellTitle: 'CellTitle',
 }

@@ -21,7 +21,7 @@ export default function Index() {
         <Provider store={store}>
             <div>
                 <div className='wrapperTextBlock'>
-                    <Header name={'Brachot aBoker'} />
+                    {/* <Header name={'Brachot aBoker'} /> */}
                     <AllWords words={words} />
                 </div>
             </div>

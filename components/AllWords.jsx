@@ -32,6 +32,9 @@ export const AllWords = ({ words }) => {
         if (word.description == 'bold') {
             return CellVariants.CellBold
         }
+        if (word.description == 'title') {
+            return CellVariants.CellTitle
+        }
 
         return CellVariants.CellSimple
     }
