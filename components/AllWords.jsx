@@ -9,7 +9,7 @@ export const AllWords = ({ words }) => {
     console.log('router.pathname :>> ', router.pathname)
 
     const hrefLinkAdd = router.pathname + '/add'
-    const hrefLinkImport = router.pathname + '/ImportWordsFrom'
+    const hrefLinkImport = router.pathname + '/import'
 
     useEffect(() => {
         // setSlides(words.length)

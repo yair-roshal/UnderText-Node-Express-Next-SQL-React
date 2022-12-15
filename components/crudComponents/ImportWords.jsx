@@ -18,6 +18,7 @@ export const ImportWords = () => {
 
     const syncPosting = async (newWords) => {
         for (const word of newWords) {
+            
             const newWord = {
                 original: word,
                 translate: '',
