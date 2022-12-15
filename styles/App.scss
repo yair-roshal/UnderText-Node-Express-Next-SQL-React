@@ -8,7 +8,7 @@ $backgroundHeader: #2c2c2c;
 
 // cell ============================================
 .cell {
-    padding: 5px;
+    padding: 0px 5px;
     background: #fbeed5;
     border: 1px solid #d0d0d0;
 }
@@ -35,6 +35,7 @@ $backgroundHeader: #2c2c2c;
 }
 
 .original_text {
+    font-family: 'Roboto';
     text-align: center;
     // font-weight: 600;
     font-size: calc(15px + 1vmin);
@@ -262,10 +263,9 @@ $backgroundHeader: #2c2c2c;
     // transition-timing-function: ease-in-out;
 
     // Header==============================================================
-
     .wrapperHeader {
         position: relative;
-        height: 44px;
+        // height: 33x;
         border-right: 10px solid $redSection;
         margin: 16px 0px;
         border-radius: 3px;
@@ -273,11 +273,12 @@ $backgroundHeader: #2c2c2c;
         display: flex;
 
         .textWrapper {
-            font-family: 'Arial', Sans-serif;
-            font-size: 26px;
+            vertical-align:middle; display:table-cell;
+             font-family: 'Arial', Sans-serif;
+            font-size: 22px;
             color: $white;
-            padding: 8px 21px 7px 0px;
-            .bold {
+            // padding: 8px 21px 7px 0px;
+            .bold { 
                 font-weight: bold;
                 padding: 0px 20px;
             }

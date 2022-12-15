@@ -13,7 +13,7 @@ export const CellTitle = (props) => {
     const { id, original, translate } = props
 
     const router = useRouter()
-    const hrefLinkShow = `${router.pathname}/show/${id}`
+    const hrefLinkShow = `${router.pathname}/update/${id}`
 
     return (
         <>

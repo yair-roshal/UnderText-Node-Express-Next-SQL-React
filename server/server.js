@@ -93,7 +93,7 @@ app.post('/:table', async (req, res) => {
     let translate
 
     const tableName = req.params.table
-    console.log('req.params :>> ', req.params)
+    // console.log('req.params :>> ', req.params)
     const sqlQuery = `INSERT INTO ${tableName} SET ?`
 
     await axios
