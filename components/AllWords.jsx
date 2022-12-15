@@ -6,15 +6,14 @@ import { useRouter } from 'next/router'
 
 export const AllWords = ({ words }) => {
     const router = useRouter()
-    console.log('router.pathname :>> ', router.pathname)
 
     const hrefLinkAdd = router.pathname + '/add'
     const hrefLinkImport = router.pathname + '/import'
 
-    useEffect(() => {
-        // setSlides(words.length)
-        console.log('words', words)
-    }, [words])
+    // useEffect(() => {
+    //     // setSlides(words.length)
+    //     console.log('words', words)
+    // }, [words])
 
     // deleteWord(id) {
     // 	axios.delete('http://localhost:5000/words/' + id)

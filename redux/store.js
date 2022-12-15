@@ -1,7 +1,8 @@
-import { createStore, applyMiddleware } from 'redux'
-import { reducers } from 'redux/reducer'
-import thunk from 'redux-thunk'
+import { configureStore } from '@reduxjs/toolkit'
+import wordsReducer from './wordsSlice'
 
-const composeWithDevTools = require('redux-devtools-extension').composeWithDevTools
-
-export const store = createStore(reducers, {}, composeWithDevTools(applyMiddleware(thunk)))
+export const store = configureStore({
+    reducer: {
+        words: wordsReducer,
+    },
+})

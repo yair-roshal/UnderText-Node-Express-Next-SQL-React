@@ -10,16 +10,16 @@ const findWord = (id) => {
 export const addWordAction = (word) => {
     const words = JSON.parse(localStorage.getItem('words'))
 
-    let maxID = 0
-    const values = Object.values(words)
-    for (const value of values) {
-        if (value.id > maxID) {
-            maxID = value.id
-        }
-    }
+    // let maxID = 0
+    // const values = Object.values(words)
+    // for (const value of values) {
+    //     if (value.id > maxID) {
+    //         maxID = value.id
+    //     }
+    // }
 
     return (dispatch) => {
-        word.id = maxID + 1
+        // word.id = maxID + 1
         words.push(word)
         window.localStorage.setItem('words', JSON.stringify(words))
 

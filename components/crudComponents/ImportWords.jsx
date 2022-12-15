@@ -3,10 +3,17 @@ import { useForm } from 'react-hook-form'
 import { axiosWrappers } from 'helpers'
 import { URL } from 'constants'
 import { useRouter } from 'next/router'
+import { useSelector, useDispatch } from 'react-redux'
+import { getWord, addWord, editWord, deleteWord }  from '../../redux/wordsSlice'
 
 let newWords = []
 
 export const ImportWords = () => {
+
+    const words = useSelector((state) => state.words)
+    const dispatch = useDispatch()
+    console.log('words from store :>> ', words);
+
     const router = useRouter()
     const hrefMainPage = `/${router.asPath.split('/')[1]}`
 
@@ -18,7 +25,7 @@ export const ImportWords = () => {
 
     const syncPosting = async (newWords) => {
         for (const word of newWords) {
-            
+
             const newWord = {
                 original: word,
                 translate: '',

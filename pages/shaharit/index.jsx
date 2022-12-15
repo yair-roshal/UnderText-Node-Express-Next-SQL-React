@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react'
-import { AllWords, Loading, Header } from 'components'
-import { store } from '@reduxFolder'
-import { Provider } from 'react-redux'
+import { AllWords, Loading } from 'components'
 import { axiosWrappers } from 'helpers'
 import { URL } from 'constants/clientConstants'
 import { useRouter } from 'next/router'
@@ -9,7 +7,6 @@ import { useRouter } from 'next/router'
 export default function Index() {
     const router = useRouter()
     const hrefMainPage = `/${router.asPath.split('/')[1]}`
-
     const [words, setWords] = useState(null)
 
     useEffect(() => {
@@ -21,12 +18,10 @@ export default function Index() {
     }
 
     return (
-        <Provider store={store}>
-            <div>
-                <div className='wrapperTextBlock'>
-                    <AllWords words={words} />
-                </div>
+        <div>
+            <div className='wrapperTextBlock'>
+                <AllWords words={words} />
             </div>
-        </Provider>
+        </div>
     )
 }

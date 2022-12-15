@@ -1,14 +1,14 @@
 import { ActionTypes } from '@reduxFolder'
-import wordsJs from 'data'
+// import wordsJs from 'data'
 
-const initialState = {
-    words: wordsJs,
-    loading: false,
-    // setLoading: false,
-    pageNumber: 0,
-}
+// const initialState = {
+//     words: wordsJs,
+//     loading: false,
+//     // setLoading: false,
+//  }
 
-export const wordReducers = (state = initialState, action) => {
+export const wordReducers = (state, action) => {
+    // export const wordReducers = (state = initialState, action) => {
     switch (action.type) {
         case ActionTypes.GET_WORDS:
             return {
