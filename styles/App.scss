@@ -192,11 +192,7 @@ $backgroundHeader: #2c2c2c;
 }
 
 // button ==========================================
-.wrapperStaticButtons {
-    position: absolute;
-    bottom: 0;
-}
-
+ 
 .wrapperButton {
     padding: 35px 0;
 
@@ -251,17 +247,10 @@ $backgroundHeader: #2c2c2c;
 
 .wrapperTextBlock {
     position: relative;
-    overflow: hidden;
-    // width: 970px;
-    // width: 90%;
+    overflow: hidden; 
     margin-left: auto;
     margin-right: auto;
-
-    // transition: translate;
-    // transition-property: transform;
-    // transition-duration: 300ms;
-    // transition-timing-function: ease-in-out;
-
+  
     // Header==============================================================
     .wrapperHeader {
         position: relative;
@@ -273,12 +262,13 @@ $backgroundHeader: #2c2c2c;
         display: flex;
 
         .textWrapper {
-            vertical-align:middle; display:table-cell;
-             font-family: 'Arial', Sans-serif;
+            vertical-align: middle;
+            display: table-cell;
+            font-family: 'Arial', Sans-serif;
             font-size: 22px;
             color: $white;
             // padding: 8px 21px 7px 0px;
-            .bold { 
+            .bold {
                 font-weight: bold;
                 padding: 0px 20px;
             }
@@ -309,110 +299,6 @@ $backgroundHeader: #2c2c2c;
         display: flex;
         flex-direction: row-reverse;
         flex-wrap: wrap;
-
-        // -webkit-transition: all 0.6s ease-out;
-        // transition: all 0.6s ease-out;
-
-        //  Word==============================================================
-        .wrapperWord:first-child {
-            // margin-left: 25px;
-        }
-        .wrapperWord {
-            position: relative;
-            border-radius: 2px;
-            margin-left: 25px;
-            // margin-right: 25px;
-            // width: 50%;
-            // width: 480px;
-            min-width: 450px;
-            min-height: 550px;
-            border: 1px solid grey;
-
-            //  ImageInfo==============================================================
-
-            .wrapperImage {
-                position: relative;
-                overflow: hidden;
-
-                img {
-                    width: 100%;
-                }
-
-                .shadowWordName {
-                    position: absolute;
-                    display: table;
-                    color: $white;
-                    font-size: 15px;
-                    height: 29px;
-                    background-color: $backgroundShadow;
-                    text-align: center;
-                    line-height: 29px;
-                    bottom: 10px;
-                    border-radius: 2px;
-                    padding: 0 15px;
-                    left: 50%;
-                    white-space: nowrap;
-                    transform: translateX(-50%);
-                    font-family: 'Arial', Sans-serif;
-                }
-            }
-
-            //  Info==============================================================
-            .wrapperInfo {
-                overflow: hidden;
-
-                .textJSON {
-                    font-family: 'Arial', Sans-serif;
-                    font-weight: bold;
-                    font-size: 14px;
-
-                    color: $text;
-                    overflow: hidden;
-                    padding: 9px 21px 8px;
-                    background: $white;
-                    text-align: center;
-                    line-height: 1.2;
-                    min-height: 77px;
-                }
-            }
-        }
-    }
-
-    // arrows==============================================================
-
-    .twoArrows {
-        // position: absolute;
-        // top: 450px;
-        a:before {
-            color: grey;
-            font-family: twoArrows;
-            content: '';
-            width: 32px;
-            height: 32px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            font-size: 10px;
-        }
-
-        .arrow {
-            position: absolute;
-            top: 50%;
-            cursor: pointer;
-            background: $backgroundArrow;
-            width: 32px;
-            height: 32px;
-            z-index: 10;
-            border: 1px solid grey;
-        }
-        .prev {
-            left: 0;
-        }
-
-        .next {
-            right: 0;
-            transform: rotate(180deg);
-        }
+        background-color: antiquewhite;
     }
 }

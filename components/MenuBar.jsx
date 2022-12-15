@@ -17,10 +17,10 @@ import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import InboxIcon from '@mui/icons-material/MoveToInbox'
-import MailIcon from '@mui/icons-material/Mail'
 import { pagesPrayers } from '../constants/clientConstants'
 import { Link } from 'components'
 import { useRouter } from 'next/router'
+import BookIcon from '@mui/icons-material/Book'
 
 const drawerWidth = 240
 
@@ -118,7 +118,7 @@ export function MenuBar() {
                                 <ListItem key={pagesPrayer.name} disablePadding>
                                     <ListItemButton>
                                         <ListItemIcon>
-                                            <InboxIcon />
+                                            <BookIcon />
                                         </ListItemIcon>
 
                                         <Link
@@ -142,7 +142,7 @@ export function MenuBar() {
                                 <ListItem key={pagesPrayer.name} disablePadding>
                                     <ListItemButton>
                                         <ListItemIcon>
-                                            <InboxIcon />
+                                            <BookIcon />
                                         </ListItemIcon>
 
                                         <Link
@@ -156,6 +156,27 @@ export function MenuBar() {
                                 </ListItem>
                             ),
                     )}
+                </List>
+
+                <Divider />
+                <List>
+                    {[{ name: 'options', href: '/options' }].map((pagesPrayer) => (
+                        <ListItem key={pagesPrayer.name} disablePadding>
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <BookIcon />
+                                </ListItemIcon>
+
+                                <Link
+                                    onClick={handleDrawerClose}
+                                    href={pagesPrayer.href}
+                                    style={{ textDecoration: 'none' }}
+                                >
+                                    <ListItemText primary={pagesPrayer.name} />
+                                </Link>
+                            </ListItemButton>
+                        </ListItem>
+                    ))}
                 </List>
             </Drawer>
         </Box>
