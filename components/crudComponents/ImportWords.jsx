@@ -1,27 +1,35 @@
 import { Link, UpdateButton } from 'components'
 import { useForm } from 'react-hook-form'
+import { useState, useEffect } from 'react'
+
 import { axiosWrappers } from 'helpers'
 import { URL } from 'constants'
 import { useRouter } from 'next/router'
 import { useSelector, useDispatch } from 'react-redux'
 import { getWord, addWord, editWord, deleteWord } from '../../redux/wordsSlice'
-import { useEffect } from 'react'
 import { getWords } from '../../helpers/getWords'
 
-let newWords = []
+let formFileWords = []
 
 export const ImportWords = () => {
-    const words = useSelector((state) => state.words)
-    const dispatch = useDispatch()
-    console.log('words from store :>> ', words)
-
     const router = useRouter()
     const hrefMainPage = `/${router.asPath.split('/')[1]}`
 
+    const [words, setWords] = useState(null)
     useEffect(() => {
-        dispatch(getWords({ table: router.asPath.split('/')[1] }))
-        console.log('words from store222 :>> ', words)
+        axiosWrappers.getAxios(URL + hrefMainPage).then(function (value) {
+            setWords(value)
+        })
     }, [])
+
+    // const words = useSelector((state) => state.words)
+    // const dispatch = useDispatch()
+    // console.log('words from store :>> ', words)
+
+    // useEffect(() => {
+    //     dispatch(getWords({ table: router.asPath.split('/')[1] }))
+    //     console.log('words from store222 :>> ', words)
+    // }, [])
 
     const {
         register,
@@ -29,21 +37,63 @@ export const ImportWords = () => {
         handleSubmit,
     } = useForm()
 
-    const syncPosting = async (newWords) => {
-        for (const word of newWords) {
-            const newWord = {
-                original: word,
-                translate: '',
-                description: '',
+    const syncPosting = async (formFileWords) => {
+        console.log('formFileWords :>> ', formFileWords)
+        console.log('words :>> ', words)
+
+        for (const formFileWord of formFileWords) {
+            let newWord
+
+            const checkWord = (chekingWord) => {
+                return chekingWord.original == formFileWord
             }
+
+            const foundedWord = words.find(checkWord)
+
+            console.log('foundedWord :>> ', foundedWord)
+            if (foundedWord) {
+                newWord = {
+                    original: foundedWord.original,
+                    translate: foundedWord.translate,
+                    description: foundedWord.description,
+                }
+            } else {
+                console.log('new word :>> ', formFileWord)
+
+                newWord = {
+                    original: formFileWord,
+                    translate: '',
+                    description: '',
+                }
+            }
+
+            // for (const wordDB of words) {
+            //     if (wordDB.original == formFileWord) {
+            //         console.log('translate from DB :>> ', formFileWord)
+
+            //         newWord = {
+            //             original: wordDB.original,
+            //             translate: wordDB.translate,
+            //             description: '',
+            //         }
+            //     } else {
+            //         console.log('new word :>> ', formFileWord)
+
+            //         newWord = {
+            //             original: formFileWord,
+            //             translate: '',
+            //             description: '',
+            //         }
+            //     }
+            // }
 
             await axiosWrappers.postAxios(`${URL}${hrefMainPage}`, { ...newWord })
         }
     }
 
     const onSubmitImportWords = (data) => {
-        newWords = data.text.trim().split(' ')
-        syncPosting(newWords)
+        formFileWords = data.text.trim().split(' ')
+        syncPosting(formFileWords)
         // alert(`All words successfully imported `)
         console.log(`All words successfully imported `)
     }
@@ -56,8 +106,8 @@ export const ImportWords = () => {
 
         fileReader.onload = (e) => {
             const text = e.target.result
-            newWords = text.trim().split(' ')
-            syncPosting(newWords)
+            formFileWords = text.trim().split(' ')
+            syncPosting(formFileWords)
         }
 
         fileReader.readAsText(e.target.files[0])

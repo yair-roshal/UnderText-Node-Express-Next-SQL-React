@@ -14,20 +14,23 @@ export const AddWord = () => {
     const [words, setWords] = useState([])
 
     useEffect(() => {
-        axiosWrappers.getAxios(URL, setWords)
+        // axiosWrappers.getAxios(URL, setWords)
+        const response = axiosWrappers.getAxios(URL)
+        setWords(response)
     }, [])
 
     const onSubmitAddWord = (data) => {
         //checking last id
-        let maxId = 0
-        for (const index in words) {
-            if (+words[index].id > maxId) {
-                maxId = +words[index].id
-            }
-        }
-        const newId = maxId + 1
+        // let maxId = 0
+        // for (const index in words) {
+        //     if (+words[index].id > maxId) {
+        //         maxId = +words[index].id
+        //     }
+        // }
+        // const newId = maxId + 1
 
-        axiosWrappers.postAxios(URL, { id: newId, ...data })
+        axiosWrappers.postAxios(URL, data)
+        // axiosWrappers.postAxios(URL, { id: newId, ...data })
     }
 
     return (

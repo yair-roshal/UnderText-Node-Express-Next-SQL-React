@@ -1,7 +1,6 @@
 export const words = [
-    { id: 1, original: 'מודֶה', translate: 'Благодарен', description: '' },
-    { id: 2, original: 'אֲנִי', translate: 'я', description: '' },
-    { id: 3, original: 'מוֹדֶה', translate: '', description: '' },
+    { id: 1, original: 'מודֶה אֲנִי', translate: 'Благодарен я', description: 'title' },
+    { id: 3, original: 'מוֹדֶה', translate: '', description: 'bold' },
     { id: 4, original: 'אֲנִי', translate: '', description: '' },
     { id: 5, original: 'לְפָנֶיךָ', translate: '', description: '' },
     { id: 6, original: 'מֶלֶךְ', translate: '', description: '' },

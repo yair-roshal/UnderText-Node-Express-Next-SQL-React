@@ -1,14 +1,10 @@
 import axios from 'axios'
 
 const getAxios = (url) => {
-    // const getAxios = (url, callback) => {
-
     return axios
         .get(url)
         .then((res) => {
             return res.data
-            // console.log('res.data===', res.data)
-            // callback(res.data)
         })
 
         .catch((err) =>
@@ -36,15 +32,12 @@ const getAxios = (url) => {
 }
 
 function postAxios(url, body) {
-    // function postAxios(url, body, callback) {
     return axios
         .post(url, body)
         .then((res) => {
             if (res.status === 200) {
-                // callback(res.data)
-                // console.log('body :>> ', body)
-                // console.log('res :>> ', res)
                 console.log(`${body.original} successfully added to DB`)
+                return res.data
             } else Promise.reject()
         })
         .catch((err) =>

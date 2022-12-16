@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import { CellComponent } from './CellComponent/CellComponent'
 import { CellVariants } from '../constants/clientConstants'
-import { Link } from 'components'
 import { useRouter } from 'next/router'
+import { Link, UpdateButton } from 'components'
 
 export const AllWords = ({ words }) => {
     const router = useRouter()
@@ -40,21 +40,17 @@ export const AllWords = ({ words }) => {
 
     return (
         <>
+            <Link href={hrefLinkAdd} style={{ textDecoration: 'none' }}>
+                <UpdateButton variant='contained'>Add 1 Word </UpdateButton>
+            </Link>
+            <Link href={hrefLinkImport} style={{ textDecoration: 'none' }}>
+                <UpdateButton variant='contained'>Import Words From... </UpdateButton>
+            </Link>
+
             <div className='allWords'>
                 {words.map((word, index) => (
                     <CellComponent key={index} variant={getVariant(word)} {...word} />
                 ))}
-            </div>
-
-            <div className='wrapperButton'>
-                <Link href={hrefLinkAdd} className='button'>
-                    <span>Add 1 Word </span>
-                </Link>
-            </div>
-            <div className='wrapperButton'>
-                <Link href={hrefLinkImport} className='button'>
-                    <span>Import Words From... </span>
-                </Link>
             </div>
         </>
     )

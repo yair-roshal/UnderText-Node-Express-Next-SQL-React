@@ -6,18 +6,20 @@ import { Provider } from 'react-redux'
 
 export default function App({ Component, pageProps }) {
     return (
-        <Provider store={store}>
-            <Head>
-                <title>Under Text</title>
-                <link rel='shortcut icon' href='/favicon.ico' />
-            </Head>
+        <>
+            <Provider store={store}>
+                <Head>
+                    <title>Under Text</title>
+                    <link rel='shortcut icon' href='/favicon.ico' />
+                </Head>
 
-            <div>
-                <MenuBar />
                 <div>
-                    <Component {...pageProps} />
+                    <MenuBar />
+                    <div>
+                        <Component {...pageProps} />
+                    </div>
                 </div>
-            </div>
-        </Provider>
+            </Provider>
+        </>
     )
 }

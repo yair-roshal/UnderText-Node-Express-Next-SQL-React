@@ -10,7 +10,10 @@ export default function Index() {
     const [words, setWords] = useState(null)
 
     useEffect(() => {
-        axiosWrappers.getAxios(URL + hrefMainPage, setWords)
+        // axiosWrappers.getAxios(URL + hrefMainPage, setWords)
+        axiosWrappers.getAxios(URL + hrefMainPage).then(function (value) {
+            setWords(value)
+        })
     }, [])
 
     if (!words) {

@@ -80,39 +80,67 @@ function poolConnection(req, res, sqlQuery, params) {
 
 // Add a new word =============================================
 app.post('/:table', async (req, res) => {
-    const texts = [req.body.original]
-
-    const body = {
-        sourceLanguageCode: process.env.source_language,
-        targetLanguageCode: process.env.target_language,
-        texts: texts,
-        folderId: process.env.folder_id,
-    }
-
-    const headers = { headers: { Authorization: `Bearer ${IAM_TOKEN}` } }
+    let word
     let translate
 
     const tableName = req.params.table
-    // console.log('req.params :>> ', req.params)
     const sqlQuery = `INSERT INTO ${tableName} SET ?`
 
-    await axios
-        .post('https://translate.api.cloud.yandex.net/translate/v2/translate', body, headers)
-        .then((response) => {
-            console.log('response.data: ', response.data)
-            translate = response.data.translations[0].text
-        })
-        .catch((error) => {
-            console.log('AXIOS ERROR_post_translate: ', error.response)
-        })
+    // console.log('req.body :>> ', req.body)
+    // console.log('req.body.translate :>> ', req.body.translate)
 
-    const word = {
-        original: req.body.original,
-        translate: translate,
-        description: req.body.description,
+
+    if (req.body.translate == '') {
+        console.log('need translate :>> ')
+        const texts = [req.body.original]
+
+        const body = {
+            sourceLanguageCode: process.env.source_language,
+            targetLanguageCode: process.env.target_language,
+            texts: texts,
+            folderId: process.env.folder_id,
+        }
+
+        const headers = { headers: { Authorization: `Bearer ${IAM_TOKEN}` } }
+
+        await axios
+            .post('https://translate.api.cloud.yandex.net/translate/v2/translate', body, headers)
+            .then((response) => {
+                // console.log('response.data: ', response.data)
+                translate = response.data.translations[0].text
+            })
+            .catch((error) => {
+                console.log('AXIOS ERROR_post_translate: ', error.response)
+            })
+
+        word = {
+            original: req.body.original,
+            translate: translate,
+            description: req.body.description,
+        }
+
+        if (translate != undefined) {
+            poolConnection(req, res, sqlQuery, word)
+            console.log('New word posted after translate', word)
+        } else {
+            console.log('we have problem with translate this word:', word)
+        }
+        
+    } else {
+        console.log('translate from DB another word:>> ')
+
+        word = {
+            original: req.body.original,
+            translate: req.body.translate,
+            description: req.body.description,
+        }
+
+        poolConnection(req, res, sqlQuery, word)
+        console.log('New word posted after translate', word)
     }
-    console.log('New word posted after translate', word)
-    if (translate != undefined) poolConnection(req, res, sqlQuery, word)
+
+
+  
 })
 
 // // Get all words ==============================================
