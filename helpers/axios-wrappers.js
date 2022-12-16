@@ -1,12 +1,14 @@
 import axios from 'axios'
 
-const getAxios = (url, callback) => {
-    // function getAxios(url, callback) {
-    // console.log('url :>>getAxios ', url)
+const getAxios = (url) => {
+    // const getAxios = (url, callback) => {
+
     return axios
         .get(url)
         .then((res) => {
-            callback(res.data)
+            return res.data
+            // console.log('res.data===', res.data)
+            // callback(res.data)
         })
 
         .catch((err) =>

@@ -4,18 +4,24 @@ import { axiosWrappers } from 'helpers'
 import { URL } from 'constants'
 import { useRouter } from 'next/router'
 import { useSelector, useDispatch } from 'react-redux'
-import { getWord, addWord, editWord, deleteWord }  from '../../redux/wordsSlice'
+import { getWord, addWord, editWord, deleteWord } from '../../redux/wordsSlice'
+import { useEffect } from 'react'
+import { getWords } from '../../helpers/getWords'
 
 let newWords = []
 
 export const ImportWords = () => {
-
     const words = useSelector((state) => state.words)
     const dispatch = useDispatch()
-    console.log('words from store :>> ', words);
+    console.log('words from store :>> ', words)
 
     const router = useRouter()
     const hrefMainPage = `/${router.asPath.split('/')[1]}`
+
+    useEffect(() => {
+        dispatch(getWords({ table: router.asPath.split('/')[1] }))
+        console.log('words from store222 :>> ', words)
+    }, [])
 
     const {
         register,
@@ -25,7 +31,6 @@ export const ImportWords = () => {
 
     const syncPosting = async (newWords) => {
         for (const word of newWords) {
-
             const newWord = {
                 original: word,
                 translate: '',

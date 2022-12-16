@@ -1,9 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { getWords } from '../helpers/getWords'
 
-const wordsInitial = [
+const wordsMinha = [
     { id: 1, original: 'מודֶה', translate: 'Благодарен', description: '' },
     { id: 2, original: 'אֲנִי', translate: 'я', description: '' },
 ]
+const wordsShaharit = [
+    { id: 1, original: 'מודֶה', translate: 'Благодарен', description: '' },
+    { id: 2, original: 'אֲנִי', translate: 'я', description: '' },
+]
+
+const wordsInitial = { wordsMinha, wordsShaharit }
 
 export const wordsSlice = createSlice({
     name: 'words',
@@ -24,6 +31,18 @@ export const wordsSlice = createSlice({
 
         deleteWord(state, action) {
             state.words.filter((word) => word.id !== action.payload.id)
+        },
+        extraReducers: {
+            [getWords.pending]: (state, action) => {
+                state.status = 'loading'
+            },
+            [getWords.fulfilled]: (state, { payload, meta }) => {
+                state.words = payload
+                state.status = 'success'
+            },
+            [getWords.rejected]: (state, action) => {
+                state.status = 'failed'
+            },
         },
     },
 })
