@@ -1,25 +1,19 @@
 import { CellComponent } from './CellComponent/CellComponent'
 import { CellVariants } from '../constants/clientConstants'
 import { useRouter } from 'next/router'
-import { Link, UpdateButton } from 'components'
+import { Link, StyledButton } from 'components'
 import { useState, useEffect } from 'react'
 import { axiosWrappers } from 'helpers'
 import { URL } from 'constants/clientConstants'
 
 export const AllWords = ({ words }) => {
     const router = useRouter()
+    const [newWords, setNewWords] = useState(JSON.stringify(words))
 
     const namePrayerPage = `/${router.asPath.split('/')[1]}/`
     const hrefLinkImport = router.pathname + '/import'
 
-    // deleteWord(id) {
-    // 	axios.delete('http://localhost:5000/words/' + id)
-    // 	  .then(response => {console.log(response.data)});
-
-    // 	this.setState({
-    // 	  words: this.state.words.filter(el => el._id !== id)
-    // 	})
-    //   }
+    // useEffect(() => {}, [])
 
     const getVariant = (word) => {
         if (word.description == 'last') {
@@ -35,12 +29,8 @@ export const AllWords = ({ words }) => {
         return CellVariants.CellSimple
     }
 
-    const [newWords, setNewWords] = useState(JSON.stringify(words))
-
     const syncPosting = async (stringWords) => {
         const arrayObjectWords = JSON.parse(stringWords)
-
-        console.log('arrayObjectWords', arrayObjectWords)
 
         for (const objectWord of arrayObjectWords) {
             console.log('objectWord', objectWord)
@@ -51,9 +41,8 @@ export const AllWords = ({ words }) => {
     const handleSubmit = async (event) => {
         event.preventDefault()
         await axiosWrappers.deleteAllAxios(URL + namePrayerPage)
-        console.log('all deleted')
-
-        syncPosting(newWords)
+        await syncPosting(newWords)
+        window.location.reload()
     }
 
     return (
@@ -67,12 +56,15 @@ export const AllWords = ({ words }) => {
                         onChange={(e) => setNewWords(e.target.value)}
                     />
 
-                    <button type='submit'>send newWords</button>
+                    {/* <button type='submit'>send newWords</button> */}
+                    <StyledButton  variant='contained' type='submit'>send newWords</StyledButton>
+                    {/* <StyledButton variant='contained'>Import Words From... </StyledButton> */}
+
                 </form>
             </div>
 
             <Link href={hrefLinkImport} style={{ textDecoration: 'none' }}>
-                <UpdateButton variant='contained'>Import Words From... </UpdateButton>
+                <StyledButton variant='contained'>Import Words From... </StyledButton>
             </Link>
 
             <div className='allWords'>
