@@ -38,11 +38,30 @@ export const AllWords = ({ words }) => {
         return CellVariants.CellSimple
     }
 
+    const onSubmitImportWords = (data) => {
+        // formFileWords = data.text.trim().split(' ')
+        // syncPosting(formFileWords)
+        // alert(`All words successfully imported `)
+        console.log(`All words successfully imported `)
+    }
+
     return (
         <>
-            <Link href={hrefLinkAdd} style={{ textDecoration: 'none' }}>
+            <form onSubmit={onSubmitImportWords}>
+                <textarea
+                className='editWords'
+                    name='text'
+                    type='text'
+                    // value={words}
+                    //  value={JSON.parse(words)}
+                     value={JSON.stringify(words)}
+                />
+                <input type='submit' />
+            </form>
+
+            {/* <Link href={hrefLinkAdd} style={{ textDecoration: 'none' }}>
                 <UpdateButton variant='contained'>Add 1 Word </UpdateButton>
-            </Link>
+            </Link> */}
             <Link href={hrefLinkImport} style={{ textDecoration: 'none' }}>
                 <UpdateButton variant='contained'>Import Words From... </UpdateButton>
             </Link>

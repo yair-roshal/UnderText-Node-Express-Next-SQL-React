@@ -6,6 +6,12 @@ $backgroundShadow: #00000059;
 $redSection: #ed1c24;
 $backgroundHeader: #2c2c2c;
 
+.editWords {
+    width: 900px;
+    height: 400px;
+    font-size:18px;
+}
+
 // cell ============================================
 .cell {
     padding: 0px 5px;
@@ -88,7 +94,6 @@ $backgroundHeader: #2c2c2c;
     font-size: 46px;
     margin-top: -40px;
 }
- 
 
 // form=======================================================
 
@@ -169,7 +174,7 @@ $backgroundHeader: #2c2c2c;
 }
 
 // button ==========================================
- 
+
 .wrapperButton {
     padding: 35px 0;
 
@@ -224,10 +229,10 @@ $backgroundHeader: #2c2c2c;
 
 .wrapperTextBlock {
     position: relative;
-    overflow: hidden; 
+    overflow: hidden;
     margin-left: auto;
     margin-right: auto;
-  
+
     // Header==============================================================
     .wrapperHeader {
         position: relative;
