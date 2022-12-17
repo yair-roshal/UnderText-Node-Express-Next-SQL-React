@@ -98,7 +98,7 @@ function deleteAllAxios(url) {
             if (res.status === 200) {
                 console.log('Word successfully deleted')
                 // alert('Word successfully deleted')
-                window.location.reload()
+                // window.location.reload()
             } else Promise.reject()
         })
         .catch((err) =>

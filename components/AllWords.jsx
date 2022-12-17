@@ -37,17 +37,24 @@ export const AllWords = ({ words }) => {
 
     const [newWords, setNewWords] = useState(JSON.stringify(words))
 
+    const syncPosting = async (stringWords) => {
+        const arrayObjectWords = JSON.parse(stringWords)
+
+        console.log('arrayObjectWords', arrayObjectWords)
+
+        for (const objectWord of arrayObjectWords) {
+            console.log('objectWord', objectWord)
+            await axiosWrappers.postAxios(`${URL}${namePrayerPage}`, { ...objectWord })
+        }
+    }
+
     const handleSubmit = async (event) => {
         event.preventDefault()
         await axiosWrappers.deleteAllAxios(URL + namePrayerPage)
-    }
+        console.log('all deleted')
 
-    // const updateWordItem = async (wordObject) => {
-    //     await axiosWrappers.putAxios(
-    //         URL + `/${router.asPath.split('/')[1]}/` + wordProp.id,
-    //         wordObject,
-    //     )
-    // }
+        syncPosting(newWords)
+    }
 
     return (
         <>
