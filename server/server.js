@@ -89,7 +89,6 @@ app.post('/:table', async (req, res) => {
     // console.log('req.body :>> ', req.body)
     // console.log('req.body.translate :>> ', req.body.translate)
 
-
     if (req.body.translate == '') {
         console.log('need translate :>> ')
         const texts = [req.body.original]
@@ -125,7 +124,6 @@ app.post('/:table', async (req, res) => {
         } else {
             console.log('we have problem with translate this word:', word)
         }
-        
     } else {
         console.log('translate from DB another word:>> ')
 
@@ -138,9 +136,6 @@ app.post('/:table', async (req, res) => {
         poolConnection(req, res, sqlQuery, word)
         console.log('New word posted after translate', word)
     }
-
-
-  
 })
 
 // // Get all words ==============================================
@@ -181,9 +176,19 @@ app.put('/:table/:id', (req, res) => {
 
 // Delete a word by table and by ID =============================================
 app.delete('/:table/:id', (req, res) => {
+    console.log('DELETE id :>> ')
     const tableName = req.params.table
     const sqlQuery = `DELETE from ${tableName} WHERE id = ?`
     poolConnection(req, res, sqlQuery, [req.params.id])
+})
+
+// Delete a all by table and by ID =============================================
+app.delete('/:table', (req, res) => {
+    const tableName = req.params.table
+    const sqlQuery = `DELETE from ${tableName} WHERE id >0`
+    console.log('req.params :>> ', req.params)
+    console.log('sqlQuery :>> ', sqlQuery)
+    poolConnection(req, res, sqlQuery)
 })
 
 // Listen on environment port or 5000

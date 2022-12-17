@@ -90,9 +90,28 @@ function deleteAxios(url, id) {
         )
 }
 
+function deleteAllAxios(url) {
+    console.log('url :>> ', url);
+    return axios
+        .delete(url)
+        .then((res) => {
+            if (res.status === 200) {
+                console.log('Word successfully deleted')
+                // alert('Word successfully deleted')
+                window.location.reload()
+            } else Promise.reject()
+        })
+        .catch((err) =>
+            console.log(
+                'deleteAxios - Something went wrong (maybe you need restart server), error: ' + err,
+            ),
+        )
+}
+
 export const axiosWrappers = {
     getAxios,
     postAxios,
     putAxios,
     deleteAxios,
+    deleteAllAxios,
 }
