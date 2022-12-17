@@ -67,26 +67,6 @@ export const ImportWords = () => {
                 }
             }
 
-            // for (const wordDB of words) {
-            //     if (wordDB.original == formFileWord) {
-            //         console.log('translate from DB :>> ', formFileWord)
-
-            //         newWord = {
-            //             original: wordDB.original,
-            //             translate: wordDB.translate,
-            //             description: '',
-            //         }
-            //     } else {
-            //         console.log('new word :>> ', formFileWord)
-
-            //         newWord = {
-            //             original: formFileWord,
-            //             translate: '',
-            //             description: '',
-            //         }
-            //     }
-            // }
-
             await axiosWrappers.postAxios(`${URL}${hrefMainPage}`, { ...newWord })
         }
     }
