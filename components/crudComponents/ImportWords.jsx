@@ -71,15 +71,7 @@ export const ImportWords = () => {
         }
     }
 
-    const onSubmitImportWords = (data) => {
-        formFileWords = data.text.trim().split(' ')
-        syncPosting(formFileWords)
-        // alert(`All words successfully imported `)
-        console.log(`All words successfully imported `)
-    }
-
-    // ==================================
-
+ 
     const showFile = (e) => {
         // e.preventDefault()
         const fileReader = new FileReader()
@@ -93,6 +85,13 @@ export const ImportWords = () => {
         fileReader.readAsText(e.target.files[0])
         console.log(`All words from this file successfully imported `)
         // alert(`All words from this file successfully imported `)
+    }
+
+    const onSubmitImportWords = (data) => {
+        formFileWords = data.text.trim().split(' ')
+        syncPosting(formFileWords)
+        // alert(`All words successfully imported `)
+        console.log(`All words successfully imported `)
     }
 
     return (
