@@ -4,11 +4,11 @@ import { styled } from '@mui/material/styles'
 // import styled from 'styled-components'
 
 export const StyledButton = styled(Button)({
-    backgroundColor: '#0077B5',
+    backgroundColor: '#2c2c2c',
     margin: '10px',
 })
 export const ShowButton = styled(Button)({
-    backgroundColor: 'blue',
+    backgroundColor: '#0077B5',
     margin: '0 10px',
 })
 export const ExportButton = styled(Button)({
@@ -23,8 +23,6 @@ export const DeleteButton = styled(Button)({
     backgroundColor: 'red',
     margin: '0 10px',
 })
-
-
 
 // const Node = styled.div`
 //     width: 30px;
