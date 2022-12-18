@@ -1,6 +1,7 @@
 import axios from 'axios'
 
 const getAxios = (url) => {
+    console.log('url', url)
     return axios
         .get(url)
         .then((res) => {
@@ -91,7 +92,7 @@ function deleteAxios(url, id) {
 }
 
 function deleteAllAxios(url) {
-    console.log('url :>> ', url);
+    console.log('url :>> ', url)
     return axios
         .delete(url)
         .then((res) => {

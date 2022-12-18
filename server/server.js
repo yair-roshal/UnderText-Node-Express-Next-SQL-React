@@ -5,7 +5,10 @@ const mysql = require('mysql')
 const app = express()
 const axios = require('axios')
 const jose = require('node-jose')
-require('dotenv').config()
+require('dotenv').config({ path: '../.env' })
+// require('dotenv').config({ path: '../constants/.env' })
+// require('dotenv').config()
+const constants = require('./constants')
 
 const port = process.env.PORT || 5000
 
@@ -56,13 +59,7 @@ jose.JWK.asKey(private_key, 'pem', { kid: keyId, alg: 'PS256' }).then(function (
 })
 
 // MySQL=============================================
-const pool = mysql.createPool({
-    connectionLimit: 10,
-    host: 'localhost',
-    user: 'foo',
-    password: 'foo',
-    database: 'under-text',
-})
+const pool = mysql.createPool(constants.sqlConfig)
 
 function poolConnection(req, res, sqlQuery, params) {
     return pool.getConnection((err, connection) => {
@@ -78,7 +75,40 @@ function poolConnection(req, res, sqlQuery, params) {
     })
 }
 
-// Add a new word =============================================
+//  Get all words by table ==============================================
+app.get('', (req, res) => {
+    console.log('get all from words')
+    const tableName = 'words'
+    const sqlQuery = `SELECT * from ${tableName}`
+
+    poolConnection(req, res, sqlQuery)
+})
+
+//  Get all words by table ==============================================
+app.get('/:table', (req, res) => {
+    const tableName = req.params.table
+    const sqlQuery = `SELECT * from ${tableName}`
+
+    console.log('get all from  : ' + tableName)
+    console.log('req.params111 :>> ', req.params)
+    console.log('sqlQuery :>> ', sqlQuery)
+    if (tableName != 'favicon.ico') {
+        poolConnection(req, res, sqlQuery)
+    }
+})
+
+// Get a word by table and by ID ==============================================
+app.get('/:table/:id', (req, res) => {
+    const tableName = req.params.table
+    const sqlQuery = `SELECT * from ${tableName} WHERE id = ?`
+
+    console.log('req.params222 :>> ', req.params)
+    console.log('sqlQuery :>> ', sqlQuery)
+
+    poolConnection(req, res, sqlQuery, [req.params.id])
+})
+
+// Add a new word with translate =============================================
 app.post('/:table', async (req, res) => {
     let word
     let translate
@@ -136,34 +166,6 @@ app.post('/:table', async (req, res) => {
         poolConnection(req, res, sqlQuery, word)
         console.log('New word posted after translate', word)
     }
-})
-
-// // Get all words ==============================================
-// app.get('', (req, res) => {
-//     const sqlQuery = 'SELECT * from words'
-//     poolConnection(req, res, sqlQuery)
-// })
-
-//  Get all words by table ==============================================
-app.get('/:table', (req, res) => {
-    const tableName = req.params.table
-    const sqlQuery = `SELECT * from ${tableName}`
-
-    console.log('req.params111 :>> ', req.params)
-    console.log('sqlQuery :>> ', sqlQuery)
-
-    poolConnection(req, res, sqlQuery)
-})
-
-// Get a word by table and by ID ==============================================
-app.get('/:table/:id', (req, res) => {
-    const tableName = req.params.table
-    const sqlQuery = `SELECT * from ${tableName} WHERE id = ?`
-
-    console.log('req.params222 :>> ', req.params)
-    console.log('sqlQuery :>> ', sqlQuery)
-
-    poolConnection(req, res, sqlQuery, [req.params.id])
 })
 
 // Update a word by table and by ID ===========================================

@@ -4,4 +4,8 @@ module.exports = {
     sassOptions: {
         includePaths: [path.join(__dirname, 'styles')],
     },
+
+    env: {
+        PORT: process.env.PORT,
+    },
 }
