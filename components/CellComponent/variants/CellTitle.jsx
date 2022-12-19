@@ -1,16 +1,15 @@
 import { Link, Header } from 'components'
-import { useRouter } from 'next/router'
+import { useMainPage } from 'hooks'
 
 export const CellTitle = (props) => {
     const { id, original, translate } = props
-
-    const router = useRouter()
-    const hrefLinkShow = `${router.pathname}/update/${id}`
+    const hrefMainPage = useMainPage()
+    const hrefLinkShow = `${hrefMainPage}/update/${id}`
 
     return (
         <>
             <Link href={hrefLinkShow} style={{ textDecoration: 'none' }}>
-                <Header name={original} />
+                <Header name={original} translate={translate} />
             </Link>
             <div className='cellFullWidth'></div>
         </>

@@ -4,17 +4,15 @@ import { useState, useEffect } from 'react'
 
 import { axiosWrappers } from 'helpers'
 import { URL } from 'constants'
-import { useRouter } from 'next/router'
-import { useSelector, useDispatch } from 'react-redux'
+ import { useSelector, useDispatch } from 'react-redux'
 import { getWord, addWord, editWord, deleteWord } from '../../redux/wordsSlice'
 import { getWords } from '../../helpers/getWords'
+import { useMainPage } from 'hooks'
 
 let formFileWords = []
 
 export const ImportWords = () => {
-    const router = useRouter()
-    const hrefMainPage = `/${router.asPath.split('/')[1]}`
-
+    const hrefMainPage = useMainPage()
     const [words, setWords] = useState(null)
     useEffect(() => {
         axiosWrappers.getAxios(URL + hrefMainPage).then(function (value) {
@@ -71,7 +69,6 @@ export const ImportWords = () => {
         }
     }
 
- 
     const showFile = (e) => {
         // e.preventDefault()
         const fileReader = new FileReader()
@@ -113,8 +110,7 @@ export const ImportWords = () => {
                     <input type='submit' />
                 </form>
 
-                {/* Import words from file ============
-                finish it later================= */}
+                {/* Import words from file ============  */}
                 <h2 className='titlePage'>Import words from file</h2>
                 <input type='file' onChange={(e) => showFile(e)} />
             </div>

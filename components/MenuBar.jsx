@@ -22,7 +22,7 @@ import {
 
 import { pagesPrayers } from '../constants/clientConstants'
 import { Link } from 'components'
-import { useRouter } from 'next/router'
+import { useMainPage } from 'hooks'
 
 const drawerWidth = 240
 
@@ -34,8 +34,8 @@ const AppBar = styled(MuiAppBar, {
         duration: theme.transitions.duration.leavingScreen,
     }),
     ...(open && {
-        width: '100%',
-        // width: `calc(100% - ${drawerWidth}px)`,
+        // width: '100%',
+        width: `calc(100% - ${drawerWidth}px)`,
         transition: theme.transitions.create(['margin', 'width'], {
             easing: theme.transitions.easing.easeOut,
             duration: theme.transitions.duration.enteringScreen,
@@ -54,8 +54,8 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 }))
 
 export function MenuBar() {
-    const router = useRouter()
-    const nameHeader = router.asPath.slice(1).toUpperCase()
+    const hrefMainPage = useMainPage()
+    const nameHeader = hrefMainPage.slice(1).toUpperCase()
 
     const theme = useTheme()
     const [open, setOpen] = React.useState(false)

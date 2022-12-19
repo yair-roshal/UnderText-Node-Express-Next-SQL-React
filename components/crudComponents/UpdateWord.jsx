@@ -1,18 +1,15 @@
 import { useState } from 'react'
 import { Link } from 'components'
 import { StyledButton } from 'styles'
-
 import { useForm } from 'react-hook-form'
 import { axiosWrappers } from 'helpers'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
-// import Router from 'next/router'
 import { URL } from 'constants'
-import { useRouter } from 'next/router'
+import { useMainPage } from 'hooks'
 
 export const UpdateWord = (wordProp) => {
-    const router = useRouter()
-    const hrefMainPage = `/${router.asPath.split('/')[1]}`
+    const hrefMainPage = useMainPage()
 
     const [word, setWord] = useState(null)
 
@@ -32,10 +29,11 @@ export const UpdateWord = (wordProp) => {
     } = useForm(formOptions)
 
     const updateWordItem = async (wordObject) => {
-        await axiosWrappers.putAxios(
-            URL + `/${router.asPath.split('/')[1]}/` + wordProp.id,
-            wordObject,
-        )
+        await axiosWrappers.putAxios(URL + hrefMainPage + wordProp.id, wordObject)
+    }
+
+    const deleteWord = (id) => {
+        axiosWrappers.deleteAxios(URL, id)
     }
 
     return (
@@ -43,6 +41,10 @@ export const UpdateWord = (wordProp) => {
             <Link href={hrefMainPage} style={{ textDecoration: 'none' }}>
                 <StyledButton variant='contained'>Back</StyledButton>
             </Link>
+
+            <StyledButton onClick={() => deleteWord(wordProp.id)} variant='contained'>
+                Delete
+            </StyledButton>
 
             {wordProp && (
                 <>

@@ -1,16 +1,10 @@
 import { Link } from 'components'
-import { useRouter } from 'next/router'
-import { URL } from 'constants/clientConstants'
+import { useMainPage } from 'hooks'
 
 export const CellNewLine = (props) => {
     const { id, original, translate } = props
-
-    // const deleteWord = (id) => {
-    //     axiosWrappers.deleteAxios(URL, id)
-    // }
-
-    const router = useRouter()
-    const hrefLinkUpdate = `${router.pathname}/update/${id}`
+    const hrefMainPage = useMainPage()
+    const hrefLinkUpdate = `${hrefMainPage}/update/${id}`
 
     return (
         <>
