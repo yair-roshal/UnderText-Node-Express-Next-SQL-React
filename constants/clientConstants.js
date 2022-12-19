@@ -1,5 +1,5 @@
 export const URL = `http://localhost:${process.env.PORT}`
-console.log('URL_const', URL)
+// console.log('URL_const', URL)
 // export const URL = 'http://localhost:7700'
 
 export const pagesPrayers = [
@@ -13,6 +13,20 @@ export const pagesPrayers = [
 
     { name: 'Options', href: '/options', prayer: 'additionalItems' },
 ]
+
+export const fontFamilyList = [
+    'Arial',
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+]
+
+export const fontSizeList = [8, 10, 12, 14, 16, 18, 20, 22, 24, 26]
 
 export const CellVariants = {
     CellSimple: 'CellSimple',

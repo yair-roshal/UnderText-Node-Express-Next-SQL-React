@@ -258,25 +258,7 @@ $backgroundHeader: #2c2c2c;
                 padding: 0px 20px;
             }
         }
-        a:before {
-            color: $white;
-            font-family: twoArrows;
-            content: '';
-            width: 28px;
-            height: 28px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            text-align: center;
-            font-size: 8px;
-            box-sizing: border-box;
-            left: 32px;
-            border: 2px solid #fff;
-        }
+         
     }
     // End Header==============================================================
 
