@@ -4,7 +4,9 @@ import { StyledButton } from 'styles'
 import { axiosWrappers } from 'helpers'
 import { URL } from 'constants/clientConstants'
 
-export const ExportWord = (wordProp) => {
+// todo: make it if it is need
+
+export const ExportWords = (wordProp) => {
     const [fileName, setFileName] = useState(null)
 
     useEffect(() => {

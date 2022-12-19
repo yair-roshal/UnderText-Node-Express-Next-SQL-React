@@ -1,10 +1,6 @@
 import { pagesPrayers } from '../constants/clientConstants'
 import { Link } from 'components'
-import { Typography } from '@mui/material'
-import List from '@mui/material/List'
-import ListItem from '@mui/material/ListItem'
-import ListItemButton from '@mui/material/ListItemButton'
-import ListItemIcon from '@mui/material/ListItemIcon'
+import { List, ListItem, ListItemButton, ListItemIcon, Typography } from '@mui/material'
 import BookIcon from '@mui/icons-material/Book'
 
 export default function Home() {

@@ -69,7 +69,6 @@ function putAxios(url, body) {
 }
 
 function deleteAxios(url, table, id) {
-    console.log('deleteAxios `${url}/${id}`', `${url}/${id}`)
     return axios
         .delete(`${url}/${table}/${id}`)
         .then((res) => {
