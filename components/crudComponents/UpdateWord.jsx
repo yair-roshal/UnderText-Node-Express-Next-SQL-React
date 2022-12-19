@@ -33,7 +33,9 @@ export const UpdateWord = (wordProp) => {
     }
 
     const deleteWord = (id) => {
-        axiosWrappers.deleteAxios(URL, id)
+        console.log('id', id)
+        console.log('URL', URL)
+        axiosWrappers.deleteAxios(URL, hrefMainPage.slice(1), id)
     }
 
     return (

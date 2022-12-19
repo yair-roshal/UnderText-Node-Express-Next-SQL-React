@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const getAxios = (url) => {
-     return axios
+    return axios
         .get(url)
         .then((res) => {
             return res.data
@@ -68,14 +68,15 @@ function putAxios(url, body) {
         )
 }
 
-function deleteAxios(url, id) {
+function deleteAxios(url, table, id) {
+    console.log('deleteAxios `${url}/${id}`', `${url}/${id}`)
     return axios
-        .delete(url + id)
+        .delete(`${url}/${table}/${id}`)
         .then((res) => {
             if (res.status === 200) {
                 console.log('Word successfully deleted')
                 // alert('Word successfully deleted')
-                window.location.reload()
+                history.back()
             } else Promise.reject()
         })
         .catch(
