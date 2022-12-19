@@ -22,43 +22,44 @@ export default function BasicSelect() {
         <>
             <h1>Options</h1>
             <Box sx={{ minWidth: 120 }}>
-                {/* <FormControl sx={{ width: 220 }}> */}
-                <FormControl fullWidth>
-                <h3>font-size</h3>
+                <FormControl sx={{ width: 220 }}>
+                    <h3>font-size</h3>
 
-                {/* <InputLabel id='fontSize-select-label'>font-size</InputLabel> */}
-                <Select
-                    labelId='fontSize-select-label'
-                    value={fontSize}
-                    label='fontSize'
-                    onChange={fontSizeHandleChange}
-                >
-                    {console.log('fontSizeList', fontSizeList)}
-                    {fontSizeList.map((fontSize) => {
-                        // <MenuItem value={fontSize}>{fontSize}</MenuItem>
-                        <MenuItem value={11}>111</MenuItem>
-                        console.log('fontSize', fontSize)
-
-                    })}
-
-                </Select>
+                    {/* <InputLabel id='fontSize-select-label'>font-size</InputLabel> */}
+                    <Select
+                        labelId='fontSize-select-label'
+                        value={fontSize}
+                        label='fontSize'
+                        onChange={fontSizeHandleChange}
+                    >
+                        {fontSizeList.map((fontSize) => {
+                            return (
+                                <MenuItem key={fontSize} value={fontSize}>
+                                    {fontSize}
+                                </MenuItem>
+                            )
+                        })}
+                    </Select>
                 </FormControl>
 
                 <FormControl sx={{ width: 220 }}>
-                <h3>font-family</h3>
-                {/* <InputLabel id='fontFamily-select-label'>font-size</InputLabel> */}
+                    <h3>font-family</h3>
+                    {/* <InputLabel id='fontFamily-select-label'>font-size</InputLabel> */}
 
-                <Select
-                    labelId='fontFamily-select-label'
-                    value={fontFamily}
-                    label='fontFamily'
-                    onChange={fontFamilyHandleChange}
-                >
-                    {console.log('fontFamilyList', fontFamilyList)}
-                    {fontFamilyList.map((fontFamily) => {
-                         <MenuItem value={fontFamily}>{fontFamily}</MenuItem>
-                    })}
-                </Select>
+                    <Select
+                        labelId='fontFamily-select-label'
+                        value={fontFamily}
+                        label='fontFamily'
+                        onChange={fontFamilyHandleChange}
+                    >
+                        {fontFamilyList.map((fontFamily) => {
+                            return (
+                                <MenuItem key={fontFamily} value={fontFamily}>
+                                    {fontFamily}
+                                </MenuItem>
+                            )
+                        })}
+                    </Select>
                 </FormControl>
             </Box>
         </>
