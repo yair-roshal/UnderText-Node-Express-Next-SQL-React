@@ -1,8 +1,7 @@
 import axios from 'axios'
 
 const getAxios = (url) => {
-    console.log('url', url)
-    return axios
+     return axios
         .get(url)
         .then((res) => {
             return res.data

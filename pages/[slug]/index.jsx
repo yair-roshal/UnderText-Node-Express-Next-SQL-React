@@ -1,13 +1,14 @@
-import { UpdateWord } from 'components/crudComponents'
+import { Homepage } from 'components'
 import { URL } from 'constants/clientConstants'
 import axios from 'axios'
 
 export async function getServerSideProps({ params }) {
-    const response = await axios.get(`${URL}/shaharit/${params.id}`)
+    console.log('params', params)
+    const response = await axios.get(`${URL}/${params.slug}`)
 
     return {
         props: { ...response.data }[0],
     }
 }
 
-export default UpdateWord
+export default Homepage

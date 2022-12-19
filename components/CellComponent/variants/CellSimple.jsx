@@ -9,9 +9,14 @@ export const CellSimple = (props) => {
     //     axiosWrappers.deleteAxios(URL, id)
     // }
 
-     const router = useRouter()
-    const hrefLinkUpdate = `${router.pathname}/update/${id}`
+    const router = useRouter()
+    const hrefMainPage = `/${router.asPath.split('/')[1]}`
+    const hrefLinkUpdate = `${hrefMainPage}/update/${id}`
+ 
 
+    console.log(' hrefLinkUpdate ', hrefLinkUpdate)
+
+    // console.log('hrefLinkUpdate', hrefLinkUpdate)
     return (
         <>
             <Link href={hrefLinkUpdate} style={{ textDecoration: 'none' }}>

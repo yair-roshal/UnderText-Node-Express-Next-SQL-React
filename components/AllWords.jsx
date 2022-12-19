@@ -13,7 +13,10 @@ export const AllWords = ({ words }) => {
     const namePrayerPage = `/${router.asPath.split('/')[1]}/`
     const hrefLinkImport = router.pathname + '/import'
 
-    // useEffect(() => {}, [])
+    useEffect(() => {
+        setNewWords(JSON.stringify(words))
+
+    }, [words])
 
     const getVariant = (word) => {
         if (word.description == 'last') {
