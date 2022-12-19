@@ -23,3 +23,7 @@ export default class MyDocument extends Document {
         )
     }
 }
+
+// Component.getInitialProps = async ({ query, req, asPath }) => {
+//     throw new Error('Application is crashing without catch');
+//   }

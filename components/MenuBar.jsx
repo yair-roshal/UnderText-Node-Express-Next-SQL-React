@@ -162,23 +162,26 @@ export function MenuBar() {
 
                 <Divider />
                 <List>
-                    {[{ name: 'options', href: '/options' }].map((pagesPrayer) => (
-                        <ListItem key={pagesPrayer.name} disablePadding>
-                            <ListItemButton>
-                                <ListItemIcon>
-                                    <BookIcon />
-                                </ListItemIcon>
+                    {pagesPrayers.map(
+                        (pagesPrayer) =>
+                            pagesPrayer.prayer == 'additionalItems' && (
+                                <ListItem key={pagesPrayer.name} disablePadding>
+                                    <ListItemButton>
+                                        <ListItemIcon>
+                                            <BookIcon />
+                                        </ListItemIcon>
 
-                                <Link
-                                    onClick={handleDrawerClose}
-                                    href={pagesPrayer.href}
-                                    style={{ textDecoration: 'none' }}
-                                >
-                                    <ListItemText primary={pagesPrayer.name} />
-                                </Link>
-                            </ListItemButton>
-                        </ListItem>
-                    ))}
+                                        <Link
+                                            onClick={handleDrawerClose}
+                                            href={pagesPrayer.href}
+                                            style={{ textDecoration: 'none' }}
+                                        >
+                                            <ListItemText primary={pagesPrayer.name} />
+                                        </Link>
+                                    </ListItemButton>
+                                </ListItem>
+                            ),
+                    )}
                 </List>
             </Drawer>
         </Box>
