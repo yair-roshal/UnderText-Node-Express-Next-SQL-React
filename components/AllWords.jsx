@@ -50,25 +50,27 @@ export const AllWords = ({ words }) => {
             <Link href={hrefLinkImport} style={{ textDecoration: 'none' }}>
                 <StyledButton variant='contained'>Import Words From File or text </StyledButton>
             </Link>
-            <div className='formWrapper'>
-                <form onSubmit={handleSubmit}>
-                    <textarea
-                        type='text'
-                        name='newWords'
-                        value={newWords}
-                        onChange={(e) => setNewWords(e.target.value)}
-                    />
+            <div className='wrapperTextBlock'>
+                <div className='formWrapper'>
+                    <form onSubmit={handleSubmit}>
+                        <textarea
+                            type='text'
+                            name='newWords'
+                            value={newWords}
+                            onChange={(e) => setNewWords(e.target.value)}
+                        />
 
-                    <StyledButton variant='contained' type='submit'>
-                        change
-                    </StyledButton>
-                </form>
-            </div>
+                        <StyledButton variant='contained' type='submit'>
+                            change
+                        </StyledButton>
+                    </form>
+                </div>
 
-            <div className='allWords'>
-                {words.map((word, index) => (
-                    <CellComponent key={index} variant={getVariant(word)} {...word} />
-                ))}
+                <div className='allWords'>
+                    {words.map((word, index) => (
+                        <CellComponent key={index} variant={getVariant(word)} {...word} />
+                    ))}
+                </div>
             </div>
         </>
     )

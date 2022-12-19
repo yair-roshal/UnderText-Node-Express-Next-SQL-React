@@ -10,8 +10,7 @@ export default function Index() {
     const [words, setWords] = useState(null)
 
     useEffect(() => {
-        // axiosWrappers.getAxios(URL + hrefMainPage, setWords)
-        axiosWrappers.getAxios(URL + hrefMainPage).then(function (value) {
+        axiosWrappers.getAxios(URL + hrefMainPage).then((value) => {
             setWords(value)
         })
     }, [])
@@ -20,11 +19,5 @@ export default function Index() {
         return <Loading />
     }
 
-    return (
-        <div>
-            <div className='wrapperTextBlock'>
-                <AllWords words={words} />
-            </div>
-        </div>
-    )
+    return <AllWords words={words} />
 }
