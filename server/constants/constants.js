@@ -4,9 +4,6 @@ module.exports = Object.freeze({
         host: 'localhost',
         user: 'root',
         password: '',
-        // user: 'foo',
-        // password: 'foo',
-
         database: 'under-text',
     },
     ANOTHER_CONSTANT: 'another value',

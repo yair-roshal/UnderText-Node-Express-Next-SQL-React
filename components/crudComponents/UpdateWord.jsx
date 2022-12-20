@@ -29,12 +29,10 @@ export const UpdateWord = (wordProp) => {
     } = useForm(formOptions)
 
     const updateWordItem = async (wordObject) => {
-        await axiosWrappers.putAxios(URL + hrefMainPage + wordProp.id, wordObject)
+        await axiosWrappers.putAxios(URL + hrefMainPage + '/' + wordProp.id, wordObject)
     }
 
     const deleteWord = (id) => {
-        console.log('id', id)
-        console.log('URL', URL)
         axiosWrappers.deleteAxios(URL, hrefMainPage.slice(1), id)
     }
 
