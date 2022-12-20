@@ -44,7 +44,7 @@ class WordsController {
     }
 
     async deleteTable(req, res) {
-        const result = await WordsService.deleteWord(req, res)
+        const result = await WordsService.deleteTable(req, res)
 
         if (result) return res.status(200).send(result)
         else return res.status(500).send({ message: 'error.' })

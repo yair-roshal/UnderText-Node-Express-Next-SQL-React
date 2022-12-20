@@ -1,4 +1,3 @@
-export * from './AllWords'
 export * from './Header'
 export * from './Link'
 export * from './Loading'

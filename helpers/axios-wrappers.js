@@ -96,7 +96,7 @@ function deleteAllAxios(url) {
         .delete(url)
         .then((res) => {
             if (res.status === 200) {
-                console.log('Word successfully deleted')
+                console.log('all words in this table successfully deleted')
                 // alert('Word successfully deleted')
                 // window.location.reload()
             } else Promise.reject()
