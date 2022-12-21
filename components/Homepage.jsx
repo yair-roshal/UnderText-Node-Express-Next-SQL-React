@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { AllWords, Loading, Link, StyledButton } from 'components'
+import {   Loading, Link, StyledButton } from 'components'
 import { axiosWrappers } from 'helpers'
 import { URL } from 'constants/clientConstants'
 import { useMainPage } from 'hooks'

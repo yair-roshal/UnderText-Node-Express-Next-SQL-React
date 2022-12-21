@@ -32,6 +32,13 @@ export function CellComponent({ variant, ...props }) {
                 Component = CellSimple
                 break
         }
+
+        // if (dataToday >= periodStart && dataToday <= periodEnd) {
+        //     return Component
+        // } else {
+        //     null
+        // }
+
         return Component
     }, [variant])
 
