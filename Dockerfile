@@ -45,7 +45,7 @@ COPY --from=builder /app/package.json ./package.json
 
 # Override the standalone server with custom server, which requires the generated config file
 COPY --from=builder /app/next.config.js ./
-COPY --from=builder /app/server.js ./
+COPY --from=builder /app/.next/standalone/server.js ./
 
 # TODO: Standalone output is not including packages used by custom server.js
 COPY --from=builder /app/node_modules ./node_modules
