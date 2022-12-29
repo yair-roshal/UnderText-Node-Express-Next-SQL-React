@@ -101,7 +101,7 @@ class WordsService {
             console.log('req.params111 :>> ', req.params)
             console.log('sqlQuery :>> ', sqlQuery)
 
-            if (tableName != 'favicon.ico') {
+            if (tableName != 'favicon.ico' && tableName != '[slug]') {
                 poolConnection(req, res, resolve, reject, sqlQuery)
             }
         })

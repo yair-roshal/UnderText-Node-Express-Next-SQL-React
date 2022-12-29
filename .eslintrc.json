@@ -12,7 +12,8 @@
         "new-parens": 1,
         "react/prop-types": "off",
         "no-unused-vars": "warn",
-        "import/no-unresolved": "off"
+        "import/no-unresolved": "off",
+        "no-useless-escape":"off"
     },
 
     "env": {

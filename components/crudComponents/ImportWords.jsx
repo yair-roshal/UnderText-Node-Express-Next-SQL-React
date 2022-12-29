@@ -75,7 +75,8 @@ export const ImportWords = () => {
 
         fileReader.onload = (e) => {
             const text = e.target.result
-            formFileWords = text.trim().split(' ')
+            // formFileWords = text.trim().split(' ')
+            formFileWords = text.trim().split(/\s/)
             syncPosting(formFileWords)
         }
 
