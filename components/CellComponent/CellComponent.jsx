@@ -3,6 +3,7 @@ import { CellSimple } from './variants/CellSimple'
 import { CellNewLine } from './variants/CellNewLine'
 import { CellBold } from './variants/CellBold'
 import { CellTitle } from './variants/CellTitle'
+import { CellLastBold } from './variants/CellLastBold'
 
 // import { CellVariants } from 'constants'
 import { CellVariants } from '../../constants/clientConstants'
@@ -38,6 +39,10 @@ export function CellComponent({ variant, ...props }) {
 
             case CellVariants.CellBold:
                 Component = CellBold
+                break
+
+            case CellVariants.CellLastBold:
+                Component = CellLastBold
                 break
 
             case CellVariants.CellTitle:

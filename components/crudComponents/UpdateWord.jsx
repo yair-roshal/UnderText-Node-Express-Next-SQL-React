@@ -30,8 +30,11 @@ export const UpdateWord = (wordProp) => {
 
     const updateWordItem = async (wordObject) => {
         await axiosWrappers.putAxios(URL + hrefMainPage + '/' + wordProp.id, wordObject)
-        window.location.replace(URL + hrefMainPage)
-     }
+
+        window.location.replace(
+            window.location.protocol + '//' + window.location.host + hrefMainPage,
+        )
+    }
 
     const deleteWord = (id) => {
         axiosWrappers.deleteAxios(URL, hrefMainPage.slice(1), id)

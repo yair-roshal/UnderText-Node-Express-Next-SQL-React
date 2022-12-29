@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import {   Loading, Link, StyledButton } from 'components'
+import { Loading, Link, StyledButton } from 'components'
 import { axiosWrappers } from 'helpers'
 import { URL } from 'constants/clientConstants'
 import { useMainPage } from 'hooks'
@@ -34,6 +34,9 @@ export function Homepage() {
         if (word.description == 'title') {
             return CellVariants.CellTitle
         }
+        if (word.description == 'lastBold') {
+            return CellVariants.CellLastBold
+        }
 
         return CellVariants.CellSimple
     }
@@ -48,7 +51,7 @@ export function Homepage() {
     }
 
     // const handleSubmit = async () => {
-        const handleSubmit = async (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault()
 
         console.log('URL + hrefMainPage1111', URL + hrefMainPage)
@@ -86,7 +89,7 @@ export function Homepage() {
                 <div className='allWords'>
                     {words.map((word, index) => (
                         <CellComponent key={index} variant={getVariant(word)} {...word} />
-                     ))}
+                    ))}
                 </div>
             </div>
         </>

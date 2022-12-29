@@ -33,4 +33,5 @@ export const CellVariants = {
     CellNewLine: 'CellNewLine',
     CellBold: 'CellBold',
     CellTitle: 'CellTitle',
+    CellLastBold: 'CellLastBold',
 }
