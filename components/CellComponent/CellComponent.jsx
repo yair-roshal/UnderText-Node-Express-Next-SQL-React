@@ -9,6 +9,22 @@ import { CellVariants } from '../../constants/clientConstants'
 // import { useGetStyle } from 'helpers'
 
 export function CellComponent({ variant, ...props }) {
+    // console.log('...props',  props)
+    // let newWord = props
+    // console.log('...newWord original', newWord.original=newWord.original+"1231")
+    // console.log('...props original', props.original=props.original+"1231")
+
+    const position = props.original.search(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g)
+
+    // console.log('--------')
+    // console.log('props.original :>> ', props.original)
+    // console.log('position :>> ', position)
+
+    if (position != '-1' && position != '0') {
+        const symbol = props.original.slice(-1)
+        const word = props.original.slice(0, position)
+        props.original = symbol + word
+    }
     const Component = useMemo(() => {
         let Component
         switch (variant) {

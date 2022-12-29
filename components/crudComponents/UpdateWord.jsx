@@ -30,7 +30,8 @@ export const UpdateWord = (wordProp) => {
 
     const updateWordItem = async (wordObject) => {
         await axiosWrappers.putAxios(URL + hrefMainPage + '/' + wordProp.id, wordObject)
-    }
+        window.location.replace(URL + hrefMainPage)
+     }
 
     const deleteWord = (id) => {
         axiosWrappers.deleteAxios(URL, hrefMainPage.slice(1), id)
@@ -54,7 +55,7 @@ export const UpdateWord = (wordProp) => {
                         <form onSubmit={handleSubmit(updateWordItem)}>
                             <input style={{ display: 'none' }} {...register('id')} />
 
-                            <label htmlFor='original'>original word</label>
+                            <label htmlFor='original'>Original word</label>
                             <input
                                 type='text'
                                 placeholder='original word'
@@ -73,9 +74,9 @@ export const UpdateWord = (wordProp) => {
                                 <p style={{ color: 'red' }}>Please Enter original word</p>
                             )}
 
-                            <br />
+                            {/* <br /> */}
 
-                            <label htmlFor='translate'>translate</label>
+                            <label htmlFor='translate'>Translate</label>
                             <input
                                 type='text'
                                 placeholder='translate'
@@ -93,9 +94,9 @@ export const UpdateWord = (wordProp) => {
                                 <p style={{ color: 'red' }}>Please Enter a translate</p>
                             )}
 
-                            <br />
+                            {/* <br /> */}
 
-                            <label htmlFor='description'>description</label>
+                            <label htmlFor='description'>Description</label>
                             <textarea
                                 type='text'
                                 placeholder='description'
@@ -108,7 +109,7 @@ export const UpdateWord = (wordProp) => {
                                 })}
                             />
 
-                            <br />
+                            {/* <br /> */}
                             <input type='submit' />
                         </form>
 

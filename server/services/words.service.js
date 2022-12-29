@@ -169,7 +169,7 @@ class WordsService {
 
     updateWord(req, res) {
         return new Promise((resolve, reject) => {
-            console.log('req.body111', req.body)
+            console.log('req.body_updateWord', req.body)
             const { id, original, translate, description } = req.body
             const tableName = req.params.table
             const sqlQuery = `UPDATE ${tableName} SET original = ?,  translate = ?,  description = ?  WHERE id = ?`
@@ -195,7 +195,7 @@ class WordsService {
         return new Promise((resolve, reject) => {
             const tableName = req.params.table
             const sqlQuery = `DELETE from ${tableName} WHERE id >0`
-            console.log('req.params :>> ', req.params)
+            console.log('req.params_deleteTable :>> ', req.params)
             console.log('sqlQuery :>> ', sqlQuery)
             poolConnection(req, res, resolve, reject, sqlQuery)
         })

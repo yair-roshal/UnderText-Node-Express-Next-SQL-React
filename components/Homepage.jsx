@@ -86,7 +86,7 @@ export function Homepage() {
                 <div className='allWords'>
                     {words.map((word, index) => (
                         <CellComponent key={index} variant={getVariant(word)} {...word} />
-                    ))}
+                     ))}
                 </div>
             </div>
         </>
