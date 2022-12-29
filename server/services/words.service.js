@@ -69,7 +69,7 @@ class WordsService {
     //  Get all for start page ==============================================
     getWordsStartPage(req, res) {
         return new Promise((resolve, reject) => {
-            console.log('get all from words')
+            console.log('get all from words _ getWordsStartPage')
             const tableName = 'words'
             const sqlQuery = `SELECT * from ${tableName}`
 
@@ -83,7 +83,7 @@ class WordsService {
             const tableName = req.params.table
             const sqlQuery = `SELECT * from ${tableName} WHERE id = ?`
 
-            console.log('req.params222 :>> ', req.params)
+            console.log('req.params_getWord :>> ', req.params)
             console.log('sqlQuery :>> ', sqlQuery)
 
             poolConnection(req, res, resolve, reject, sqlQuery, [req.params.id])
@@ -93,13 +93,14 @@ class WordsService {
     //  Get all words by table ==============================================
     getWords(req, res) {
         return new Promise((resolve, reject) => {
-            console.log('req.params000', req.params)
             const tableName = req.params.table
             const sqlQuery = `SELECT * from ${tableName}`
 
+            console.log('req.params_getWords', req.params)
             console.log('get all from  : ' + tableName)
             console.log('req.params111 :>> ', req.params)
             console.log('sqlQuery :>> ', sqlQuery)
+
             if (tableName != 'favicon.ico') {
                 poolConnection(req, res, resolve, reject, sqlQuery)
             }

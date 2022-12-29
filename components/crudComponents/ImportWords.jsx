@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 
 import { axiosWrappers } from 'helpers'
 import { URL } from 'constants'
- import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { getWord, addWord, editWord, deleteWord } from '../../redux/wordsSlice'
 import { getWords } from '../../helpers/getWords'
 import { useMainPage } from 'hooks'
@@ -42,8 +42,8 @@ export const ImportWords = () => {
         for (const formFileWord of formFileWords) {
             let newWord
 
-            const checkWord = (chekingWord) => {
-                return chekingWord.original == formFileWord
+            const checkWord = (checkingWord) => {
+                return checkingWord.original == formFileWord
             }
 
             const foundedWord = words.find(checkWord)
@@ -85,9 +85,12 @@ export const ImportWords = () => {
     }
 
     const onSubmitImportWords = (data) => {
-        formFileWords = data.text.trim().split(' ')
+        //  formFileWords = data.text.trim().split(/[\s]/g)
+        formFileWords = data.text.trim().split(/\s/)
+        // formFileWords = data.text.trim().split(/\r\n|\r|\n/)
+
+        //  formFileWords = data.text.trim().split(' ')
         syncPosting(formFileWords)
-        // alert(`All words successfully imported `)
         console.log(`All words successfully imported `)
     }
 
