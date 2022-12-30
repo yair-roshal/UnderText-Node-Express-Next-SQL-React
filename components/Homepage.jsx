@@ -74,6 +74,7 @@ export function Homepage() {
                 <div className='formWrapper'>
                     <form onSubmit={handleSubmit}>
                         <textarea
+                            className='homePage'
                             type='text'
                             name='newWords'
                             value={newWords}

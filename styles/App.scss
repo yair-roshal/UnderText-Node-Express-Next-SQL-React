@@ -103,7 +103,14 @@ $backgroundHeader: #2c2c2c;
     margin-right: auto;
     width: 900px;
 
-    textarea {
+    textarea.homePage {
+        width: 933px;
+        font-size: 18px;
+        height: 300px;
+        font-size: 18px;
+    }
+
+    textarea.importWords {
         width: 900px;
         font-size: 18px;
         height: 100px;

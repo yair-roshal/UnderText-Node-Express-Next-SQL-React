@@ -105,6 +105,7 @@ export const ImportWords = () => {
 
                 <form onSubmit={handleSubmit(onSubmitImportWords)}>
                     <textarea
+                    className='importWords'
                         name='text'
                         type='text'
                         placeholder='Please Enter your text'
