@@ -5,9 +5,8 @@ import { useForm } from 'react-hook-form'
 import { axiosWrappers } from 'helpers'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
-import { URL } from 'constants'
 import { useMainPage } from 'hooks'
-import { CellVariants } from '../../constants/clientConstants'
+import { URL, CellVariantsArray } from 'constants'
 
 export const UpdateWord = (wordProp) => {
     const hrefMainPage = useMainPage()
@@ -78,8 +77,6 @@ export const UpdateWord = (wordProp) => {
                                 <p style={{ color: 'red' }}>Please Enter original word</p>
                             )}
 
-                            {/* <br /> */}
-
                             <label htmlFor='translate'>Translate</label>
                             <input
                                 type='text'
@@ -98,35 +95,9 @@ export const UpdateWord = (wordProp) => {
                                 <p style={{ color: 'red' }}>Please Enter a translate</p>
                             )}
 
-                            {/* <br /> */}
-
                             <label htmlFor='description'>Description</label>
 
-                            <select   {...register('description', {
-                                    onChange: (e) =>
-                                        setWord({
-                                            ...word,
-                                            description: e.target.value,
-                                        }),
-                                })}>
-
-
-{/* CellVariants */}
-
-
-                                <option value=''>none</option>
-                                <option value='title'>title</option>
-                                <option value='bold'>bold</option>
-                                <option value='female'>last</option>
-                                <option value='other'>lastBold</option>
-
-         
-
-                            </select>
-{/* 
-                            <textarea
-                                type='text'
-                                placeholder='description'
+                            <select
                                 {...register('description', {
                                     onChange: (e) =>
                                         setWord({
@@ -134,9 +105,18 @@ export const UpdateWord = (wordProp) => {
                                             description: e.target.value,
                                         }),
                                 })}
-                            /> */}
+                            >
+                                <option disabled selected>
+                                    Select type
+                                </option>
 
-                            {/* <br /> */}
+                                {CellVariantsArray.map((cellObject) => (
+                                    <option key={cellObject.type} value={cellObject.value}>
+                                        {cellObject.type}
+                                    </option>
+                                ))}
+                            </select>
+
                             <input type='submit' />
                         </form>
 

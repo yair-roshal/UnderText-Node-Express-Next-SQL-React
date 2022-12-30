@@ -5,9 +5,8 @@ import { CellBold } from './variants/CellBold'
 import { CellTitle } from './variants/CellTitle'
 import { CellLastBold } from './variants/CellLastBold'
 
-// import { CellVariants } from 'constants'
-import { CellVariants } from '../../constants/clientConstants'
-// import { useGetStyle } from 'helpers'
+import { CellVariants } from 'constants'
+ // import { useGetStyle } from 'helpers'
 
 export function CellComponent({ variant, ...props }) {
     const position = props.original.search(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g)

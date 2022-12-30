@@ -1,12 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Loading, Link, StyledButton } from 'components'
 import { axiosWrappers } from 'helpers'
-import { URL } from 'constants/clientConstants'
 import { useMainPage } from 'hooks'
-
 import { CellComponent } from './CellComponent/CellComponent'
-import { CellVariants } from '../constants/clientConstants'
-import { CellVariantsArray } from '../constants/clientConstants'
+import { CellVariantsArray, URL } from 'constants'
 
 export function Homepage() {
     const hrefMainPage = useMainPage()
@@ -46,9 +43,7 @@ export function Homepage() {
     const handleSubmit = async (event) => {
         event.preventDefault()
 
-        console.log('URL + hrefMainPage1111', URL + hrefMainPage)
         await axiosWrappers.deleteAllAxios(URL + hrefMainPage)
-        console.log('newWords111', newWords)
         await syncPosting(newWords)
         window.location.reload()
     }

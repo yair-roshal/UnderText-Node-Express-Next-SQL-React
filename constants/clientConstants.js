@@ -7,11 +7,11 @@ export const CellVariants = {
 }
 
 export const CellVariantsArray = [
-    { type: '', component: 'CellSimple' },
-    { type: 'title', component: 'CellTitle' },
-    { type: 'bold', component: 'CellBold' },
-    { type: 'last', component: 'CellLast' },
-    { type: 'lastBold', component: 'CellLastBold' },
+    { type: 'simple', value: '', component: 'CellSimple' },
+    { type: 'title', value: 'title', component: 'CellTitle' },
+    { type: 'bold', value: 'bold', component: 'CellBold' },
+    { type: 'last', value: 'last', component: 'CellLast' },
+    { type: 'lastBold', value: 'lastBold', component: 'CellLastBold' },
 ]
 
 export const URL = `http://localhost:${process.env.PORT}`
