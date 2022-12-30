@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { CellSimple } from './variants/CellSimple'
-import { CellNewLine } from './variants/CellNewLine'
+import { CellLast } from './variants/CellLast'
 import { CellBold } from './variants/CellBold'
 import { CellTitle } from './variants/CellTitle'
 import { CellLastBold } from './variants/CellLastBold'
@@ -10,16 +10,7 @@ import { CellVariants } from '../../constants/clientConstants'
 // import { useGetStyle } from 'helpers'
 
 export function CellComponent({ variant, ...props }) {
-    // console.log('...props',  props)
-    // let newWord = props
-    // console.log('...newWord original', newWord.original=newWord.original+"1231")
-    // console.log('...props original', props.original=props.original+"1231")
-
     const position = props.original.search(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g)
-
-    // console.log('--------')
-    // console.log('props.original :>> ', props.original)
-    // console.log('position :>> ', position)
 
     if (position != '-1' && position != '0') {
         const symbol = props.original.slice(-1)
@@ -33,8 +24,8 @@ export function CellComponent({ variant, ...props }) {
                 Component = CellSimple
                 break
 
-            case CellVariants.CellNewLine:
-                Component = CellNewLine
+            case CellVariants.CellLast:
+                Component = CellLast
                 break
 
             case CellVariants.CellBold:

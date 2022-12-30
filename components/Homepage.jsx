@@ -6,6 +6,7 @@ import { useMainPage } from 'hooks'
 
 import { CellComponent } from './CellComponent/CellComponent'
 import { CellVariants } from '../constants/clientConstants'
+import { CellVariantsArray } from '../constants/clientConstants'
 
 export function Homepage() {
     const hrefMainPage = useMainPage()
@@ -25,20 +26,11 @@ export function Homepage() {
     }, [words])
 
     const getVariant = (word) => {
-        if (word.description == 'last') {
-            return CellVariants.CellNewLine
+        for (const cellObject of CellVariantsArray) {
+            if (word.description === cellObject.type) {
+                return cellObject.component
+            }
         }
-        if (word.description == 'bold') {
-            return CellVariants.CellBold
-        }
-        if (word.description == 'title') {
-            return CellVariants.CellTitle
-        }
-        if (word.description == 'lastBold') {
-            return CellVariants.CellLastBold
-        }
-
-        return CellVariants.CellSimple
     }
 
     const syncPosting = async (stringWords) => {

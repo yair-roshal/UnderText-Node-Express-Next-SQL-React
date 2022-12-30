@@ -1,7 +1,7 @@
 import { Link } from 'components'
 import { useMainPage } from 'hooks'
 
-export const CellNewLine = (props) => {
+export const CellLast = (props) => {
     const { id, original, translate } = props
     const hrefMainPage = useMainPage()
     const hrefLinkUpdate = `${hrefMainPage}/update/${id}`

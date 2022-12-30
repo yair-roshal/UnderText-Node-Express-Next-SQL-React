@@ -7,6 +7,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 import { URL } from 'constants'
 import { useMainPage } from 'hooks'
+import { CellVariants } from '../../constants/clientConstants'
 
 export const UpdateWord = (wordProp) => {
     const hrefMainPage = useMainPage()
@@ -100,6 +101,29 @@ export const UpdateWord = (wordProp) => {
                             {/* <br /> */}
 
                             <label htmlFor='description'>Description</label>
+
+                            <select   {...register('description', {
+                                    onChange: (e) =>
+                                        setWord({
+                                            ...word,
+                                            description: e.target.value,
+                                        }),
+                                })}>
+
+
+{/* CellVariants */}
+
+
+                                <option value=''>none</option>
+                                <option value='title'>title</option>
+                                <option value='bold'>bold</option>
+                                <option value='female'>last</option>
+                                <option value='other'>lastBold</option>
+
+         
+
+                            </select>
+{/* 
                             <textarea
                                 type='text'
                                 placeholder='description'
@@ -110,7 +134,7 @@ export const UpdateWord = (wordProp) => {
                                             description: e.target.value,
                                         }),
                                 })}
-                            />
+                            /> */}
 
                             {/* <br /> */}
                             <input type='submit' />
