@@ -5,8 +5,8 @@ import { CellBold } from './variants/CellBold'
 import { CellTitle } from './variants/CellTitle'
 import { CellLastBold } from './variants/CellLastBold'
 
-import { CellVariants } from 'constants'
- // import { useGetStyle } from 'helpers'
+import { CellVariantsArray } from 'constants'
+// import { useGetStyle } from 'helpers'
 
 export function CellComponent({ variant, ...props }) {
     const position = props.original.search(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g)
@@ -19,24 +19,24 @@ export function CellComponent({ variant, ...props }) {
     const Component = useMemo(() => {
         let Component
         switch (variant) {
-            case CellVariants.CellSimple:
+            case CellVariantsArray[0].component:
                 Component = CellSimple
                 break
 
-            case CellVariants.CellLast:
-                Component = CellLast
+            case CellVariantsArray[1].component:
+                Component = CellTitle
                 break
 
-            case CellVariants.CellBold:
+            case CellVariantsArray[2].component:
                 Component = CellBold
                 break
 
-            case CellVariants.CellLastBold:
-                Component = CellLastBold
+            case CellVariantsArray[3].component:
+                Component = CellLast
                 break
 
-            case CellVariants.CellTitle:
-                Component = CellTitle
+            case CellVariantsArray[4].component:
+                Component = CellLastBold
                 break
 
             default:

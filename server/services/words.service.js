@@ -1,6 +1,7 @@
 const mysql = require('mysql')
 const axios = require('axios')
 const constants = require('../constants/constants')
+// const pagesPrayers = require('../../constants/clientConstants')
 const pool = mysql.createPool(constants.sqlConfig)
 const jose = require('node-jose')
 const private_key = process.env.PRIVATE_KEY.replace(/\\n/g, '\n')
@@ -96,12 +97,28 @@ class WordsService {
             const tableName = req.params.table
             const sqlQuery = `SELECT * from ${tableName}`
 
+            console.log('----------------')
+
             console.log('req.params_getWords', req.params)
             console.log('get all from  : ' + tableName)
             console.log('req.params111 :>> ', req.params)
             console.log('sqlQuery :>> ', sqlQuery)
 
-            if (tableName != 'favicon.ico' && tableName != '[slug]') {
+            // pagesPrayers = [
+            //     // { name: 'Shaharit', href: '/shaharit', prayer: true },
+            //     { name: 'Minha', href: '/minha', prayer: true },
+            //     { name: 'Maariv', href: '/maariv', prayer: true },
+
+            // for(const obj of pagesPrayers){
+            //     console.log('obj', obj)
+            // }
+
+            if (
+                tableName != 'favicon.ico' &&
+                tableName != '[slug]' &&
+                tableName != 'about' &&
+                tableName != 'tehilim'
+            ) {
                 poolConnection(req, res, resolve, reject, sqlQuery)
             }
         })

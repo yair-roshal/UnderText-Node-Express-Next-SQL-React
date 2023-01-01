@@ -1,11 +1,3 @@
-export const CellVariants = {
-    CellSimple: 'CellSimple',
-    CellLast: 'CellLast',
-    CellBold: 'CellBold',
-    CellTitle: 'CellTitle',
-    CellLastBold: 'CellLastBold',
-}
-
 export const CellVariantsArray = [
     { type: 'simple', value: '', component: 'CellSimple' },
     { type: 'title', value: 'title', component: 'CellTitle' },
@@ -15,8 +7,6 @@ export const CellVariantsArray = [
 ]
 
 export const URL = `http://localhost:${process.env.PORT}`
-// console.log('URL_const', URL)
-// export const URL = 'http://localhost:7700'
 
 export const pagesPrayers = [
     // { name: 'Shaharit', href: '/shaharit', prayer: true },
@@ -28,6 +18,7 @@ export const pagesPrayers = [
     { name: 'Tehilim', href: '/tehilim', prayer: false },
 
     { name: 'Options', href: '/options', prayer: 'additionalItems' },
+    { name: 'About', href: '/about', prayer: 'additionalItems' },
 ]
 
 export const fontFamilyList = [
