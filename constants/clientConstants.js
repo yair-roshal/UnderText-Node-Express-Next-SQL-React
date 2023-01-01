@@ -4,6 +4,7 @@ export const CellVariantsArray = [
     { type: 'bold', value: 'bold', component: 'CellBold' },
     { type: 'last', value: 'last', component: 'CellLast' },
     { type: 'lastBold', value: 'lastBold', component: 'CellLastBold' },
+    { type: 'disable', value: 'disable', component: 'CellDisable' },
 ]
 
 export const URL = `http://localhost:${process.env.PORT}`

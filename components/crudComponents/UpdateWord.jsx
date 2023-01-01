@@ -91,9 +91,36 @@ export const UpdateWord = (wordProp) => {
                                         }),
                                 })}
                             />
+
                             {errors.translate && (
                                 <p style={{ color: 'red' }}>Please Enter a translate</p>
                             )}
+
+                            <label htmlFor='periodStart'>periodStart</label>
+                            <input
+                                type='text'
+                                placeholder='periodStart'
+                                {...register('periodStart', {
+                                    onChange: (e) =>
+                                        setWord({
+                                            ...word,
+                                            periodStart: e.target.value,
+                                        }),
+                                })}
+                            />
+
+                            <label htmlFor='periodEnd'>periodEnd</label>
+                            <input
+                                type='text'
+                                placeholder='periodEnd'
+                                {...register('periodEnd', {
+                                    onChange: (e) =>
+                                        setWord({
+                                            ...word,
+                                            periodEnd: e.target.value,
+                                        }),
+                                })}
+                            />
 
                             <label htmlFor='description'>Description</label>
 
@@ -110,6 +137,7 @@ export const UpdateWord = (wordProp) => {
                                     Select type
                                 </option>
 
+                                {/* {console.log('CellVariantsArray', CellVariantsArray)} */}
                                 {CellVariantsArray.map((cellObject) => (
                                     <option key={cellObject.type} value={cellObject.value}>
                                         {cellObject.type}

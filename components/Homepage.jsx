@@ -5,6 +5,15 @@ import { useMainPage } from 'hooks'
 import { CellComponent } from './CellComponent/CellComponent'
 import { CellVariantsArray, URL } from 'constants'
 
+import {
+    toJewishDate,
+    formatJewishDate,
+    toHebrewJewishDate,
+    formatJewishDateInHebrew,
+    toGregorianDate,
+    JewishMonth,
+} from 'jewish-date'
+
 export function Homepage() {
     const hrefMainPage = useMainPage()
     const hrefLinkImport = hrefMainPage + '/import'
@@ -23,6 +32,66 @@ export function Homepage() {
     }, [words])
 
     const getVariant = (word) => {
+        console.log('word_0000 :>> ', word)
+
+        const hebrewDateToday = new Intl.DateTimeFormat('en-u-ca-hebrew', {
+            year: 'numeric',
+            month: 'numeric',
+            day: 'numeric',
+        }).format(new Date())
+
+        console.log('------------')
+
+        const arrayHebrewDateToday = hebrewDateToday.split(' ')
+        console.log('arrayHebrewDateToday :>> ', arrayHebrewDateToday)
+
+        const arrayPeriodStart = word.periodStart.split(' ')
+        const arrayPeriodEnd = word.periodEnd.split(' ')
+
+        console.log('arrayPeriodStart', arrayPeriodStart)
+        console.log('arrayPeriodEnd', arrayPeriodEnd)
+
+        const startObj = {
+            year: 5780,
+            monthName: arrayPeriodStart[1],
+            day: Number(arrayPeriodStart[0]),
+        }
+        console.log('startObj', startObj)
+
+        const GregorianDateStart = toGregorianDate(startObj)
+
+        const endObj = {
+            year: 5780,
+            monthName: arrayPeriodEnd[1],
+            day: Number(arrayPeriodEnd[0]),
+        }
+        console.log('endObj', endObj)
+
+        const GregorianDateEnd = toGregorianDate(endObj)
+        console.log(GregorianDateStart)
+        console.log(GregorianDateEnd)
+
+        // const date1 = new Date('2020-01-01')
+        const dateToday = new Date()
+
+        // console.log('date1 :>> ', date1)
+        // console.log('date2 :>> ', date2)
+
+        // console.log('date1>date2', date1 > date2)
+
+        console.log('GregorianDateStart > dateToday :>> ', GregorianDateStart > dateToday)
+        console.log('GregorianDateEnd < dateToday :>> ', GregorianDateEnd < dateToday)
+        console.log('GregorianDateStart != ', GregorianDateStart != '')
+        if (
+            arrayPeriodStart != '' &&
+            arrayPeriodEnd != '' &&
+            (GregorianDateStart > dateToday || GregorianDateEnd < dateToday)
+        ) {
+            console.log('innnnnn')
+            return 'CellDisable'
+            // return null
+        }
+        console.log('11111 :>> ')
         for (const cellObject of CellVariantsArray) {
             if (word.description === cellObject.type) {
                 return cellObject.component

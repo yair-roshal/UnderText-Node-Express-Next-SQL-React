@@ -4,6 +4,7 @@ import { CellLast } from './variants/CellLast'
 import { CellBold } from './variants/CellBold'
 import { CellTitle } from './variants/CellTitle'
 import { CellLastBold } from './variants/CellLastBold'
+import { CellDisable } from './variants/CellDisable'
 
 import { CellVariantsArray } from 'constants'
 // import { useGetStyle } from 'helpers'
@@ -18,6 +19,13 @@ export function CellComponent({ variant, ...props }) {
     }
     const Component = useMemo(() => {
         let Component
+
+     // if (dataToday >= periodStart && dataToday <= periodEnd) {
+        //     return Component
+        // } else {
+        //     null
+        // }
+
         switch (variant) {
             case CellVariantsArray[0].component:
                 Component = CellSimple
@@ -39,16 +47,16 @@ export function CellComponent({ variant, ...props }) {
                 Component = CellLastBold
                 break
 
+            case CellVariantsArray[5].component:
+                Component = CellDisable
+                break
+
             default:
                 Component = CellSimple
                 break
         }
 
-        // if (dataToday >= periodStart && dataToday <= periodEnd) {
-        //     return Component
-        // } else {
-        //     null
-        // }
+   
 
         return Component
     }, [variant])

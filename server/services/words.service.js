@@ -128,7 +128,7 @@ class WordsService {
         return new Promise((resolve, reject) => {
             let word
             let translate
-            console.log('req.params333', req.params)
+            console.log('req.params_createWord', req.params)
 
             const tableName = req.params.table
             const sqlQuery = `INSERT INTO ${tableName} SET ?`
@@ -159,11 +159,22 @@ class WordsService {
                     .then((response) => {
                         // console.log('response.data: ', response.data)
                         translate = response.data.translations[0].text
+                        // word = {
+                        //     ...word,
+                        //     translate: translate,
+                        // }
+
                         word = {
                             original: req.body.original,
                             translate: translate,
                             description: req.body.description,
+                            periodStart: req.body.periodStart,
+                            periodEnd: req.body.periodEnd,
                         }
+
+                        console.log('word_0000 :>> ', word)
+
+
                         poolConnection(req, res, resolve, reject, sqlQuery, word)
                     })
                     .catch((error) => {
@@ -172,10 +183,17 @@ class WordsService {
             } else {
                 console.log('translate from DB another word:>> ')
 
+                // word = {
+                //     ...word,
+                // }
+                console.log('word_111 :>> ', word)
+
                 word = {
                     original: req.body.original,
                     translate: req.body.translate,
                     description: req.body.description,
+                    periodStart: req.body.periodStart,
+                    periodEnd: req.body.periodEnd,
                 }
 
                 poolConnection(req, res, resolve, reject, sqlQuery, word)

@@ -23,7 +23,8 @@ import {
 import { pagesPrayers } from '../constants/clientConstants'
 import { Link } from 'components'
 import { useMainPage } from 'hooks'
-// var hebrewDate = require("hebrew-date");
+
+// const hebrewDate = require('hebrew-date')
 
 const drawerWidth = 240
 
@@ -62,9 +63,7 @@ export function MenuBar() {
         month: 'numeric',
         day: 'numeric',
     }).format(new Date())
-    
-// todo: check hebrew date
-    // const arrayHebrewDate = hebrewDate.split(' ')
+
     const nameHeader = hrefMainPage.slice(1).toUpperCase() + '  -  ' + hebrewDate
 
     const theme = useTheme()

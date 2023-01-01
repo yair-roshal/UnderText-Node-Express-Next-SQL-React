@@ -6,15 +6,12 @@
     "scripts": {
         "dev": "next dev",
         "dev2": "npm next dev",
-
         "build": "next build",
         "build2": "npm next build",
         "lint": "npm next lint",
-
         "client": "npm run dev",
         "server": "npm start --prefix server",
         "start_npm": "concurrently \"npm run client\" \"npm run server\" ",
-        
         "client2": "yarn next start",
         "server2": "yarn --cwd server start",
         "start": "concurrently  \"  yarn client2  \"  \"  yarn server2  \"  "
@@ -27,7 +24,9 @@
         "@mui/material": "^5.10.11",
         "@reduxjs/toolkit": "^1.5.0",
         "axios": "^0.27.2",
+        "concurrently": "^6.0.0",
         "dotenv": "^16.0.3",
+        "jewish-date": "^1.0.9",
         "next": "^13.1.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
@@ -39,8 +38,7 @@
         "redux-devtools-extension": "^2.13.9",
         "redux-thunk": "^2.3.0",
         "sass": "^1.55.0",
-        "yup": "^0.32.9",
-        "concurrently": "^6.0.0"
+        "yup": "^0.32.9"
     },
     "browserslist": {
         "production": [

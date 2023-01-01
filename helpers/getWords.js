@@ -7,8 +7,8 @@ export const getWords = createAsyncThunk(
 
     async (arg, { rejectWithValue }) => {
         try {
-             const response = await axiosWrappers.getAxios(`${URL}/${arg.table}`)
-            console.log('response_getWords :>> ', response)
+            const response = await axiosWrappers.getAxios(`${URL}/${arg.table}`)
+            // console.log('response_getWords :>> ', response)
             return response
         } catch (err) {
             if (!err.response) {
