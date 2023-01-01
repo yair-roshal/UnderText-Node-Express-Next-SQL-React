@@ -1,3 +1,21 @@
+export const JewishMonth = {
+    None: 'None',
+    Tishri: 'Tishri',
+    Cheshvan: 'Cheshvan',
+    Kislev: 'Kislev',
+    Shevat: 'Shevat',
+    Adar: 'Adar',
+    Nisan: 'Nisan',
+    Iyyar: 'Iyyar',
+    Sivan: 'Sivan',
+    Tammuz: 'Tammuz',
+    Av: 'Av',
+    Elul: 'Elul',
+    AdarI: 'AdarI',
+    AdarII: 'AdarII',
+    Tevet: 'Tevet',
+}
+
 export const CellVariantsArray = [
     { type: 'simple', value: '', component: 'CellSimple' },
     { type: 'title', value: 'title', component: 'CellTitle' },

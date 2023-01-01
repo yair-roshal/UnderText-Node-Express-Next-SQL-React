@@ -174,7 +174,6 @@ class WordsService {
 
                         console.log('word_0000 :>> ', word)
 
-
                         poolConnection(req, res, resolve, reject, sqlQuery, word)
                     })
                     .catch((error) => {
@@ -205,15 +204,17 @@ class WordsService {
     updateWord(req, res) {
         return new Promise((resolve, reject) => {
             console.log('req.body_updateWord', req.body)
-            const { id, original, translate, description } = req.body
+            const { id, original, translate, description, periodStart, periodEnd } = req.body
             const tableName = req.params.table
-            const sqlQuery = `UPDATE ${tableName} SET original = ?,  translate = ?,  description = ?  WHERE id = ?`
-            poolConnection(req, res, resolve, reject, sqlQuery, [
-                original,
-                translate,
-                description,
-                id,
-            ])
+            const sqlQuery = `UPDATE ${tableName} SET original = ?,  translate = ?,  description = ? ,  periodStart = ? ,  periodEnd = ?  WHERE id = ?`
+            poolConnection(
+                req,
+                res,
+                resolve,
+                reject,
+                sqlQuery,
+                [original, translate, description, periodStart, periodEnd, id],
+            )
         })
     }
 

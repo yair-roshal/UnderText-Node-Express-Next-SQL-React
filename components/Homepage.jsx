@@ -52,7 +52,7 @@ export function Homepage() {
         console.log('arrayPeriodEnd', arrayPeriodEnd)
 
         const startObj = {
-            year: 5780,
+            year: arrayHebrewDateToday[2],
             monthName: arrayPeriodStart[1],
             day: Number(arrayPeriodStart[0]),
         }
@@ -61,7 +61,7 @@ export function Homepage() {
         const GregorianDateStart = toGregorianDate(startObj)
 
         const endObj = {
-            year: 5780,
+            year: arrayHebrewDateToday[2],
             monthName: arrayPeriodEnd[1],
             day: Number(arrayPeriodEnd[0]),
         }
@@ -71,13 +71,7 @@ export function Homepage() {
         console.log(GregorianDateStart)
         console.log(GregorianDateEnd)
 
-        // const date1 = new Date('2020-01-01')
         const dateToday = new Date()
-
-        // console.log('date1 :>> ', date1)
-        // console.log('date2 :>> ', date2)
-
-        // console.log('date1>date2', date1 > date2)
 
         console.log('GregorianDateStart > dateToday :>> ', GregorianDateStart > dateToday)
         console.log('GregorianDateEnd < dateToday :>> ', GregorianDateEnd < dateToday)
@@ -127,7 +121,13 @@ export function Homepage() {
                 <StyledButton variant='contained'>Import Words From File or text </StyledButton>
             </Link>
             <div className='wrapperTextBlock'>
-                <div className='formWrapper'>
+                <div className='allWords'>
+                    {words.map((word, index) => (
+                        <CellComponent key={index} variant={getVariant(word)} {...word} />
+                    ))}
+                </div>
+
+                <div className='formWrapperJSON'>
                     <form onSubmit={handleSubmit}>
                         <textarea
                             className='homePage'
@@ -141,12 +141,6 @@ export function Homepage() {
                             change
                         </StyledButton>
                     </form>
-                </div>
-
-                <div className='allWords'>
-                    {words.map((word, index) => (
-                        <CellComponent key={index} variant={getVariant(word)} {...word} />
-                    ))}
                 </div>
             </div>
         </>
