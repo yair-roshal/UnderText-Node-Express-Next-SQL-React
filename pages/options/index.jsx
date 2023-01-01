@@ -1,14 +1,16 @@
 import * as React from 'react'
 import Box from '@mui/material/Box'
-import InputLabel from '@mui/material/InputLabel'
+// import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
 import { fontFamilyList, fontSizeList } from '../../constants/clientConstants'
+import Checkbox from '@mui/material/Checkbox'
 
 export default function BasicSelect() {
     const [fontSize, setFontSize] = React.useState('')
     const [fontFamily, setFontFamily] = React.useState('')
+    const label = { inputProps: { 'aria-label': 'text only to this date' } }
 
     const fontSizeHandleChange = (event) => {
         setFontSize(event.target.value)
@@ -61,6 +63,9 @@ export default function BasicSelect() {
                         })}
                     </Select>
                 </FormControl>
+
+                <h2>text only to this date (without additional text to all year)</h2>
+                <Checkbox {...label} defaultChecked />
             </Box>
         </>
     )

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'components'
-import { StyledButton } from 'styles'
+import { BackButton,DeleteButton } from 'styles'
 import { useForm } from 'react-hook-form'
 import { axiosWrappers } from 'helpers'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -43,12 +43,12 @@ export const UpdateWord = (wordProp) => {
     return (
         <>
             <Link href={hrefMainPage} style={{ textDecoration: 'none' }}>
-                <StyledButton variant='contained'>Back</StyledButton>
+                <BackButton variant='contained'>Back</BackButton>
             </Link>
 
-            <StyledButton onClick={() => deleteWord(wordProp.id)} variant='contained'>
+            <DeleteButton onClick={() => deleteWord(wordProp.id)} variant='contained'>
                 Delete
-            </StyledButton>
+            </DeleteButton>
 
             {wordProp && (
                 <>

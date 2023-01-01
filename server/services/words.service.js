@@ -114,8 +114,8 @@ class WordsService {
             // }
 
             if (
-                tableName != 'favicon.ico' &&
-                tableName != '[slug]' &&
+                // tableName != 'favicon.ico' &&
+                // tableName != '[slug]' &&
                 tableName != 'about' &&
                 tableName != 'tehilim'
             ) {

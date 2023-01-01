@@ -7,6 +7,19 @@ export const StyledButton = styled(Button)({
     backgroundColor: '#2c2c2c',
     margin: '10px',
 })
+export const DeleteButton = styled(Button)({
+    backgroundColor: 'red',
+    margin: '10px',
+})
+export const BackButton = styled(Button)({
+    backgroundColor: '#0077B5',
+    margin: '10px',
+})
+export const ImportButton = styled(Button)({
+    backgroundColor: '#b436ac',
+    margin: '10px',
+})
+
 export const ShowButton = styled(Button)({
     backgroundColor: '#0077B5',
     margin: '0 10px',
@@ -18,10 +31,6 @@ export const ExportButton = styled(Button)({
 export const UpdateButton = styled(Button)({
     backgroundColor: '#2c2c2c',
     margin: '20px',
-})
-export const DeleteButton = styled(Button)({
-    backgroundColor: 'red',
-    margin: '0 10px',
 })
 
 // const Node = styled.div`

@@ -64,7 +64,7 @@ export function MenuBar() {
         day: 'numeric',
     }).format(new Date())
 
-    const nameHeader = hrefMainPage.slice(1).toUpperCase() + '  -  ' + hebrewDate
+    const nameHeader = hrefMainPage.slice(1).toUpperCase() + ' ' + hebrewDate
 
     const theme = useTheme()
     const [open, setOpen] = React.useState(false)

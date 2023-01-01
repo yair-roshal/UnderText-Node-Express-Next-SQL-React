@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Loading, Link, StyledButton } from 'components'
+import { Loading, Link, StyledButton, ImportButton } from 'components'
 import { axiosWrappers } from 'helpers'
 import { useMainPage } from 'hooks'
 import { CellComponent } from './CellComponent/CellComponent'
@@ -118,7 +118,7 @@ export function Homepage() {
     return (
         <>
             <Link href={hrefLinkImport} style={{ textDecoration: 'none' }}>
-                <StyledButton variant='contained'>Import Words From File or text </StyledButton>
+                <ImportButton variant='contained'>Import Words From File or text </ImportButton>
             </Link>
             <div className='wrapperTextBlock'>
                 <div className='allWords'>
