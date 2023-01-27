@@ -8,6 +8,9 @@
 ### Russian version
 <img src=" images/tehilimRu.jpg"  width="400"/>
 
+### Mobile version
+<img src=" images/mobile.jpeg"  width="400"/>
+
 ### French version
  <img src=" images/tehilFr.jpg"  width="400"/>
 
