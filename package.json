@@ -4,8 +4,8 @@
     "description": "UnderText - Translation Under Text",
     "private": false,
     "scripts": {
-        "dev": "next dev",
-        "dev2": "npm next dev",
+        "start": "next dev",
+        "dev - next": "next dev",
         "build": "next build",
         "build2": "npm next build",
         "lint": "npm next lint",
@@ -14,7 +14,7 @@
         "start_npm": "concurrently \"npm run client\" \"npm run server\" ",
         "client2": "yarn next start",
         "server2": "yarn --cwd server start",
-        "start": "concurrently  \"  yarn client2  \"  \"  yarn server2  \"  "
+        "start_yarn": "concurrently  \"  yarn client2  \"  \"  yarn server2  \"  "
     },
     "dependencies": {
         "@emotion/react": "^11.10.5",
