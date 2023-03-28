@@ -42,9 +42,23 @@ $backgroundHeader: #2c2c2c;
 }
 
 .original_text {
+    // font-family: 'Roboto'; // не весь иврит видит
+    text-align: center;
+    // font-weight: 600;
+    font-size: calc(15px + 1vmin);
+}
+.original_text :hover {
     font-family: 'Roboto';
     text-align: center;
     // font-weight: 600;
+    font-size: calc(15px + 1vmin);
+    background-color: #646ce2;
+}
+
+.bold {
+    font-family: 'Roboto';
+    text-align: center;
+    font-weight: 600;
     font-size: calc(15px + 1vmin);
 }
 
@@ -144,8 +158,9 @@ $backgroundHeader: #2c2c2c;
     }
 
     input {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-            'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+            'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+            'Helvetica Neue', sans-serif;
         display: block;
         box-sizing: border-box;
         width: 100%;

@@ -18,7 +18,9 @@ const payload = {
 
 let IAM_TOKEN
 
-jose.JWK.asKey(private_key, 'pem', { kid: keyId, alg: 'PS256' }).then(function (result) {
+jose.JWK.asKey(private_key, 'pem', { kid: keyId, alg: 'PS256' }).then(function (
+    result,
+) {
     jose.JWS.createSign({ format: 'compact' }, result)
         .update(JSON.stringify(payload))
         .final()
@@ -99,10 +101,10 @@ class WordsService {
 
             console.log('----------------')
 
-            console.log('req.params_getWords', req.params)
-            console.log('get all from  : ' + tableName)
-            console.log('req.params111 :>> ', req.params)
-            console.log('sqlQuery :>> ', sqlQuery)
+            // console.log('req.params_getWords', req.params)
+            // console.log('get all from  : ' + tableName)
+            // console.log('req.params111 :>> ', req.params)
+            // console.log('sqlQuery :>> ', sqlQuery)
 
             // pagesPrayers = [
             //     // { name: 'Shaharit', href: '/shaharit', prayer: true },
@@ -128,16 +130,16 @@ class WordsService {
         return new Promise((resolve, reject) => {
             let word
             let translate
-            console.log('req.params_createWord', req.params)
+            // console.log('req.params_createWord', req.params)
 
             const tableName = req.params.table
             const sqlQuery = `INSERT INTO ${tableName} SET ?`
 
-            console.log('req.body :>> ', req.body)
-            console.log('req.body.translate :>> ', req.body.translate)
+            // console.log('req.body :>> ', req.body)
+            // console.log('req.body.translate :>> ', req.body.translate)
 
-            if (req.body.translate == '') {
-                console.log('need translate :>> ')
+            if (req.body.translate == '' && req.body.original != '') {
+                // console.log('need translate :>> ')
                 const texts = [req.body.original]
 
                 const body = {
@@ -147,7 +149,9 @@ class WordsService {
                     folderId: process.env.folder_id,
                 }
 
-                const headers = { headers: { Authorization: `Bearer ${IAM_TOKEN}` } }
+                const headers = {
+                    headers: { Authorization: `Bearer ${IAM_TOKEN}` },
+                }
 
                 // await axios
                 axios
@@ -174,10 +178,20 @@ class WordsService {
 
                         console.log('word_0000 :>> ', word)
 
-                        poolConnection(req, res, resolve, reject, sqlQuery, word)
+                        poolConnection(
+                            req,
+                            res,
+                            resolve,
+                            reject,
+                            sqlQuery,
+                            word,
+                        )
                     })
                     .catch((error) => {
-                        console.log('AXIOS ERROR_post_translate: ', error.response)
+                        console.log(
+                            'AXIOS ERROR_post_translate: ',
+                            error.response,
+                        )
                     })
             } else {
                 console.log('translate from DB another word:>> ')
@@ -204,17 +218,24 @@ class WordsService {
     updateWord(req, res) {
         return new Promise((resolve, reject) => {
             console.log('req.body_updateWord', req.body)
-            const { id, original, translate, description, periodStart, periodEnd } = req.body
+            const {
+                id,
+                original,
+                translate,
+                description,
+                periodStart,
+                periodEnd,
+            } = req.body
             const tableName = req.params.table
             const sqlQuery = `UPDATE ${tableName} SET original = ?,  translate = ?,  description = ? ,  periodStart = ? ,  periodEnd = ?  WHERE id = ?`
-            poolConnection(
-                req,
-                res,
-                resolve,
-                reject,
-                sqlQuery,
-                [original, translate, description, periodStart, periodEnd, id],
-            )
+            poolConnection(req, res, resolve, reject, sqlQuery, [
+                original,
+                translate,
+                description,
+                periodStart,
+                periodEnd,
+                id,
+            ])
         })
     }
 

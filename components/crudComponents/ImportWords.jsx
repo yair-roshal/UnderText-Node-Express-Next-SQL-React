@@ -15,9 +15,11 @@ export const ImportWords = () => {
     const hrefMainPage = useMainPage()
     const [words, setWords] = useState(null)
     useEffect(() => {
+        console.log('URL + hrefMainPage ImportWords', URL + hrefMainPage)
         axiosWrappers.getAxios(URL + hrefMainPage).then(function (value) {
             setWords(value)
         })
+        .catch((err)=>console.log('err2222', err))
     }, [])
 
     // const words = useSelector((state) => state.words)

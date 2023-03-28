@@ -9,9 +9,7 @@ export const CellBold = (props) => {
     return (
         <div className='cell'>
             <Link href={hrefLinkUpdate} style={{ textDecoration: 'none' }}>
-                <div className='original_text' style={{ fontWeight: '600' }}>
-                    {original}
-                </div>
+                <div className='original_text bold'>{original}</div>
                 <div className='translate'>{translate}</div>
             </Link>
         </div>
