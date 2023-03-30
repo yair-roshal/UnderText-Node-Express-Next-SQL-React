@@ -1,18 +1,21 @@
 # UnderText - Translation Under Text
 
-# Demo of App : 
-![alt text]( images/img_for_github.png "Illustration for the project")
+<!-- # Demo of App :  -->
+<!-- ![alt text]( images/img_for_github.png "Illustration for the project") -->
 
-## What I want to do:
+<!-- ## What I want to do: -->
 
 ### Russian version
 <img src=" images/tehilimRu.jpg"  width="400"/>
 
-### Mobile version
-<img src=" images/mobile.jpeg"  width="400"/>
 
 ### French version
  <img src=" images/tehilFr.jpg"  width="400"/>
+ 
+ 
+### Our Mobile version
+<img src=" images/mobile.jpeg"  width="400"/>
+
 
 ### Tasks (What I need TODO)
 2. Connect a translator (Google, Yandex) via the API to translate individual words.
