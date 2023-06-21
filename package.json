@@ -5,7 +5,7 @@
     "private": false,
     "scripts": {
         "start": "next dev",
-        "dev - next": "next dev",
+        "dev": "next dev",
        
         "build": "next build",
         "build2": "npm next build",
