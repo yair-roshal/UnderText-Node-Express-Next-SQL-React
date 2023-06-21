@@ -1,14 +1,17 @@
-module.exports = Object.freeze({
+require('dotenv').config();
+
+module.exports = {
   sqlConfig: {
-    connectionLimit: 10,
-    host: '194.31.175.248',
-    port: '3306',
-    user: 'gen_user',
-    password: 'pw07613vrm1',
-    database: 'default_db',
+    host: process.env.DB_HOST || 'localhost',
+    port: process.env.DB_PORT ,
+    user: process.env.DB_USER || 'root',
+    password: process.env.DB_PASSWORD || '',
+    database: process.env.DB_NAME || 'default_db',
   },
-  ANOTHER_CONSTANT: 'another value',
-})
+};
+
+
+//localhost
 
 // module.exports = Object.freeze({
 //     sqlConfig: {
