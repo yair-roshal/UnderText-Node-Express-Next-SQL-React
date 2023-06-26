@@ -6,6 +6,9 @@
 **/backup
 **/.env
 
+.env.development
+.env.production
+
 # classic ignoring files===============
 
 /.pnp

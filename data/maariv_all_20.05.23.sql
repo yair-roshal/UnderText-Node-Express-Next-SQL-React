@@ -1,14 +1,17 @@
-CREATE TABLE tableName 
-(
-    id	INT,
-    original	VARCHAR(5 2),
-    translate	VARCHAR(5 2),
-    description	VARCHAR(5 2),
-    periodStart	VARCHAR(5 2),
-    periodEnd 	INT
-);
+USE default_db;
 
-INSERT INTO tableName (id, original, translate, description, periodStart, periodEnd ) VALUES
+CREATE TABLE `maariv` (
+  `id` int(11) NOT NULL,
+  `original` varchar(99) NOT NULL,
+  `translate` varchar(99) NOT NULL,
+  `description` text NOT NULL COMMENT 'description of word',
+  `periodStart` text,
+  `periodEnd` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+INSERT INTO maariv (id, original, translate, description, periodStart, periodEnd ) VALUES
 	(' ', 'וְהוּא', 'и он', 'null', 'null', ' '),
 	('2', 'רַחוּם', 'Милосердный', 'null', 'null', ' '),
 	('3', 'יְכַפֵּר', 'Искупит', 'null', 'null', ' '),

@@ -4,17 +4,13 @@
     "description": "UnderText - Translation Under Text",
     "private": false,
     "scripts": {
-        "start": "next dev",
         "dev": "next dev",
-       
+        "server_dev": "npm run dev --prefix server",
         "build": "next build",
-        "build2": "npm next build",
-        "lint": "npm next lint",
-       
+        "start": "next start",
         "client": "npm run dev",
         "server": "npm start --prefix server",
         "start_npm": "concurrently \"npm run client\" \"npm run server\" ",
-       
         "client2": "yarn next start",
         "server2": "yarn --cwd server start",
         "start_yarn": "concurrently  \"  yarn client2  \"  \"  yarn server2  \"  "
