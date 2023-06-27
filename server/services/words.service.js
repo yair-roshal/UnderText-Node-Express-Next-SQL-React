@@ -1,215 +1,183 @@
-const axios = require('axios')
-const constants = require('../constants/constants')
-const jose = require('node-jose')
-const private_key = process.env.PRIVATE_KEY.replace(/\\n/g, '\n')
-const serviceAccountId = process.env.SERVICE_ACCOUNT_ID
-const keyId = process.env.KEY_ID
-const now = Math.floor(new Date().getTime() / 1000)
-// const pagesPrayers = require('../../constants/clientConstants')
+const axios = require('axios');
+const constants = require('../constants/constants');
+const jose = require('node-jose');
+const private_key = process.env.PRIVATE_KEY.replace(/\\n/g, '\n');
+const serviceAccountId = process.env.SERVICE_ACCOUNT_ID;
+const keyId = process.env.KEY_ID;
+const now = Math.floor(new Date().getTime() / 1000);
 
-const mysql = require('mysql2')
-const connection = mysql.createConnection(constants.sqlConfig)
-
-const payload = {
-  aud: 'https://iam.api.cloud.yandex.net/iam/v1/tokens',
-  iss: serviceAccountId,
-  iat: now,
-  exp: now + 3600,
-}
-
-let IAM_TOKEN
-
-jose.JWK.asKey(private_key, 'pem', { kid: keyId, alg: 'PS256' }).then(function (result) {
-  jose.JWS.createSign({ format: 'compact' }, result)
-    .update(JSON.stringify(payload))
-    .final()
-    .then(function (result) {
-      const jwt_token = result
-
-      const body = {
-        //  includes only one of the fields `yandexPassportOauthToken`, `jwt`
-        // "yandexPassportOauthToken": process.env.OAUTH_TOKEN,
-        jwt: jwt_token,
-        // end of the list of possible fields
-      }
-
-      axios
-        .post('https://iam.api.cloud.yandex.net/iam/v1/tokens', body)
-        .then((response) => {
-          // console.log('response.data', response.data)
-          IAM_TOKEN = response.data.iamToken
-        })
-        .catch((error) => {
-          console.log('AXIOS ERROR_jwt: ', error.response)
-        })
-    })
-})
-
-connection.connect((err) => {
-  if (err) {
-    console.error('Error connecting to MySQL:', err)
-    return
-  }
-  console.log('Connected to MySQL database.')
-})
+const mysql = require('mysql2/promise');
 
 class WordsService {
-  //  Get all for start page ==============================================
-  getWordsStartPage() {
-    console.log('get all from words _ getWordsStartPage')
-
-    const tableName = 'words'
-    const sqlQuery = `SELECT * from ${tableName}`
-
-    connection.query(sqlQuery, function (err, results) {
-      console.log(results)
-    })
+  constructor() {
+    this.pool = mysql.createPool(constants.sqlConfig);
+    this.IAM_TOKEN = null;
   }
 
-  // Get a word by table and by ID ==============================================
-  getWord(req, res) {
-    return new Promise((resolve, reject) => {
-      const tableName = req.params.table
-      const sqlQuery = `SELECT * from ${tableName} WHERE id = ?`
-
-      console.log('req.params_getWord :>> ', req.params)
-      console.log('sqlQuery :>> ', sqlQuery)
-
-      connection.query(req, res, resolve, reject, sqlQuery, [req.params.id])
-
-      //   connection.query(
-      //     sqlQuery,      [req.params.id],
-      //     function(err, results) {
-      //       console.log(results);
-      //     }
-      //   );
-    })
+  async runQuery(sqlQuery, values) {
+    try {
+      const connection = await this.pool.getConnection();
+      const [results] = await connection.query(sqlQuery, values);
+      connection.release();
+      return results;
+    } catch (error) {
+      console.error('Error executing SQL query:', error);
+    }
   }
 
-  //  Get all words by table ==============================================
-  getWords(req, res) {
-    return new Promise((resolve, reject) => {
-      const tableName = req.params.table
-      const sqlQuery = `SELECT * from ${tableName}`
+  async initializeIAMToken() {
+    try {
+      const payload = {
+        aud: 'https://iam.api.cloud.yandex.net/iam/v1/tokens',
+        iss: serviceAccountId,
+        iat: now,
+        exp: now + 3600,
+      };
 
-      console.log('----------------')
+      const key = await jose.JWK.asKey(private_key, 'pem', { kid: keyId, alg: 'PS256' });
+      const jwt_token = await jose.JWS.createSign({ format: 'compact' }, key)
+        .update(JSON.stringify(payload))
+        .final();
 
-      if (tableName != 'about' && tableName != 'tehilim') {
-        connection.query(req, res, resolve, reject, sqlQuery)
-      }
-    })
+      const body = {
+        jwt: jwt_token,
+      };
+
+      const response = await axios.post('https://iam.api.cloud.yandex.net/iam/v1/tokens', body);
+      this.IAM_TOKEN = response.data.iamToken;
+    } catch (error) {
+      console.log('AXIOS ERROR_jwt:', error.response);
+    }
   }
 
-  async createWord(req, res) {
-    return new Promise((resolve, reject) => {
-      let word
-      let translate
-      // console.log('req.params_createWord', req.params)
+  async getWordsStartPage() {
+    console.log('get all from words _ getWordsStartPage');
 
-      const tableName = req.params.table
-      const sqlQuery = `INSERT INTO ${tableName} SET ?`
+    const tableName = 'maariv';
+    const sqlQuery = `SELECT * from ${tableName}`;
 
-      // console.log('req.body :>> ', req.body)
-      // console.log('req.body.translate :>> ', req.body.translate)
+    try {
+      const results = await this.runQuery(sqlQuery);
+      console.log(results);
+      return results;
+    } catch (error) {
+      console.error('Error executing SQL query:', error);
+    }
+  }
 
-      if (req.body.translate == '' && req.body.original != '') {
-        // console.log('need translate :>> ')
-        const texts = [req.body.original]
+  async getWord(table, id) {
+    const tableName = table;
+    const sqlQuery = `SELECT * from ${tableName} WHERE id = ?`;
 
+    try {
+      const results = await this.runQuery(sqlQuery, [id]);
+      return results;
+    } catch (error) {
+      console.error('Error executing SQL query:', error);
+    }
+  }
+
+  async getWords(table) {
+    
+    console.log('table1111', table.url)
+    console.log('table.url', table.url)
+    
+    
+    const tableName = table.url.slice(1);
+    // const tableName = table;
+    const sqlQuery = `SELECT * from ${tableName}`;
+
+    try {
+      const results = await this.runQuery(sqlQuery);
+      return results;
+    } catch (error) {
+      console.error('Error executing SQL query:', error);
+    }
+  }
+
+  async createWord(table, data) {
+    const tableName = table;
+    const sqlQuery = `INSERT INTO ${tableName} SET ?`;
+
+    try {
+      let word = { ...data };
+
+      if (data.translate === '' && data.original !== '') {
+        const texts = [data.original];
         const body = {
           sourceLanguageCode: process.env.source_language,
           targetLanguageCode: process.env.target_language,
           texts: texts,
           folderId: process.env.folder_id,
-        }
+        };
 
         const headers = {
-          headers: { Authorization: `Bearer ${IAM_TOKEN}` },
-        }
+          headers: { Authorization: `Bearer ${this.IAM_TOKEN}` },
+        };
 
-        // await axios
-        axios
-          .post('https://translate.api.cloud.yandex.net/translate/v2/translate', body, headers)
-          .then((response) => {
-            // console.log('response.data: ', response.data)
-            translate = response.data.translations[0].text
-            // word = {
-            //     ...word,
-            //     translate: translate,
-            // }
-
-            word = {
-              original: req.body.original,
-              translate: translate,
-              description: req.body.description,
-              periodStart: req.body.periodStart,
-              periodEnd: req.body.periodEnd,
-            }
-
-            console.log('word_0000 :>> ', word)
-
-            connection.query(req, res, resolve, reject, sqlQuery, word)
-          })
-          .catch((error) => {
-            console.log('AXIOS ERROR_post_translate: ', error.response)
-          })
-      } else {
-        console.log('translate from DB another word:>> ')
-
-        // word = {
-        //     ...word,
-        // }
-        console.log('word_111 :>> ', word)
-
+        const response = await axios.post(
+          'https://translate.api.cloud.yandex.net/translate/v2/translate',
+          body,
+          headers,
+        );
+        const translate = response.data.translations[0].text;
         word = {
-          original: req.body.original,
-          translate: req.body.translate,
-          description: req.body.description,
-          periodStart: req.body.periodStart,
-          periodEnd: req.body.periodEnd,
-        }
-
-        connection.query(req, res, resolve, reject, sqlQuery, word)
-        console.log('New word posted after translate', word)
+          ...word,
+          translate: translate,
+        };
       }
-    })
+
+      const results = await this.runQuery(sqlQuery, word);
+      console.log('New word posted after translate', word);
+      return results;
+    } catch (error) {
+      console.error('Error executing SQL query:', error);
+    }
   }
 
-  updateWord(req, res) {
-    return new Promise((resolve, reject) => {
-      console.log('req.body_updateWord', req.body)
-      const { id, original, translate, description, periodStart, periodEnd } = req.body
-      const tableName = req.params.table
-      const sqlQuery = `UPDATE ${tableName} SET original = ?,  translate = ?,  description = ? ,  periodStart = ? ,  periodEnd = ?  WHERE id = ?`
-      connection.query(req, res, resolve, reject, sqlQuery, [
+  async updateWord(table, data) {
+    const { id, original, translate, description, periodStart, periodEnd } = data;
+    const tableName = table;
+    const sqlQuery = `UPDATE ${tableName} SET original = ?, translate = ?, description = ?, periodStart = ?, periodEnd = ? WHERE id = ?`;
+
+    try {
+      const results = await this.runQuery(sqlQuery, [
         original,
         translate,
         description,
         periodStart,
         periodEnd,
         id,
-      ])
-    })
+      ]);
+      return results;
+    } catch (error) {
+      console.error('Error executing SQL query:', error);
+    }
   }
 
-  deleteWord(req, res) {
-    return new Promise((resolve, reject) => {
-      console.log('DELETE id :>> ')
-      const tableName = req.params.table
-      const sqlQuery = `DELETE from ${tableName} WHERE id = ?`
-      connection.query(req, res, resolve, reject, sqlQuery, [req.params.id])
-    })
+  async deleteWord(table, id) {
+    const tableName = table;
+    const sqlQuery = `DELETE from ${tableName} WHERE id = ?`;
+
+    try {
+      const results = await this.runQuery(sqlQuery, [id]);
+      return results;
+    } catch (error) {
+      console.error('Error executing SQL query:', error);
+    }
   }
 
-  deleteTable(req, res) {
-    return new Promise((resolve, reject) => {
-      const tableName = req.params.table
-      const sqlQuery = `DELETE from ${tableName} WHERE id >0`
-      console.log('req.params_deleteTable :>> ', req.params)
-      console.log('sqlQuery :>> ', sqlQuery)
-      connection.query(req, res, resolve, reject, sqlQuery)
-    })
+  async deleteTable(table) {
+    const tableName = table;
+    const sqlQuery = `DELETE from ${tableName} WHERE id > 0`;
+
+    try {
+      const results = await this.runQuery(sqlQuery);
+      return results;
+    } catch (error) {
+      console.error('Error executing SQL query:', error);
+    }
   }
 }
 
-module.exports = new WordsService()
+module.exports = new WordsService();
