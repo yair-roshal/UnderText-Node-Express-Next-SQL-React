@@ -25,7 +25,8 @@ export const CellVariantsArray = [
     { type: 'disable', value: 'disable', component: 'CellDisable' },
 ]
 
-export const URL = `http://localhost:${process.env.PORT}`
+export const URL = 'https://burgerim.ru'
+// export const URL = `http://localhost:${process.env.PORT}`
 
 export const pagesPrayers = [
     // { name: 'Shaharit', href: '/shaharit', prayer: true },
