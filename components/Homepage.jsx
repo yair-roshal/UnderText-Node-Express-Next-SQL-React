@@ -29,8 +29,10 @@ export function Homepage() {
   const [newWords, setNewWords] = useState(JSON.stringify(words))
 
   useEffect(() => {
-    axiosWrappers.getAxios(URL + hrefMainPage).then((value) => {
-      console.log('value!!!', value)
+    let url=URL + hrefMainPage
+    console.log('url_____', url)
+    axiosWrappers.getAxios(url).then((value) => {
+      console.log('_axiosWrappers.getAxio_value!!!', value)
       setWords(value)
     })
   }, [hrefMainPage])
