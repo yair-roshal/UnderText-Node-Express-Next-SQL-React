@@ -1,17 +1,18 @@
 USE default_db;
 
-CREATE TABLE `maariv_4` (
-   `original` varchar(99)  ,
-  `translate` varchar(99) ,
+CREATE TABLE `maariv` (
+  `id` INT AUTO_INCREMENT PRIMARY KEY,
+  `original` varchar(99),
+  `translate` varchar(99),
   `description` text,
   `periodStart` text,
   `periodEnd` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO maariv (id, original, translate, description, periodStart, periodEnd) VALUES
 
---  (1, 'example1', 'translation1', 'This is the first example', 'start1', 'end1'), 
- 
+INSERT INTO maariv ( original, translate, description, periodStart, periodEnd) VALUES
+
+  
 ( 'וְהוּא', 'и он', NULL, NULL, NULL),
 ( 'רַחוּם', 'Милосердный', NULL, NULL, NULL),
 ( 'יְכַפֵּר', 'Искупит', NULL, NULL, NULL),
