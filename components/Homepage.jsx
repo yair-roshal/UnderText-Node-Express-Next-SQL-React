@@ -29,7 +29,7 @@ export function Homepage() {
   const [newWords, setNewWords] = useState(JSON.stringify(words))
 
   useEffect(() => {
-    let url=URL + hrefMainPage
+    const url = URL + hrefMainPage
     console.log('url_____', url)
     axiosWrappers.getAxios(url).then((value) => {
       console.log('_axiosWrappers.getAxio_value!!!', value)
@@ -166,9 +166,7 @@ export function Homepage() {
   //       setDialogText('Error updating table:')
   //       setDialogOpen(true)
   //     })
-      
-    
-      
+
   // }
 
   return (

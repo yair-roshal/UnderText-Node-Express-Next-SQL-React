@@ -1,5 +1,7 @@
-export const URL = 'https://burgerim.ru'
-// export const URL = `http://localhost:${process.env.PORT}`
+// export const URL = 'https://burgerim.ru'
+export const URL = 'http://burgerim.ru'
+// export const URL = 'burgerim.ru'
+ // export const URL = `http://localhost:${process.env.PORT}`
 
 
 export const JewishMonth = {
