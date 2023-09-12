@@ -1,6 +1,6 @@
 USE default_db;
 
-CREATE TABLE `maariv_3` (
+CREATE TABLE `maariv` (
   `id` varchar(99),
   `original` varchar(99) NOT NULL,
   `translate` varchar(99) NOT NULL,

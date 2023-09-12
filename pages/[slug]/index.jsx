@@ -7,8 +7,10 @@ export async function getServerSideProps({ params }) {
  
   const response = await axios.get(`${URL}/${params.slug}`)
 
-  console.log('response :>> ', response)
-  console.log('response.data222', response.data)
+  console.log('response.status :>> ', response.status)
+  console.log('response.statusText :>>  ', response.statusText)
+  // console.log('response :>> ', response)
+  // console.log('response.data222', response.data)
 
   if (response.data[0] == undefined) {
     // console.log('not items111')
