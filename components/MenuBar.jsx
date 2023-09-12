@@ -24,8 +24,6 @@ import { pagesPrayers } from '../constants/clientConstants'
 import { Link } from 'components'
 import { useMainPage } from 'hooks'
 
-// const hebrewDate = require('hebrew-date')
-
 const drawerWidth = 240
 
 const AppBar = styled(MuiAppBar, {
@@ -36,7 +34,6 @@ const AppBar = styled(MuiAppBar, {
         duration: theme.transitions.duration.leavingScreen,
     }),
     ...(open && {
-        // width: '100%',
         width: `calc(100% - ${drawerWidth}px)`,
         transition: theme.transitions.create(['margin', 'width'], {
             easing: theme.transitions.easing.easeOut,
@@ -50,7 +47,6 @@ const DrawerHeader = styled('div')(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
     padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
     ...theme.mixins.toolbar,
     justifyContent: 'flex-start',
 }))
@@ -75,6 +71,10 @@ export function MenuBar() {
 
     const handleDrawerClose = () => {
         setOpen(false)
+    }
+
+    const handleMenuItemClick = () => {
+        handleDrawerClose()
     }
 
     return (
@@ -125,13 +125,12 @@ export function MenuBar() {
                 <List>
                     {pagesPrayers.map(
                         (pagesPrayer) =>
-                            pagesPrayer.prayer == true && (
+                            pagesPrayer.prayer === true && (
                                 <ListItem key={pagesPrayer.name} disablePadding>
-                                    <ListItemButton>
+                                    <ListItemButton onClick={handleMenuItemClick}>
                                         <ListItemIcon>
                                             <BookIcon />
                                         </ListItemIcon>
-
                                         <Link
                                             onClick={handleDrawerClose}
                                             href={pagesPrayer.href}
@@ -149,13 +148,12 @@ export function MenuBar() {
                 <List>
                     {pagesPrayers.map(
                         (pagesPrayer) =>
-                            pagesPrayer.prayer == false && (
+                            pagesPrayer.prayer === false && (
                                 <ListItem key={pagesPrayer.name} disablePadding>
-                                    <ListItemButton>
+                                    <ListItemButton onClick={handleMenuItemClick}>
                                         <ListItemIcon>
                                             <BookIcon />
                                         </ListItemIcon>
-
                                         <Link
                                             onClick={handleDrawerClose}
                                             href={pagesPrayer.href}
@@ -173,13 +171,12 @@ export function MenuBar() {
                 <List>
                     {pagesPrayers.map(
                         (pagesPrayer) =>
-                            pagesPrayer.prayer == 'additionalItems' && (
+                            pagesPrayer.prayer === 'additionalItems' && (
                                 <ListItem key={pagesPrayer.name} disablePadding>
-                                    <ListItemButton>
+                                    <ListItemButton onClick={handleMenuItemClick}>
                                         <ListItemIcon>
                                             <BookIcon />
                                         </ListItemIcon>
-
                                         <Link
                                             onClick={handleDrawerClose}
                                             href={pagesPrayer.href}
