@@ -6,7 +6,8 @@ import { CellTitle } from './variants/CellTitle'
 import { CellLastBold } from './variants/CellLastBold'
 import { CellDisable } from './variants/CellDisable'
 
-import { CellVariantsArray } from 'constants'
+import { CellVariantsArray } from '../../constants/clientConstants'
+// import { CellVariantsArray } from 'constants'
 // import { useGetStyle } from 'helpers'
 
 export function CellComponent({ variant, ...props }) {
@@ -25,7 +26,8 @@ export function CellComponent({ variant, ...props }) {
         // } else {
         //     null
         // }
-
+        
+ 
         switch (variant) {
             case CellVariantsArray[0].component:
                 Component = CellSimple

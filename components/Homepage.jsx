@@ -3,39 +3,56 @@ import { Loading, Link, StyledButton, ImportButton } from 'components'
 import { axiosWrappers } from 'helpers'
 import { useMainPage } from 'hooks'
 import { CellComponent } from './CellComponent/CellComponent'
+// import { useRouter } from 'next/router'
+
 // import { CellVariantsArray, URL } from 'constants'
 import { URL } from 'constants/clientConstants'
-import DialogComponent from 'components/styled/DialogComponent'
+// import DialogComponent from 'components/styled/DialogComponent'
 
-import axios from 'axios'
-import { Button, Container, TextField } from '@mui/material'
-import {
-  // toJewishDate,
-  // formatJewishDate,
-  // toHebrewJewishDate,
-  // formatJewishDateInHebrew,
-  toGregorianDate,
-  // JewishMonth,
-} from 'jewish-date'
+// import axios from 'axios'
+// import { Button, Container, TextField } from '@mui/material'
+// import {
+//   // toJewishDate,
+//   // formatJewishDate,
+//   // toHebrewJewishDate,
+//   // formatJewishDateInHebrew,
+//   toGregorianDate,
+//   // JewishMonth,
+// } from 'jewish-date'
 
-export function Homepage() {
+export function Homepage(props) {
+  // Use the useRouter hook to access props
+  // const router = useRouter();
+
   const hrefMainPage = useMainPage()
   const hrefLinkImport = hrefMainPage + '/import'
   // const [file, setFile] = useState(null)
   // const [dialogOpen, setDialogOpen] = useState(false)
   // const [dialogText, setDialogText] = useState('')
 
-  const [words, setWords] = useState(null)
+  const { data } = props
+
+  console.log('props111', props)
+  console.log('data111', data)
+
+  const [words, setWords] = useState(props.data)
   const [newWords, setNewWords] = useState(JSON.stringify(words))
 
   useEffect(() => {
-    const url = URL + hrefMainPage
-    console.log('url_____', url)
-    axiosWrappers.getAxios(url).then((value) => {
-      console.log('_axiosWrappers.getAxio_value!!!', value)
-      setWords(value)
-    })
-  }, [hrefMainPage])
+    console.log('props111', props)
+    setWords(props.data)
+  }, [props])
+
+  // useEffect(() => {
+  //   const url = URL + hrefMainPage
+  //   console.log('url_____', url)
+  //   axiosWrappers.getAxios(url).then((value) => {
+  //     console.log('_axiosWrappers.getAxio_value!!!', value)
+
+  //     console.log('value22222', value)
+  //     setWords(value)
+  //   })
+  //  }, [hrefMainPage])
 
   useEffect(() => {
     setNewWords(JSON.stringify(words))
