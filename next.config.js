@@ -1,6 +1,13 @@
 const path = require('path')
  
 module.exports = {
+    
+ 
+    sassOptions: {
+        includePaths: [path.join(__dirname, 'styles')],
+    },
+
+      
     //   -  12.2.x or later
     output: 'standalone',
 
@@ -8,10 +15,6 @@ module.exports = {
     // experimental: {
     //     outputStandalone: true,
     //   }
-
-    sassOptions: {
-        includePaths: [path.join(__dirname, 'styles')],
-    },
 
     env: {
         PORT: process.env.PORT,

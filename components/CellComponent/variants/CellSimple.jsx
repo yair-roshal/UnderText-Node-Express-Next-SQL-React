@@ -9,12 +9,12 @@ export const CellSimple = (props) => {
 
     return (
         <>
-            <Link href={hrefLinkUpdate} style={{ textDecoration: 'none' }}>
+            {/* <Link href={hrefLinkUpdate} style={{ textDecoration: 'none' }}> */}
                 <div className='cell'>
                     <div className='original_text'>{original}</div>
                     <div className='translate'>{translate}</div>
                 </div>
-            </Link>
+            {/* </Link> */}
         </>
     )
 }

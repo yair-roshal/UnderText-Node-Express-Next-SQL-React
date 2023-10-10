@@ -9,10 +9,10 @@ export const CellLast = (props) => {
     return (
         <>
             <div className='cell'>
-                <Link href={hrefLinkUpdate} style={{ textDecoration: 'none' }}>
+                {/* <Link href={hrefLinkUpdate} style={{ textDecoration: 'none' }}> */}
                     <div className='original_text'>{original}</div>
                     <div className='translate'>{translate}</div>
-                </Link>
+                {/* </Link> */}
             </div>
             <div className='cellFullWidth'></div>
         </>
