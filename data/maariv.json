@@ -747,8 +747,9 @@
     {"id":"692","original":"שְׁמוֹ","translate":"Имени своего","description":null,"periodStart":null,"periodEnd":null},
     {"id":"693","original":"בְּאַהֲבָֽה:","translate":"С любовью:","description":"last","periodStart":null,"periodEnd":null},
 
+	
+	
     {"id":"694","original":"בעשי״ת","translate":"10 дней тшувы","description":"first","periodStart":null,"periodEnd":null},
-
     {"id":"695","original":"זָכְרֵֽנוּ","translate":"вспомни нас","description":"bold","periodStart":null,"periodEnd":null},
     {"id":"696","original":"לְחַיִּֽים,","translate":"к жизни,","description":"bold","periodStart":null,"periodEnd":null},
     {"id":"697","original":"מֶֽלֶךְ","translate":"владыка","description":"bold","periodStart":null,"periodEnd":null},
@@ -1354,7 +1355,10 @@
     {"id":"1221","original":"מֵעוֹלָֽם","translate":"ДО (тех пор пока есть) МИР","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1222","original":"קִוִּֽינוּ","translate":"БУДЕМ МЫ НАДЕЯТЬСЯ","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1223","original":"לָךְ","translate":"НА ТЕБЯ","description":null,"periodStart":null,"periodEnd":null},
-    {"id":"1224","original":"וְעַל","translate":"и ЗА","description":null,"periodStart":null,"periodEnd":null},
+   
+	
+	
+	{"id":"1224","original":"וְעַל","translate":"и ЗА","description":"first","periodStart":null,"periodEnd":null},
     {"id":"1225","original":"כֻּלָּם","translate":"ВСЕ (это)","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1226","original":"יִתְבָּרֵךְ","translate":"(да) БУДЕТ БЛАГОСЛОВЕННО","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1227","original":"וְיִתְרוֹמָם","translate":"И ВОЗВЫШАЕМО","description":null,"periodStart":null,"periodEnd":null},
@@ -1364,7 +1368,20 @@
     {"id":"1231","original":"תָּמִיד","translate":"Постоянно","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1232","original":"לְעוֹלָם","translate":"ДО (тех пор пока есть) МИР","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1233","original":"וָעֶד","translate":"И ДО (конца времен)","description":null,"periodStart":null,"periodEnd":null},
-    {"id":"1234","original":":וְכָל","translate":"И ВСЕ","description":null,"periodStart":null,"periodEnd":null},
+   
+	
+	
+	
+	{"id":"694","original":"בעשי״ת","translate":"10 дней тшувы","description":"first","periodStart":null,"periodEnd":null},
+	{"id":"694","original":"וכתוב","translate":"И ЗАПИШИ","description":"first","periodStart":null,"periodEnd":null},
+	{"id":"694","original":"לחיים","translate":"НА ЖИЗНЬ","description":"first","periodStart":null,"periodEnd":null},
+	{"id":"694","original":"טובים","translate":"хорошую","description":"first","periodStart":null,"periodEnd":null},
+	{"id":"694","original":"כל","translate":"всех","description":"first","periodStart":null,"periodEnd":null},
+	{"id":"694","original":"בני","translate":"сыновей","description":"first","periodStart":null,"periodEnd":null},
+	{"id":"694","original":"תבוריסך","translate":"израиля","description":"first","periodStart":null,"periodEnd":null},
+ 
+	
+	{"id":"1234","original":":וְכָל","translate":"И ВСЕ","description":"first","periodStart":null,"periodEnd":null},
     {"id":"1235","original":":  הַחַיִּים","translate":"живое","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1236","original":"יוֹדוּךָ","translate":"(да) БЛАГОДАРИТ ТЕБЯ","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1237","original":"סֶּלָה,","translate":"вечно,","description":null,"periodStart":null,"periodEnd":null},
@@ -1388,7 +1405,10 @@
     {"id":"1255","original":"וּלְךָ","translate":"И ТЕБЯ","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1256","original":"נָאֶה","translate":"ПРИСТАЛО","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1257","original":"לְהוֹדוֹת:","translate":"БЛАГОДАРИТЬ","description":null,"periodStart":null,"periodEnd":null},
-    {"id":"1258","original":"שִׂים","translate":"ПОЛОЖИ","description":null,"periodStart":null,"periodEnd":null},
+    
+	
+	
+	{"id":"1258","original":"שִׂים","translate":"ПОЛОЖИ","description":"first","periodStart":null,"periodEnd":null},
     {"id":"1259","original":"שָׁלוֹם,","translate":"Мир,","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1260","original":"טוֹבָה","translate":"БЛАГО","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1261","original":"וּבְרָכָה,","translate":"И БРАХУ (благословение)","description":null,"periodStart":null,"periodEnd":null},
