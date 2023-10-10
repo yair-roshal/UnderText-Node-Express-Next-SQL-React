@@ -1,5 +1,6 @@
 import { Link } from 'components'
 import { useMainPage } from 'hooks'
+import { Cell } from '../../Cell'
 
 export const CellSimple = (props) => {
     const { id, original, translate } = props
@@ -10,10 +11,8 @@ export const CellSimple = (props) => {
     return (
         <>
             {/* <Link href={hrefLinkUpdate} style={{ textDecoration: 'none' }}> */}
-                <div className='cell'>
-                    <div className='original_text'>{original}</div>
-                    <div className='translate'>{translate}</div>
-                </div>
+            <Cell original={original} translate={translate} bold={false} />
+
             {/* </Link> */}
         </>
     )

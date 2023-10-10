@@ -155,7 +155,7 @@ export function MenuBar() {
               (pagesPrayer) =>
                 pagesPrayer.prayer === true && (
                   <ListItem key={pagesPrayer.name} disablePadding>
-                    <ListItemButton onClick={handleMenuItemClick}>
+                    <ListItemButton onClick={()=>handleMenuItemClick()}>
                       <ListItemIcon>
                         <BookIcon />
                       </ListItemIcon>
@@ -177,7 +177,7 @@ export function MenuBar() {
               (pagesPrayer) =>
                 pagesPrayer.prayer === false && (
                   <ListItem key={pagesPrayer.name} disablePadding>
-                    <ListItemButton onClick={handleMenuItemClick}>
+                    <ListItemButton onClick={()=>handleMenuItemClick()}>
                       <ListItemIcon>
                         <BookIcon />
                       </ListItemIcon>
@@ -199,7 +199,7 @@ export function MenuBar() {
               (pagesPrayer) =>
                 pagesPrayer.prayer === 'additionalItems' && (
                   <ListItem key={pagesPrayer.name} disablePadding>
-                    <ListItemButton onClick={handleMenuItemClick}>
+                    <ListItemButton onClick={()=>handleMenuItemClick()}>
                       <ListItemIcon>
                         <BookIcon />
                       </ListItemIcon>

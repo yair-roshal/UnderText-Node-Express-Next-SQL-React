@@ -864,7 +864,7 @@
     {"id":"788","original":"הַקָּדֽוֹשׁ","translate":"СВЯТОЙ","description":null,"periodStart":null,"periodEnd":null},
 	
 	
-    {"id":"789","original":"בעשי״ת","translate":"В ДЕСЯТЬ ДНЕЙ ТШУВЫ:","description":"first","periodStart":null,"periodEnd":null},
+    {"id":"789","original":"בעשי״ת","translate":"В ДЕСЯТЬ ДНЕЙ ТШУВЫ:","description":"bold","periodStart":null,"periodEnd":null},
     {"id":"790","original":"הַמֶּֽלֶךְ","translate":"ВЛАДЫКА","description":null,"periodStart":null,"periodEnd":null},
     {"id":"791","original":"הַקָּדֽוֹשׁ","translate":"СВЯТОЙ","description":null,"periodStart":null,"periodEnd":null},
 	
@@ -1373,12 +1373,12 @@
 	
 	
 	{"id":"694","original":"בעשי״ת","translate":"10 дней тшувы","description":"first","periodStart":null,"periodEnd":null},
-	{"id":"694","original":"וכתוב","translate":"И ЗАПИШИ","description":"first","periodStart":null,"periodEnd":null},
-	{"id":"694","original":"לחיים","translate":"НА ЖИЗНЬ","description":"first","periodStart":null,"periodEnd":null},
-	{"id":"694","original":"טובים","translate":"хорошую","description":"first","periodStart":null,"periodEnd":null},
-	{"id":"694","original":"כל","translate":"всех","description":"first","periodStart":null,"periodEnd":null},
-	{"id":"694","original":"בני","translate":"сыновей","description":"first","periodStart":null,"periodEnd":null},
-	{"id":"694","original":"תבוריסך","translate":"израиля","description":"first","periodStart":null,"periodEnd":null},
+	{"id":"694","original":"וכתוב","translate":"И ЗАПИШИ","description":"bold","periodStart":null,"periodEnd":null},
+	{"id":"694","original":"לחיים","translate":"НА ЖИЗНЬ","description":"bold","periodStart":null,"periodEnd":null},
+	{"id":"694","original":"טובים","translate":"хорошую","description":"bold","periodStart":null,"periodEnd":null},
+	{"id":"694","original":"כל","translate":"всех","description":"bold","periodStart":null,"periodEnd":null},
+	{"id":"694","original":"בני","translate":"сыновей","description":"bold","periodStart":null,"periodEnd":null},
+	{"id":"694","original":"תבוריסך","translate":"израиля","description":"bold","periodStart":null,"periodEnd":null},
  
 	
 	{"id":"1234","original":":וְכָל","translate":"И ВСЕ","description":"first","periodStart":null,"periodEnd":null},
