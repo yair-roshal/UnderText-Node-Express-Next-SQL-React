@@ -1,67 +1,61 @@
-import * as React from 'react'
+import React, { useState, useEffect } from 'react'
 import Box from '@mui/material/Box'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
 import Checkbox from '@mui/material/Checkbox'
 import Typography from '@mui/material/Typography'
-import Button from '@mui/material/Button' // Импортируем кнопку
+import Button from '@mui/material/Button'
+// import StyledCell from '../../components/StyledCell'
 
 import { fontFamilyList, fontSizeList } from '../../constants/clientConstants'
 import { useUsersContext } from '../../context/usersContext'
-import { useEffect } from 'react'
+import { StyledCell } from 'components/StyledCell'
 
 export default function BasicSelect() {
-  // const { userOption, setUserOption } = useUserOptionContext();
   const { usersData, setUsersData } = useUsersContext()
 
-  const [fontSize, setFontSize] = React.useState('')
-  const [fontFamily, setFontFamily] = React.useState('')
-  const [textOnlyToDate, setTextOnlyToDate] = React.useState(true) // Стейт для чекбокса
+  const [options, setOptions] = useState({
+    fontSize: '',
+    fontFamily: '',
+    textOnlyToDate: true,
+  })
 
   useEffect(() => {
-    // Заполняем стейты из контекста
-    setFontSize(usersData.fontSize)
-    setFontFamily(usersData.fontFamily)
-    setTextOnlyToDate(usersData.textOnlyToDate)
+    const savedOptions = JSON.parse(localStorage.getItem('userOptions'))
 
-    console.log('usersData :>> ', usersData)
-  }, [usersData])
+    if (savedOptions) {
+      setOptions(savedOptions)
+    }
+  }, [])
 
-  const fontSizeHandleChange = (event) => {
-    setFontSize(event.target.value)
+  useEffect(() => {
+    // Обновляем контекст
+    setUsersData(options)
 
-    // Сохраняем выбранный font-size в контекст
-    setUsersData({ ...usersData, fontSize: event.target.value })
+    // Сохраняем параметры в LocalStorage
+    localStorage.setItem('userOptions', JSON.stringify(options))
+  }, [options, setUsersData])
+
+  const handleOptionChange = (event, option) => {
+    const value = event.target.value
+    setOptions({
+      ...options,
+      [option]: value,
+    })
   }
 
-  const fontFamilyHandleChange = (event) => {
-    setFontFamily(event.target.value)
-
-    // Сохраняем выбранный font-family в контекст
-    setUsersData({ ...usersData, fontFamily: event.target.value })
-  }
-
-  const textOnlyToDateHandleChange = (event) => {
-    setTextOnlyToDate(event.target.checked)
-
-    // Сохраняем состояние чекбокса в контекст
-    setUsersData({ ...usersData, textOnlyToDate: event.target.checked })
-  }
+  const textExampleHebrew = 'טקסט לדוגמה גודל ומשפחת גופנים בעברית '
+  const textExample = 'Текст для примера размера и семейства шрифта на русском'
 
   const handleDefaultButtonClick = () => {
-    // Устанавливаем значения по умолчанию
-    setFontFamily('Times New Roman')
-    setFontSize(22)
-    setTextOnlyToDate(true)
-
-    // Обновляем контекст
-    setUsersData({
-      ...usersData,
+    const defaultOptions = {
+      fontSize: '22',
       fontFamily: 'Times New Roman',
-      fontSize: 22,
       textOnlyToDate: true,
-    })
+    }
+
+    setOptions(defaultOptions)
   }
 
   return (
@@ -70,21 +64,22 @@ export default function BasicSelect() {
         <Typography variant='h3' sx={{ padding: '20px 0px' }}>
           Options
         </Typography>
+
         <Box
           sx={{
-            // paddingTop: '90px',
             display: 'flex',
-            alignItems: 'bottom',
-            justifyContent: 'start',
+            alignItems: 'center',
+
+            justifyContent: 'space-around',
           }}
         >
-          <FormControl sx={{ width: 220 }}>
-            <Typography variant='h5'>Font size</Typography>
+          <FormControl sx={{ width: '100%' }}>
+            <Typography variant='h5'>Размер шрифта</Typography>
             <Select
               labelId='fontSize-select-label'
-              value={fontSize}
+              value={options.fontSize}
               label='fontSize'
-              onChange={fontSizeHandleChange}
+              onChange={(event) => handleOptionChange(event, 'fontSize')}
             >
               {fontSizeList.map((fontSize) => (
                 <MenuItem key={fontSize} value={fontSize}>
@@ -94,14 +89,14 @@ export default function BasicSelect() {
             </Select>
           </FormControl>
 
-          <FormControl sx={{ width: 220, paddingLeft: 2 }}>
-            <Typography variant='h5'>Font family</Typography>
+          <FormControl sx={{ width: '100%', paddingLeft: 2 }}>
+            <Typography variant='h5'>Семейство шрифта</Typography>
 
             <Select
               labelId='fontFamily-select-label'
-              value={fontFamily}
+              value={options.fontFamily}
               label='fontFamily'
-              onChange={fontFamilyHandleChange}
+              onChange={(event) => handleOptionChange(event, 'fontFamily')}
             >
               {fontFamilyList.map((fontFamily) => (
                 <MenuItem key={fontFamily} value={fontFamily}>
@@ -111,43 +106,31 @@ export default function BasicSelect() {
             </Select>
           </FormControl>
 
-          <Button sx={{ m: 3 }} variant='contained' onClick={handleDefaultButtonClick}>
-            Default
+          <Button
+            sx={{ width: '300px', height: '50px', paddingLeft: 2, m: 2 }}
+            // sx={{ width: '100%', paddingLeft: 2, m: 2 }}
+            variant='contained'
+            onClick={handleDefaultButtonClick}
+          >
+            По умолчанию
           </Button>
         </Box>
 
-        <Typography variant='h6'>
-          text only to this date (without additional text to all year){' '}
-          <Checkbox checked={textOnlyToDate} onChange={textOnlyToDateHandleChange} />
-        </Typography>
+        {/* <Typography variant='h6'>
+          Только текст на эту дату (без дополнительного текста на весь год){' '}
+          <Checkbox
+            checked={options.textOnlyToDate}
+            onChange={(event) => handleOptionChange(event, 'textOnlyToDate')}
+          />
+        </Typography> */}
       </Box>
 
       <Box sx={{ p: 4 }}>
-        <Typography
-          sx={{
-            fontFamily: usersData.fontFamily,
-            fontSize: `${usersData.fontSize}px !important`,
-            border: '1px solid black',
-            borderRadius: '5px',
-            width: 'fit-content',
-            padding: '10px',
-          }}
-        >
-          Text For Example Size and Font Family in English
+        <Typography variant='h4' p={2}>
+          Пример :
         </Typography>
-        <Typography
-          sx={{
-            fontFamily: usersData.fontFamily,
-            fontSize: `${usersData.fontSize}px !important`,
-            border: '1px solid black',
-            borderRadius: '5px',
-            width: 'fit-content',
-            padding: '10px',
-            margin: '20px 0 ',
-          }}
-        >
-          טקסט לדוגמה גודל ומשפחת גופנים בעברית
-        </Typography>
+
+        <StyledCell original={textExampleHebrew} translate={textExample} />
       </Box>
     </>
   )
