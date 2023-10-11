@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Box from '@mui/material/Box'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
@@ -6,7 +6,6 @@ import Select from '@mui/material/Select'
 import Checkbox from '@mui/material/Checkbox'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
-// import StyledCell from '../../components/StyledCell'
 
 import { fontFamilyList, fontSizeList } from '../../constants/clientConstants'
 import { useUsersContext } from '../../context/usersContext'
@@ -15,7 +14,11 @@ import { StyledCell } from 'components/StyledCell'
 export default function BasicSelect() {
   const { usersData, setUsersData } = useUsersContext()
 
-  const [options, setOptions] = useState(usersData)
+  const [options, setOptions] = useState({
+    fontSize: '22',
+    fontFamily: 'Times New Roman',
+    borderForCell: true,
+  })
 
   useEffect(() => {
     const savedOptions = JSON.parse(localStorage.getItem('usersData'))
@@ -83,11 +86,10 @@ export default function BasicSelect() {
           }}
         >
           <FormControl sx={{ width: '100%' }}>
-            <Typography variant='h5'>Размер шрифта</Typography>
+            <Typography variant='h5'>Размер</Typography>
+
             <Select
-              labelId='fontSize-select-label'
               value={options.fontSize}
-              label='fontSize'
               onChange={(event) => handleOptionChange(event, 'fontSize')}
             >
               {fontSizeList.map((fontSize) => (
@@ -99,12 +101,10 @@ export default function BasicSelect() {
           </FormControl>
 
           <FormControl sx={{ width: '100%', paddingLeft: 2 }}>
-            <Typography variant='h5'>Семейство шрифта</Typography>
+            <Typography variant='h5'>Шрифт</Typography>
 
             <Select
-              labelId='fontFamily-select-label'
               value={options.fontFamily}
-              label='fontFamily'
               onChange={(event) => handleOptionChange(event, 'fontFamily')}
             >
               {fontFamilyList.map((fontFamily) => (
@@ -140,11 +140,12 @@ export default function BasicSelect() {
         </Typography>
 
         <StyledCell
-          sx={{
-            fontSize: options.fontSize,
-            fontFamily: options.fontFamily,
-            border: options.borderForCell ? '1px solid #d0d0d0' : 'none',
-          }}
+          // sx={{
+          //   fontSize: options.fontSize,
+          //   fontFamily: options.fontFamily,
+          //   border: options.borderForCell ? '1px solid #d0d0d0' : 'none',
+          //   borderRadius: options.borderForCell ? '10px' : '0px',
+          // }}
           original={textExampleHebrew}
           translate={textExample}
         />

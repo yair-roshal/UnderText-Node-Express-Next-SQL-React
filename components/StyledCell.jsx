@@ -73,6 +73,7 @@ export const StyledCell = ({ original, translate, bold, periodStart, periodEnd }
         fontFamily: usersData.fontFamily,
         fontSize: `${usersData.fontSize}px !important`,
         border: usersData.borderForCell ? '1px solid #d0d0d0' : 'none',
+        borderRadius: usersData.borderForCell ? '10px' : '0px',
       }}
     >
       <Box className='original_text'>{original}</Box>
