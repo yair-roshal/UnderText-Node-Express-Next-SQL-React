@@ -3,6 +3,26 @@ export const URL = 'http://burgerim.ru'
 // export const URL = 'burgerim.ru'
 // export const URL = `http://localhost:${process.env.PORT}`
 
+export const fontFamilyList = [
+  'Rubik',
+  'Rubik Moonrocks',
+  'Rubik Wet Paint',
+  'Rubik Vinyl',
+
+  'Frank Ruhl Libre',
+  'Tinos',
+  'David Libre',
+
+  'Arial',
+  'Segoe UI',
+  'Times New Roman',
+  'Courier New',
+  'Georgia',
+  'Comic Sans MS',
+  'Impact',
+  'Courier',
+]
+
 export const JewishMonth = {
   None: 'None',
   Tishri: 'Tishri',
@@ -34,16 +54,4 @@ export const pagesPrayers = [
   { name: 'About', href: '/about', prayer: 'additionalItems' },
 ]
 
-export const fontFamilyList = [
-  'Arial',
-  'Segoe UI',
-  'Roboto',
-  'Oxygen',
-  'Ubuntu',
-  'Cantarell',
-  'Fira Sans',
-  'Droid Sans',
-  'Helvetica Neue',
-]
-
-export const fontSizeList = [8, 10, 12, 14, 16, 18, 20, 22, 24, 26]
+export const fontSizeList = [8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 36, 48, 72]

@@ -1,72 +1,154 @@
 import * as React from 'react'
 import Box from '@mui/material/Box'
-// import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
-import { fontFamilyList, fontSizeList } from '../../constants/clientConstants'
 import Checkbox from '@mui/material/Checkbox'
+import Typography from '@mui/material/Typography'
+import Button from '@mui/material/Button' // Импортируем кнопку
+
+import { fontFamilyList, fontSizeList } from '../../constants/clientConstants'
+import { useUsersContext } from '../../context/usersContext'
+import { useEffect } from 'react'
 
 export default function BasicSelect() {
-    const [fontSize, setFontSize] = React.useState('')
-    const [fontFamily, setFontFamily] = React.useState('')
-    const label = { inputProps: { 'aria-label': 'text only to this date' } }
+  // const { userOption, setUserOption } = useUserOptionContext();
+  const { usersData, setUsersData } = useUsersContext()
 
-    const fontSizeHandleChange = (event) => {
-        setFontSize(event.target.value)
-    }
+  const [fontSize, setFontSize] = React.useState('')
+  const [fontFamily, setFontFamily] = React.useState('')
+  const [textOnlyToDate, setTextOnlyToDate] = React.useState(true) // Стейт для чекбокса
 
-    const fontFamilyHandleChange = (event) => {
-        setFontFamily(event.target.value)
-    }
+  useEffect(() => {
+    // Заполняем стейты из контекста
+    setFontSize(usersData.fontSize)
+    setFontFamily(usersData.fontFamily)
+    setTextOnlyToDate(usersData.textOnlyToDate)
 
-    return (
-        <>
-            <h1>Options</h1>
-            <Box sx={{ minWidth: 120 }}>
-                <FormControl sx={{ width: 220 }}>
-                    <h3>font-size</h3>
+    console.log('usersData :>> ', usersData)
+  }, [usersData])
 
-                    {/* <InputLabel id='fontSize-select-label'>font-size</InputLabel> */}
-                    <Select
-                        labelId='fontSize-select-label'
-                        value={fontSize}
-                        label='fontSize'
-                        onChange={fontSizeHandleChange}
-                    >
-                        {fontSizeList.map((fontSize) => {
-                            return (
-                                <MenuItem key={fontSize} value={fontSize}>
-                                    {fontSize}
-                                </MenuItem>
-                            )
-                        })}
-                    </Select>
-                </FormControl>
+  const fontSizeHandleChange = (event) => {
+    setFontSize(event.target.value)
 
-                <FormControl sx={{ width: 220 }}>
-                    <h3>font-family</h3>
-                    {/* <InputLabel id='fontFamily-select-label'>font-size</InputLabel> */}
+    // Сохраняем выбранный font-size в контекст
+    setUsersData({ ...usersData, fontSize: event.target.value })
+  }
 
-                    <Select
-                        labelId='fontFamily-select-label'
-                        value={fontFamily}
-                        label='fontFamily'
-                        onChange={fontFamilyHandleChange}
-                    >
-                        {fontFamilyList.map((fontFamily) => {
-                            return (
-                                <MenuItem key={fontFamily} value={fontFamily}>
-                                    {fontFamily}
-                                </MenuItem>
-                            )
-                        })}
-                    </Select>
-                </FormControl>
+  const fontFamilyHandleChange = (event) => {
+    setFontFamily(event.target.value)
 
-                <h2>text only to this date (without additional text to all year)</h2>
-                <Checkbox {...label} defaultChecked />
-            </Box>
-        </>
-    )
+    // Сохраняем выбранный font-family в контекст
+    setUsersData({ ...usersData, fontFamily: event.target.value })
+  }
+
+  const textOnlyToDateHandleChange = (event) => {
+    setTextOnlyToDate(event.target.checked)
+
+    // Сохраняем состояние чекбокса в контекст
+    setUsersData({ ...usersData, textOnlyToDate: event.target.checked })
+  }
+
+  const handleDefaultButtonClick = () => {
+    // Устанавливаем значения по умолчанию
+    setFontFamily('Times New Roman')
+    setFontSize(22)
+    setTextOnlyToDate(true)
+
+    // Обновляем контекст
+    setUsersData({
+      ...usersData,
+      fontFamily: 'Times New Roman',
+      fontSize: 22,
+      textOnlyToDate: true,
+    })
+  }
+
+  return (
+    <>
+      <Box sx={{ minWidth: 120, p: 4 }}>
+        <Typography variant='h3' sx={{ padding: '20px 0px' }}>
+          Options
+        </Typography>
+        <Box
+          sx={{
+            // paddingTop: '90px',
+            display: 'flex',
+            alignItems: 'bottom',
+            justifyContent: 'start',
+          }}
+        >
+          <FormControl sx={{ width: 220 }}>
+            <Typography variant='h5'>Font size</Typography>
+            <Select
+              labelId='fontSize-select-label'
+              value={fontSize}
+              label='fontSize'
+              onChange={fontSizeHandleChange}
+            >
+              {fontSizeList.map((fontSize) => (
+                <MenuItem key={fontSize} value={fontSize}>
+                  {fontSize}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+
+          <FormControl sx={{ width: 220, paddingLeft: 2 }}>
+            <Typography variant='h5'>Font family</Typography>
+
+            <Select
+              labelId='fontFamily-select-label'
+              value={fontFamily}
+              label='fontFamily'
+              onChange={fontFamilyHandleChange}
+            >
+              {fontFamilyList.map((fontFamily) => (
+                <MenuItem key={fontFamily} value={fontFamily}>
+                  {fontFamily}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+
+          <Button sx={{ m: 3 }} variant='contained' onClick={handleDefaultButtonClick}>
+            Default
+          </Button>
+        </Box>
+
+        <Typography variant='h6'>
+          text only to this date (without additional text to all year){' '}
+          <Checkbox checked={textOnlyToDate} onChange={textOnlyToDateHandleChange} />
+        </Typography>
+      </Box>
+
+      <Box sx={{ p: 4 }}>
+        <Typography
+          sx={{
+            fontFamily: usersData.fontFamily,
+            fontSize: `${usersData.fontSize}px !important`,
+            border: '1px solid black',
+            borderRadius: '5px',
+            width: 'fit-content',
+            padding: '10px',
+          }}
+        >
+          Text For Example Size and Font Family in English
+        </Typography>
+        <Typography
+          sx={{
+            fontFamily: usersData.fontFamily,
+            fontSize: `${usersData.fontSize}px !important`,
+            border: '1px solid black',
+            borderRadius: '5px',
+            width: 'fit-content',
+            padding: '10px',
+            margin: '20px 0 ',
+          }}
+        >
+          טקסט לדוגמה גודל ומשפחת גופנים בעברית
+        </Typography>
+      </Box>
+    </>
+  )
 }

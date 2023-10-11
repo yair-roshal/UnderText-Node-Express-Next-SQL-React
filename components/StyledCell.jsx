@@ -1,9 +1,16 @@
 import { useEffect, useState } from 'react'
 import { Box } from '@mui/material'
 import { HDate, months } from '@hebcal/core'
+import { useUsersContext } from '../context/usersContext'
 
 export const StyledCell = ({ original, translate, bold, periodStart, periodEnd }) => {
   const [shouldShow, setShouldShow] = useState(true)
+
+  const { usersData, setUsersData } = useUsersContext()
+
+  useEffect(() => {
+    console.log('usersData1111 :>> ', usersData)
+  }, [usersData])
 
   const getVariant = () => {
     if (periodStart == null || periodEnd == null) {
@@ -60,7 +67,14 @@ export const StyledCell = ({ original, translate, bold, periodStart, periodEnd }
 
   return shouldShow ? (
     <Box>
-      <Box className='cell' sx={{ fontWeight: bold ? '600' : '400' }}>
+      <Box
+        className='cell'
+        sx={{
+          fontWeight: bold ? '600' : '400',
+          fontFamily: usersData.fontFamily,
+          fontSize: `${usersData.fontSize}px !important`,
+        }}
+      >
         <Box className='original_text'>{original}</Box>
         <Box className='translate'>{translate.toUpperCase()}</Box>
       </Box>

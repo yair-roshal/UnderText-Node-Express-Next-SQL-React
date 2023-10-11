@@ -92,7 +92,7 @@ export function MenuBar() {
           <Button
             key={pagesPrayer.name}
             //TODO : отключить по готовности
-            // disabled={pagesPrayer.name.toLowerCase() == 'maariv' ? false : true}//
+            disabled={pagesPrayer.name.toLowerCase() == 'tehilim' ? true : false}//
             variant='contained'
             sx={{ color: 'black' }}
           >
@@ -149,13 +149,14 @@ export function MenuBar() {
               {theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
             </IconButton>
           </DrawerHeader>
+
           <Divider />
           <List>
             {pagesPrayers.map(
               (pagesPrayer) =>
                 pagesPrayer.prayer === true && (
                   <ListItem key={pagesPrayer.name} disablePadding>
-                    <ListItemButton onClick={()=>handleMenuItemClick()}>
+                    <ListItemButton onClick={() => handleMenuItemClick()}>
                       <ListItemIcon>
                         <BookIcon />
                       </ListItemIcon>
@@ -177,7 +178,7 @@ export function MenuBar() {
               (pagesPrayer) =>
                 pagesPrayer.prayer === false && (
                   <ListItem key={pagesPrayer.name} disablePadding>
-                    <ListItemButton onClick={()=>handleMenuItemClick()}>
+                    <ListItemButton onClick={() => handleMenuItemClick()}>
                       <ListItemIcon>
                         <BookIcon />
                       </ListItemIcon>
@@ -199,7 +200,7 @@ export function MenuBar() {
               (pagesPrayer) =>
                 pagesPrayer.prayer === 'additionalItems' && (
                   <ListItem key={pagesPrayer.name} disablePadding>
-                    <ListItemButton onClick={()=>handleMenuItemClick()}>
+                    <ListItemButton onClick={() => handleMenuItemClick()}>
                       <ListItemIcon>
                         <BookIcon />
                       </ListItemIcon>

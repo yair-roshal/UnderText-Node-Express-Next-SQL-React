@@ -4,8 +4,15 @@ import { axiosWrappers } from 'helpers'
 import { useMainPage } from 'hooks'
 import { CellComponent } from './CellComponent/CellComponent'
 import { URL } from 'constants/clientConstants'
+import { useUsersContext } from '../context/usersContext'
 
 export function Homepage(props) {
+  const { usersData, setUsersData } = useUsersContext()
+
+  useEffect(() => {
+    console.log('usersData :>> ', usersData)
+  }, [usersData])
+
   // console.log('props.data :>> ', props.data);
   const hrefMainPage = useMainPage()
   const hrefLinkImport = hrefMainPage + '/import'
@@ -53,7 +60,9 @@ export function Homepage(props) {
       </Link> */}
       <div className='wrapperTextBlock'>
         <div className='allWords'>
-           { words.map((word, index) => <CellComponent key={index} {...word} />)}
+          {words.map((word, index) => (
+            <CellComponent key={index} {...word} />
+          ))}
         </div>
 
         {/* <div className='formWrapperJSON'>
