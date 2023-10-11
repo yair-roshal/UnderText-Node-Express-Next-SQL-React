@@ -81,7 +81,7 @@ export default function BasicSelect() {
           sx={{
             display: 'flex',
             alignItems: 'center',
-
+            flexDirection: 'column',
             justifyContent: 'space-around',
           }}
         >
@@ -100,7 +100,7 @@ export default function BasicSelect() {
             </Select>
           </FormControl>
 
-          <FormControl sx={{ width: '100%', paddingLeft: 2 }}>
+          <FormControl sx={{ width: '100%' }}>
             <Typography variant='h5'>Шрифт</Typography>
 
             <Select
@@ -117,7 +117,6 @@ export default function BasicSelect() {
 
           <Button
             sx={{ width: '300px', height: '50px', paddingLeft: 2, m: 2 }}
-            // sx={{ width: '100%', paddingLeft: 2, m: 2 }}
             variant='contained'
             onClick={handleDefaultButtonClick}
           >
@@ -139,16 +138,7 @@ export default function BasicSelect() {
           Пример :
         </Typography>
 
-        <StyledCell
-          // sx={{
-          //   fontSize: options.fontSize,
-          //   fontFamily: options.fontFamily,
-          //   border: options.borderForCell ? '1px solid #d0d0d0' : 'none',
-          //   borderRadius: options.borderForCell ? '10px' : '0px',
-          // }}
-          original={textExampleHebrew}
-          translate={textExample}
-        />
+        <StyledCell original={textExampleHebrew} translate={textExample} />
       </Box>
     </>
   )
