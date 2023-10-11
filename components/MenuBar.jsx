@@ -92,7 +92,7 @@ export function MenuBar() {
           <Button
             key={pagesPrayer.name}
             //TODO : отключить по готовности
-            disabled={pagesPrayer.name.toLowerCase() == 'maariv' ? false : true}//
+            // disabled={pagesPrayer.name.toLowerCase() == 'maariv' ? false : true}//
             variant='contained'
             sx={{ color: 'black' }}
           >

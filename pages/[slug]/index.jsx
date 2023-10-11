@@ -1,23 +1,42 @@
 import { Homepage } from 'components'
 import { URL } from 'constants/clientConstants'
-// import axios from 'axios'
-import fs from 'fs/promises' // Import the fs module
-import path from 'path' // Добавляем модуль path для работы с путями к файлам
+import fs from 'fs/promises'
+import path from 'path'
+
+const minhaSeder = ['ashrey', 'amida']
+const maarivSeder = ['shma', 'amida']
 
 export async function getServerSideProps({ params }) {
   console.log('url_params_slug ', `${URL}/${params.slug}`)
 
-  const filePath = path.join(process.cwd(), 'data', `${params.slug}.json`)
-  console.log('filePath', filePath)
-
   try {
-    const fileData = await fs.readFile(filePath, 'utf-8') // Read the file content
-    const jsonData = JSON.parse(fileData) // Parse the JSON data
+    let data = []
 
-    const tableObject = jsonData.find((obj) => obj.type === 'table')
+    if (params.slug === 'minha') {
+      // Если slug равен 'minha', запросить данные из файлов с именами из minhaSeder
+      for (const file of minhaSeder) {
+        const fileData = await fs.readFile(
+          path.join(process.cwd(), 'data', `${file}.json`),
+          'utf-8',
+        )
+        const fileJsonData = JSON.parse(fileData)
+        const tableObject = fileJsonData.find((obj) => obj.type === 'table')
+        data = data.concat(tableObject ? tableObject.data : [])
+      }
+    } else if (params.slug === 'maariv') {
+      // Если slug равен 'maariv', запросить данные из файлов с именами из maarivSeder
+      for (const file of maarivSeder) {
+        const fileData = await fs.readFile(
+          path.join(process.cwd(), 'data', `${file}.json`),
+          'utf-8',
+        )
+        const fileJsonData = JSON.parse(fileData)
+        const tableObject = fileJsonData.find((obj) => obj.type === 'table')
+        data = data.concat(tableObject ? tableObject.data : [])
+      }
+    }
 
-    const data = tableObject ? tableObject.data : []
-    console.log('data111.length', data.length)
+    console.log('data.length', data.length)
 
     return {
       props: {
@@ -39,8 +58,6 @@ export async function getServerSideProps({ params }) {
   } catch (error) {
     console.error('Error:', error)
     return {
-      // props: {},
-
       props: {
         data: [
           {

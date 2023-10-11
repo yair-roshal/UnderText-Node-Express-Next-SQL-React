@@ -9,6 +9,8 @@ export const CellTitle = (props) => {
   return (
     <>
       {/* <Link href={hrefLinkShow} style={{ textDecoration: 'none' }}> */}
+      <div className='cellFullWidth'></div>
+
       <Header
         name={original}
         translate={translate}

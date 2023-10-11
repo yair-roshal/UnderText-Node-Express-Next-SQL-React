@@ -3,7 +3,7 @@ import { Box } from '@mui/material'
 import { HDate, months } from '@hebcal/core'
 
 export const StyledCell = ({ original, translate, bold, periodStart, periodEnd }) => {
-  const [shouldShow, setShouldShow] = useState(false)
+  const [shouldShow, setShouldShow] = useState(true)
 
   const getVariant = () => {
     if (periodStart == null || periodEnd == null) {
@@ -55,7 +55,7 @@ export const StyledCell = ({ original, translate, bold, periodStart, periodEnd }
   }
 
   useEffect(() => {
-    getVariant()
+    // getVariant()
   }, [])
 
   return shouldShow ? (

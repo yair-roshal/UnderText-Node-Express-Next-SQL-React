@@ -6,6 +6,7 @@ import { CellComponent } from './CellComponent/CellComponent'
 import { URL } from 'constants/clientConstants'
 
 export function Homepage(props) {
+  // console.log('props.data :>> ', props.data);
   const hrefMainPage = useMainPage()
   const hrefLinkImport = hrefMainPage + '/import'
 
@@ -45,19 +46,18 @@ export function Homepage(props) {
 
   return (
     <>
-      <Link href={hrefLinkImport} style={{ textDecoration: 'none' }}>
+      {/* <Link href={hrefLinkImport} style={{ textDecoration: 'none' }}>
         <ImportButton variant='contained' disabled>
           Import Words From File or text{' '}
         </ImportButton>
-      </Link>
+      </Link> */}
       <div className='wrapperTextBlock'>
         <div className='allWords'>
-          {words.map((word, index) => (
-            <CellComponent key={index} {...word} />
-          ))}
+          {console.log('words :>> ', words)}{' '}
+          { words.map((word, index) => <CellComponent key={index} {...word} />)}
         </div>
 
-        <div className='formWrapperJSON'>
+        {/* <div className='formWrapperJSON'>
           <form onSubmit={changeHandleSubmit}>
             <textarea
               className='homePage'
@@ -71,7 +71,7 @@ export function Homepage(props) {
               change
             </StyledButton>
           </form>
-        </div>
+        </div> */}
       </div>
     </>
   )
