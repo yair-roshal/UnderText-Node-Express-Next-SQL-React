@@ -6,7 +6,6 @@ export const getWords = createAsyncThunk(
   'words/getWords',
 
   async (arg, { rejectWithValue }) => {
-    
     console.log('`${URL1111', `${URL}/${arg.table}`)
     try {
       const response = await axiosWrappers.getAxios(`${URL}/${arg.table}`)

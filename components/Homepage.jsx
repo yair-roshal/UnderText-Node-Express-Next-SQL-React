@@ -53,8 +53,7 @@ export function Homepage(props) {
       </Link> */}
       <div className='wrapperTextBlock'>
         <div className='allWords'>
-          {console.log('words :>> ', words)}{' '}
-          { words.map((word, index) => <CellComponent key={index} {...word} />)}
+           { words.map((word, index) => <CellComponent key={index} {...word} />)}
         </div>
 
         {/* <div className='formWrapperJSON'>

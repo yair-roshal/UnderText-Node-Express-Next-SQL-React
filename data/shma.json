@@ -96,15 +96,13 @@
     {"id":"79","original":"ג פעמים","translate":"Повторяют три раза:","description":"bold","periodStart":null,"periodEnd":null},
   
     {"id":"80","original":"יְיָ","translate":"Ашем","description":null,"periodStart":null,"periodEnd":null},
-    {"id":"81","original":"צְבָאוֹת","translate":"Армия","description":null,"periodStart":null,"periodEnd":null},
-    {"id":"82","original":"אַשְׁרֵי","translate":"Ашери","description":null,"periodStart":null,"periodEnd":null},
-    {"id":"83","original":"אָדָם","translate":"Человек","description":null,"periodStart":null,"periodEnd":null},
-    {"id":"84","original":"בֹּטֵחַ","translate":"Вероятно","description":null,"periodStart":null,"periodEnd":null},
-	
-    {"id":"85","original":"בָּךְ:","translate":"в тебе:","description":"last","periodStart":null,"periodEnd":null},
-    {"id":"86","original":"ג פעמים","translate":"Повторяют три раза:","description":"bold","periodStart":null,"periodEnd":null},
-   
-	
+    {"id":"81","original":"צְבָאוֹת","translate":"воинств","description":null,"periodStart":null,"periodEnd":null},
+    {"id":"82","original":"אַשְׁרֵי","translate":"хвала","description":null,"periodStart":null,"periodEnd":null},
+    {"id":"83","original":"אָדָם","translate":"Человеку","description":null,"periodStart":null,"periodEnd":null},
+    {"id":"84","original":"בֹּטֵחַ","translate":"уповающему","description":null,"periodStart":null,"periodEnd":null},
+    {"id":"85","original":"בָּךְ:","translate":"на тебя","description":null,"periodStart":null,"periodEnd":null},
+
+    {"id":"86","original":"ג פעמים","translate":"Повторяют три раза:","description":"first","periodStart":null,"periodEnd":null},
     {"id":"87","original":"יְיָ","translate":"Ашем","description":null,"periodStart":null,"periodEnd":null},
     {"id":"88","original":"הוֹשִׁיעָה,","translate":"ПОШЛИ ИЗБАВЛЕНИЕ,","description":null,"periodStart":null,"periodEnd":null},
     {"id":"89","original":"הַמֶּלֶךְ","translate":"ВЛАДЫКА","description":null,"periodStart":null,"periodEnd":null},
@@ -113,13 +111,13 @@
     {"id":"92","original":"קראנו","translate":"ВОЗЗВАНИЯ нашего к нему","description":null,"periodStart":null,"periodEnd":null},
    
 	{"id":"93","original":"חזן","translate":"Хазан","description":"first","periodStart":null,"periodEnd":null},
-    {"id":"93","original":"בָּרְכוּ","translate":"БЛАГОСЛОВИТЕ","description":"first","periodStart":null,"periodEnd":null},
+    {"id":"93","original":"בָּרְכוּ","translate":"БЛАГОСЛОВИТЕ","description":"bold","periodStart":null,"periodEnd":null},
     {"id":"94","original":"אֶת","translate":"-","description":null,"periodStart":null,"periodEnd":null},
     {"id":"95","original":"יְיָ","translate":"Ашема","description":null,"periodStart":null,"periodEnd":null},
     {"id":"96","original":"הַמְבֹרָךְ:","translate":"БЛАГОСЛОВЕННОГО","description":null,"periodStart":null,"periodEnd":null},
   
 	{"id":"93","original":"קן״ח","translate":"Община","description":"first","periodStart":null,"periodEnd":null},
-	{"id":"97","original":"בָּרוּךְ","translate":"БЛАГОСЛОВЕН","description":"first","periodStart":null,"periodEnd":null},
+	{"id":"97","original":"בָּרוּךְ","translate":"БЛАГОСЛОВЕН","description":"bold","periodStart":null,"periodEnd":null},
     {"id":"98","original":"יְיָ","translate":"Ашем","description":null,"periodStart":null,"periodEnd":null},
     {"id":"99","original":"הַמְבֹרָךְ","translate":"благословенный","description":null,"periodStart":null,"periodEnd":null},
     {"id":"100","original":"לְעוֹלָם","translate":"на веки","description":null,"periodStart":null,"periodEnd":null},
