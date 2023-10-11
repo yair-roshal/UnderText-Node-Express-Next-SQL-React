@@ -3,6 +3,8 @@
     {"type":"database","name":"default_db"},
     {"type":"table","name":"maariv","database":"default_db","data":
     [
+        {"id":"0","original":"תפילת ערבית","translate":"Вечерняя молитва","description":"title","periodStart":null,"periodEnd":null},
+
     {"id":"1","original":"וְהוּא","translate":"и он","description":"bold","periodStart":null,"periodEnd":null},
     {"id":"2","original":"רַחוּם","translate":"Милосердный","description":null,"periodStart":null,"periodEnd":null},
     {"id":"3","original":"יְכַפֵּר","translate":"Искупит","description":null,"periodStart":null,"periodEnd":null},

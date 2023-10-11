@@ -38,8 +38,12 @@ export default function BasicSelect() {
     console.log('usersData2222_options', usersData)
   }, [options, setUsersData])
 
-  const textExampleHebrew = 'טקסט לדוגמה גודל ומשפחת גופנים בעברית '
-  const textExample = 'Текст для примера размера и семейства шрифта на русском'
+  
+ 
+  
+  
+  const textExampleHebrew = 'אַשְׁרֵי יוֹשְׁבֵי בֵיתֶֽךָ עוֹד יְהַלְלֽוּךָ סֶּֽלָה '
+  const textExample = 'счастливы сидячие в доме твоем (и) еще восхвалят тебя'
 
   const handleDefaultButtonClick = () => {
     const defaultOptions = {

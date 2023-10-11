@@ -277,13 +277,12 @@ $backgroundHeader: #2c2c2c;
   // Header==============================================================
   .wrapperHeader {
     position: relative;
-    // height: 33x;
-    border-right: 10px solid $redSection;
+    border-left: 10px solid $redSection;
     margin: 16px 0px;
     border-radius: 3px;
     background: $backgroundHeader;
     display: flex;
-
+    padding: 10px;
     .textWrapper {
       vertical-align: middle;
       display: table-cell;

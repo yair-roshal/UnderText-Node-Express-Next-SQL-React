@@ -61,8 +61,6 @@ export function MenuBar() {
     day: 'numeric',
   }).format(new Date())
 
-  const nameHeader = hrefMainPage.slice(1).toUpperCase() + ' ' + hebrewDate
-
   const theme = useTheme()
   const [open, setOpen] = React.useState(false)
 
@@ -92,7 +90,7 @@ export function MenuBar() {
           <Button
             key={pagesPrayer.name}
             //TODO : отключить по готовности
-            disabled={pagesPrayer.name.toLowerCase() == 'tehilim' ? true : false}//
+            disabled={pagesPrayer.name.toLowerCase() == 'tehilim' ? true : false} //
             variant='contained'
             sx={{ color: 'black' }}
           >
@@ -118,8 +116,23 @@ export function MenuBar() {
               sx={{ flexGrow: 1, textAlign: 'center' }}
               component='div'
             >
-              {nameHeader}
+              {hrefMainPage.slice(1).toUpperCase()}
             </Typography>
+
+            <Typography
+              variant='h6'
+              noWrap
+              sx={{
+                flexGrow: 1,
+                textAlign: 'center',
+                border: '1px solid #d0d0d0',
+                borderRadius: '10px',
+              }}
+              component='div'
+            >
+              {hebrewDate}
+            </Typography>
+
             <IconButton
               color='inherit'
               aria-label='open drawer'

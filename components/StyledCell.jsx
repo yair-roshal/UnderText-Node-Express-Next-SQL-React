@@ -76,8 +76,22 @@ export const StyledCell = ({ original, translate, bold, periodStart, periodEnd }
         borderRadius: usersData.borderForCell ? '10px' : '0px',
       }}
     >
-      <Box className='original_text'>{original}</Box>
-      <Box className='translate'>{translate.toLowerCase()}</Box>
+      <Box
+        sx={{
+          fontSize: ~~usersData.fontSize*2 + 'px',
+        }}
+        className='original_text'
+      >
+        {original}
+      </Box>
+      <Box
+        sx={{
+          fontSize: `${usersData.fontSize}px !important`,
+        }}
+        className='translate'
+      >
+        {translate.toLowerCase()}
+      </Box>
       {/* <Box className='translate'>{translate.toUpperCase()}</Box> */}
     </Box>
   ) : null
