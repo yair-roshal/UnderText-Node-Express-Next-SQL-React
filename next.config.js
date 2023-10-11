@@ -7,7 +7,5 @@ module.exports = {
 
   output: 'standalone',
 
-  env: {
-    PORT: process.env.PORT,
-  },
+  
 }
