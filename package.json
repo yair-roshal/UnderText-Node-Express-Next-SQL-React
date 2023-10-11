@@ -26,7 +26,8 @@
         "react-router-dom": "^5.2.0",
         "react-scripts": "4.0.1",
         "sql.js": "^1.8.0",
-        "yup": "^0.32.9"
+        "yup": "^0.32.9",
+        "sass": "^1.69.2"
     },
     "browserslist": {
         "production": [
@@ -64,7 +65,7 @@
         "os": false
     },
     "devDependencies": {
-        "@styled-jsx/plugin-sass": "^4.1.0",
-        "sass": "^1.69.2"
+        "@netlify/plugin-nextjs": "^4.36.1",
+        "@styled-jsx/plugin-sass": "^4.1.0"
     }
 }
