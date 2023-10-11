@@ -679,11 +679,11 @@
 	{"id":"694","original":"טובים","translate":"хорошую","description":"bold","periodStart":null,"periodEnd":null},
 	{"id":"694","original":"כל","translate":"всех","description":"bold","periodStart":null,"periodEnd":null},
 	{"id":"694","original":"בני","translate":"сыновей","description":"bold","periodStart":null,"periodEnd":null},
-	{"id":"694","original":"תבוריסך","translate":"израиля","description":"bold","periodStart":null,"periodEnd":null},
+	{"id":"694","original":"יִשְׂרָאֵל","translate":"израиля","description":"bold","periodStart":null,"periodEnd":null},
  
 	
-	{"id":"1234","original":":וְכָל","translate":"И ВСЕ","description":"first","periodStart":null,"periodEnd":null},
-    {"id":"1235","original":":  הַחַיִּים","translate":"живое","description":null,"periodStart":null,"periodEnd":null},
+	{"id":"1234","original":"וְכָל","translate":"И ВСЕ","description":"first","periodStart":null,"periodEnd":null},
+    {"id":"1235","original":"הַחַיִּים","translate":"живое","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1236","original":"יוֹדוּךָ","translate":"(да) БЛАГОДАРИТ ТЕБЯ","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1237","original":"סֶּלָה,","translate":"вечно,","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1238","original":"וִיהַלְלוּ","translate":"И ВОСХВАЛЯЮТ","description":null,"periodStart":null,"periodEnd":null},
