@@ -1,9 +1,9 @@
 import { Link } from 'components'
 import { useMainPage } from 'hooks'
-import { Cell } from '../../Cell'
+import { StyledCell } from '../../StyledCell'
 
 export const FirstCell = (props) => {
-  const { id, original, translate } = props
+  const { id, original, translate, periodStart, periodEnd } = props
   const hrefMainPage = useMainPage()
   const hrefLinkUpdate = `${hrefMainPage}/update/${id}`
 
@@ -11,7 +11,13 @@ export const FirstCell = (props) => {
     <>
       <div className='cellFullWidth'></div>
 
-      <Cell original={original} translate={translate} bold={true} />
+      <StyledCell
+        original={original}
+        translate={translate}
+        bold={true}
+        periodStart={periodStart}
+        periodEnd={periodEnd}
+      />
     </>
   )
 }

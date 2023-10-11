@@ -1,10 +1,10 @@
 // import { Link } from 'components'
 // import { useMainPage } from 'hooks'
-import { Cell } from '../../Cell'
+import { StyledCell } from '../../StyledCell'
 export const CellBold = (props) => {
-  const { id, original, translate } = props
-//   const hrefMainPage = useMainPage()
-//   const hrefLinkUpdate = `${hrefMainPage}/update/${id}`
+  const { id, original, translate, periodStart, periodEnd } = props
+  //   const hrefMainPage = useMainPage()
+  //   const hrefLinkUpdate = `${hrefMainPage}/update/${id}`
 
   return (
     <>
@@ -12,7 +12,13 @@ export const CellBold = (props) => {
       {/* <div className='original_text bold'>{original}</div>
                 <div className='translate'>{translate}</div> */}
 
-      <Cell original={original} translate={translate} bold={true} />
+      <StyledCell
+        original={original}
+        translate={translate}
+        periodStart={periodStart}
+        periodEnd={periodEnd}
+        bold={true}
+      />
       {/* </Link> */}
     </>
   )

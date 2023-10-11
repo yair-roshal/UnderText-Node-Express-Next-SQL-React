@@ -4,17 +4,10 @@ import { axiosWrappers } from 'helpers'
 import { useMainPage } from 'hooks'
 import { CellComponent } from './CellComponent/CellComponent'
 import { URL } from 'constants/clientConstants'
- 
+
 export function Homepage(props) {
- 
-  console.log('33333-------',)
   const hrefMainPage = useMainPage()
   const hrefLinkImport = hrefMainPage + '/import'
-
-  const { data } = props
-
-  // console.log('props111', props)
-  // console.log('data111', data)
 
   const [words, setWords] = useState(props.data)
   const [newWords, setNewWords] = useState(JSON.stringify(words))
@@ -32,14 +25,13 @@ export function Homepage(props) {
     const arrayObjectWords = JSON.parse(stringWords)
 
     for (const objectWord of arrayObjectWords) {
-      console.log('objectWord', objectWord)
       await axiosWrappers.postAxios(`${URL}${hrefMainPage}`, {
         ...objectWord,
       })
     }
   }
 
-  const handleSubmit = async (event) => {
+  const changeHandleSubmit = async (event) => {
     event.preventDefault()
 
     await axiosWrappers.deleteAllAxios(URL + hrefMainPage)
@@ -53,10 +45,10 @@ export function Homepage(props) {
 
   return (
     <>
-     
-
       <Link href={hrefLinkImport} style={{ textDecoration: 'none' }}>
-        <ImportButton variant='contained' disabled>Import Words From File or text </ImportButton>
+        <ImportButton variant='contained' disabled>
+          Import Words From File or text{' '}
+        </ImportButton>
       </Link>
       <div className='wrapperTextBlock'>
         <div className='allWords'>
@@ -66,7 +58,7 @@ export function Homepage(props) {
         </div>
 
         <div className='formWrapperJSON'>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={changeHandleSubmit}>
             <textarea
               className='homePage'
               type='text'
