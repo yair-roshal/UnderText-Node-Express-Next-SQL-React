@@ -881,7 +881,8 @@
     {"id":"1404","original":"חֶלְקֵנוּ","translate":"ДОЛЮ НАШУ","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1405","original":"בְּתוֹרָתֶךָ:","translate":"В УЧЕНИИ ТВОЕМ","description":null,"periodStart":null,"periodEnd":null},
    
-   
+    {"id":"0","original":"עלינו","translate":"Наш долг","description":"title","periodStart":null,"periodEnd":null},
+
     {"id":"1406","original":"עלינו","translate":"НА НАС (возложено)","description":"first","periodStart":null,"periodEnd":null},
     {"id":"1407","original":"לשבח","translate":"ВОСХВАЛЯТЬ","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1408","original":"לַאֲדוֹן","translate":"ГОСПОДИНА","description":null,"periodStart":null,"periodEnd":null},
