@@ -9,7 +9,7 @@ export const StyledCell = ({ original, translate, bold, periodStart, periodEnd }
   const { usersData, setUsersData } = useUsersContext()
 
   useEffect(() => {
-    console.log('usersData1111 :>> ', usersData)
+    console.log('usersData_in_Cell :>> ', usersData)
   }, [usersData])
 
   const getVariant = () => {
@@ -66,18 +66,18 @@ export const StyledCell = ({ original, translate, bold, periodStart, periodEnd }
   }, [])
 
   return shouldShow ? (
-    <Box>
-      <Box
-        className='cell'
-        sx={{
-          fontWeight: bold ? '600' : '400',
-          fontFamily: usersData.fontFamily,
-          fontSize: `${usersData.fontSize}px !important`,
-        }}
-      >
-        <Box className='original_text'>{original}</Box>
-        <Box className='translate'>{translate.toUpperCase()}</Box>
-      </Box>
+    <Box
+      className='cell'
+      sx={{
+        fontWeight: bold ? '600' : '400',
+        fontFamily: usersData.fontFamily,
+        fontSize: `${usersData.fontSize}px !important`,
+        border: usersData.borderForCell ? '1px solid #d0d0d0' : 'none',
+      }}
+    >
+      <Box className='original_text'>{original}</Box>
+      <Box className='translate'>{translate.toLowerCase()}</Box>
+      {/* <Box className='translate'>{translate.toUpperCase()}</Box> */}
     </Box>
   ) : null
 }

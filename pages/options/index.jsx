@@ -15,14 +15,10 @@ import { StyledCell } from 'components/StyledCell'
 export default function BasicSelect() {
   const { usersData, setUsersData } = useUsersContext()
 
-  const [options, setOptions] = useState({
-    fontSize: '',
-    fontFamily: '',
-    textOnlyToDate: true,
-  })
+  const [options, setOptions] = useState(usersData)
 
   useEffect(() => {
-    const savedOptions = JSON.parse(localStorage.getItem('userOptions'))
+    const savedOptions = JSON.parse(localStorage.getItem('usersData'))
 
     if (savedOptions) {
       setOptions(savedOptions)
@@ -34,16 +30,10 @@ export default function BasicSelect() {
     setUsersData(options)
 
     // Сохраняем параметры в LocalStorage
-    localStorage.setItem('userOptions', JSON.stringify(options))
-  }, [options, setUsersData])
+    localStorage.setItem('usersData', JSON.stringify(options))
 
-  const handleOptionChange = (event, option) => {
-    const value = event.target.value
-    setOptions({
-      ...options,
-      [option]: value,
-    })
-  }
+    console.log('usersData2222_options', usersData)
+  }, [options, setUsersData])
 
   const textExampleHebrew = 'טקסט לדוגמה גודל ומשפחת גופנים בעברית '
   const textExample = 'Текст для примера размера и семейства шрифта на русском'
@@ -52,10 +42,29 @@ export default function BasicSelect() {
     const defaultOptions = {
       fontSize: '22',
       fontFamily: 'Times New Roman',
-      textOnlyToDate: true,
+      borderForCell: true,
     }
 
     setOptions(defaultOptions)
+  }
+
+  const handleOptionChange = (event, optionName) => {
+    const value = event.target.value
+    console.log('value----', value)
+    console.log('optionName----', optionName)
+
+    if (optionName === 'borderForCell') {
+      setOptions({
+        ...options,
+        [optionName]: event.target.checked,
+      })
+      return
+    }
+
+    setOptions({
+      ...options,
+      [optionName]: value,
+    })
   }
 
   return (
@@ -116,13 +125,13 @@ export default function BasicSelect() {
           </Button>
         </Box>
 
-        {/* <Typography variant='h6'>
-          Только текст на эту дату (без дополнительного текста на весь год){' '}
+        <Typography variant='h6'>
+          Рамка для текста{' '}
           <Checkbox
-            checked={options.textOnlyToDate}
-            onChange={(event) => handleOptionChange(event, 'textOnlyToDate')}
+            checked={options.borderForCell}
+            onChange={(event) => handleOptionChange(event, 'borderForCell')}
           />
-        </Typography> */}
+        </Typography>
       </Box>
 
       <Box sx={{ p: 4 }}>
@@ -130,7 +139,15 @@ export default function BasicSelect() {
           Пример :
         </Typography>
 
-        <StyledCell original={textExampleHebrew} translate={textExample} />
+        <StyledCell
+          sx={{
+            fontSize: options.fontSize,
+            fontFamily: options.fontFamily,
+            border: options.borderForCell ? '1px solid #d0d0d0' : 'none',
+          }}
+          original={textExampleHebrew}
+          translate={textExample}
+        />
       </Box>
     </>
   )

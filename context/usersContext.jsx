@@ -1,32 +1,43 @@
-import { createContext, useContext, useState, useEffect, useMemo } from 'react'
-import initialUsersData from '../data/initialUsersData.json' // Import initial data from JSON file
+import { createContext, useContext, useState, useEffect, useMemo } from 'react';
+import initialUsersData from '../data/initialUsersData.json';
 
-// initial value
 const UsersContext = createContext({
   usersData: initialUsersData || [],
   setUsersData: () => {},
   loading: true,
-})
+});
 
-// value provider
 export const ContextProvider = ({ children }) => {
-  const [usersData, setUsersData] = useState({})
-  const [loading, setLoading] = useState(true)
+  const [usersData, setUsersData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setUsersData(initialUsersData)
-    setLoading(false) //  Set loading to false when data is loaded
-  }, [])
+    // Попытка получить данные из localStorage
+    const storedData = localStorage.getItem('usersData');
+
+    if (storedData) {
+      setUsersData(JSON.parse(storedData));
+    } else {
+      // Если данных в localStorage нет, используем начальные данные
+      setUsersData(initialUsersData);
+    }
+
+    setLoading(false);
+  }, []);
+
+  // Сохранение данных в localStorage при изменении usersData
+  useEffect(() => {
+    localStorage.setItem('usersData', JSON.stringify(usersData));
+  }, [usersData]);
 
   const contextValue = useMemo(
     () => ({ usersData, setUsersData, loading }),
     [usersData, setUsersData, loading],
-  )
+  );
 
-  return <UsersContext.Provider value={contextValue}>{children}</UsersContext.Provider>
-}
+  return <UsersContext.Provider value={contextValue}>{children}</UsersContext.Provider>;
+};
 
-// consumer
-export const useUsersContext = () => useContext(UsersContext)
+export const useUsersContext = () => useContext(UsersContext);
 
-export default UsersContext
+export default UsersContext;

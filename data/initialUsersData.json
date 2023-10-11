@@ -1,5 +1,5 @@
 {
-  "fontSize": "10",
+  "fontSize": "20",
   "fontFamily": "Arial",
-  "textOnlyToDate": "checked"
+  "borderForCell": "true"
 }

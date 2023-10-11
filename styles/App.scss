@@ -18,12 +18,8 @@ $backgroundHeader: #2c2c2c;
   padding: 0 5px;
   margin: 1px 1px;
   background: #fbeed5;
-  border: 1px solid #d0d0d0;
-  
+  // border: 1px solid #d0d0d0;
   border-radius: 10px;
-
-  // font-family: 'David Libre', sans-serif;
-  // font-family: "Rashi", sans-serif;
 }
 
 .styledLink {
@@ -45,26 +41,21 @@ $backgroundHeader: #2c2c2c;
 }
 
 .edit {
-  // text-align: right;
   font-size: calc(5px + 1vmin);
 }
 
 .original_text {
-  // font-family: 'Roboto'; // не весь иврит видит
   text-align: center;
-  // font-weight: 600;
-  font-size: calc(15px + 1vmin);
+  // font-size: calc(15px + 1vmin);
 }
 .original_text :hover {
   font-family: 'Roboto';
   text-align: center;
-  // font-weight: 600;
-  font-size: calc(15px + 1vmin);
+  // font-size: calc(15px + 1vmin);
   background-color: #646ce2;
 }
 
 .bold {
-  font-family: 'Roboto';
   text-align: center;
   font-weight: 600;
   font-size: calc(15px + 1vmin);
@@ -72,7 +63,7 @@ $backgroundHeader: #2c2c2c;
 
 .translate {
   text-align: center;
-  font-size: calc(6px + 1vmin);
+  // font-size: calc(6px + 1vmin);
 }
 
 // ============================================
