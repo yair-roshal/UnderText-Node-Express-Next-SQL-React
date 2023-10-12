@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react'
 import { Box } from '@mui/material'
 import { HDate, months } from '@hebcal/core'
 import { useUsersContext } from '../context/usersContext'
+import initialUsersData from '../constants/initialUsersData.json'
 
 export const StyledCell = ({ original, translate, bold, periodStart, periodEnd }) => {
   const [shouldShow, setShouldShow] = useState(true)
-  const { usersData, setUsersData } = useUsersContext()
+  const { usersData, setUsersData } = useUsersContext(initialUsersData)
+  console.log('usersData', usersData)
 
   const getVariant = () => {
     if (periodStart == null || periodEnd == null) {
@@ -16,7 +18,7 @@ export const StyledCell = ({ original, translate, bold, periodStart, periodEnd }
 
     const today = new HDate()
     // console.log('today :>> ', today)
- 
+
     // console.log('periodStart', periodStart)
     const arrayPeriodStart = periodStart.split('_')
     // console.log('periodEnd', periodEnd)
@@ -51,11 +53,10 @@ export const StyledCell = ({ original, translate, bold, periodStart, periodEnd }
 
     if (deltaTodayToStart <= deltaPeriod && deltaTodayToEnd <= deltaPeriod) {
       setShouldShow(true)
-      console.log("show---------->")
+      console.log('show---------->')
     } else {
       setShouldShow(false)
-      console.log("not show---------->")
-
+      console.log('not show---------->')
     }
   }
 

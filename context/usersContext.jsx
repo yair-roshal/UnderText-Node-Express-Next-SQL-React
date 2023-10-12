@@ -27,13 +27,12 @@ export const ContextProvider = ({ children }) => {
 
   // Сохранение данных в localStorage при изменении usersData
   useEffect(() => {
-    localStorage.setItem('usersData', JSON.stringify(usersData))
+    if (usersData.length > 0) {
+      localStorage.setItem('usersData', JSON.stringify(usersData))
+    }
   }, [usersData])
 
-  const contextValue = useMemo(
-    () => ({ usersData, setUsersData, loading }),
-    [usersData, setUsersData, loading],
-  )
+  const contextValue = useMemo(() => ({ usersData, setUsersData, loading }), [usersData, setUsersData, loading])
 
   return <UsersContext.Provider value={contextValue}>{children}</UsersContext.Provider>
 }
