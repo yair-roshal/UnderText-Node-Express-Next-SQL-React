@@ -35,7 +35,7 @@ export default function BasicSelect() {
     // Сохраняем параметры в LocalStorage
     localStorage.setItem('usersData', JSON.stringify(options))
 
-    console.log('usersData2222_options', usersData)
+    console.log('usersData2222_options', options)
   }, [options, setUsersData])
 
   

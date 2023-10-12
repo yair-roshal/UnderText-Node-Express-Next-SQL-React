@@ -1,40 +1,37 @@
-import { Link, UpdateButton } from 'components';
-import { useForm } from 'react-hook-form';
-import { useState, useEffect } from 'react';
+import { Link, UpdateButton } from 'components'
+import { useForm } from 'react-hook-form'
+import { useState, useEffect } from 'react'
+import { useMainPage } from 'hooks'
 
-import { axiosWrappers } from 'helpers';
-import { URL } from 'constants';
-import { useMainPage } from 'hooks';
-
-let formFileWords = [];
+let formFileWords = []
 
 export const ImportWords = (props) => {
-  const hrefMainPage = useMainPage();
-  const [words, setWords] = useState(props.data);
-  const [resultText, setResultText] = useState([]);
+  const hrefMainPage = useMainPage()
+  const [words, setWords] = useState(props.data)
+  const [resultText, setResultText] = useState([])
 
   const {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm();
+  } = useForm()
 
   const syncPosting = async (formFileWords) => {
-    console.log('formFileWords :>> ', formFileWords);
-    console.log('words :>> ', words);
+    console.log('formFileWords :>> ', formFileWords)
+    console.log('words :>> ', words)
 
-    let newDataTehilim = [];
+    let newDataTehilim = []
 
     for (const formFileWord of formFileWords) {
-      let newWord;
+      let newWord
 
       const checkWord = (checkingWord) => {
-        return checkingWord.original == formFileWord;
-      };
+        return checkingWord.original == formFileWord
+      }
 
-      const foundedWord = words.find(checkWord);
+      const foundedWord = words.find(checkWord)
 
-      console.log('foundedWord :>> ', foundedWord);
+      console.log('foundedWord :>> ', foundedWord)
       if (foundedWord) {
         newWord = {
           id: newDataTehilim.length + 1, // Заменили id на порядковый номер
@@ -43,9 +40,9 @@ export const ImportWords = (props) => {
           description: null,
           periodStart: null,
           periodEnd: null,
-        };
+        }
       } else {
-        console.log('new word :>> ', formFileWord);
+        console.log('new word :>> ', formFileWord)
 
         newWord = {
           id: newDataTehilim.length + 1, // Заменили id на порядковый номер
@@ -54,59 +51,59 @@ export const ImportWords = (props) => {
           description: null,
           periodStart: null,
           periodEnd: null,
-        };
+        }
       }
 
-      newDataTehilim = [...newDataTehilim, newWord];
+      newDataTehilim = [...newDataTehilim, newWord]
       // await axiosWrappers.postAxios(`${URL}${hrefMainPage}`, { ...newWord })
     }
 
-    setResultText(newDataTehilim);
-    console.log(JSON.stringify(newDataTehilim, null, 0));
-  };
+    setResultText(newDataTehilim)
+    console.log(JSON.stringify(newDataTehilim, null, 0))
+  }
 
   const showFile = (e) => {
     // e.preventDefault()
-    const fileReader = new FileReader();
+    const fileReader = new FileReader()
 
     fileReader.onload = (e) => {
-      const text = e.target.result;
+      const text = e.target.result
       // formFileWords = text.trim().split(' ')
-      formFileWords = text.trim().split(/\s/);
-      syncPosting(formFileWords);
-    };
+      formFileWords = text.trim().split(/\s/)
+      syncPosting(formFileWords)
+    }
 
-    fileReader.readAsText(e.target.files[0]);
-    console.log(`All words from this file successfully imported `);
+    fileReader.readAsText(e.target.files[0])
+    console.log(`All words from this file successfully imported `)
     // alert(`All words from this file successfully imported `)
-  };
+  }
 
   const onSubmitImportWords = (data) => {
-    formFileWords = data.text.trim().split(/\s/);
-    syncPosting(formFileWords);
-    console.log(`All words successfully imported `);
-  };
+    formFileWords = data.text.trim().split(/\s/)
+    syncPosting(formFileWords)
+    console.log(`All words successfully imported `)
+  }
 
   return (
     <>
       <Link href={hrefMainPage} style={{ textDecoration: 'none' }}>
-        <UpdateButton variant="contained">Back</UpdateButton>
+        <UpdateButton variant='contained'>Back</UpdateButton>
       </Link>
-      <div className="formWrapper">
-        <h2 className="titlePage">Import words from text</h2>
+      <div className='formWrapper'>
+        <h2 className='titlePage'>Import words from text</h2>
 
         <form onSubmit={handleSubmit(onSubmitImportWords)}>
-          <textarea className="importWords" name="text" type="text" placeholder="Please Enter your text" {...register('text', { required: true })} />
+          <textarea className='importWords' name='text' type='text' placeholder='Please Enter your text' {...register('text', { required: true })} />
           {errors.name && <p style={{ color: 'red' }}>Please Enter your text</p>}
-          <input type="submit" />
+          <input type='submit' />
         </form>
 
-        <textarea className="importWords" name="text" type="text" value={JSON.stringify(resultText, null, 0)} />
+        <textarea className='importWords' name='text' type='text' value={JSON.stringify(resultText, null, 0)} />
 
         {/* Import words from file ============  */}
-        <h2 className="titlePage">Import words from file</h2>
-        <input type="file" onChange={(e) => showFile(e)} />
+        <h2 className='titlePage'>Import words from file</h2>
+        <input type='file' onChange={(e) => showFile(e)} />
       </div>
     </>
-  );
-};
+  )
+}
