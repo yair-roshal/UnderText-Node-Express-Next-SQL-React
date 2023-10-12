@@ -5,12 +5,7 @@ import { useUsersContext } from '../context/usersContext'
 
 export const StyledCell = ({ original, translate, bold, periodStart, periodEnd }) => {
   const [shouldShow, setShouldShow] = useState(true)
-
   const { usersData, setUsersData } = useUsersContext()
-
-  useEffect(() => {
-    console.log('usersData_in_Cell :>> ', usersData)
-  }, [usersData])
 
   const getVariant = () => {
     if (periodStart == null || periodEnd == null) {
@@ -20,12 +15,12 @@ export const StyledCell = ({ original, translate, bold, periodStart, periodEnd }
     }
 
     const today = new HDate()
-
     console.log('today :>> ', today)
-    console.log('today.day :>> ', today.day)
-
-    const arrayPeriodStart = periodStart.split(' ')
-    const arrayPeriodEnd = periodEnd.split(' ')
+ 
+    console.log('periodStart', periodStart)
+    const arrayPeriodStart = periodStart.split('_')
+    console.log('periodEnd', periodEnd)
+    const arrayPeriodEnd = periodEnd.split('_')
 
     const hebrewDateStart = {
       year: today.year,
@@ -56,13 +51,16 @@ export const StyledCell = ({ original, translate, bold, periodStart, periodEnd }
 
     if (deltaTodayToStart <= deltaPeriod && deltaTodayToEnd <= deltaPeriod) {
       setShouldShow(true)
+      console.log("show---------->")
     } else {
       setShouldShow(false)
+      console.log("not show---------->")
+
     }
   }
 
   useEffect(() => {
-    // getVariant()
+    getVariant()
   }, [])
 
   return shouldShow ? (
@@ -78,7 +76,7 @@ export const StyledCell = ({ original, translate, bold, periodStart, periodEnd }
     >
       <Box
         sx={{
-          fontSize: ~~usersData.fontSize*2 + 'px',
+          fontSize: ~~usersData.fontSize * 2 + 'px',
         }}
         className='original_text'
       >

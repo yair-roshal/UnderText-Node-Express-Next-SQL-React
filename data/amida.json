@@ -4,7 +4,7 @@
     {"type":"table","name":"maariv","database":"default_db","data":
     [
  
-        {"id":"0","original":"עמידה","translate":"Стояние","description":"title","periodStart":null,"periodEnd":null},
+    {"id":"0","original":"עמידה","translate":"Стояние","description":"title","periodStart":null,"periodEnd":null},
 
     {"id":"655","original":"אֲדֹנָי,","translate":"Г-сподь,","description":"first","periodStart":null,"periodEnd":null},
     {"id":"656","original":"שְׂפָתַי","translate":"губы Мои","description":null,"periodStart":null,"periodEnd":null},
@@ -50,18 +50,18 @@
 
 	
 	
-    {"id":"694","original":"בעשי״ת","translate":"10 дней тшувы","description":"first","periodStart":null,"periodEnd":null},
-    {"id":"695","original":"זָכְרֵֽנוּ","translate":"вспомни нас","description":"bold","periodStart":null,"periodEnd":null},
-    {"id":"696","original":"לְחַיִּֽים,","translate":"к жизни,","description":"bold","periodStart":null,"periodEnd":null},
-    {"id":"697","original":"מֶֽלֶךְ","translate":"владыка","description":"bold","periodStart":null,"periodEnd":null},
-    {"id":"698","original":"חָפֵֽץ","translate":"желающий","description":"bold","periodStart":null,"periodEnd":null},
-    {"id":"699","original":"בַּחַיִּֽים,","translate":"жизни,","description":"bold","periodStart":null,"periodEnd":null},
-    {"id":"700","original":"וְכָתְבֵֽנוּ","translate":"и запиши НАС","description":"bold","periodStart":null,"periodEnd":null},
-    {"id":"701","original":"בְּסֵֽפֶר","translate":"в Книге","description":"bold","periodStart":null,"periodEnd":null},
-    {"id":"702","original":"הַחַיִּֽים,","translate":"Жизни,","description":"bold","periodStart":null,"periodEnd":null},
-    {"id":"703","original":"לְמַעַנְךָֽ","translate":"ради тебя","description":"bold","periodStart":null,"periodEnd":null},
-    {"id":"704","original":"אֱלֹהִֽים","translate":"Б-г","description":"bold","periodStart":null,"periodEnd":null},
-    {"id":"705","original":"חַיִּֽים:","translate":"Жизни","description":"bold","periodStart":null,"periodEnd":null},
+    {"id":"694","original":"בעשי״ת","translate":"в 10 дней тшувы","description":"first","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"695","original":"זָכְרֵֽנוּ","translate":"вспомни нас","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"696","original":"לְחַיִּֽים,","translate":"к жизни,","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"697","original":"מֶֽלֶךְ","translate":"владыка","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"698","original":"חָפֵֽץ","translate":"желающий","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"699","original":"בַּחַיִּֽים,","translate":"жизни,","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"700","original":"וְכָתְבֵֽנוּ","translate":"и запиши НАС","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"701","original":"בְּסֵֽפֶר","translate":"в Книге","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"702","original":"הַחַיִּֽים,","translate":"Жизни,","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"703","original":"לְמַעַנְךָֽ","translate":"ради тебя","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"704","original":"אֱלֹהִֽים","translate":"Б-г","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"705","original":"חַיִּֽים:","translate":"Жизни","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
 
 
 
@@ -74,7 +74,9 @@
     {"id":"712","original":"יְיָ,","translate":"Ашем,","description":null,"periodStart":null,"periodEnd":null},
     {"id":"713","original":"מָגֵֽן","translate":"ЗАЩИЩАЮЩИЙ","description":null,"periodStart":null,"periodEnd":null},
     {"id":"714","original":"אַבְרָהָֽם","translate":"ABPAhAMA","description":null,"periodStart":null,"periodEnd":null},
-    {"id":"715","original":"אַתָּֽה","translate":"Ты","description":null,"periodStart":null,"periodEnd":null},
+ 
+ 
+    {"id":"715","original":"אַתָּֽה","translate":"Ты","description":"first","periodStart":null,"periodEnd":null},
     {"id":"716","original":"גִּבּֽוֹר","translate":"МОГУЩЕСТВЕНЕН","description":null,"periodStart":null,"periodEnd":null},
     {"id":"717","original":"לְעוֹלָֽם","translate":"Навеки(до тех пор, пока есть мир)","description":null,"periodStart":null,"periodEnd":null},
     {"id":"718","original":"אֲדֹנָֽי,","translate":"г-сподь,","description":null,"periodStart":null,"periodEnd":null},
@@ -127,14 +129,14 @@
     {"id":"758","original":"יְשׁוּעָֽה","translate":"ИЗБАВЛЕНИЕ","description":null,"periodStart":null,"periodEnd":null},
 	
 	
-	{"id":"694","original":"בעשי״ת","translate":"10 дней тшувы","description":"first","periodStart":null,"periodEnd":null},
-    {"id":"759","original":"מִי־כָמֽוֹךָ","translate":"Кто-как ТЫ","description":null,"periodStart":null,"periodEnd":null},
-    {"id":"760","original":"אָב","translate":"Отец","description":null,"periodStart":null,"periodEnd":null},
-    {"id":"761","original":"הָרַחֲמָֽן","translate":"МИЛОСЕРДНЫЙ","description":null,"periodStart":null,"periodEnd":null},
-    {"id":"762","original":"זוֹכֵֽר","translate":"ПОМНЯЩИЙ","description":null,"periodStart":null,"periodEnd":null},
-    {"id":"763","original":"יְצוּרָֽיו","translate":"СОТВОРЕННЫХ ИМ","description":null,"periodStart":null,"periodEnd":null},
-    {"id":"764","original":"לְחַיִּֽים","translate":"К ЖизнИ","description":null,"periodStart":null,"periodEnd":null},
-    {"id":"765","original":"בְּרַחֲמִים","translate":"в СОСТРАДАТЕЛЬНОСТИ","description":null,"periodStart":null,"periodEnd":null},
+	{"id":"694","original":"בעשי״ת","translate":"в 10 дней тшувы","description":"first","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"759","original":"מִי־כָמֽוֹךָ","translate":"Кто-как ТЫ","description":null,"periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"760","original":"אָב","translate":"Отец","description":null,"periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"761","original":"הָרַחֲמָֽן","translate":"МИЛОСЕРДНЫЙ","description":null,"periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"762","original":"זוֹכֵֽר","translate":"ПОМНЯЩИЙ","description":null,"periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"763","original":"יְצוּרָֽיו","translate":"СОТВОРЕННЫХ ИМ","description":null,"periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"764","original":"לְחַיִּֽים","translate":"К ЖизнИ","description":null,"periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"765","original":"בְּרַחֲמִים","translate":"в СОСТРАДАТЕЛЬНОСТИ","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
 	
 	
 	
@@ -147,7 +149,9 @@
     {"id":"772","original":"יְיָ,","translate":"Ашем,","description":null,"periodStart":null,"periodEnd":null},
     {"id":"773","original":"מְחַיֶּֽה","translate":"ОЖИВЛЯЮЩИЙ","description":null,"periodStart":null,"periodEnd":null},
     {"id":"774","original":"הַמֵּתִֽים","translate":"МЕРТВЫХ","description":null,"periodStart":null,"periodEnd":null},
-    {"id":"775","original":"אַתָּֽה","translate":"Ты","description":null,"periodStart":null,"periodEnd":null},
+ 
+ 
+    {"id":"775","original":"אַתָּֽה","translate":"Ты","description":"first","periodStart":null,"periodEnd":null},
     {"id":"776","original":"קָדֽוֹשׁ","translate":"Святой","description":null,"periodStart":null,"periodEnd":null},
     {"id":"777","original":"וְשִׁמְךָֽ","translate":"И Имя твое","description":null,"periodStart":null,"periodEnd":null},
     {"id":"778","original":"קָדֽוֹשׁ,","translate":"СВЯТО,","description":null,"periodStart":null,"periodEnd":null},
@@ -301,13 +305,16 @@
     {"id":"900","original":"תְבוּאָתָהּ","translate":"УРОЖАЯ ЕГО","description":null,"periodStart":null,"periodEnd":null},
     {"id":"901","original":"לְטוֹבָה","translate":"К БЛАГУ","description":null,"periodStart":null,"periodEnd":null},
     {"id":"902","original":"וְתֵן","translate":"И ДАЙ","description":null,"periodStart":null,"periodEnd":null},
-    {"id":"903","original":"בקיץ","translate":"Летом","description":null,"periodStart":null,"periodEnd":null},
+   
+    {"id":"903","original":"בקיץ","translate":"Летом","description":"first","periodStart":null,"periodEnd":null},
     {"id":"904","original":"בְּרָכָה","translate":"Благословение","description":null,"periodStart":null,"periodEnd":null},
-    {"id":"905","original":"בחורף","translate":"Зимой","description":null,"periodStart":null,"periodEnd":null},
+    {"id":"905","original":"בחורף","translate":"Зимой","description":"bold","periodStart":null,"periodEnd":null},
     {"id":"906","original":"טַל","translate":"РОСУ","description":null,"periodStart":null,"periodEnd":null},
     {"id":"907","original":"וּמָטָר","translate":"И ДОЖДЬ","description":null,"periodStart":null,"periodEnd":null},
     {"id":"908","original":"לִבְרָכָה","translate":"к благословению","description":null,"periodStart":null,"periodEnd":null},
-    {"id":"909","original":"עַל","translate":"На","description":null,"periodStart":null,"periodEnd":null},
+  
+  
+    {"id":"909","original":"עַל","translate":"На","description":"first","periodStart":null,"periodEnd":null},
     {"id":"910","original":"פְּנֵי","translate":"ЛИК","description":null,"periodStart":null,"periodEnd":null},
     {"id":"911","original":"הָאֲדָמָה,","translate":"ЗЕМЛИ,","description":null,"periodStart":null,"periodEnd":null},
     {"id":"912","original":"וְשַׂבְּעֵנוּ","translate":"И НАСЫТЬ НАС","description":null,"periodStart":null,"periodEnd":null},
@@ -384,7 +391,7 @@
  
 	
 	
-	{"id":"977","original":"בעשי״ת","translate":"В ДЕСЯТЬ ДНЕЙ ТШУВЫ","description":null,"periodStart":null,"periodEnd":null},
+	{"id":"977","original":"בעשי״ת","translate":"В ДЕСЯТЬ ДНЕЙ ТШУВЫ","description":"first","periodStart":null,"periodEnd":null},
     {"id":"978","original":"הַמֶּלֶךְ","translate":"ВЛАДЫКА","description":null,"periodStart":null,"periodEnd":null},
     {"id":"979","original":"הֵמִשְׁפָּט","translate":"ПРАВОСУДИя","description":null,"periodStart":null,"periodEnd":null},
    
@@ -422,7 +429,9 @@
     {"id":"1008","original":"אֹיְבִים","translate":"ВРАГОВ","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1009","original":"וּמַכְנִיעַ","translate":"И УСМИРЯЮЩИМ","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1010","original":"זֵדִים","translate":"ЗЛОНАМЕРЕННЫХ","description":null,"periodStart":null,"periodEnd":null},
-    {"id":"1011","original":"עַל־הַצַּדִּיקִים","translate":"НА ПРАВЕДНЫХ","description":null,"periodStart":null,"periodEnd":null},
+ 
+ 
+    {"id":"1011","original":"עַל־הַצַּדִּיקִים","translate":"НА ПРАВЕДНЫХ","description":"first","periodStart":null,"periodEnd":null},
     {"id":"1012","original":"וְעַל־הַחֲסִידִים,","translate":"НА ДОБРОДЕТЕЛЬНЫХ","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1013","original":"וְעַל","translate":"и на","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1014","original":"זִקְנֵי","translate":"старцев","description":null,"periodStart":null,"periodEnd":null},
@@ -598,7 +607,7 @@
    
 	
 	
-	{"id":"1166","original":"מוֹדִֽים","translate":"БЛАГОДАРИМֽ","description":null,"periodStart":null,"periodEnd":null},
+	{"id":"1166","original":"מוֹדִֽים","translate":"БЛАГОДАРИМֽ","description":"first","periodStart":null,"periodEnd":null},
     {"id":"1167","original":"אֲנַֽחְנוּ","translate":"МЫ","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1168","original":"לָךְ,","translate":"ТЕБЯ,","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1169","original":"שָׁאַתָּה","translate":"(за то) ЧТО ТЫ:","description":null,"periodStart":null,"periodEnd":null},
@@ -673,13 +682,13 @@
 	
 	
 	
-	{"id":"694","original":"בעשי״ת","translate":"10 дней тшувы","description":"first","periodStart":null,"periodEnd":null},
-	{"id":"694","original":"וכתוב","translate":"И ЗАПИШИ","description":"bold","periodStart":null,"periodEnd":null},
-	{"id":"694","original":"לחיים","translate":"НА ЖИЗНЬ","description":"bold","periodStart":null,"periodEnd":null},
-	{"id":"694","original":"טובים","translate":"хорошую","description":"bold","periodStart":null,"periodEnd":null},
-	{"id":"694","original":"כל","translate":"всех","description":"bold","periodStart":null,"periodEnd":null},
-	{"id":"694","original":"בני","translate":"сыновей","description":"bold","periodStart":null,"periodEnd":null},
-	{"id":"694","original":"יִשְׂרָאֵל","translate":"израиля","description":"bold","periodStart":null,"periodEnd":null},
+	{"id":"694","original":"בעשי״ת","translate":"в 10 дней тшувы","description":"first","periodStart":null,"periodEnd":null},
+	{"id":"694","original":"וכתוב","translate":"И ЗАПИШИ","description":"simple","periodStart":null,"periodEnd":null},
+	{"id":"694","original":"לחיים","translate":"НА ЖИЗНЬ","description":"simple","periodStart":null,"periodEnd":null},
+	{"id":"694","original":"טובים","translate":"хорошую","description":"simple","periodStart":null,"periodEnd":null},
+	{"id":"694","original":"כל","translate":"всех","description":"simple","periodStart":null,"periodEnd":null},
+	{"id":"694","original":"בני","translate":"сыновей","description":"simple","periodStart":null,"periodEnd":null},
+	{"id":"694","original":"יִשְׂרָאֵל","translate":"израиля","description":"simple","periodStart":null,"periodEnd":null},
  
 	
 	{"id":"1234","original":"וְכָל","translate":"И ВСЕ","description":"first","periodStart":null,"periodEnd":null},
@@ -756,6 +765,36 @@
     {"id":"1301","original":"וּבְכָל שָׁעָה","translate":"час","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1302","original":"בִּשְׁלוֹמֶךָ","translate":"ТВОИМ МИРОМ","description":null,"periodStart":null,"periodEnd":null},
   
+ 
+	
+    {"id":"694","original":"בעשי״ת","translate":"в 10 дней тшувы","description":"first","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"695","original":"ובספר","translate":"И В КНИГУ","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"696","original":"חיים,","translate":"жизни,","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"697","original":"רכה","translate":"И БРАХИ ","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"698","original":"ושלום","translate":"И МИРА","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"699","original":"ופרנסה,","translate":"И ДОСТАТКА","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"700","original":"טובה","translate":"ДОБРОГО ","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"701","original":"לשועה","translate":"ИЗБАВЛЕНИЯ","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"702","original":"ונחמה,","translate":" И ОБОДРЕНИЯ","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"703","original":"וגזרות","translate":"И ПОСТАНОВЛЕНИЙ","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"704","original":"טובות","translate":" ДОБРЫХ","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"705","original":"נזכר","translate":"будем ВСПОМНЕНЫ","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"705","original":"ונכתב","translate":"и записаны","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"705","original":"לפניך","translate":"ПРЕД ТОБОЙ","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"705","original":"אנחנו","translate":"МЫ","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"705","original":"וכל","translate":"и ВЕСЬ","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"705","original":"עמר","translate":"НАРОД ТВОЙ","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"705","original":"בית","translate":"ДОМ","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"705","original":"ישראל","translate":"ИЗРАИЛЯ","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"705","original":"לחיים","translate":"К ЖИЗНИ","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"705","original":"טובים","translate":"ДОБРОЙ","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"705","original":"ולשלום","translate":"И МИРУ","description":"simple","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+
+    
+    
+    
+    
+    
     
   
     {"id":"1303","original":"בָּרוּךְ","translate":"БЛАГОСЛОВЕН","description":"first","periodStart":null,"periodEnd":null},
@@ -848,14 +887,14 @@
   
     {"id":"788","original":"עשה","translate":"ДЕЛАЮЩИЙ","description":"first","periodStart":null,"periodEnd":null},
 
-    {"id":"786","original":"הכל שנה","translate":"все ДНИ ГОДА","description":"bold","periodStart":null,"periodEnd":null},
+    {"id":"786","original":"הכל שנה","translate":"все ДНИ ГОДА","description":"first","periodStart":null,"periodEnd":null},
     {"id":"787","original":"שלום","translate":"МИР","description":null,"periodStart":null,"periodEnd":null},
 
-    {"id":"789","original":"בעשי״ת","translate":"В ДЕСЯТЬ ДНЕЙ ТШУВЫ:","description":"bold","periodStart":null,"periodEnd":null},
+    {"id":"789","original":"בעשי״ת","translate":"В ДЕСЯТЬ ДНЕЙ ТШУВЫ:","description":"first","periodStart":null,"periodEnd":null},
     {"id":"790","original":"השלום","translate":"ТОТ САМЫЙ МИР","description":null,"periodStart":null,"periodEnd":null},
  
 
-    {"id":"788","original":"במרומיו","translate":"В ВЫСЯХ СВОИХ","description":null,"periodStart":null,"periodEnd":null},
+    {"id":"788","original":"במרומיו","translate":"В ВЫСЯХ СВОИХ","description":"first","periodStart":null,"periodEnd":null},
     {"id":"1384","original":"הוּא","translate":"ОН","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1385","original":"יַעֲשֶׂה","translate":"СДЕЛАЕТ","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1386","original":"שָׁלוֹם","translate":"Мир","description":null,"periodStart":null,"periodEnd":null},
