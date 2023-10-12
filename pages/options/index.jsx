@@ -38,18 +38,14 @@ export default function BasicSelect() {
     console.log('usersData2222_options', options)
   }, [options, setUsersData])
 
-  
- 
-  
-  
   const textExampleHebrew = 'אַשְׁרֵי יוֹשְׁבֵי בֵיתֶֽךָ עוֹד יְהַלְלֽוּךָ סֶּֽלָה '
   const textExample = 'счастливы сидячие в доме твоем (и) еще восхвалят тебя'
 
   const handleDefaultButtonClick = () => {
     const defaultOptions = {
-      fontSize: '22',
+      fontSize: '26',
       fontFamily: 'Times New Roman',
-      borderForCell: true,
+      borderForCell: 'true',
     }
 
     setOptions(defaultOptions)
@@ -92,10 +88,7 @@ export default function BasicSelect() {
           <FormControl sx={{ width: '100%' }}>
             <Typography variant='h5'>Размер</Typography>
 
-            <Select
-              value={options.fontSize}
-              onChange={(event) => handleOptionChange(event, 'fontSize')}
-            >
+            <Select value={options.fontSize} onChange={(event) => handleOptionChange(event, 'fontSize')}>
               {fontSizeList.map((fontSize) => (
                 <MenuItem key={fontSize} value={fontSize}>
                   {fontSize}
@@ -107,10 +100,7 @@ export default function BasicSelect() {
           <FormControl sx={{ width: '100%' }}>
             <Typography variant='h5'>Шрифт</Typography>
 
-            <Select
-              value={options.fontFamily}
-              onChange={(event) => handleOptionChange(event, 'fontFamily')}
-            >
+            <Select value={options.fontFamily} onChange={(event) => handleOptionChange(event, 'fontFamily')}>
               {fontFamilyList.map((fontFamily) => (
                 <MenuItem key={fontFamily} value={fontFamily}>
                   {fontFamily}
@@ -119,21 +109,13 @@ export default function BasicSelect() {
             </Select>
           </FormControl>
 
-          <Button
-            sx={{ width: '300px', height: '50px', paddingLeft: 2, m: 2 }}
-            variant='contained'
-            onClick={handleDefaultButtonClick}
-          >
+          <Button sx={{ width: '300px', height: '50px', paddingLeft: 2, m: 2 }} variant='contained' onClick={handleDefaultButtonClick}>
             По умолчанию
           </Button>
         </Box>
 
         <Typography variant='h6'>
-          Рамка для текста{' '}
-          <Checkbox
-            checked={options.borderForCell}
-            onChange={(event) => handleOptionChange(event, 'borderForCell')}
-          />
+          Рамка для текста <Checkbox checked={options.borderForCell} onChange={(event) => handleOptionChange(event, 'borderForCell')} />
         </Typography>
       </Box>
 
