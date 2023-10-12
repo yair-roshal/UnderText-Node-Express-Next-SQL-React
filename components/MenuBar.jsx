@@ -5,21 +5,7 @@ import MenuIcon from '@mui/icons-material/Menu'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import BookIcon from '@mui/icons-material/Book'
-import {
-  Box,
-  Drawer,
-  Toolbar,
-  CssBaseline,
-  Typography,
-  List,
-  Divider,
-  IconButton,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-  Button,
-} from '@mui/material'
+import { Box, Drawer, Toolbar, CssBaseline, Typography, List, Divider, IconButton, ListItem, ListItemButton, ListItemIcon, ListItemText, Button } from '@mui/material'
 
 import { pagesPrayers } from '../constants/clientConstants'
 import { Link } from 'components'
@@ -100,11 +86,7 @@ export function MenuBar() {
             variant='contained'
             sx={{ color: 'black' }}
           >
-            <Link
-              onClick={handleDrawerClose}
-              href={pagesPrayer.href}
-              style={{ textDecoration: 'none' }}
-            >
+            <Link onClick={handleDrawerClose} href={pagesPrayer.href} style={{ textDecoration: 'none' }}>
               {pagesPrayer.name}
             </Link>
           </Button>
@@ -115,36 +97,48 @@ export function MenuBar() {
         <CssBaseline />
         <AppBar position='fixed' open={open}>
           <Toolbar>
-            <Typography
-              variant='h6'
-              noWrap
-              sx={{ flexGrow: 1, textAlign: 'center' }}
-              component='div'
-            >
+            <Typography variant='h6' noWrap sx={{ flexGrow: 1, textAlign: 'center' }} component='div'>
               {hrefMainPage.slice(1).toUpperCase()}
             </Typography>
 
-            <Typography
-              variant='h6'
-              noWrap
+            <Box
               sx={{
-                flexGrow: 1,
-                textAlign: 'center',
-                border: '1px solid #d0d0d0',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                width: '200px',
+                height: '50px',
+                padding: '5px',
                 borderRadius: '10px',
+                border: '1px solid #d0d0d0',
+                marginRight: '10px',
+                marginLeft: '10px',
               }}
-              component='div'
             >
-              {hebrewDate} - {gregorianDateStr}
-            </Typography>
+              <Typography
+                noWrap
+                sx={{
+                  flexGrow: 1,
+                  textAlign: 'center',
+                }}
+                component='div'
+              >
+                {hebrewDate}
+              </Typography>
+              <Typography
+                noWrap
+                sx={{
+                  flexGrow: 1,
+                  textAlign: 'center',
+                }}
+                component='div'
+              >
+                {gregorianDateStr}
+              </Typography>
+            </Box>
 
-            <IconButton
-              color='inherit'
-              aria-label='open drawer'
-              edge='end'
-              onClick={handleDrawerOpen}
-              sx={{ ...(open && { display: 'none' }) }}
-            >
+            <IconButton color='inherit' aria-label='open drawer' edge='end' onClick={handleDrawerOpen} sx={{ ...(open && { display: 'none' }) }}>
               <MenuIcon />
             </IconButton>
           </Toolbar>
@@ -163,9 +157,7 @@ export function MenuBar() {
           open={open}
         >
           <DrawerHeader>
-            <IconButton onClick={handleDrawerClose}>
-              {theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-            </IconButton>
+            <IconButton onClick={handleDrawerClose}>{theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}</IconButton>
           </DrawerHeader>
 
           <Divider />
@@ -178,11 +170,7 @@ export function MenuBar() {
                       <ListItemIcon>
                         <BookIcon />
                       </ListItemIcon>
-                      <Link
-                        onClick={handleDrawerClose}
-                        href={pagesPrayer.href}
-                        style={{ textDecoration: 'none' }}
-                      >
+                      <Link onClick={handleDrawerClose} href={pagesPrayer.href} style={{ textDecoration: 'none' }}>
                         <ListItemText primary={pagesPrayer.name} />
                       </Link>
                     </ListItemButton>
@@ -200,11 +188,7 @@ export function MenuBar() {
                       <ListItemIcon>
                         <BookIcon />
                       </ListItemIcon>
-                      <Link
-                        onClick={handleDrawerClose}
-                        href={pagesPrayer.href}
-                        style={{ textDecoration: 'none' }}
-                      >
+                      <Link onClick={handleDrawerClose} href={pagesPrayer.href} style={{ textDecoration: 'none' }}>
                         <ListItemText primary={pagesPrayer.name} />
                       </Link>
                     </ListItemButton>
@@ -222,11 +206,7 @@ export function MenuBar() {
                       <ListItemIcon>
                         <BookIcon />
                       </ListItemIcon>
-                      <Link
-                        onClick={handleDrawerClose}
-                        href={pagesPrayer.href}
-                        style={{ textDecoration: 'none' }}
-                      >
+                      <Link onClick={handleDrawerClose} href={pagesPrayer.href} style={{ textDecoration: 'none' }}>
                         <ListItemText primary={pagesPrayer.name} />
                       </Link>
                     </ListItemButton>
