@@ -48,7 +48,9 @@ export const pagesPrayers = [
 
   // { name: 'Main shalosh', href: '/main-shalosh', prayer: false },
   // { name: 'Birkat aMazon', href: '/birkat-amazon', prayer: false },
-  { name: 'Tehilim', href: '/tehilim', prayer: false },
+  
+  
+  // { name: 'Tehilim', href: '/tehilim', prayer: false },
 
   { name: 'Options', href: '/options', prayer: 'additionalItems' },
   { name: 'About', href: '/about', prayer: 'additionalItems' },
