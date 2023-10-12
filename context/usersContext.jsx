@@ -15,7 +15,8 @@ export const ContextProvider = ({ children }) => {
     // Попытка получить данные из localStorage
     const storedData = localStorage.getItem('usersData')
 
-    if (storedData) {
+     
+    if (storedData.length > 0) {
       setUsersData(JSON.parse(storedData))
     } else {
       // Если данных в localStorage нет, используем начальные данные

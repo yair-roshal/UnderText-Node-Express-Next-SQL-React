@@ -6,9 +6,9 @@ import initialUsersData from '../constants/initialUsersData.json'
 
 export const StyledCell = ({ original, translate, bold, periodStart, periodEnd }) => {
   const [shouldShow, setShouldShow] = useState(true)
+  // const { usersData, setUsersData } = useUsersContext()
   const { usersData, setUsersData } = useUsersContext(initialUsersData)
-  console.log('usersData', usersData)
-
+ 
   const getVariant = () => {
     if (periodStart == null || periodEnd == null) {
       setShouldShow(true)
@@ -77,7 +77,7 @@ export const StyledCell = ({ original, translate, bold, periodStart, periodEnd }
     >
       <Box
         sx={{
-          fontSize: ~~usersData.fontSize * 2 + 'px',
+          fontSize: ~~usersData.fontSize   + 'px',
         }}
         className='original_text'
       >
@@ -85,7 +85,7 @@ export const StyledCell = ({ original, translate, bold, periodStart, periodEnd }
       </Box>
       <Box
         sx={{
-          fontSize: `${usersData.fontSize}px !important`,
+          fontSize: `${usersData.fontSize / 2}px !important`,
         }}
         className='translate'
       >
