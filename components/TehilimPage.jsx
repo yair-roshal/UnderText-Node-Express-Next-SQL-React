@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react'
-import { Loading, Link, StyledButton, ImportButton } from 'components'
-
+import { useState, useEffect } from 'react'
+import { Link } from 'components'
 import { CellComponent } from './CellComponent/CellComponent'
 import { useUsersContext } from '../context/usersContext'
 import { useRouter } from 'next/router'
 
-import { Button, FormControl, InputLabel, MenuItem, Select, Box, Typography } from '@mui/material'
-const totalPages = 150 // Общее количество страниц
-// import CellComponent from '../../components/CellComponent/CellComponent';
+import { Button, FormControl, MenuItem, Select, Box, Typography } from '@mui/material'
+// const totalPages = 150 // Общее количество страниц
+const totalPages = 29 // Общее количество страниц
 
 export function TehilimPage(props) {
   const router = useRouter()
@@ -67,8 +66,7 @@ export function TehilimPage(props) {
           </Select>
         </FormControl>
       </Box>
-      
-      
+
       <Box
         sx={{
           padding: '50px',
