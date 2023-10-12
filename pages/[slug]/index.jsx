@@ -48,8 +48,7 @@ export async function getServerSideProps({ params }) {
       }
     }
 
-    console.log('data.length', data.length)
-
+ 
     return {
       props: {
         data:
@@ -59,7 +58,7 @@ export async function getServerSideProps({ params }) {
                 {
                   id: 1,
                   original: 'no data in this file json',
-                  translate: `data.length = ${data.length} `,
+                  translate: 'no data in this file json',
                   description: null,
                   periodStart: null,
                   periodEnd: null,

@@ -16,7 +16,7 @@ export const ContextProvider = ({ children }) => {
     const storedData = localStorage.getItem('usersData')
 
      
-    if (storedData.length > 0) {
+    if (storedData && storedData.length > 0) {
       setUsersData(JSON.parse(storedData))
     } else {
       // Если данных в localStorage нет, используем начальные данные
@@ -28,7 +28,7 @@ export const ContextProvider = ({ children }) => {
 
   // Сохранение данных в localStorage при изменении usersData
   useEffect(() => {
-    if (usersData.length > 0) {
+    if (usersData && usersData.length > 0) {
       localStorage.setItem('usersData', JSON.stringify(usersData))
     }
   }, [usersData])

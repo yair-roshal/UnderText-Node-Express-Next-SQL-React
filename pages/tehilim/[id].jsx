@@ -14,18 +14,17 @@ export async function getServerSideProps({ params }) {
     const tableObject = fileJsonData.find((obj) => obj.type === 'table');
     data = data.concat(tableObject ? tableObject.data : []);
 
-    console.log('data.length', data.length);
-
+ 
     return {
       props: {
         data:
-          data.length > 0
+        data&&  data.length > 0
             ? data
             : [
                 {
                   id: 1,
                   original: 'no data in this file json',
-                  translate: `data.length = ${data.length} `,
+                  translate: 'no data in this file json',
                   description: null,
                   periodStart: null,
                   periodEnd: null,
