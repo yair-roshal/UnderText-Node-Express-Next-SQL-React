@@ -53,11 +53,13 @@ export function Homepage(props) {
 
   return (
     <>
-      {/* <Link href={hrefLinkImport} style={{ textDecoration: 'none' }}>
-        <ImportButton variant='contained' disabled>
+       <Link href={hrefLinkImport} style={{ textDecoration: 'none' }}>
+         <ImportButton variant='contained' >
           Import Words From File or text{' '}
         </ImportButton>
-      </Link> */}
+      </Link>  
+      
+      
       <div className='wrapperTextBlock'>
         <div className='allWords'>
           {words.map((word, index) => (

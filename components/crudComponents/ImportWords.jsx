@@ -8,27 +8,9 @@ import { useMainPage } from 'hooks'
 
 let formFileWords = []
 
-export const ImportWords = () => {
+export const ImportWords = (props) => {
   const hrefMainPage = useMainPage()
-  const [words, setWords] = useState(null)
-  useEffect(() => {
-    console.log('URL + hrefMainPage ImportWords', URL + hrefMainPage)
-    axiosWrappers
-      .getAxios(URL + hrefMainPage)
-      .then(function (value) {
-        setWords(value)
-      })
-      .catch((err) => console.log('err2222', err))
-  }, [])
-
-  // const words = useSelector((state) => state.words)
-  // const dispatch = useDispatch()
-  // console.log('words from store :>> ', words)
-
-  // useEffect(() => {
-  //     dispatch(getWords({ table: router.asPath.split('/')[1] }))
-  //     console.log('words from store222 :>> ', words)
-  // }, [])
+  const [words, setWords] = useState(props.data)
 
   const {
     register,
@@ -39,6 +21,8 @@ export const ImportWords = () => {
   const syncPosting = async (formFileWords) => {
     console.log('formFileWords :>> ', formFileWords)
     console.log('words :>> ', words)
+
+    let newDataTehilim = []
 
     for (const formFileWord of formFileWords) {
       let newWord
@@ -52,22 +36,32 @@ export const ImportWords = () => {
       console.log('foundedWord :>> ', foundedWord)
       if (foundedWord) {
         newWord = {
+          id: newDataTehilim.length + 1, // Заменили id на порядковый номер
           original: foundedWord.original,
           translate: foundedWord.translate,
-          description: foundedWord.description,
+          description: null,
+          periodStart: null,
+          periodEnd: null,
         }
       } else {
         console.log('new word :>> ', formFileWord)
 
         newWord = {
+          id: newDataTehilim.length + 1, // Заменили id на порядковый номер
           original: formFileWord,
           translate: '',
-          description: '',
+          description: null,
+          periodStart: null,
+          periodEnd: null,
         }
       }
 
-      await axiosWrappers.postAxios(`${URL}${hrefMainPage}`, { ...newWord })
+      newDataTehilim = [...newDataTehilim, newWord]
+      // await axiosWrappers.postAxios(`${URL}${hrefMainPage}`, { ...newWord })
     }
+
+
+    console.log(JSON.stringify(newDataTehilim, null, 0));  
   }
 
   const showFile = (e) => {
@@ -87,11 +81,7 @@ export const ImportWords = () => {
   }
 
   const onSubmitImportWords = (data) => {
-    //  formFileWords = data.text.trim().split(/[\s]/g)
     formFileWords = data.text.trim().split(/\s/)
-    // formFileWords = data.text.trim().split(/\r\n|\r|\n/)
-
-    //  formFileWords = data.text.trim().split(' ')
     syncPosting(formFileWords)
     console.log(`All words successfully imported `)
   }
