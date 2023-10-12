@@ -15,11 +15,11 @@ export const StyledCell = ({ original, translate, bold, periodStart, periodEnd }
     }
 
     const today = new HDate()
-    console.log('today :>> ', today)
+    // console.log('today :>> ', today)
  
-    console.log('periodStart', periodStart)
+    // console.log('periodStart', periodStart)
     const arrayPeriodStart = periodStart.split('_')
-    console.log('periodEnd', periodEnd)
+    // console.log('periodEnd', periodEnd)
     const arrayPeriodEnd = periodEnd.split('_')
 
     const hebrewDateStart = {
@@ -37,17 +37,17 @@ export const StyledCell = ({ original, translate, bold, periodStart, periodEnd }
     const start = new HDate(hebrewDateStart.day, hebrewDateStart.month, hebrewDateStart.year)
     const end = new HDate(hebrewDateEnd.day, hebrewDateEnd.month, hebrewDateEnd.year)
 
-    console.log('start :>> ', start)
-    console.log('end :>> ', end)
+    // console.log('start :>> ', start)
+    // console.log('end :>> ', end)
 
     const deltaPeriod = Math.abs(start.deltaDays(end))
-    console.log('deltaDays :>> ', deltaPeriod)
+    // console.log('deltaDays :>> ', deltaPeriod)
 
     const deltaTodayToStart = Math.abs(start.deltaDays(today))
-    console.log('deltaTodayToStart :>> ', deltaTodayToStart)
+    // console.log('deltaTodayToStart :>> ', deltaTodayToStart)
 
     const deltaTodayToEnd = Math.abs(end.deltaDays(today))
-    console.log('deltaTodayToEnd :>> ', deltaTodayToEnd)
+    // console.log('deltaTodayToEnd :>> ', deltaTodayToEnd)
 
     if (deltaTodayToStart <= deltaPeriod && deltaTodayToEnd <= deltaPeriod) {
       setShouldShow(true)
