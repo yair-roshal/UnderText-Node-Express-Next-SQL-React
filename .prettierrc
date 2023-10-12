@@ -6,7 +6,7 @@
     "singleQuote": true, 
     "trailingComma": "all",  
     
-    "printWidth": 190
+    "printWidth": 120
   }
   
   

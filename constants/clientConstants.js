@@ -50,7 +50,7 @@ export const pagesPrayers = [
   // { name: 'Birkat aMazon', href: '/birkat-amazon', prayer: false },
   
   
-  // { name: 'Tehilim', href: '/tehilim', prayer: false },
+  { name: 'Tehilim', href: '/tehilim/1', prayer: false },
 
   { name: 'Options', href: '/options', prayer: 'additionalItems' },
   { name: 'About', href: '/about', prayer: 'additionalItems' },
