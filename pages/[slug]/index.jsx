@@ -5,6 +5,7 @@ import path from 'path'
 
 const minhaSeder = ['ashrey', 'amida']
 const maarivSeder = ['shma', 'amida']
+const tehilimSeder = ['tehilim']
 
 export async function getServerSideProps({ params }) {
   console.log('url_params_slug ', `${URL}/${params.slug}`)
@@ -34,6 +35,17 @@ export async function getServerSideProps({ params }) {
         const tableObject = fileJsonData.find((obj) => obj.type === 'table')
         data = data.concat(tableObject ? tableObject.data : [])
       }
+    } else if (params.slug === 'tehilim') {
+      // Если slug равен 'tehilim', запросить данные из файлов с именами из tehilimSeder
+      for (const file of tehilimSeder) {
+        const fileData = await fs.readFile(
+          path.join(process.cwd(), 'data', `${file}.json`),
+          'utf-8',
+        )
+        const fileJsonData = JSON.parse(fileData)
+        const tableObject = fileJsonData.find((obj) => obj.type === 'table')
+        data = data.concat(tableObject ? tableObject.data : [])
+      }
     }
 
     console.log('data.length', data.length)
@@ -48,9 +60,9 @@ export async function getServerSideProps({ params }) {
                   id: 1,
                   original: 'no data in this file json',
                   translate: `data.length = ${data.length} `,
-                  description: 'NULL',
-                  periodStart: 'NULL',
-                  periodEnd: 'NULL',
+                  description: null,
+                  periodStart: null,
+                  periodEnd: null,
                 },
               ],
       },
@@ -64,9 +76,9 @@ export async function getServerSideProps({ params }) {
             id: 1,
             original: 'Error',
             translate: `${error} `,
-            description: 'NULL',
-            periodStart: 'NULL',
-            periodEnd: 'NULL',
+            description: null,
+            periodStart: null,
+            periodEnd: null,
           },
         ],
       },

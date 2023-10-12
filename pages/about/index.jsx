@@ -34,6 +34,9 @@ export default function BasicSelect() {
       <Typography variant='body1' align='left'>
         ver 2.0 : Maariv
       </Typography>
+      <Typography variant='body1' align='left'>
+        ver 3.0 : Options (change font size, change font family, change border)
+      </Typography>
     </Box>
   )
 }

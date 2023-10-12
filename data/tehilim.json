@@ -1,0 +1,10 @@
+[
+    {"type":"header","version":"5.1.1","comment":"Export to JSON plugin for PHPMyAdmin"},
+    {"type":"database","name":"default_db"},
+    {"type":"table","name":"tehilim","database":"default_db","data":
+    [
+        {"id":"0","original":"תהילים","translate":"теилим","description":"title","periodStart":null,"periodEnd":null},
+        {"id":"0","original":"תהילים  ","translate":"теилим","description":"first","periodStart":null,"periodEnd":null}
+      ]
+    }
+    ]

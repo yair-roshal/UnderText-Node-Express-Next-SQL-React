@@ -60,7 +60,14 @@ export function MenuBar() {
     month: 'numeric',
     day: 'numeric',
   }).format(new Date())
-
+  
+  const gregorianDate = new Date();
+  const gregorianDateStr = gregorianDate.toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
+ 
   const theme = useTheme()
   const [open, setOpen] = React.useState(false)
 
@@ -89,8 +96,7 @@ export function MenuBar() {
         {pagesPrayers.map((pagesPrayer) => (
           <Button
             key={pagesPrayer.name}
-            //TODO : отключить по готовности
-            disabled={pagesPrayer.name.toLowerCase() == 'tehilim' ? true : false} //
+             // disabled={pagesPrayer.name.toLowerCase() == 'tehilim' ? true : false} //
             variant='contained'
             sx={{ color: 'black' }}
           >
@@ -99,8 +105,7 @@ export function MenuBar() {
               href={pagesPrayer.href}
               style={{ textDecoration: 'none' }}
             >
-              {/* <ListItemText primary={pagesPrayer.name} /> */}
-              {pagesPrayer.name}
+               {pagesPrayer.name}
             </Link>
           </Button>
         ))}
@@ -130,7 +135,7 @@ export function MenuBar() {
               }}
               component='div'
             >
-              {hebrewDate}
+              {hebrewDate} - {gregorianDateStr}
             </Typography>
 
             <IconButton
