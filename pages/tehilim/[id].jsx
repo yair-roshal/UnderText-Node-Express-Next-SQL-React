@@ -10,9 +10,10 @@ export async function getServerSideProps({ params }) {
     let data = [];
 
     const fileData = await fs.readFile(path.join(process.cwd(), 'data/tehilim', `${params.id}.json`), 'utf-8');
+    // const data = JSON.parse(fileData);
     const fileJsonData = JSON.parse(fileData);
-    const tableObject = fileJsonData.find((obj) => obj.type === 'table');
-    data = data.concat(tableObject ? tableObject.data : []);
+     const tableObject = fileJsonData.find((obj) => obj.type === 'table');
+    data = data.concat(tableObject ? tableObject.data : fileJsonData);
 
  
     return {
