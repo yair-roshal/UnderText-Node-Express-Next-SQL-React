@@ -5,8 +5,8 @@ import { useUsersContext } from '../context/usersContext'
 import { useRouter } from 'next/router'
 
 import { Button, FormControl, MenuItem, Select, Box, Typography } from '@mui/material'
-// const totalPages = 150 // Общее количество страниц
-const totalPages = 29 // Общее количество страниц
+const totalPages = 150 // Общее количество страниц
+// const totalPages = 29 // Общее количество страниц
 
 export function TehilimPage(props) {
   const router = useRouter()

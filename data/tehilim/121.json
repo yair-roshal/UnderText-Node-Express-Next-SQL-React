@@ -1,17 +1,259 @@
 [
   {
-    "type": "header",
-    "version": "5.1.1",
-    "comment": "Export to JSON plugin for PHPMyAdmin"
+    "original": "קכא",
+    "translate": "121",
+    "description": "title"
   },
   {
-    "type": "database",
-    "name": "default_db"
+    "original": "א",
+    "translate": "1",
+    "description": "first"
   },
   {
-    "type": "table",
-    "name": "tehilim",
-    "database": "default_db",
-    "data": 
+    "original": "שִׁיר",
+    "translate": "песня"
+  },
+  {
+    "original": "לַמַּעֲלוֹת",
+    "translate": "для восхождений"
+  },
+  {
+    "original": "אֶשָּׂא",
+    "translate": "поднимаю"
+  },
+  {
+    "original": " עֵינַי",
+    "translate": " глаза"
+  },
+  {
+    "original": "אֶל-הֶהָרִים",
+    "translate": "к горам"
+  },
+  {
+    "original": "מֵאַיִן",
+    "translate": "откуда"
+  },
+  {
+    "original": "יָבֹא ",
+    "translate": "придет "
+  },
+  {
+    "original": "עֶזְרִי",
+    "translate": "мне помощ"
+  },
+  {
+    "original": "ב",
+    "translate": "2",
+    "description": "first"
+  },
+  {
+    "original": "עֶזְרִי",
+    "translate": "помощ мне"
+  },
+  {
+    "original": "מֵעִם",
+    "translate": "от "
+  },
+  {
+    "original": "יְהוָה",
+    "translate": "Г-да"
+  },
+  {
+    "original": " עֹשֵׂה",
+    "translate": "создавшего"
+  },
+  {
+    "original": "שָׁמַיִם",
+    "translate": "небеса"
+  },
+  {
+    "original": "וָאָרֶץ",
+    "translate": "и землю"
+  },
+  {
+    "original": "ג",
+    "translate": "3",
+    "description": "first"
+  },
+  {
+    "original": "אַל",
+    "translate": "Не "
+  },
+  {
+    "original": "יִתֵּן",
+    "translate": "даст Он"
+  },
+  {
+    "original": "לַמּוֹט",
+    "translate": "шататься "
+  },
+  {
+    "original": "רַגְלֶךָ",
+    "translate": "твоей ноге "
+  },
+  {
+    "original": "אַל",
+    "translate": "не"
+  },
+  {
+    "original": "יָנוּם",
+    "translate": "задремлет "
+  },
+  {
+    "original": "שֹׁמְרֶךָ",
+    "translate": "твой страж"
+  },
+  {
+    "original": "ד",
+    "translate": "4",
+    "description": "first"
+  },
+  {
+    "original": "הִנֵּה",
+    "translate": "Ведь"
+  },
+  {
+    "original": "לֹא",
+    "translate": "не"
+  },
+  {
+    "original": "יָנוּם",
+    "translate": "дремлет "
+  },
+  {
+    "original": " וְלֹא",
+    "translate": "и не"
+  },
+  {
+    "original": "יִישָׁן",
+    "translate": "спит "
+  },
+  {
+    "original": "שׁוֹמֵר",
+    "translate": "страж "
+  },
+  {
+    "original": "יִשְׂרָאֵל",
+    "translate": "Израиля"
+  },
+  {
+    "original": "ה",
+    "translate": "5",
+    "description": "first"
+  },
+  {
+    "original": "יְהוָה",
+    "translate": "Г-дь"
+  },
+  {
+    "original": "שֹׁמְרֶךָ",
+    "translate": "твой страж"
+  },
+  {
+    "original": " יְהוָה",
+    "translate": "Г-дь "
+  },
+  {
+    "original": "צִלְּךָ",
+    "translate": "твоя тень"
+  },
+  {
+    "original": " עַל",
+    "translate": "по"
+  },
+  {
+    "original": " יַד",
+    "translate": "руку "
+  },
+  {
+    "original": "יְמִינֶך",
+    "translate": "правую твою (от тебя)"
+  },
+  {
+    "original": "ו",
+    "translate": "6",
+    "description": "first"
+  },
+  {
+    "original": "יוֹמָם",
+    "translate": "Днем"
+  },
+  {
+    "original": "הַשֶּׁמֶשׁ",
+    "translate": "солнце"
+  },
+  {
+    "original": "לֹא",
+    "translate": "не"
+  },
+  {
+    "original": " יַכֶּכָּה",
+    "translate": "причинит тебе вреда"
+  },
+  {
+    "original": "וְיָרֵחַ",
+    "translate": "и луна"
+  },
+  {
+    "original": "בַּלָּיְלָה",
+    "translate": "ночью"
+  },
+  {
+    "original": "ז",
+    "translate": "7",
+    "description": "first"
+  },
+  {
+    "original": "יהוָה",
+    "translate": "Г-дь"
+  },
+  {
+    "original": " יִשְׁמָרְךָ",
+    "translate": "сохранит тебя"
+  },
+  {
+    "original": "מִכָּל",
+    "translate": "от любого"
+  },
+  {
+    "original": "רָע",
+    "translate": "зла"
+  },
+  {
+    "original": "  יִשְׁמֹר",
+    "translate": "осхранит "
+  },
+  {
+    "original": " אֶת-נַפְשֶׁךָ",
+    "translate": "твою душу"
+  },
+  {
+    "original": "ח",
+    "translate": "8",
+    "description": "first"
+  },
+  {
+    "original": "יְהוָה",
+    "translate": "Г-дь"
+  },
+  {
+    "original": "יִשְׁמָר",
+    "translate": "хранить будет тебя"
+  },
+  {
+    "original": "צֵאתְךָ",
+    "translate": "на твоем выходе"
+  },
+  {
+    "original": "וּבוֹאֶךָ",
+    "translate": "и на твоем приходе"
+  },
+  {
+    "original": "מֵעַתָּה",
+    "translate": "отныне"
+  },
+  {
+    "original": " וְעַד-עוֹלָם",
+    "translate": " и вовеки "
   }
 ]
