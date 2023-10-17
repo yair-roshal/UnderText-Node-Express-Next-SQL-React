@@ -5,8 +5,8 @@ import fs from 'fs/promises';
 import { TehilimPage } from 'components'
 
 export async function getServerSideProps({ params }) {
-  console.log('params.slug---------->>', params.slug);
-  try {
+  console.log('params---------->>', params);
+   try {
     let data = [];
 
     const fileData = await fs.readFile(path.join(process.cwd(), 'data/tehilim', `${params.id}.json`), 'utf-8');

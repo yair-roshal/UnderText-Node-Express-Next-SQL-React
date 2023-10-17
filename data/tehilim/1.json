@@ -1,4 +1,9 @@
 [
+  {
+    "original": "א",
+    "translate": "1",
+    "description": "title"
+  },
    { "original": "אַ֥שְֽׁרֵי ", "translate": "Счастлив " },
    { "original": " הָאִ֗ישׁ", "translate": " человек " },
   { "original": "לֹ֥א", "translate": "который не" },

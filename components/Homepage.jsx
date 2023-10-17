@@ -5,7 +5,7 @@ import { useMainPage } from 'hooks'
 import { CellComponent } from './CellComponent/CellComponent'
 import { URL } from 'constants/clientConstants'
 import { useUsersContext } from '../context/usersContext'
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router'
 import Box from '@mui/material/Box'
 
 export function Homepage(props) {
@@ -18,26 +18,23 @@ export function Homepage(props) {
   const [newWords, setNewWords] = useState(JSON.stringify(words))
   const [loading, setLoading] = useState(false)
 
-  const router = useRouter();
+  const router = useRouter()
 
   // Отслеживание начала загрузки страницы
   router.events.on('routeChangeStart', (url) => {
-    console.log(`Загрузка страницы_Homepage: ${url}`);
-    setLoading(true);
-  });
+    console.log(`Загрузка страницы_Homepage: ${url}`)
+    setLoading(true)
+  })
 
   // Отслеживание завершения загрузки страницы
   router.events.on('routeChangeComplete', (url) => {
-    console.log(`Страница загружена_Homepage: ${url}`);
-    setLoading(false);
-  });
-  
-  
+    console.log(`Страница загружена_Homepage: ${url}`)
+    setLoading(false)
+  })
 
   useEffect(() => {
     console.log('usersData :>> ', usersData)
   }, [usersData])
-
 
   useEffect(() => {
     console.log('props111', props)
@@ -67,20 +64,19 @@ export function Homepage(props) {
   // }
 
   if (loading) {
-    return <Box className="loading-overlay">
-      <Loading />
-    </Box>
+    return (
+      <Box className='loading-overlay'>
+        <Loading />
+      </Box>
+    )
   }
 
   return (
     <>
-       <Link href={hrefLinkImport} style={{ textDecoration: 'none' }}>
-         <ImportButton variant='contained' >
-          Import Words From File or text{' '}
-        </ImportButton>
-      </Link>  
-      
-      
+      <Link href={hrefLinkImport} style={{ textDecoration: 'none' }}>
+        <ImportButton variant='contained'>Import Words From File or text </ImportButton>
+      </Link>
+
       <div className='wrapperTextBlock'>
         <div className='allWords'>
           {words.map((word, index) => (
