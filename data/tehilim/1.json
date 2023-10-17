@@ -1,5 +1,6 @@
 [
-  { "original": "אַ֥שְֽׁרֵי־הָאִ֗ישׁ", "translate": "Счастлив человек," },
+   { "original": "אַ֥שְֽׁרֵי ", "translate": "Счастлив " },
+   { "original": " הָאִ֗ישׁ", "translate": " человек " },
   { "original": "לֹ֥א", "translate": "который не" },
   { "original": "הָלַךְ֮", "translate": "ходил" },
   { "original": "בַּעֲצַ֪ת", "translate": "по совету" },
