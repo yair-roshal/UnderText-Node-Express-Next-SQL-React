@@ -1,9 +1,11 @@
-import React from 'react'
+import * as React from 'react'
+import CircularProgress from '@mui/material/CircularProgress'
+import Box from '@mui/material/Box'
 
 export const Loading = () => {
-    return (
-        <div className='loading'>
-            <h4> Data loading...</h4>
-        </div>
-    )
+  return (
+    <Box sx={{ display: 'flex' }}>
+      <CircularProgress />
+    </Box>
+  )
 }
