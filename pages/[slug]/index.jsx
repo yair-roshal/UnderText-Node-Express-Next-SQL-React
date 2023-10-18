@@ -8,7 +8,7 @@ const maarivSeder = ['shma', 'amida']
 const tehilimSeder = ['tehilim']
 
 export async function getServerSideProps({ params }) {
-  console.log('url_params_slug ', `${URL}/${params.slug}`)
+  // console.log('url_params_slug ', `${URL}/${params.slug}`)
 
   try {
     let data = []

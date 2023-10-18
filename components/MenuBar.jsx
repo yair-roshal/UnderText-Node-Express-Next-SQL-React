@@ -81,8 +81,7 @@ export function MenuBar() {
       >
         {/* big buttons */}
         {pagesPrayers.map((pagesPrayer) => (
-          <>
-            <Link key={pagesPrayer.name} onClick={handleDrawerClose} href={pagesPrayer.href} style={{ textDecoration: 'none' }}>
+             <Link key={pagesPrayer.name} onClick={handleDrawerClose} href={pagesPrayer.href} style={{ textDecoration: 'none' }}>
               <Button
                 // disabled={pagesPrayer.name.toLowerCase() == 'tehilim' ? true : false} //
                 variant='contained'
@@ -91,8 +90,7 @@ export function MenuBar() {
                 {pagesPrayer.name}
               </Button>
             </Link>
-          </>
-        ))}
+         ))}
       </Box>
 
       <Box sx={{ display: 'flex' }}>
@@ -168,8 +166,7 @@ export function MenuBar() {
             {pagesPrayers.map(
               (pagesPrayer) =>
                 pagesPrayer.prayer === true && (
-                  <>
-                    <Link key={pagesPrayer.name} onClick={handleDrawerClose} href={pagesPrayer.href} style={{ textDecoration: 'none' }}>
+                     <Link key={pagesPrayer.name} onClick={handleDrawerClose} href={pagesPrayer.href} style={{ textDecoration: 'none' }}>
                       <ListItem disablePadding>
                         <ListItemButton onClick={() => handleMenuItemClick()}>
                           <ListItemIcon>
@@ -179,8 +176,7 @@ export function MenuBar() {
                         </ListItemButton>
                       </ListItem>
                     </Link>
-                  </>
-                ),
+                 ),
             )}
           </List>
           <Divider />
@@ -188,8 +184,7 @@ export function MenuBar() {
             {pagesPrayers.map(
               (pagesPrayer) =>
                 pagesPrayer.prayer === false && (
-                  <>
-                    <Link key={pagesPrayer.name} onClick={handleDrawerClose} href={pagesPrayer.href} style={{ textDecoration: 'none' }}>
+                     <Link key={pagesPrayer.name} onClick={handleDrawerClose} href={pagesPrayer.href} style={{ textDecoration: 'none' }}>
                       <ListItem disablePadding>
                         <ListItemButton onClick={() => handleMenuItemClick()}>
                           <ListItemIcon>
@@ -199,8 +194,7 @@ export function MenuBar() {
                         </ListItemButton>
                       </ListItem>
                     </Link>
-                  </>
-                ),
+                 ),
             )}
           </List>
           <Divider />
@@ -208,8 +202,7 @@ export function MenuBar() {
             {pagesPrayers.map(
               (pagesPrayer) =>
                 pagesPrayer.prayer === 'additionalItems' && (
-                  <>
-                    <Link key={pagesPrayer.name} onClick={handleDrawerClose} href={pagesPrayer.href} style={{ textDecoration: 'none' }}>
+                     <Link key={pagesPrayer.name} onClick={handleDrawerClose} href={pagesPrayer.href} style={{ textDecoration: 'none' }}>
                       <ListItem disablePadding>
                         <ListItemButton onClick={() => handleMenuItemClick()}>
                           <ListItemIcon>
@@ -219,8 +212,7 @@ export function MenuBar() {
                         </ListItemButton>
                       </ListItem>
                     </Link>
-                  </>
-                ),
+                 ),
             )}
           </List>
         </Drawer>
