@@ -39,13 +39,7 @@ export default function BasicSelect() {
   const textExample = 'счастливы сидячие в доме твоем (и) еще восхвалят тебя'
 
   const handleDefaultButtonClick = () => {
-    const defaultOptions = {
-      fontSize: '26',
-      fontFamily: 'Times New Roman',
-      borderForCell: 'true',
-    }
-
-    setOptions(defaultOptions)
+    setOptions(initialUsersData)
   }
 
   const handleOptionChange = (event, optionName) => {
@@ -96,13 +90,18 @@ export default function BasicSelect() {
             </Select>
           </FormControl>
 
-          <Button sx={{ width: '300px', height: '50px', paddingLeft: 2, m: 2 }} variant='contained' onClick={handleDefaultButtonClick}>
+          <Button
+            sx={{ width: '300px', height: '50px', paddingLeft: 2, m: 2 }}
+            variant='contained'
+            onClick={handleDefaultButtonClick}
+          >
             По умолчанию
           </Button>
         </Box>
 
         <Typography variant='h6'>
-          Рамка для текста <Checkbox checked={options.borderForCell} onChange={(event) => handleOptionChange(event, 'borderForCell')} />
+          Рамка для текста{' '}
+          <Checkbox checked={options.borderForCell} onChange={(event) => handleOptionChange(event, 'borderForCell')} />
         </Typography>
       </Box>
 
