@@ -10,15 +10,12 @@ import Button from '@mui/material/Button'
 import { fontFamilyList, fontSizeList } from '../../constants/clientConstants'
 import { useUsersContext } from '../../context/usersContext'
 import { StyledCell } from 'components/StyledCell'
+import initialUsersData from '../../constants/initialUsersData.json'
 
 export default function BasicSelect() {
   const { usersData, setUsersData } = useUsersContext()
 
-  const [options, setOptions] = useState({
-    fontSize: '22',
-    fontFamily: 'Times New Roman',
-    borderForCell: true,
-  })
+  const [options, setOptions] = useState(initialUsersData)
 
   useEffect(() => {
     const savedOptions = JSON.parse(localStorage.getItem('usersData'))
@@ -52,17 +49,7 @@ export default function BasicSelect() {
   }
 
   const handleOptionChange = (event, optionName) => {
-    const value = event.target.value
-    console.log('value----', value)
-    console.log('optionName----', optionName)
-
-    if (optionName === 'borderForCell') {
-      setOptions({
-        ...options,
-        [optionName]: event.target.checked,
-      })
-      return
-    }
+    const value = optionName === 'borderForCell' ? event.target.checked : event.target.value
 
     setOptions({
       ...options,

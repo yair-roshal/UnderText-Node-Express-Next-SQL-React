@@ -1,5 +1,5 @@
 {
-  "fontSize": "26",
+  "fontSize": "30",
   "fontFamily": "Times New Roman",
-  "borderForCell": "true"
+  "borderForCell": true
 }
