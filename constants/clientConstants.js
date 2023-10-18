@@ -48,12 +48,11 @@ export const pagesPrayers = [
 
   // { name: 'Main shalosh', href: '/main-shalosh', prayer: false },
   // { name: 'Birkat aMazon', href: '/birkat-amazon', prayer: false },
-  
-  
+
   { name: 'Tehilim', href: '/tehilim/1', prayer: false },
 
   { name: 'Options', href: '/options', prayer: 'additionalItems' },
   { name: 'About', href: '/about', prayer: 'additionalItems' },
 ]
 
-export const fontSizeList = [8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 36, 48, 72]
+export const fontSizeList = [20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50]
