@@ -164,14 +164,13 @@
     {"id":"785","original":"יְיָ,","translate":"Ашем,","description":null,"periodStart":null,"periodEnd":null},
 	
 	
-    {"id":"786","original":"הכל שנה","translate":"все ДНИ ГОДА","description":"first","periodStart":null,"periodEnd":null},
-    {"id":"787","original":"הָאֵֽל","translate":"Б-Г","description":null,"periodStart":null,"periodEnd":null},
+     {"id":"787","original":"הָאֵֽל","translate":"Б-Г","description":null,"periodStart":null,"periodEnd":null},
     {"id":"788","original":"הַקָּדֽוֹשׁ","translate":"СВЯТОЙ","description":null,"periodStart":null,"periodEnd":null},
 	
 	
-    {"id":"789","original":"בעשי״ת","translate":"В ДЕСЯТЬ ДНЕЙ ТШУВЫ:","description":"bold","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
-    {"id":"790","original":"הַמֶּֽלֶךְ","translate":"ВЛАДЫКА","description":null,"periodStart":"1_Tishri","periodEnd":"10_Tishri"},
-    {"id":"791","original":"הַקָּדֽוֹשׁ","translate":"СВЯТОЙ","description":null,"periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"789","original":"בעשי״ת","translate":"В ДЕСЯТЬ ДНЕЙ ТШУВЫ:","description":"grey","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"790","original":"הַמֶּֽלֶךְ","translate":"ВЛАДЫКА","description":"grey","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"791","original":"הַקָּדֽוֹשׁ","translate":"СВЯТОЙ","description":"grey","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
 	
 	
 	
