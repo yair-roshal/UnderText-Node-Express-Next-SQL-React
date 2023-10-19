@@ -65,33 +65,35 @@ export const StyledCell = ({ original, translate, bold, periodStart, periodEnd }
   }, [])
 
   return shouldShow ? (
-    <Box
-      className='cell'
-      sx={{
-        fontWeight: bold ? '600' : '400',
-        fontFamily: usersData.fontFamily,
-        fontSize: `${usersData.fontSize}px !important`,
-        border: usersData.borderForCell ? '1px solid #d0d0d0' : 'none',
-        borderRadius: usersData.borderForCell ? '10px' : '0px',
-      }}
-    >
+    <>
       <Box
+        className='cell'
         sx={{
-          fontSize: ~~usersData.fontSize   + 'px',
+          fontWeight: bold ? '600' : '400',
+          fontFamily: usersData.fontFamily,
+          fontSize: `${usersData.fontSize}px !important`,
+          border: usersData.borderForCell ? '1px solid #d0d0d0' : 'none',
+          borderRadius: usersData.borderForCell ? '10px' : '0px',
         }}
-        className='original_text'
       >
-        {original}
+        <Box
+          sx={{
+            fontSize: ~~usersData.fontSize   + 'px',
+          }}
+          className='original_text'
+        >
+          {original}
+        </Box>
+        <Box
+          sx={{
+            fontSize: `${usersData.fontSize / 2}px !important`,
+          }}
+          className='translate'
+        >
+          {translate.toLowerCase()}
+        </Box>
+        {/* <Box className='translate'>{translate.toUpperCase()}</Box> */}
       </Box>
-      <Box
-        sx={{
-          fontSize: `${usersData.fontSize / 2}px !important`,
-        }}
-        className='translate'
-      >
-        {translate.toLowerCase()}
-      </Box>
-      {/* <Box className='translate'>{translate.toUpperCase()}</Box> */}
-    </Box>
+    </>
   ) : null
 }

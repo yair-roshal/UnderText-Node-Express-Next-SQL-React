@@ -507,8 +507,8 @@
   
 	
 	
-	{"id":"1078","original":"את","translate":"","description":"first","periodStart":null,"periodEnd":null},
-    {"id":"1079","original":"צמח","translate":"РОСТОК","description":null,"periodStart":null,"periodEnd":null},
+	{"id":"1078","original":"אֶת","translate":"","description":"first","periodStart":null,"periodEnd":null},
+    {"id":"1079","original":"צֶמַח","translate":"РОСТОК","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1080","original":"דָּוִֽד","translate":"ДАВИДА","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1081","original":"עַבְדְּךָֽ","translate":"РАБА ТВОЕГО","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1082","original":"מְהֵרָֽה","translate":"ВСКОРОСТИ","description":null,"periodStart":null,"periodEnd":null},
@@ -811,7 +811,7 @@
     {"id":"1316","original":"לְפָנֶיךָ,","translate":"Перед ТОБОЙ,","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1317","original":"יְיָ","translate":"Ашем","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1318","original":"צוּרִי","translate":"ТВЕРДЫНЯ МОЯ","description":null,"periodStart":null,"periodEnd":null},
-    {"id":"1319","original":"וגואלי","translate":"И ОСВОБОДИТЕЛЬ МОЙ","description":null,"periodStart":null,"periodEnd":null},
+    {"id":"1319","original":"וְגוֹאֲלִי","translate":"И ОСВОБОДИТЕЛЬ МОЙ","description":null,"periodStart":null,"periodEnd":null},
    
    
     {"id":"1320","original":"אֱלֹהַי,","translate":"Б-г мой,","description":"first","periodStart":null,"periodEnd":null},
@@ -885,8 +885,8 @@
     {"id":"788","original":"עֹשֶׂה","translate":"ДЕЛАЮЩИЙ","description":"first","periodStart":null,"periodEnd":null},
     {"id":"787","original":"שָׁלוֹם","translate":"МИР","description":null,"periodStart":null,"periodEnd":null},
 
-    {"id":"789","original":"בעשי״ת","translate":"В ДЕСЯТЬ ДНЕЙ ТШУВЫ:","description":"first","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
-    {"id":"790","original":"הַשָּׁלוֹם","translate":"ТОТ САМЫЙ МИР","description":"last","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"789","original":"בעשי״ת","translate":"В ДЕСЯТЬ ДНЕЙ ТШУВЫ:","description":"grey","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
+    {"id":"790","original":"הַשָּׁלוֹם","translate":"ТОТ САМЫЙ МИР","description":"grey","periodStart":"1_Tishri","periodEnd":"10_Tishri"},
  
 
     {"id":"788","original":"בִּמְרוֹמָיו","translate":"В ВЫСЯХ СВОИХ","description":"simple","periodStart":null,"periodEnd":null},

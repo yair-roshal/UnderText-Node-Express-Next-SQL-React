@@ -8,6 +8,7 @@ import { CellBold } from './variants/CellBold'
 import { CellTitle } from './variants/CellTitle'
 import { CellLastBold } from './variants/CellLastBold'
 import { FirstCell } from './variants/FirstCell'
+import { GreyCell } from './variants/GreyCell'
 
 const CellVariants = {
   simple: CellSimple,
@@ -16,6 +17,7 @@ const CellVariants = {
   last: CellLast,
   lastBold: CellLastBold,
   first: FirstCell,
+  grey: GreyCell,
 }
 
 export function CellComponent({ original, description, ...props }) {

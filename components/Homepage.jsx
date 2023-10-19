@@ -21,16 +21,18 @@ export function Homepage(props) {
   const router = useRouter()
 
   // Отслеживание начала загрузки страницы
-  router.events.on('routeChangeStart', (url) => {
-    console.log(`Загрузка страницы_Homepage: ${url}`)
-    setLoading(true)
-  })
+  router.events &&
+    router.events.on('routeChangeStart', (url) => {
+      console.log(`Загрузка страницы_Homepage: ${url}`)
+      setLoading(true)
+    })
 
   // Отслеживание завершения загрузки страницы
-  router.events.on('routeChangeComplete', (url) => {
-    console.log(`Страница загружена_Homepage: ${url}`)
-    setLoading(false)
-  })
+  router.events &&
+    router.events.on('routeChangeComplete', (url) => {
+      console.log(`Страница загружена_Homepage: ${url}`)
+      setLoading(false)
+    })
 
   useEffect(() => {
     console.log('usersData :>> ', usersData)
