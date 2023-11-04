@@ -1,0 +1,1010 @@
+[
+  {
+      "id": "1",
+      "original": "{א}",
+      "translate": "1",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "2",
+      "original": "שִׁיר",
+      "translate": "Песнь",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "3",
+      "original": "מִזְמוֹר",
+      "translate": "Псалом",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "4",
+      "original": "לִבְנֵי",
+      "translate": "сыновей",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "5",
+      "original": "קֹרַח:",
+      "translate": "Кораха",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "6",
+      "original": "{ב}",
+      "translate": "2",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "7",
+      "original": "גָּדוֹל",
+      "translate": "Велик",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "8",
+      "original": "יְהוָה",
+      "translate": "Г-сподь",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "9",
+      "original": "וּמְהֻלָּל",
+      "translate": "и прославляем",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "10",
+      "original": "מְאֹד",
+      "translate": "очень",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "11",
+      "original": "בְּעִיר",
+      "translate": "в городе",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "12",
+      "original": "אֱלֹהֵינוּ",
+      "translate": "Б-га нашего",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "13",
+      "original": "הַר",
+      "translate": "(на) горе",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "14",
+      "original": "קָדְשׁוֹ:",
+      "translate": "святости его",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "15",
+      "original": "{ג}",
+      "translate": "3",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "16",
+      "original": "יְפֵה",
+      "translate": "прекрасный",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "17",
+      "original": "נוֹף",
+      "translate": "край",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "18",
+      "original": "מְשׂוֹשׂ",
+      "translate": "отрада",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "19",
+      "original": "כָּל",
+      "translate": "всей",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "20",
+      "original": "הָאָרֶץ",
+      "translate": "земли",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "21",
+      "original": "הַר",
+      "translate": "гора",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "22",
+      "original": "צִיּוֹן",
+      "translate": "Сион",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "23",
+      "original": "יַרְכְּתֵי",
+      "translate": "(на) стороне",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "24",
+      "original": "צָפוֹן",
+      "translate": "северной",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "25",
+      "original": "קִרְיַת",
+      "translate": "(от) города",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "26",
+      "original": "מֶלֶךְ",
+      "translate": "Царя",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "27",
+      "original": "רָב:",
+      "translate": "великого",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "28",
+      "original": "{ד}",
+      "translate": "4",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "29",
+      "original": "אֱלֹהִים",
+      "translate": "Г-сподь",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "30",
+      "original": "בְּאַרְמְנוֹתֶיהָ",
+      "translate": "во дворцах его",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "31",
+      "original": "נוֹדַע",
+      "translate": "признаваем",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "32",
+      "original": "לְמִשְׂגָּב:",
+      "translate": "оплотом",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "33",
+      "original": "{ה}",
+      "translate": "5",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "34",
+      "original": "כִּי",
+      "translate": "ибо",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "35",
+      "original": "הִנֵּה",
+      "translate": "вот",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "36",
+      "original": "הַמְּלָכִים",
+      "translate": "цари",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "37",
+      "original": "נוֹעֲדוּ",
+      "translate": "сговорившись",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "38",
+      "original": "עָבְרוּ",
+      "translate": "пришли",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "39",
+      "original": "יַחְדָּו:",
+      "translate": "вместе",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "40",
+      "original": "{ו}",
+      "translate": "6",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "41",
+      "original": "הֵמָּה",
+      "translate": "они",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "42",
+      "original": "רָאוּ",
+      "translate": "увидели",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "43",
+      "original": "כֵּן",
+      "translate": "такое",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "44",
+      "original": "תָּמָהוּ",
+      "translate": "поразились",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "45",
+      "original": "נִבְהֲלוּ",
+      "translate": "испугались",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "46",
+      "original": "נֶחְפָּזוּ:",
+      "translate": "смутились",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "47",
+      "original": "{ז}",
+      "translate": "7",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "48",
+      "original": "רְעָדָה",
+      "translate": "дрожь",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "49",
+      "original": "אֲחָזָתַם",
+      "translate": "охватила их",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "50",
+      "original": "שָׁם",
+      "translate": "там",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "51",
+      "original": "חִיל",
+      "translate": "судороги",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "52",
+      "original": "כַּיּוֹלֵדָה:",
+      "translate": "как у роженицы",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "53",
+      "original": "{ח}",
+      "translate": "8",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "54",
+      "original": "בְּרוּחַ",
+      "translate": "ветром",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "55",
+      "original": "קָדִים",
+      "translate": "восточным",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "56",
+      "original": "תְּשַׁבֵּר",
+      "translate": "сокрушены",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "57",
+      "original": "אֳנִיּוֹת",
+      "translate": "корабли",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "58",
+      "original": "תַּרְשִׁישׁ:",
+      "translate": "Таршиша",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "59",
+      "original": "{ט}",
+      "translate": "9",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "60",
+      "original": "כַּאֲשֶׁר",
+      "translate": "о чем ",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "61",
+      "original": "שָׁמַעְנוּ",
+      "translate": "мы слышали",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "62",
+      "original": "כֵּן",
+      "translate": "то",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "63",
+      "original": "רָאִינוּ",
+      "translate": "увидели",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "64",
+      "original": "בְּעִיר",
+      "translate": "в городе",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "65",
+      "original": "יְהוָה",
+      "translate": "Г-спода",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "66",
+      "original": "צְבָאוֹת",
+      "translate": "Воинств",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "67",
+      "original": "בְּעִיר",
+      "translate": "в городе",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "68",
+      "original": "אֱלֹהֵינוּ",
+      "translate": "Б-га нашего",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "69",
+      "original": "אֱלֹהִים",
+      "translate": "Б-га нашего",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "70",
+      "original": "יְכוֹנְנֶהָ",
+      "translate": "утвердившего",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "71",
+      "original": "עַד",
+      "translate": "на",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "72",
+      "original": "עוֹלָם",
+      "translate": "века",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "73",
+      "original": "סֶלָה:",
+      "translate": "Сэла!",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "74",
+      "original": "{י}",
+      "translate": "10",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "75",
+      "original": "דִּמִּינוּ",
+      "translate": "представляем мы",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "76",
+      "original": "אֱלֹהִים",
+      "translate": "Б-г",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "77",
+      "original": "חַסְדֶּךָ",
+      "translate": "милость Твою",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "78",
+      "original": "בְּקֶרֶב",
+      "translate": "внутри",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "79",
+      "original": "הֵיכָלֶךָ:",
+      "translate": "дворца Твоего",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "80",
+      "original": "{יא}",
+      "translate": "11",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "81",
+      "original": "כְּשִׁמְךָ",
+      "translate": "как Имя Твое",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "82",
+      "original": "אֱלֹהִים",
+      "translate": "Б-г",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "83",
+      "original": "כֵּן",
+      "translate": "так",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "84",
+      "original": "תְּהִלָּתְךָ",
+      "translate": "слава Твоя",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "85",
+      "original": "עַל",
+      "translate": "до",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "86",
+      "original": "קַצְוֵי",
+      "translate": "краев",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "87",
+      "original": "אֶרֶץ",
+      "translate": "земли",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "88",
+      "original": "צֶדֶק",
+      "translate": "справедливостью",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "89",
+      "original": "מָלְאָה",
+      "translate": "полна",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "90",
+      "original": "יְמִינֶךָ:",
+      "translate": "десница Твоя",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "91",
+      "original": "{יב}",
+      "translate": "12",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "92",
+      "original": "יִשְׂמַח",
+      "translate": "возрадуется",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "93",
+      "original": "הַר",
+      "translate": "гора",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "94",
+      "original": "צִיּוֹן",
+      "translate": "Сион",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "95",
+      "original": "תָּגֵלְנָה",
+      "translate": "возликуют",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "96",
+      "original": "בְּנוֹת",
+      "translate": "дочери",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "97",
+      "original": "יְהוּדָה",
+      "translate": "Иудеи",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "98",
+      "original": "לְמַעַן",
+      "translate": "благодаря",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "99",
+      "original": "מִשְׁפָּטֶיךָ:",
+      "translate": "правосудию твоему",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "100",
+      "original": "{יג}",
+      "translate": "13",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "101",
+      "original": "סֹבּוּ",
+      "translate": "обойдите вокруг",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "102",
+      "original": "צִיּוֹן",
+      "translate": "Сиона",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "103",
+      "original": "וְהַקִּיפוּהָ",
+      "translate": "и окружите его",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "104",
+      "original": "סִפְרוּ",
+      "translate": "сосчитайте",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "105",
+      "original": "מִגְדָּלֶיהָ:",
+      "translate": "его башни",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "106",
+      "original": "{יד}",
+      "translate": "14",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "107",
+      "original": "שִׁיתוּ",
+      "translate": "обратите",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "108",
+      "original": "לִבְּכֶם",
+      "translate": "сердца ваши",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "109",
+      "original": "לְחֵילָה",
+      "translate": "к укреплениям его",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "110",
+      "original": "פַּסְּגוּ",
+      "translate": "поднимитесь",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "111",
+      "original": "אַרְמְנוֹתֶיהָ",
+      "translate": "к его дворцам",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "112",
+      "original": "לְמַעַן",
+      "translate": "чтобы",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "113",
+      "original": "תְּסַפְּרוּ",
+      "translate": "рассказать",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "114",
+      "original": "לְדוֹר",
+      "translate": "поколению",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "115",
+      "original": "אַחֲרוֹן:",
+      "translate": "грядущему",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "116",
+      "original": "{טו}",
+      "translate": "15",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "117",
+      "original": "כִּי",
+      "translate": "ибо",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "118",
+      "original": "זֶה",
+      "translate": "это",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "119",
+      "original": "אֱלֹהִים",
+      "translate": "Б-г",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "120",
+      "original": "אֱלֹהֵינוּ",
+      "translate": "Б-г наш",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "121",
+      "original": "עוֹלָם",
+      "translate": "на веки",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "122",
+      "original": "וָעֶד",
+      "translate": "веков",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "123",
+      "original": "הוּא",
+      "translate": "Он",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "124",
+      "original": "יְנַהֲגֵנוּ",
+      "translate": "направляет нас",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "125",
+      "original": "עַל",
+      "translate": "на",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": " "
+  },
+  {
+      "id": "126",
+      "original": "מוּת:",
+      "translate": "вечно",
+      "description": null,
+      "periodStart": null,
+      "periodEnd ": null
+  }
+]
