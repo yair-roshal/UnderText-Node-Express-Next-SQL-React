@@ -5,17 +5,23 @@ import { useUsersContext } from '../context/usersContext'
 import { useRouter } from 'next/router'
 
 import { Button, FormControl, MenuItem, Select, Box, Typography } from '@mui/material'
+// import fs from 'fs/promises'
+const path = require('path')
+const dataFolderPath = './data' // Путь к папке с данными
 const totalPages = 150 // Общее количество страниц
-// const totalPages = 29 // Общее количество страниц
 
 export function TehilimPage(props) {
   const router = useRouter()
 
   const [currentPage, setCurrentPage] = useState(1)
   const [textData, setTextData] = useState()
+  const [availableFiles, setAvailableFiles] = useState([])
 
   useEffect(() => {
     setTextData(props.data)
+    // Получите список доступных файлов в папке "дата"
+    console.log('props.files', props.files)
+    setAvailableFiles(props.files)
   }, [props])
 
   const handlePageChange = (event) => {
@@ -39,7 +45,6 @@ export function TehilimPage(props) {
     <>
       <Box
         sx={{
-          // paddingTop: '20px',
           width: '100%',
           display: 'flex',
           flexDirection: 'row',
@@ -47,7 +52,6 @@ export function TehilimPage(props) {
           justifyContent: 'center',
         }}
       >
-        {' '}
         <FormControl>
           <Typography>Выберите страницу</Typography>
           <Select
@@ -58,9 +62,9 @@ export function TehilimPage(props) {
             value={currentPage}
             onChange={handlePageChange}
           >
-            {Array.from({ length: totalPages }, (_, index) => (
-              <MenuItem key={index + 1} value={index + 1}>
-                {index + 1}
+            {availableFiles.map((fileName, index) => (
+              <MenuItem key={index} value={fileName}>
+                {path.basename(fileName, '.json')}
               </MenuItem>
             ))}
           </Select>
