@@ -2,6 +2,16 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 
 export default function BasicSelect() {
+  const arrayVersions = [
+    'ver 0.1 : hebrew date in header',
+    ' ver 1.0 : Minha',
+    ' ver 2.0 : Maariv  ',
+    ' ver 3.0 : Options (change font size, change font family, change border)  ',
+  ]
+
+  const arrayHelp = ['Батья - Перевод псалом 91 , 121', 'Malka Krieger - Перевод псалом 43']
+  const arrayBooks = ['Сидур Тегилат Ашем', 'Книга Теилим - Живая Тора']
+
   return (
     <Box sx={{ paddingLeft: 2 }} display='flex' flexDirection='column' alignItems='start' justifyContent='start'>
       <Typography variant='h1'>About</Typography>
@@ -17,28 +27,26 @@ export default function BasicSelect() {
       </Typography>
 
       <Typography variant='h2'>Versions:</Typography>
-      <Typography variant='body1' p={1}>
-        ver 0.1 : hebrew date in header
-      </Typography>
-      <Typography variant='body1' p={1}>
-        ver 1.0 : Minha
-      </Typography>
-      <Typography variant='body1' p={1}>
-        ver 2.0 : Maariv
-      </Typography>
-      <Typography variant='body1' p={1}>
-        ver 3.0 : Options (change font size, change font family, change border)
-      </Typography>
+      {arrayVersions.map((item, index) => (
+        <Typography key={index} variant='body1' p={1}>
+          {item}
+        </Typography>
+      ))}
 
       <Typography variant='h2'>Помогали проекту:</Typography>
-      <Typography variant='body1' p={1}>
-        Батья - Перевод псалом 121
-      </Typography>
+      {arrayHelp.map((item, index) => (
+        <Typography key={index} variant='body1' p={1}>
+          {item}
+        </Typography>
+      ))}
 
       <Typography variant='h2'>Ресурсы:</Typography>
-      <Typography variant='body1' p={1}>
-        Книга Теилим - Живая Тора 
-      </Typography>
+
+      {arrayBooks.map((item, index) => (
+        <Typography key={index} variant='body1' p={1}>
+          {item}
+        </Typography>
+      ))}
     </Box>
   )
 }
