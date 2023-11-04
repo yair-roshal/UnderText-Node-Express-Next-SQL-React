@@ -14,20 +14,13 @@ export async function getServerSideProps({ params }) {
     data = data.concat(tableObject ? tableObject.data : fileJsonData)
 
     //==================
-    let files = []
-    // try {
-    //     files = await fs.readdir('data/tehilim-json');
-    //    console.log(files);
-    // } catch (err) {
-    //   console.error(err);
-    // }
-    let onlyNumbers = []
+
     let onlyNumbersSorted = []
     try {
-      files = await fs.readdir('data/tehilim-json')
+      const files = await fs.readdir('data/tehilim-json')
 
       const onlyJsons = files.filter((file) => /^\d+\.json$/.test(file))
-      onlyNumbers = onlyJsons.map((file) => file.replace('.json', ''))
+      const onlyNumbers = onlyJsons.map((file) => file.replace('.json', ''))
       onlyNumbersSorted = onlyNumbers.sort((a, b) => a - b)
       console.log(onlyNumbers)
     } catch (err) {
