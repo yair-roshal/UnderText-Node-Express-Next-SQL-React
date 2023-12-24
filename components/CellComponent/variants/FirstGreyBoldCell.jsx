@@ -22,13 +22,7 @@ export const FirstGreyBoldCell = (props) => {
 
       <GreyCellContainer>
         <StyledCell
-          // sx={{ backgroundColor: "grey" }}
-          // InputProps={{
-          //   style: { color: "white", borderColor: "white", backgroundColor: "#b42f2f"  },
-          // }}
-          // sx={{ backgroundColor: "#b42f2f" }}
-          //  backgroundColor= {backgroundColor}
-          backgroundColor={"#b42f2f"}
+          backgroundColor={"grey"}
           original={original}
           translate={translate}
           bold={true}

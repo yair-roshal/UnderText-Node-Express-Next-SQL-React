@@ -1,12 +1,10 @@
-
 .cellStyle {
-    padding: 0px 5px;
-    background: #fbeed5;
-    border: 1px solid #d0d0d0;
-  }
- 
-  
-  $text: #101619;
+  padding: 0px 5px;
+  background: #fbeed5;
+  border: 1px solid #d0d0d0;
+}
+
+$text: #101619;
 $border: #f2f2f2;
 $white: #ffffff;
 $backgroundArrow: #ebebeb;
@@ -22,298 +20,298 @@ $backgroundHeader: #2c2c2c;
 
 // cell ============================================
 .cell {
-    padding: 0px 5px;
-    background: #fbeed5;
-    border: 1px solid #d0d0d0;
+  padding: 0px 5px;
+  background: #fbeed5;
+  border: 1px solid #d0d0d0;
 }
 
 .styledLink {
-    color: $text;
-    text-decoration: none; /* no underline */
+  color: $text;
+  text-decoration: none; /* no underline */
 }
 
 .wrapperTitles {
-    display: flex;
-    flex-wrap: wrap;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .cellFullWidth {
-    width: 100%;
+  width: 100%;
 }
 
 .edit {
-    // text-align: right;
-    font-size: calc(5px + 1vmin);
+  // text-align: right;
+  font-size: calc(5px + 1vmin);
 }
 
 .original_text {
-    // font-family: 'Roboto'; // не весь иврит видит
-    text-align: center;
-    // font-weight: 600;
-    font-size: calc(15px + 1vmin);
+  // font-family: 'Roboto'; // не весь иврит видит
+  text-align: center;
+  // font-weight: 600;
+  font-size: calc(15px + 1vmin);
 }
 .original_text :hover {
-    font-family: 'Roboto';
-    text-align: center;
-    // font-weight: 600;
-    font-size: calc(15px + 1vmin);
-    background-color: #646ce2;
+  font-family: "Roboto";
+  text-align: center;
+  // font-weight: 600;
+  font-size: calc(15px + 1vmin);
+  background-color: #646ce2;
 }
 
 .bold {
-    font-family: 'Roboto';
-    text-align: center;
-    font-weight: 600;
-    font-size: calc(15px + 1vmin);
+  font-family: "Roboto";
+  text-align: center;
+  font-weight: 600;
+  font-size: calc(15px + 1vmin);
 }
 
 .translate {
-    text-align: center;
-    font-size: calc(6px + 1vmin);
+  text-align: center;
+  font-size: calc(6px + 1vmin);
 }
 
 // ============================================
 .MuiToolbar-regular {
-    background-color: $backgroundHeader;
+  background-color: $backgroundHeader;
 }
 
 .loading {
-    color: $text;
-    font-size: 30px;
-    margin-left: 30px;
+  color: $text;
+  font-size: 30px;
+  margin-left: 30px;
 }
 
 .wordWrapper {
-    padding: 20px;
-    margin: 20px;
-    width: 800px;
-    height: 400px;
-    border: 1px solid;
+  padding: 20px;
+  margin: 20px;
+  width: 800px;
+  height: 400px;
+  border: 1px solid;
 }
 
 .flexWrapper {
-    display: flex;
-    .item {
-        padding: 15px;
-        margin: 15px;
-        border: 2px solid lightblue;
-        width: 50%;
-    }
+  display: flex;
+  .item {
+    padding: 15px;
+    margin: 15px;
+    border: 2px solid lightblue;
+    width: 50%;
+  }
 }
 
 .titlePage {
-    width: 100%;
-    text-align: center;
-    font-size: 46px;
-    padding-top: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 46px;
+  padding-top: 20px;
 }
 
 .subTitle {
-    width: 100%;
-    text-align: center;
-    font-size: 46px;
-    margin-top: -40px;
+  width: 100%;
+  text-align: center;
+  font-size: 46px;
+  margin-top: -40px;
 }
 
 // form=======================================================
 
 .formWrapperJSON {
-    margin-top: 20px;
+  margin-top: 20px;
 
-    textarea.homePage {
-        width: 100vw;
-        // width: 933px;
-        font-size: 18px;
-        height: 900px;
-        font-size: 18px;
-    }
+  textarea.homePage {
+    width: 100vw;
+    // width: 933px;
+    font-size: 18px;
+    height: 900px;
+    font-size: 18px;
+  }
 }
 
 .formWrapper {
-    margin-left: auto;
-    margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 900px;
+
+  select {
+    width: 933px;
+    font-size: 18px;
+    height: 50px;
+    font-size: 18px;
+  }
+
+  textarea.homePage {
+    width: 933px;
+    font-size: 18px;
+    height: 300px;
+    font-size: 18px;
+  }
+
+  textarea.importWords {
     width: 900px;
+    font-size: 18px;
+    height: 100px;
+    font-size: 18px;
+  }
 
-    select {
-        width: 933px;
-        font-size: 18px;
-        height: 50px;
-        font-size: 18px;
-    }
+  label {
+    display: block;
+    text-align: center;
+    line-height: 150%;
+    font-size: 1.85em;
+  }
 
-    textarea.homePage {
-        width: 933px;
-        font-size: 18px;
-        height: 300px;
-        font-size: 18px;
-    }
+  input {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+      "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+      "Helvetica Neue", sans-serif;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid white;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    background-color: #b8b8b8;
+    text-align: center;
+  }
 
-    textarea.importWords {
-        width: 900px;
-        font-size: 18px;
-        height: 100px;
-        font-size: 18px;
-    }
+  input[type="submit"],
+  .button {
+    position: relative;
+    background: #ec5990;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    font-weight: 600;
+    margin-top: 20px;
+    padding: 20px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    display: block;
+    appearance: none;
+    border-radius: 4px;
+    width: 100%;
+    font-weight: 400;
+    letter-spacing: 0.5rem;
+    transition: 0.3s all;
+  }
 
-    label {
-        display: block;
-        text-align: center;
-        line-height: 150%;
-        font-size: 1.85em;
-    }
+  button[type="button"] {
+    padding: 5px;
+    background: #516391;
+    color: white;
+    letter-spacing: 0px;
+    text-transform: none;
+    padding: 10px;
+    letter-spacing: 1px;
+  }
 
-    input {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-            'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-            'Helvetica Neue', sans-serif;
-        display: block;
-        box-sizing: border-box;
-        width: 100%;
-        border-radius: 4px;
-        border: 1px solid white;
-        padding: 10px 15px;
-        margin-bottom: 15px;
-        font-size: 14px;
-        background-color: #b8b8b8;
-        text-align: center;
-    }
+  input[type="submit"]:hover,
+  button[type="button"]:hover {
+    background: #bf1650;
+    color: white;
+  }
 
-    input[type='submit'],
-    .button {
-        position: relative;
-        background: #ec5990;
-        color: white;
-        text-transform: uppercase;
-        border: none;
-        font-weight: 600;
-        margin-top: 20px;
-        padding: 20px;
-        font-size: 16px;
-        letter-spacing: 2px;
-        display: block;
-        appearance: none;
-        border-radius: 4px;
-        width: 100%;
-        font-weight: 400;
-        letter-spacing: 0.5rem;
-        transition: 0.3s all;
-    }
-
-    button[type='button'] {
-        padding: 5px;
-        background: #516391;
-        color: white;
-        letter-spacing: 0px;
-        text-transform: none;
-        padding: 10px;
-        letter-spacing: 1px;
-    }
-
-    input[type='submit']:hover,
-    button[type='button']:hover {
-        background: #bf1650;
-        color: white;
-    }
-
-    input[type='submit']:active {
-        transition: 0.3s all;
-        top: 2px;
-    }
+  input[type="submit"]:active {
+    transition: 0.3s all;
+    top: 2px;
+  }
 }
 
 // button ==========================================
 
 .wrapperButton {
-    padding: 35px 0;
+  padding: 35px 0;
 
-    .button {
-        border-radius: 4px;
-        background-color: $backgroundHeader;
-        border: none;
-        color: $white;
-        text-align: center;
-        font-size: 28px;
-        padding: 20px;
-        width: 200px;
-        transition: all 0.5s;
-        cursor: pointer;
-        margin: 5px;
-    }
+  .button {
+    border-radius: 4px;
+    background-color: $backgroundHeader;
+    border: none;
+    color: $white;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
 
-    .button:active,
-    :focus {
-        border: 3px solid rgb(28, 123, 163);
-    }
+  .button:active,
+  :focus {
+    border: 3px solid rgb(28, 123, 163);
+  }
 
-    .button:hover {
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
+  .button:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
 
-    .button span {
-        cursor: pointer;
-        display: inline-block;
-        position: relative;
-        transition: 0.5s;
-    }
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
 
-    .button span:after {
-        content: '\00bb';
-        position: absolute;
-        opacity: 0;
-        top: 0;
-        right: -20px;
-        transition: 0.5s;
-    }
+  .button span:after {
+    content: "\00bb";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
 
-    .button:hover span {
-        padding-right: 25px;
-    }
+  .button:hover span {
+    padding-right: 25px;
+  }
 
-    .button:hover span:after {
-        opacity: 1;
-        right: 0;
-    }
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
 }
 
 .wrapperTextBlock {
+  position: relative;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+
+  // Header==============================================================
+  .wrapperHeader {
     position: relative;
-    overflow: hidden;
-    margin-left: auto;
-    margin-right: auto;
+    // height: 33x;
+    border-right: 10px solid $redSection;
+    margin: 16px 0px;
+    border-radius: 3px;
+    background: $backgroundHeader;
+    display: flex;
 
-    // Header==============================================================
-    .wrapperHeader {
-        position: relative;
-        // height: 33x;
-        border-right: 10px solid $redSection;
-        margin: 16px 0px;
-        border-radius: 3px;
-        background: $backgroundHeader;
-        display: flex;
-
-        .textWrapper {
-            vertical-align: middle;
-            display: table-cell;
-            font-family: 'Arial', Sans-serif;
-            font-size: 22px;
-            color: $white;
-            // padding: 8px 21px 7px 0px;
-            .bold {
-                font-weight: bold;
-                padding: 0px 20px;
-            }
-        }
+    .textWrapper {
+      vertical-align: middle;
+      display: table-cell;
+      font-family: "Arial", Sans-serif;
+      font-size: 22px;
+      color: $white;
+      // padding: 8px 21px 7px 0px;
+      .bold {
+        font-weight: bold;
+        padding: 0px 20px;
+      }
     }
-    // End Header==============================================================
+  }
+  // End Header==============================================================
 
-    .allWords {
-        display: flex;
-        flex-direction: row-reverse;
-        flex-wrap: wrap;
-        background-color: antiquewhite;
-        // justify-content: space-between;
-    }
+  .allWords {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    background-color: antiquewhite;
+    // justify-content: space-between;
+  }
 }

@@ -84,7 +84,7 @@ export const StyledCell = ({
       <Box
         className="cell"
         sx={{
-          backgroundColor: backgroundColor,
+          backgroundColor: backgroundColor? backgroundColor : "#fbeed5",
           fontWeight: bold ? "600" : "400",
           fontFamily: usersData.fontFamily,
           fontSize: `${usersData.fontSize}px !important`,

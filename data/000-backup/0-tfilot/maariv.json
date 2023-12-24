@@ -785,12 +785,12 @@
     {"id":"723","original":"לְהוֹשִֽׁיעַ","translate":"ПОСЫЛАТЬ ИЗБАВЛЕНИЕ","description":null,"periodStart":null,"periodEnd":null},
 	
 	
-	{"id":"726","original":"בקיץ","translate":"летом","description":"first","periodStart":null,"periodEnd":null},
+	{"id":"726","original":"בקיץ","translate":"летом","description":"firstGreyBold","periodStart":null,"periodEnd":null},
     {"id":"724","original":"מוֹרִֽיד","translate":"СПУСКАЮЩИЙ","description":null,"periodStart":null,"periodEnd":null},
     {"id":"725","original":"הַטָּל:","translate":"РОСУ:","description":null,"periodStart":null,"periodEnd":null},
 	
 	
-    {"id":"726","original":"בחורף","translate":"зимой","description":"bold","periodStart":null,"periodEnd":null},
+    {"id":"726","original":"בחורף","translate":"зимой","description":"firstGreyBold","periodStart":null,"periodEnd":null},
     {"id":"727","original":"מַשִּֽׁיב","translate":"ПОДНИМАЮ","description":null,"periodStart":null,"periodEnd":null},
     {"id":"728","original":"הָרֽוּחַ","translate":"ВЕТЕР","description":null,"periodStart":null,"periodEnd":null},
     {"id":"729","original":"וּמוֹרִֽיד","translate":"И СПУСКАЮЩИЙ","description":null,"periodStart":null,"periodEnd":null},
@@ -1001,9 +1001,11 @@
     {"id":"900","original":"תְבוּאָתָהּ","translate":"УРОЖАЯ ЕГО","description":null,"periodStart":null,"periodEnd":null},
     {"id":"901","original":"לְטוֹבָה","translate":"К БЛАГУ","description":null,"periodStart":null,"periodEnd":null},
     {"id":"902","original":"וְתֵן","translate":"И ДАЙ","description":null,"periodStart":null,"periodEnd":null},
-    {"id":"903","original":"בקיץ","translate":"Летом","description":null,"periodStart":null,"periodEnd":null},
+   
+    {"id":"903","original":"בקיץ","translate":"Летом","description":"firstGreyBold","periodStart":null,"periodEnd":null},
     {"id":"904","original":"בְּרָכָה","translate":"Благословение","description":null,"periodStart":null,"periodEnd":null},
-    {"id":"905","original":"בחורף","translate":"Зимой","description":null,"periodStart":null,"periodEnd":null},
+ 
+    {"id":"905","original":"בחורף","translate":"Зимой","description":"firstGreyBold","periodStart":null,"periodEnd":null},
     {"id":"906","original":"טַל","translate":"РОСУ","description":null,"periodStart":null,"periodEnd":null},
     {"id":"907","original":"וּמָטָר","translate":"И ДОЖДЬ","description":null,"periodStart":null,"periodEnd":null},
     {"id":"908","original":"לִבְרָכָה","translate":"к благословению","description":null,"periodStart":null,"periodEnd":null},
