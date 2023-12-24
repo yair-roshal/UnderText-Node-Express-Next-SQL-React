@@ -1,14 +1,15 @@
-import { useMemo } from 'react'
+import { useMemo } from "react"
 // import { CellSimple, CellLast, CellBold, CellTitle, CellLastBold, CellDisable } from './variants'
 // import { useGetStyle } from 'helpers'
 
-import { CellSimple } from './variants/CellSimple'
-import { CellLast } from './variants/CellLast'
-import { CellBold } from './variants/CellBold'
-import { CellTitle } from './variants/CellTitle'
-import { CellLastBold } from './variants/CellLastBold'
-import { FirstCell } from './variants/FirstCell'
-import { GreyCell } from './variants/GreyCell'
+import { CellSimple } from "./variants/CellSimple"
+import { CellLast } from "./variants/CellLast"
+import { CellBold } from "./variants/CellBold"
+import { CellTitle } from "./variants/CellTitle"
+import { CellLastBold } from "./variants/CellLastBold"
+import { FirstCell } from "./variants/FirstCell"
+import { GreyCell } from "./variants/GreyCell"
+import { FirstGreyBoldCell } from "./variants/FirstGreyBoldCell"
 
 const CellVariants = {
   simple: CellSimple,
@@ -18,6 +19,7 @@ const CellVariants = {
   lastBold: CellLastBold,
   first: FirstCell,
   grey: GreyCell,
+  firstGreyBold: FirstGreyBoldCell,
 }
 
 export function CellComponent({ original, description, ...props }) {

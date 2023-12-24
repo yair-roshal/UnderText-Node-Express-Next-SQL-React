@@ -87,12 +87,12 @@
     {"id":"723","original":"לְהוֹשִֽׁיעַ","translate":"ПОСЫЛАТЬ ИЗБАВЛЕНИЕ","description":null,"periodStart":null,"periodEnd":null},
 	
 	
-	{"id":"726","original":"בקיץ","translate":"летом","description":"first","periodStart":null,"periodEnd":null},
+	{"id":"726","original":"בקיץ","translate":"летом","description":"firstGreyBold","periodStart":null,"periodEnd":null},
     {"id":"724","original":"מוֹרִֽיד","translate":"СПУСКАЮЩИЙ","description":null,"periodStart":null,"periodEnd":null},
     {"id":"725","original":"הַטָּל:","translate":"РОСУ:","description":null,"periodStart":null,"periodEnd":null},
 	
 	
-    {"id":"726","original":"בחורף","translate":"зимой","description":"first","periodStart":null,"periodEnd":null},
+    {"id":"726","original":"בחורף","translate":"зимой","description":"firstGreyBold","periodStart":null,"periodEnd":null},
     {"id":"727","original":"מַשִּֽׁיב","translate":"ПОДНИМАЮ","description":null,"periodStart":null,"periodEnd":null},
     {"id":"728","original":"הָרֽוּחַ","translate":"ВЕТЕР","description":null,"periodStart":null,"periodEnd":null},
     {"id":"729","original":"וּמוֹרִֽיד","translate":"И СПУСКАЮЩИЙ","description":null,"periodStart":null,"periodEnd":null},
@@ -465,7 +465,7 @@
     {"id":"1042","original":"לֹא","translate":"Не","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1043","original":"נֵבוֹשׁ","translate":"устыдимся","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1044","original":"כִּי","translate":"ТАК КАК","description":null,"periodStart":null,"periodEnd":null},
-    {"id":"1045","original":"בְךָ","translate":"HA ТЕБЯ","description":null,"periodStart":null,"periodEnd":null},
+    {"id":"1045","original":"בְךָ","translate":"НA ТЕБЯ","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1046","original":"בָּטָחְנוּ:","translate":"УПОВАЕМ","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1047","original":"בָּרוּךְ","translate":"БЛАГОСЛОВЕН","description":null,"periodStart":null,"periodEnd":null},
     {"id":"1048","original":"אַתָּה","translate":"Ты","description":null,"periodStart":null,"periodEnd":null},

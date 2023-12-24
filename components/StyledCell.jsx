@@ -1,14 +1,21 @@
-import { useEffect, useState } from 'react'
-import { Box } from '@mui/material'
-import { HDate, months } from '@hebcal/core'
-import { useUsersContext } from '../context/usersContext'
-import initialUsersData from '../constants/initialUsersData.json'
+import { useEffect, useState } from "react"
+import { Box } from "@mui/material"
+import { HDate, months } from "@hebcal/core"
+import { useUsersContext } from "../context/usersContext"
+import initialUsersData from "../constants/initialUsersData.json"
 
-export const StyledCell = ({ original, translate, bold, periodStart, periodEnd }) => {
+export const StyledCell = ({
+  original,
+  translate,
+  bold,
+  periodStart,
+  periodEnd,
+  backgroundColor,
+}) => {
   const [shouldShow, setShouldShow] = useState(true)
   // const { usersData, setUsersData } = useUsersContext()
   const { usersData, setUsersData } = useUsersContext(initialUsersData)
- 
+
   const getVariant = () => {
     if (periodStart == null || periodEnd == null) {
       setShouldShow(true)
@@ -20,9 +27,9 @@ export const StyledCell = ({ original, translate, bold, periodStart, periodEnd }
     // console.log('today :>> ', today)
 
     // console.log('periodStart', periodStart)
-    const arrayPeriodStart = periodStart.split('_')
+    const arrayPeriodStart = periodStart.split("_")
     // console.log('periodEnd', periodEnd)
-    const arrayPeriodEnd = periodEnd.split('_')
+    const arrayPeriodEnd = periodEnd.split("_")
 
     const hebrewDateStart = {
       year: today.year,
@@ -36,8 +43,16 @@ export const StyledCell = ({ original, translate, bold, periodStart, periodEnd }
       day: ~~arrayPeriodEnd[0],
     }
 
-    const start = new HDate(hebrewDateStart.day, hebrewDateStart.month, hebrewDateStart.year)
-    const end = new HDate(hebrewDateEnd.day, hebrewDateEnd.month, hebrewDateEnd.year)
+    const start = new HDate(
+      hebrewDateStart.day,
+      hebrewDateStart.month,
+      hebrewDateStart.year
+    )
+    const end = new HDate(
+      hebrewDateEnd.day,
+      hebrewDateEnd.month,
+      hebrewDateEnd.year
+    )
 
     // console.log('start :>> ', start)
     // console.log('end :>> ', end)
@@ -53,10 +68,10 @@ export const StyledCell = ({ original, translate, bold, periodStart, periodEnd }
 
     if (deltaTodayToStart <= deltaPeriod && deltaTodayToEnd <= deltaPeriod) {
       setShouldShow(true)
-      console.log('show---------->')
+      console.log("show---------->")
     } else {
       setShouldShow(false)
-      console.log('not show---------->')
+      console.log("not show---------->")
     }
   }
 
@@ -67,20 +82,21 @@ export const StyledCell = ({ original, translate, bold, periodStart, periodEnd }
   return shouldShow ? (
     <>
       <Box
-        className='cell'
+        className="cell"
         sx={{
-          fontWeight: bold ? '600' : '400',
+          backgroundColor: backgroundColor,
+          fontWeight: bold ? "600" : "400",
           fontFamily: usersData.fontFamily,
           fontSize: `${usersData.fontSize}px !important`,
-          border: usersData.borderForCell ? '1px solid #d0d0d0' : 'none',
-          borderRadius: usersData.borderForCell ? '10px' : '0px',
+          border: usersData.borderForCell ? "1px solid #d0d0d0" : "none",
+          borderRadius: usersData.borderForCell ? "10px" : "0px",
         }}
       >
         <Box
           sx={{
-            fontSize: ~~usersData.fontSize   + 'px',
+            fontSize: ~~usersData.fontSize + "px",
           }}
-          className='original_text'
+          className="original_text"
         >
           {original}
         </Box>
@@ -88,7 +104,7 @@ export const StyledCell = ({ original, translate, bold, periodStart, periodEnd }
           sx={{
             fontSize: `${usersData.fontSize / 2}px !important`,
           }}
-          className='translate'
+          className="translate"
         >
           {translate.toLowerCase()}
         </Box>
