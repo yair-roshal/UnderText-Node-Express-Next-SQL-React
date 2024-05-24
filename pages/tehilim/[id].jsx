@@ -1,5 +1,7 @@
+// [id].jsx
 import path from 'path'
 import fs from 'fs/promises'
+import xlsx from 'xlsx' // Импортируем библиотеку для чтения XLS/XLSX файлов
 import { TehilimPage } from 'components'
 
 export async function getServerSideProps({ params }) {
@@ -7,17 +9,46 @@ export async function getServerSideProps({ params }) {
   try {
     let data = []
 
-    const fileData = await fs.readFile(path.join(process.cwd(), 'data/tehilim-json', `${params.id}.json`), 'utf-8')
-    // const data = JSON.parse(fileData);
-    const fileJsonData = JSON.parse(fileData)
-    const tableObject = fileJsonData.find((obj) => obj.type === 'table')
-    data = data.concat(tableObject ? tableObject.data : fileJsonData)
+    // Попытка прочитать JSON файл
+    const jsonFilePath = path.join(process.cwd(), 'data/tehilim-data', `${params.id}.json`)
+    const jsonFileExists = await fs.stat(jsonFilePath).catch(() => false)
+
+    if (jsonFileExists) {
+      const fileData = await fs.readFile(jsonFilePath, 'utf-8')
+      const fileJsonData = JSON.parse(fileData)
+      const tableObject = fileJsonData.find((obj) => obj.type === 'table')
+      data = data.concat(tableObject ? tableObject.data : fileJsonData)
+    } else {
+      // Если JSON файл не найден, попытка прочитать XLS файл
+      const xlsFilePath = path.join(process.cwd(), 'data/tehilim-data', `${params.id}.xls`)
+      const xlsFileExists = await fs.stat(xlsFilePath).catch(() => false)
+
+      if (xlsFileExists) {
+        const workbook = xlsx.readFile(xlsFilePath)
+        const sheetName = workbook.SheetNames[0]
+        const worksheet = workbook.Sheets[sheetName]
+        const jsonData = xlsx.utils.sheet_to_json(worksheet)
+        data = jsonData
+      } else {
+        // Если ни JSON, ни XLS файл не найдены
+        data = [
+          {
+            id: 1,
+            original: 'No data found',
+            translate: 'Данные не найдены',
+            description: null,
+            periodStart: null,
+            periodEnd: null,
+          },
+        ]
+      }
+    }
 
     //==================
 
     let onlyNumbersSorted = []
     try {
-      const files = await fs.readdir('data/tehilim-json')
+      const files = await fs.readdir('data/tehilim-data')
 
       const onlyJsons = files.filter((file) => /^\d+\.json$/.test(file))
       const onlyNumbers = onlyJsons.map((file) => file.replace('.json', ''))
@@ -30,19 +61,7 @@ export async function getServerSideProps({ params }) {
     return {
       props: {
         files: onlyNumbersSorted,
-        data:
-          data && data.length > 0
-            ? data
-            : [
-                {
-                  id: 1,
-                  original: 'no data in this file json',
-                  translate: 'no data in this file json',
-                  description: null,
-                  periodStart: null,
-                  periodEnd: null,
-                },
-              ],
+        data: data,
       },
     }
   } catch (error) {
@@ -53,7 +72,7 @@ export async function getServerSideProps({ params }) {
           {
             id: 1,
             original: 'Error',
-            translate: `${error} `,
+            translate: `${error}`,
             description: null,
             periodStart: null,
             periodEnd: null,
