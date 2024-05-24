@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'components'
 import { CellComponent } from './CellComponent/CellComponent'
-import { useUsersContext } from '../context/usersContext'
+// import { useUsersContext } from '../context/usersContext'
 import { useRouter } from 'next/router'
 
 import { Button, FormControl, MenuItem, Select, Box, Typography } from '@mui/material'
 const path = require('path')
-const dataFolderPath = './data' // Путь к папке с данными
+// const dataFolderPath = './data' // Путь к папке с данными
 const totalPages = 150 // Общее количество страниц
 
 export function TehilimPage(props) {
