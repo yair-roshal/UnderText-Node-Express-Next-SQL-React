@@ -98,7 +98,11 @@ export const StyledCell = ({
           sx={{
             fontSize: ~~usersData.fontSize + "px",
 
-            color: original.length < 2 ? "#c32e2e" : "#0e1468",
+            // color: original.length < 2 ? "#c32e2e" : "#0e1468",
+            
+            color: isNaN(translation)   ?   "#0e1468" : "#c32e2e"
+
+            
           }}
           className="original_text"
         >

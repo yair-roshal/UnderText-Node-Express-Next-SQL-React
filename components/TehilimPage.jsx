@@ -18,8 +18,8 @@ const totalPages = 150 // Общее количество страниц
 
 export function TehilimPage(props) {
   const router = useRouter()
-console.log('router :>> ', router);
-console.log('router.query.id :>> ', router.query.id);
+  console.log("router :>> ", router)
+  console.log("router.query.id :>> ", router.query.id)
 
   const [currentPage, setCurrentPage] = useState(router.query.id)
   const [textData, setTextData] = useState()
@@ -34,7 +34,7 @@ console.log('router.query.id :>> ', router.query.id);
     const selectedPage = Number(event.target.value)
     setCurrentPage(selectedPage)
     router.push(`/tehilim/${selectedPage}`)
-    console.log('selectedPage :>> ', selectedPage);
+    console.log("selectedPage :>> ", selectedPage)
   }
 
   const handlePreviousPage = () => {
@@ -43,9 +43,6 @@ console.log('router.query.id :>> ', router.query.id);
       setCurrentPage(previousPage)
       router.push(`/tehilim/${previousPage}`)
     }
-    
-    
-    
   }
 
   const handleNextPage = () => {
@@ -77,15 +74,11 @@ console.log('router.query.id :>> ', router.query.id);
             value={router.query.id}
             onChange={handlePageChange}
           >
-          
-            
             {[...Array(150).keys()].map((index) => (
-  <MenuItem key={index} value={index + 1}>
-    {index + 1}
-  </MenuItem>
-))}
-
-            
+              <MenuItem key={index} value={index + 1}>
+                {index + 1}
+              </MenuItem>
+            ))}
           </Select>
         </FormControl>
       </Box>
