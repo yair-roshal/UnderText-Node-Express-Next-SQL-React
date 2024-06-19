@@ -81,55 +81,39 @@ export const StyledCell = ({
 
   return shouldShow ? (
     <>
-    
-    {original && 
+      {original && (
         <Box
-        className="cell"
-        sx={{
-          backgroundColor: backgroundColor ? backgroundColor : "#fbeed5",
-          fontWeight: bold ? "600" : "400",
-          fontFamily: usersData.fontFamily,
-          fontSize: `${usersData.fontSize}px !important`,
-          border: usersData.borderForCell ? "1px solid #d0d0d0" : "none",
-          borderRadius: usersData.borderForCell ? "10px" : "0px",
-        }}
-      >
-        <Box
+          className="cell"
           sx={{
-            fontSize: ~~usersData.fontSize + "px",
-
-            // color: original.length < 2 ? "#c32e2e" : "#0e1468",
-            
-            color: isNaN(translation)   ?   "#0e1468" : "#c32e2e"
-
-            
+            backgroundColor: backgroundColor ? backgroundColor : "#fbeed5",
+            fontWeight: bold ? "600" : "400",
+            fontFamily: usersData.fontFamily,
+            fontSize: `${usersData.fontSize}px !important`,
+            border: usersData.borderForCell ? "1px solid #d0d0d0" : "none",
+            borderRadius: usersData.borderForCell ? "10px" : "0px",
           }}
-          className="original_text"
         >
-          {original.length > 1 ? original : "{" + original + "}"}
-           {/* {original} */}
-        </Box>
+          <Box
+            sx={{
+              fontSize: ~~usersData.fontSize + "px",
 
-        <Box
-          sx={{
-            fontSize: `${usersData.fontSize / 2}px !important`,
-          }}
-          className="translation"
-        >
-          
-          
-          {  translation ? translation.toString().toLowerCase() : "---"}
-          {/* {typeof translation === "string" ? translation.toLowerCase() : "---"} */}
-          
-          {/* {console.log('translation >> ', translation)} */}
-        </Box>
+              color: isNaN(translation) ? "#0e1468" : "#c32e2e",
+            }}
+            className="original_text"
+          >
+            {isNaN(translation) ? original : "{" + original + "}"}
+          </Box>
 
-        {/* <Box className='translation'>{translation.toUpperCase()}</Box> */}
-      </Box>
-    
-    
-    }
-  
+          <Box
+            sx={{
+              fontSize: `${usersData.fontSize / 2}px !important`,
+            }}
+            className="translation"
+          >
+            {translation ? translation.toString().toLowerCase() : "---"}
+          </Box>
+        </Box>
+      )}
     </>
   ) : null
 }
