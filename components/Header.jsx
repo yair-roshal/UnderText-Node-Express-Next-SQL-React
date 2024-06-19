@@ -3,7 +3,7 @@ export const Header = (props) => {
         <div className='wrapperHeader'>
             <div className='textWrapper'>
                 <div className='bold'>{props.name}</div>
-                <div className='translate'>{props.translate}</div>
+                <div className='translation'>{props.translation}</div>
             </div>
         </div>
     )

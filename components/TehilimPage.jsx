@@ -1,11 +1,18 @@
-import { useState, useEffect } from 'react'
-import { Link } from 'components'
-import { CellComponent } from './CellComponent/CellComponent'
+import { useState, useEffect } from "react"
+import { Link } from "components"
+import { CellComponent } from "./CellComponent/CellComponent"
 // import { useUsersContext } from '../context/usersContext'
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router"
 
-import { Button, FormControl, MenuItem, Select, Box, Typography } from '@mui/material'
-const path = require('path')
+import {
+  Button,
+  FormControl,
+  MenuItem,
+  Select,
+  Box,
+  Typography,
+} from "@mui/material"
+const path = require("path")
 // const dataFolderPath = './data' // Путь к папке с данными
 const totalPages = 150 // Общее количество страниц
 
@@ -18,8 +25,10 @@ export function TehilimPage(props) {
 
   useEffect(() => {
     setTextData(props.data)
+    console.log('props.data :>> ', props.data);
     // Получите список доступных файлов в папке "дата"
-    console.log('props.files', props.files)
+    console.log("props.files", props.files)
+    console.log("props  ", props)
     setAvailableFiles(props.files)
   }, [props])
 
@@ -30,14 +39,14 @@ export function TehilimPage(props) {
 
   const handlePreviousPage = () => {
     if (currentPage > 1) {
-      setCurrentPage(prevPage => prevPage - 1)
+      setCurrentPage((prevPage) => prevPage - 1)
       router.push(`/tehilim/${currentPage - 1}`)
     }
   }
 
   const handleNextPage = () => {
     if (currentPage < totalPages) {
-      setCurrentPage(prevPage => prevPage + 1)
+      setCurrentPage((prevPage) => prevPage + 1)
       router.push(`/tehilim/${currentPage + 1}`)
     }
   }
@@ -46,26 +55,34 @@ export function TehilimPage(props) {
     <>
       <Box
         sx={{
-          width: '100%',
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'center',
+          width: "100%",
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
         <FormControl>
           <Typography>Выберите страницу</Typography>
           <Select
             sx={{
-              width: '300px',
+              width: "300px",
             }}
             fullWidth
             value={currentPage}
             onChange={handlePageChange}
           >
-            {availableFiles.map((fileName, index) => (
+            {/* {availableFiles.map((fileName, index) => (
               <MenuItem key={index} value={index + 1}>
                 {path.basename(fileName, '.json')}
+              </MenuItem>
+            ))} */}
+
+            {availableFiles.map((fileName, index) => (
+              <MenuItem key={index} value={index + 1}>
+                {path
+                  .basename(fileName.toString())
+                  .replace(/\.(json|xls|xlsx)$/, "")}
               </MenuItem>
             ))}
           </Select>
@@ -74,49 +91,74 @@ export function TehilimPage(props) {
 
       <Box
         sx={{
-          padding: '50px',
-          width: '100%',
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'space-around',
+          padding: "50px",
+          width: "100%",
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-around",
         }}
       >
         <Link href={`${currentPage - 1}`}>
-          <Button variant='contained' color='primary' onClick={handlePreviousPage} disabled={currentPage === 1}>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handlePreviousPage}
+            disabled={currentPage === 1}
+          >
             Предыдущая
           </Button>
         </Link>
 
         <Link href={`${currentPage + 1}`}>
-          <Button variant='contained' color='primary' onClick={handleNextPage} disabled={currentPage === totalPages}>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handleNextPage}
+            disabled={currentPage === totalPages}
+          >
             Следующая
           </Button>
         </Link>
       </Box>
 
-      <div className='wrapperTextBlock'>
-        <div className='allWords'>{textData && textData.map((word, index) => <CellComponent key={index} {...word} />)}</div>
+      <div className="wrapperTextBlock">
+        <div className="allWords">
+          {textData &&
+            textData.map((word, index) => (
+              <CellComponent key={index} {...word} />
+            ))}
+        </div>
       </div>
 
       <Box
         sx={{
-          padding: '50px',
-          width: '100%',
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'space-around',
+          padding: "50px",
+          width: "100%",
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-around",
         }}
       >
         <Link href={`${currentPage - 1}`}>
-          <Button variant='contained' color='primary' onClick={handlePreviousPage} disabled={currentPage === 1}>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handlePreviousPage}
+            disabled={currentPage === 1}
+          >
             Предыдущая
           </Button>
         </Link>
 
         <Link href={`${currentPage + 1}`}>
-          <Button variant='contained' color='primary' onClick={handleNextPage} disabled={currentPage === totalPages}>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handleNextPage}
+            disabled={currentPage === totalPages}
+          >
             Следующая
           </Button>
         </Link>

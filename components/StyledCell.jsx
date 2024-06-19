@@ -6,7 +6,8 @@ import initialUsersData from "../constants/initialUsersData.json"
 
 export const StyledCell = ({
   original,
-  translate,
+  // translation,
+  translation,
   bold,
   periodStart,
   periodEnd,
@@ -84,7 +85,7 @@ export const StyledCell = ({
       <Box
         className="cell"
         sx={{
-          backgroundColor: backgroundColor? backgroundColor : "#fbeed5",
+          backgroundColor: backgroundColor ? backgroundColor : "#fbeed5",
           fontWeight: bold ? "600" : "400",
           fontFamily: usersData.fontFamily,
           fontSize: `${usersData.fontSize}px !important`,
@@ -95,20 +96,27 @@ export const StyledCell = ({
         <Box
           sx={{
             fontSize: ~~usersData.fontSize + "px",
+
+            color: original.length < 2 ? "#c32e2e" : "#0e1468",
           }}
           className="original_text"
         >
-          {original}
+          {original.length > 1 ? original : "{" + original + "}"}
+           {/* {original} */}
         </Box>
+
         <Box
           sx={{
             fontSize: `${usersData.fontSize / 2}px !important`,
           }}
-          className="translate"
+          className="translation"
         >
-          {translate.toLowerCase()}
+          {typeof translation === "string" ? translation.toLowerCase() : "---"}
+          
+          {console.log('translation >> ', translation)}
         </Box>
-        {/* <Box className='translate'>{translate.toUpperCase()}</Box> */}
+
+        {/* <Box className='translation'>{translation.toUpperCase()}</Box> */}
       </Box>
     </>
   ) : null

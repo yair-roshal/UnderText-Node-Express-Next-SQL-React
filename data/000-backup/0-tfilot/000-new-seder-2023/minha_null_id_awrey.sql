@@ -2,7 +2,7 @@
 CREATE TABLE `minha` (
   `id` int(11) NOT NULL,
   `original` varchar(99) NOT NULL,
-  `translate` varchar(99) NOT NULL,
+  `translation` varchar(99) NOT NULL,
   `description` text NOT NULL COMMENT 'description of word',
   `periodStart` text,
   `periodEnd` text
@@ -12,7 +12,7 @@ CREATE TABLE `minha` (
 
 
 
-INSERT INTO `minha` (`id`, `original`, `translate`, `description`,`periodStart`,`periodEnd` ) VALUES
+INSERT INTO `minha` (`id`, `original`, `translation`, `description`,`periodStart`,`periodEnd` ) VALUES
 ( null, 'אשרי', 'счастливы', 'title'),
 ( null, 'אַשְׁרֵי', 'счастливы', 'bold'),
 ( null, 'יוֹשְׁבֵי', 'сидячие', ''),

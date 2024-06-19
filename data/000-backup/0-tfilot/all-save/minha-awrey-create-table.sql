@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `minha` (
   `id` int(11) NOT NULL,
   `original` varchar(99) NOT NULL,
-  `translate` varchar(99) NOT NULL,
+  `translation` varchar(99) NOT NULL,
   `description` text NOT NULL COMMENT 'description of word'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -38,7 +38,7 @@ CREATE TABLE `minha` (
 -- Dumping data for table `minha`
 --
 
-INSERT INTO `minha` (`id`, `original`, `translate`, `description`) VALUES
+INSERT INTO `minha` (`id`, `original`, `translation`, `description`) VALUES
 (337, 'אשרי', 'счастливы', 'title'),
 (341, 'אַשְׁרֵי', 'счастливы', 'bold'),
 (342, 'יוֹשְׁבֵי', 'сидячие', ''),

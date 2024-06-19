@@ -58,7 +58,7 @@ export async function getServerSideProps({ params }) {
                 {
                   id: 1,
                   original: 'no data in this file json',
-                  translate: 'no data in this file json',
+                  translation: 'no data in this file json',
                   description: null,
                   periodStart: null,
                   periodEnd: null,
@@ -74,7 +74,7 @@ export async function getServerSideProps({ params }) {
           {
             id: 1,
             original: 'Error',
-            translate: `${error} `,
+            translation: `${error} `,
             description: null,
             periodStart: null,
             periodEnd: null,

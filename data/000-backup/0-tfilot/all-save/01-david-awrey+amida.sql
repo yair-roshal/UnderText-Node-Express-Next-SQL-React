@@ -1,5 +1,5 @@
  
-INSERT INTO `minha` (`id`, `original`, `translate`, `description`) VALUES
+INSERT INTO `minha` (`id`, `original`, `translation`, `description`) VALUES
  
 (4768, 'אשרי', 'счастливы', 'title'),
 (4769, 'אַשְׁרֵי', 'счастливы', 'bold'),

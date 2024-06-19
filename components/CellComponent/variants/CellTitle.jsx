@@ -2,7 +2,7 @@ import { Link, Header } from 'components'
 import { useMainPage } from 'hooks'
 
 export const CellTitle = (props) => {
-  const { id, original, translate, periodStart, periodEnd } = props
+  const { id, original, translation, periodStart, periodEnd } = props
   const hrefMainPage = useMainPage()
   const hrefLinkShow = `${hrefMainPage}/update/${id}`
 
@@ -13,7 +13,7 @@ export const CellTitle = (props) => {
 
       <Header
         name={original}
-        translate={translate}
+        translation={translation}
         periodStart={periodStart}
         periodEnd={periodEnd}
       />

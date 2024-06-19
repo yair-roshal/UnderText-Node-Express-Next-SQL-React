@@ -11,7 +11,7 @@ const GreyCellContainer = styled(Box)(({ theme }) => ({
 }))
 
 export const GreyCell = (props) => {
-  const { id, original, translate, periodStart, periodEnd } = props
+  const { id, original, translation, periodStart, periodEnd } = props
   const hrefMainPage = useMainPage()
   const hrefLinkUpdate = `${hrefMainPage}/update/${id}`
 
@@ -20,7 +20,7 @@ export const GreyCell = (props) => {
       <StyledCell
         sx={{ backgroundColor: '#d0d0d0' }}
         original={original}
-        translate={translate}
+        translation={translation}
         bold={false}
         periodStart={periodStart}
         periodEnd={periodEnd}

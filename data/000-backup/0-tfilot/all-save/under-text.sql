@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `maariv` (
   `id` int(11) NOT NULL,
   `original` varchar(99) NOT NULL,
-  `translate` varchar(99) NOT NULL,
+  `translation` varchar(99) NOT NULL,
   `description` text NOT NULL COMMENT 'description of word'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -38,7 +38,7 @@ CREATE TABLE `maariv` (
 -- Дамп данных таблицы `maariv`
 --
 
-INSERT INTO `maariv` (`id`, `original`, `translate`, `description`) VALUES
+INSERT INTO `maariv` (`id`, `original`, `translation`, `description`) VALUES
 (298, 'אֲנִי', 'Я', ''),
 (299, 'לְפָנֶיךָ', 'Перед вами', ''),
 (300, 'מֶלֶךְ', 'Король', ''),
@@ -88,7 +88,7 @@ INSERT INTO `maariv` (`id`, `original`, `translate`, `description`) VALUES
 CREATE TABLE `minha` (
   `id` int(11) NOT NULL,
   `original` varchar(99) NOT NULL,
-  `translate` varchar(99) NOT NULL,
+  `translation` varchar(99) NOT NULL,
   `description` text NOT NULL COMMENT 'description of word'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -96,7 +96,7 @@ CREATE TABLE `minha` (
 -- Дамп данных таблицы `minha`
 --
 
-INSERT INTO `minha` (`id`, `original`, `translate`, `description`) VALUES
+INSERT INTO `minha` (`id`, `original`, `translation`, `description`) VALUES
 (2315, '555', 'xxxxxxxx', 'bold'),
 (2316, '555', 'Сидячие', ''),
 (2317, 'בֵיתֶֽךָ', 'Ваш дом', ''),
@@ -115,7 +115,7 @@ INSERT INTO `minha` (`id`, `original`, `translate`, `description`) VALUES
 CREATE TABLE `shaharit` (
   `id` int(11) NOT NULL,
   `original` varchar(99) NOT NULL,
-  `translate` varchar(99) NOT NULL,
+  `translation` varchar(99) NOT NULL,
   `description` text NOT NULL COMMENT 'description of word'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -123,7 +123,7 @@ CREATE TABLE `shaharit` (
 -- Дамп данных таблицы `shaharit`
 --
 
-INSERT INTO `shaharit` (`id`, `original`, `translate`, `description`) VALUES
+INSERT INTO `shaharit` (`id`, `original`, `translation`, `description`) VALUES
 (298, 'אֲנִי', 'Я', 'bold'),
 (299, 'לְפָנֶיךָ', 'Перед вами', 'bold'),
 (300, 'מֶלֶךְ', 'Король', ''),
@@ -173,7 +173,7 @@ INSERT INTO `shaharit` (`id`, `original`, `translate`, `description`) VALUES
 CREATE TABLE `tehilim` (
   `id` int(11) NOT NULL,
   `original` varchar(99) NOT NULL,
-  `translate` varchar(99) NOT NULL,
+  `translation` varchar(99) NOT NULL,
   `description` text NOT NULL COMMENT 'description of word'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -181,7 +181,7 @@ CREATE TABLE `tehilim` (
 -- Дамп данных таблицы `tehilim`
 --
 
-INSERT INTO `tehilim` (`id`, `original`, `translate`, `description`) VALUES
+INSERT INTO `tehilim` (`id`, `original`, `translation`, `description`) VALUES
 (298, 'אֲנִי', 'Я', ''),
 (299, 'לְפָנֶיךָ', 'Перед вами', ''),
 (300, 'מֶלֶךְ', 'Король', ''),
@@ -231,7 +231,7 @@ INSERT INTO `tehilim` (`id`, `original`, `translate`, `description`) VALUES
 CREATE TABLE `words` (
   `id` int(11) NOT NULL,
   `original` varchar(99) NOT NULL,
-  `translate` varchar(99) NOT NULL,
+  `translation` varchar(99) NOT NULL,
   `description` text NOT NULL COMMENT 'description of word'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

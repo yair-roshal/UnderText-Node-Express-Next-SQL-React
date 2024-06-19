@@ -1,0 +1,535 @@
+[
+  {
+    "original": "צא",
+    "translation": "91",
+    "description": "title"
+  },
+  {
+    "original": "א",
+    "translation": "1",
+    "description": "bold"
+  },
+  {
+    "original": " יֹשֵׁב",
+    "translation": "Сидящий "
+  },
+  {
+    "original": "בְּסֵתֶר",
+    "translation": "в тайну"
+  },
+  {
+    "original": "עֶלְיוֹן",
+    "translation": "Всевышнего"
+  },
+  {
+    "original": "בְּצֵל",
+    "translation": "под сенью"
+  },
+  {
+    "original": "שַׁדַּי",
+    "translation": "Всемогущего "
+  },
+  {
+    "original": "יִתְלוֹנָן",
+    "translation": " обитает (будет ночевать)"
+  },
+  {
+    "original": "ב ",
+    "translation": "2",
+    "description": "bold"
+  },
+  {
+    "original": "אֹמַר",
+    "translation": "Скажу"
+  },
+  {
+    "original": "לַיהוָה",
+    "translation": "Г-ду:"
+  },
+  {
+    "original": "מַחְסִי ",
+    "translation": "мое убежище "
+  },
+  {
+    "original": "וּמְצוּדָתִי",
+    "translation": "и моя крепость"
+  },
+  {
+    "original": "אֱלֹהַי",
+    "translation": "мой Б-г"
+  },
+  {
+    "original": "אֶבְטַח",
+    "translation": "уповаю"
+  },
+  {
+    "original": "  בּוֹ",
+    "translation": "на Него"
+  },
+  {
+    "original": "ג",
+    "translation": "3",
+    "description": "bold"
+  },
+  {
+    "original": "כִּי",
+    "translation": "Ибо"
+  },
+  {
+    "original": "  הוּא",
+    "translation": "Он"
+  },
+  {
+    "original": "יַצִּילְךָ",
+    "translation": "спасает тебя"
+  },
+  {
+    "original": "מִפַּח",
+    "translation": "и от сетей"
+  },
+  {
+    "original": "יָקוּשׁ",
+    "translation": "ловца"
+  },
+  {
+    "original": "מִדֶּבֶר",
+    "translation": "и от мор"
+  },
+  {
+    "original": " הַוּוֹת",
+    "translation": "губительный"
+  },
+  {
+    "original": "ד",
+    "translation": "4",
+    "description": "bold"
+  },
+  {
+    "original": "בְּאֶבְרָתוֹ",
+    "translation": "Своим крылом"
+  },
+  {
+    "original": "יָסֶךְ",
+    "translation": "Он укроет"
+  },
+  {
+    "original": "לָךְ",
+    "translation": "тебя "
+  },
+  {
+    "original": "וְתַחַת",
+    "translation": "и под"
+  },
+  {
+    "original": "כְּנָפָיו",
+    "translation": "Его крыльями"
+  },
+  {
+    "original": "תֶּחְסֶה",
+    "translation": "обретешь"
+  },
+  {
+    "original": "צִנָּה",
+    "translation": "щит"
+  },
+  {
+    "original": "וְסֹחֵרָה",
+    "translation": "изащита"
+  },
+  {
+    "original": " אֲמִתּוֹ",
+    "translation": "в Его истине"
+  },
+  {
+    "original": "ה",
+    "translation": "5",
+    "description": "bold"
+  },
+  {
+    "original": "לֹא",
+    "translation": "Не"
+  },
+  {
+    "original": "תִירָא",
+    "translation": "убоишься"
+  },
+  {
+    "original": "מִפַּחַד",
+    "translation": "ни страхов"
+  },
+  {
+    "original": "לָיְלָה",
+    "translation": "ночи"
+  },
+  {
+    "original": "מֵחֵץ",
+    "translation": "ни стрелы"
+  },
+  {
+    "original": "יָעוּף",
+    "translation": "летящей"
+  },
+  {
+    "original": "יוֹמָם",
+    "translation": "днем"
+  },
+  {
+    "original": "ו",
+    "translation": "6",
+    "description": "bold"
+  },
+  {
+    "original": " מִדֶּבֶר",
+    "translation": "ни мора"
+  },
+  {
+    "original": "בָּאֹפֶל",
+    "translation": "во мраке"
+  },
+  {
+    "original": "יַהֲלֹךְ",
+    "translation": "крадущегося"
+  },
+  {
+    "original": "מִקֶּטֶב",
+    "translation": "ни беса "
+  },
+  {
+    "original": "יָשׁוּד",
+    "translation": "злодействующего"
+  },
+  {
+    "original": "צָהֳרָיִם",
+    "translation": "в полдень"
+  },
+  {
+    "original": "ז",
+    "translation": "7",
+    "description": "bold"
+  },
+  {
+    "original": "יִפֹּל",
+    "translation": "Падет"
+  },
+  {
+    "original": "מִצִּדְּךָ",
+    "translation": "рядом с тобой"
+  },
+  {
+    "original": "אֶלֶף",
+    "translation": "тысяча"
+  },
+  {
+    "original": "וּרְבָבָה",
+    "translation": "и десять тысяч"
+  },
+  {
+    "original": "מִימִינֶךָ",
+    "translation": "по правую руку"
+  },
+  {
+    "original": "אֵלֶיךָ",
+    "translation": "от тебя"
+  },
+  {
+    "original": "לֹא",
+    "translation": "не"
+  },
+  {
+    "original": "יִגָּשׁ",
+    "translation": "тронет тебя "
+  },
+  {
+    "original": "ח",
+    "translation": "8",
+    "description": "bold"
+  },
+  {
+    "original": "רַק",
+    "translation": "Только"
+  },
+  {
+    "original": "בְּעֵינֶיךָ",
+    "translation": "своими глазами"
+  },
+  {
+    "original": "תַבִּיט",
+    "translation": "ты смотреть будешь"
+  },
+  {
+    "original": "וְשִׁלֻּמַת",
+    "translation": "возмездие"
+  },
+  {
+    "original": "רְשָׁעִים",
+    "translation": "нечестивым"
+  },
+  {
+    "original": " תִּרְאֶה",
+    "translation": "ты будешь видеть"
+  },
+  {
+    "original": "ט",
+    "translation": "9",
+    "description": "bold"
+  },
+  {
+    "original": "כִּי",
+    "translation": "Ибо"
+  },
+  {
+    "original": "אַתָּה",
+    "translation": "Ты "
+  },
+  {
+    "original": "יְהוָה",
+    "translation": "Г-д "
+  },
+  {
+    "original": "מַחְסִי ",
+    "translation": "мое убежище "
+  },
+  {
+    "original": "עֶלְיוֹן",
+    "translation": "Всевышнего"
+  },
+  {
+    "original": "שַׂמְתָּ ",
+    "translation": "ты сделал "
+  },
+  {
+    "original": " מְעוֹנֶךָ",
+    "translation": "свое жилье "
+  },
+  {
+    "original": "י",
+    "translation": "10",
+    "description": "bold"
+  },
+  {
+    "original": "לֹא",
+    "translation": "Не"
+  },
+  {
+    "original": "תְאֻנֶּה",
+    "translation": "случится"
+  },
+  {
+    "original": "אֵלֶיךָ",
+    "translation": "с тобой"
+  },
+  {
+    "original": "רָעָה",
+    "translation": "дурного"
+  },
+  {
+    "original": "וְנֶגַע",
+    "translation": "и несчастие "
+  },
+  {
+    "original": "לֹא",
+    "translation": "не"
+  },
+  {
+    "original": "יִקְרַב",
+    "translation": "приблизится "
+  },
+  {
+    "original": "בְּאָהֳלֶךָ",
+    "translation": "к твоему шатру"
+  },
+  {
+    "original": "יא",
+    "translation": "11",
+    "description": "bold"
+  },
+  {
+    "original": "כִּי",
+    "translation": "ибо"
+  },
+  {
+    "original": "מַלְאָכָיו",
+    "translation": "Своим ангелам"
+  },
+  {
+    "original": "יְצַוֶּה",
+    "translation": "Он заповедует"
+  },
+  {
+    "original": "לָּךְ",
+    "translation": "тебя "
+  },
+  {
+    "original": "לִשְׁמָרְךָ",
+    "translation": "хранить"
+  },
+  {
+    "original": "בְּכָל",
+    "translation": "на всех "
+  },
+  {
+    "original": "דְּרָכֶיךָ",
+    "translation": " твоих путях."
+  },
+  {
+    "original": "יב",
+    "translation": "12",
+    "description": "bold"
+  },
+  {
+    "original": "עַל",
+    "translation": "На "
+  },
+  {
+    "original": "כַּפַּיִם",
+    "translation": "криля"
+  },
+  {
+    "original": "יִשָּׂאוּנְךָ",
+    "translation": "понесут тебя"
+  },
+  {
+    "original": "פֶּן",
+    "translation": "чтобы"
+  },
+  {
+    "original": "תִּגֹּף",
+    "translation": " не споткнулась"
+  },
+  {
+    "original": "בָּאֶבֶן",
+    "translation": "о камень"
+  },
+  {
+    "original": " רַגְלֶךָ",
+    "translation": "твоя нога."
+  },
+  {
+    "original": "יג",
+    "translation": "13",
+    "description": "bold"
+  },
+  {
+    "original": "עַל",
+    "translation": "На"
+  },
+  {
+    "original": "שַׁחַל",
+    "translation": "льва"
+  },
+  {
+    "original": "וָפֶתֶן",
+    "translation": " и ядовитую змею "
+  },
+  {
+    "original": "תִּדְרֹךְ ",
+    "translation": "наступишь"
+  },
+  {
+    "original": "תִּרְמֹס",
+    "translation": "топтать будешь"
+  },
+  {
+    "original": "כְּפִיר",
+    "translation": "львенок"
+  },
+  {
+    "original": " וְתַנִּין",
+    "translation": "и дракона"
+  },
+  {
+    "original": "יד",
+    "translation": "14",
+    "description": "bold"
+  },
+  {
+    "original": " כִּי",
+    "translation": "Ибо"
+  },
+  {
+    "original": "בִי",
+    "translation": "мое  "
+  },
+  {
+    "original": "חָשַׁק",
+    "translation": "желание таково "
+  },
+  {
+    "original": "וַאֲפַלְּטֵהוּ",
+    "translation": "Я спасу его"
+  },
+  {
+    "original": "אֲשַׂגְּבֵהוּ",
+    "translation": "и укреплю его"
+  },
+  {
+    "original": "כִּי",
+    "translation": "ибо"
+  },
+  {
+    "original": "יָדַע",
+    "translation": "знал он"
+  },
+  {
+    "original": "שְׁמִי",
+    "translation": "Мое Имя."
+  },
+  {
+    "original": "טו",
+    "translation": "15",
+    "description": "bold"
+  },
+  {
+    "original": "יִקְרָאֵנִי",
+    "translation": "Он воззовет ко Мне"
+  },
+  {
+    "original": "וְאֶעֱנֵהוּ",
+    "translation": "и Я отвечу ему"
+  },
+  {
+    "original": "עִמּוֹ",
+    "translation": "с ним"
+  },
+  {
+    "original": "אָנֹכִי",
+    "translation": "Я  "
+  },
+  {
+    "original": "בְצָרָה",
+    "translation": "в беде"
+  },
+  {
+    "original": "אֲחַלְּצֵהוּ ",
+    "translation": "спасу его"
+  },
+  {
+    "original": " וַאֲכַבְּדֵהוּ",
+    "translation": "и прославлю его"
+  },
+  {
+    "original": "טז",
+    "translation": "16",
+    "description": "bold"
+  },
+  {
+    "original": " אֹרֶךְ",
+    "translation": "С долгие"
+  },
+  {
+    "original": " יָמִים",
+    "translation": "дни (долголетием)"
+  },
+  {
+    "original": "אַשְׂבִּיעֵהוּ",
+    "translation": "насыщу его"
+  },
+  {
+    "original": "וְאַרְאֵהוּ",
+    "translation": "и дам ему увидеть"
+  },
+  {
+    "original": " בִּישׁוּעָתִי",
+    "translation": "Мое спасение"
+  }
+]

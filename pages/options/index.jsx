@@ -110,7 +110,7 @@ export default function BasicSelect() {
           Пример :
         </Typography>
 
-        <StyledCell original={textExampleHebrew} translate={textExample} />
+        <StyledCell original={textExampleHebrew} translation={textExample} />
       </Box>
     </>
   )

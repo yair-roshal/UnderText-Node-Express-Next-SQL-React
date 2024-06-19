@@ -15,7 +15,7 @@ export const UpdateWord = (wordProp) => {
 
     const validationSchema = Yup.object().shape({
         original: Yup.string().required('original is required'),
-        translate: Yup.string().required('translate is required'),
+        translation: Yup.string().required('translation is required'),
     })
 
     const formOptions = { resolver: yupResolver(validationSchema) }
@@ -77,23 +77,23 @@ export const UpdateWord = (wordProp) => {
                                 <p style={{ color: 'red' }}>Please Enter original word</p>
                             )}
 
-                            <label htmlFor='translate'>Translate</label>
+                            <label htmlFor='translation'>Translate</label>
                             <input
                                 type='text'
-                                placeholder='translate'
-                                {...register('translate', {
+                                placeholder='translation'
+                                {...register('translation', {
                                     required: true,
                                     minLength: 2,
                                     onChange: (e) =>
                                         setWord({
                                             ...word,
-                                            translate: e.target.value,
+                                            translation: e.target.value,
                                         }),
                                 })}
                             />
 
-                            {errors.translate && (
-                                <p style={{ color: 'red' }}>Please Enter a translate</p>
+                            {errors.translation && (
+                                <p style={{ color: 'red' }}>Please Enter a translation</p>
                             )}
 
                             <label htmlFor='periodStart'>periodStart</label>

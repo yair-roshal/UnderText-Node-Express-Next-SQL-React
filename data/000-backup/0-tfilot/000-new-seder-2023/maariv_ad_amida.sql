@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `maariv` (
   `id` int(11) NOT NULL,
   `original` varchar(99) NOT NULL,
-  `translate` varchar(99) NOT NULL,
+  `translation` varchar(99) NOT NULL,
   `description` text NOT NULL COMMENT 'description of word',
   `periodStart` text,
   `periodEnd` text
@@ -40,7 +40,7 @@ CREATE TABLE `maariv` (
 -- Dumping data for table `maariv`
 --
 
-INSERT INTO `maariv` (`id`, `original`, `translate`, `description`, `periodStart`, `periodEnd`) VALUES
+INSERT INTO `maariv` (`id`, `original`, `translation`, `description`, `periodStart`, `periodEnd`) VALUES
 (1, 'וְהוּא', 'Также', '', NULL, NULL),
 (2, 'רַחוּם', 'Милосердие', '', NULL, NULL),
 (3, 'יְכַפֵּר', 'Еретик', '', NULL, NULL),

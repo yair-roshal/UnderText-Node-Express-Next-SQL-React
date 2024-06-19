@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `maariv` (
   `id` int(11) NOT NULL,
   `original` varchar(99) NOT NULL,
-  `translate` varchar(99) NOT NULL,
+  `translation` varchar(99) NOT NULL,
   `description` text NOT NULL COMMENT 'description of word',
   `periodStart` text,
   `periodEnd` text
@@ -40,7 +40,7 @@ CREATE TABLE `maariv` (
 -- Dumping data for table `maariv`
 --
 
-INSERT INTO `maariv` (`id`, `original`, `translate`, `description`, `periodStart`, `periodEnd`) VALUES
+INSERT INTO `maariv` (`id`, `original`, `translation`, `description`, `periodStart`, `periodEnd`) VALUES
 (1, 'וְהוּא', 'Также', '', NULL, NULL),
 (2, 'רַחוּם', 'Милосердие', '', NULL, NULL),
 (3, 'יְכַפֵּר', 'Еретик', '', NULL, NULL),
@@ -1180,7 +1180,7 @@ INSERT INTO `maariv` (`id`, `original`, `translate`, `description`, `periodStart
 (1137, 'פְּלֵיטַת', 'Эмиссия', '', NULL, NULL),
 (1138, 'בֵּית', 'Дом', '', NULL, NULL),
 (1139, 'סוֹפְרֵיהֶם,', 'Книги,', '', NULL, NULL);
-INSERT INTO `maariv` (`id`, `original`, `translate`, `description`, `periodStart`, `periodEnd`) VALUES
+INSERT INTO `maariv` (`id`, `original`, `translation`, `description`, `periodStart`, `periodEnd`) VALUES
 (1140, 'וְעַל־גֵּרֵי', 'Над-Гери', '', NULL, NULL),
 (1141, 'הַצֶּדֶק', 'Справедливость', '', NULL, NULL),
 (1142, 'וְעָלֵינוּ,', 'Над нами,', '', NULL, NULL),
@@ -2269,7 +2269,7 @@ INSERT INTO `maariv` (`id`, `original`, `translate`, `description`, `periodStart
 (2225, 'וְיִפֹּלוּ,', 'Вифло,', '', NULL, NULL),
 (2226, 'וְלִכְבוֹד', 'В честь', '', NULL, NULL),
 (2227, 'שִׁמְךָ', 'Имя', '', NULL, NULL);
-INSERT INTO `maariv` (`id`, `original`, `translate`, `description`, `periodStart`, `periodEnd`) VALUES
+INSERT INTO `maariv` (`id`, `original`, `translation`, `description`, `periodStart`, `periodEnd`) VALUES
 (2228, 'יְקָר', 'Стоимость', '', NULL, NULL),
 (2229, 'יִתֵּנוּ,', 'См.,', '', NULL, NULL),
 (2230, 'וִיקַבְּלוּ', 'Виккабелло', '', NULL, NULL),

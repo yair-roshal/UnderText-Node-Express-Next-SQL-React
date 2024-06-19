@@ -36,7 +36,7 @@ export const ImportWords = (props) => {
         newWord = {
           id: newDataTehilim.length + 1, // Заменили id на порядковый номер
           original: foundedWord.original,
-          translate: foundedWord.translate,
+          translation: foundedWord.translation,
           description: null,
           periodStart: null,
           periodEnd: null,
@@ -47,7 +47,7 @@ export const ImportWords = (props) => {
         newWord = {
           id: newDataTehilim.length + 1, // Заменили id на порядковый номер
           original: formFileWord,
-          translate: '',
+          translation: '',
           description: null,
           periodStart: null,
           periodEnd: null,

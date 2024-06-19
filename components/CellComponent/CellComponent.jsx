@@ -24,7 +24,9 @@ const CellVariants = {
 
 export function CellComponent({ original, description, ...props }) {
   // перемещаем определенный символ в начало строки, если этот символ найден в ее конце.
-  const position = original.search(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g)
+  console.log('original :>> ', original);
+  const position =  original.toString().search(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g)  
+   
   if (position !== -1 && position !== 0) {
     const symbol = original.slice(-1)
     const word = original.slice(0, position)

@@ -3,7 +3,7 @@ import { useMainPage } from 'hooks'
 import { StyledCell } from '../../StyledCell'
 
 export const FirstCell = (props) => {
-  const { id, original, translate, periodStart, periodEnd } = props
+  const { id, original, translation, periodStart, periodEnd } = props
   const hrefMainPage = useMainPage()
   const hrefLinkUpdate = `${hrefMainPage}/update/${id}`
 
@@ -13,7 +13,7 @@ export const FirstCell = (props) => {
 
       <StyledCell
         original={original}
-        translate={translate}
+        translation={translation}
         bold={true}
         periodStart={periodStart}
         periodEnd={periodEnd}
