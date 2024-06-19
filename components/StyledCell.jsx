@@ -6,7 +6,6 @@ import initialUsersData from "../constants/initialUsersData.json"
 
 export const StyledCell = ({
   original,
-  // translation,
   translation,
   bold,
   periodStart,
@@ -111,7 +110,10 @@ export const StyledCell = ({
           }}
           className="translation"
         >
-          {typeof translation === "string" ? translation.toLowerCase() : "---"}
+          
+          
+          {  translation ? translation.toString().toLowerCase() : "---"}
+          {/* {typeof translation === "string" ? translation.toLowerCase() : "---"} */}
           
           {console.log('translation >> ', translation)}
         </Box>

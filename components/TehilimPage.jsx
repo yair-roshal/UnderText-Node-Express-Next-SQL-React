@@ -124,6 +124,7 @@ export function TehilimPage(props) {
 
       <div className="wrapperTextBlock">
         <div className="allWords">
+         { console.log('textData :>> ', textData)}
           {textData &&
             textData.map((word, index) => (
               <CellComponent key={index} {...word} />
