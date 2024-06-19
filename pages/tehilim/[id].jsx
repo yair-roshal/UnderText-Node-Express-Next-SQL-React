@@ -29,6 +29,9 @@ export async function getServerSideProps({ params }) {
         const worksheet = workbook.Sheets[sheetName];
         const jsonData = xlsx.utils.sheet_to_json(worksheet);
         data = jsonData;
+        
+        
+        console.log('data from file :>> ', data);
       } else {
         data = [
           {

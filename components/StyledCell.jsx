@@ -81,7 +81,9 @@ export const StyledCell = ({
 
   return shouldShow ? (
     <>
-      <Box
+    
+    {original && 
+        <Box
         className="cell"
         sx={{
           backgroundColor: backgroundColor ? backgroundColor : "#fbeed5",
@@ -120,6 +122,10 @@ export const StyledCell = ({
 
         {/* <Box className='translation'>{translation.toUpperCase()}</Box> */}
       </Box>
+    
+    
+    }
+  
     </>
   ) : null
 }
