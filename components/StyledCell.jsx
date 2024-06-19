@@ -117,7 +117,7 @@ export const StyledCell = ({
           {  translation ? translation.toString().toLowerCase() : "---"}
           {/* {typeof translation === "string" ? translation.toLowerCase() : "---"} */}
           
-          {console.log('translation >> ', translation)}
+          {/* {console.log('translation >> ', translation)} */}
         </Box>
 
         {/* <Box className='translation'>{translation.toUpperCase()}</Box> */}

@@ -18,36 +18,41 @@ const totalPages = 150 // Общее количество страниц
 
 export function TehilimPage(props) {
   const router = useRouter()
+console.log('router :>> ', router);
+console.log('router.query.id :>> ', router.query.id);
 
-  const [currentPage, setCurrentPage] = useState(1)
+  const [currentPage, setCurrentPage] = useState(router.query.id)
   const [textData, setTextData] = useState()
   const [availableFiles, setAvailableFiles] = useState([])
 
   useEffect(() => {
     setTextData(props.data)
-    console.log('props.data :>> ', props.data);
-    // Получите список доступных файлов в папке "дата"
-    console.log("props.files", props.files)
-    console.log("props  ", props)
     setAvailableFiles(props.files)
   }, [props])
 
   const handlePageChange = (event) => {
-    setCurrentPage(Number(event.target.value))
-    router.push(`/tehilim/${event.target.value}`)
+    const selectedPage = Number(event.target.value)
+    setCurrentPage(selectedPage)
+    router.push(`/tehilim/${selectedPage}`)
+    console.log('selectedPage :>> ', selectedPage);
   }
 
   const handlePreviousPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage((prevPage) => prevPage - 1)
-      router.push(`/tehilim/${currentPage - 1}`)
+    const previousPage = currentPage - 1
+    if (previousPage >= 1) {
+      setCurrentPage(previousPage)
+      router.push(`/tehilim/${previousPage}`)
     }
+    
+    
+    
   }
 
   const handleNextPage = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage((prevPage) => prevPage + 1)
-      router.push(`/tehilim/${currentPage + 1}`)
+    const nextPage = currentPage + 1
+    if (nextPage <= totalPages) {
+      setCurrentPage(nextPage)
+      router.push(`/tehilim/${nextPage}`)
     }
   }
 
@@ -69,22 +74,18 @@ export function TehilimPage(props) {
               width: "300px",
             }}
             fullWidth
-            value={currentPage}
+            value={router.query.id}
             onChange={handlePageChange}
           >
-            {/* {availableFiles.map((fileName, index) => (
-              <MenuItem key={index} value={index + 1}>
-                {path.basename(fileName, '.json')}
-              </MenuItem>
-            ))} */}
+          
+            
+            {[...Array(150).keys()].map((index) => (
+  <MenuItem key={index} value={index + 1}>
+    {index + 1}
+  </MenuItem>
+))}
 
-            {availableFiles.map((fileName, index) => (
-              <MenuItem key={index} value={index + 1}>
-                {path
-                  .basename(fileName.toString())
-                  .replace(/\.(json|xls|xlsx)$/, "")}
-              </MenuItem>
-            ))}
+            
           </Select>
         </FormControl>
       </Box>
@@ -99,32 +100,27 @@ export function TehilimPage(props) {
           justifyContent: "space-around",
         }}
       >
-        <Link href={`${currentPage - 1}`}>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handlePreviousPage}
-            disabled={currentPage === 1}
-          >
-            Предыдущая
-          </Button>
-        </Link>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handlePreviousPage}
+          disabled={currentPage === 1}
+        >
+          Предыдущая
+        </Button>
 
-        <Link href={`${currentPage + 1}`}>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleNextPage}
-            disabled={currentPage === totalPages}
-          >
-            Следующая
-          </Button>
-        </Link>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleNextPage}
+          disabled={currentPage === totalPages}
+        >
+          Следующая
+        </Button>
       </Box>
 
       <div className="wrapperTextBlock">
         <div className="allWords">
-         { console.log('textData :>> ', textData)}
           {textData &&
             textData.map((word, index) => (
               <CellComponent key={index} {...word} />
@@ -142,27 +138,23 @@ export function TehilimPage(props) {
           justifyContent: "space-around",
         }}
       >
-        <Link href={`${currentPage - 1}`}>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handlePreviousPage}
-            disabled={currentPage === 1}
-          >
-            Предыдущая
-          </Button>
-        </Link>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handlePreviousPage}
+          disabled={currentPage === 1}
+        >
+          Предыдущая
+        </Button>
 
-        <Link href={`${currentPage + 1}`}>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleNextPage}
-            disabled={currentPage === totalPages}
-          >
-            Следующая
-          </Button>
-        </Link>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleNextPage}
+          disabled={currentPage === totalPages}
+        >
+          Следующая
+        </Button>
       </Box>
     </>
   )
