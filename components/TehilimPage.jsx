@@ -21,7 +21,7 @@ export function TehilimPage(props) {
   console.log("router :>> ", router)
   console.log("router.query.id :>> ", router.query.id)
 
-  const [currentPage, setCurrentPage] = useState(router.query.id)
+  const [currentPage, setCurrentPage] = useState(Number(router.query.id))
   const [textData, setTextData] = useState()
   const [availableFiles, setAvailableFiles] = useState([])
 
@@ -32,6 +32,9 @@ export function TehilimPage(props) {
 
   const handlePageChange = (event) => {
     const selectedPage = Number(event.target.value)
+
+    console.log("typeof(selectedPage) :>> ", typeof selectedPage)
+
     setCurrentPage(selectedPage)
     router.push(`/tehilim/${selectedPage}`)
     console.log("selectedPage :>> ", selectedPage)
@@ -47,6 +50,10 @@ export function TehilimPage(props) {
 
   const handleNextPage = () => {
     const nextPage = currentPage + 1
+
+    console.log("typeof(nextPage) :>> ", typeof nextPage)
+    console.log("typeof(currentPage) :>> ", typeof currentPage)
+
     if (nextPage <= totalPages) {
       setCurrentPage(nextPage)
       router.push(`/tehilim/${nextPage}`)
