@@ -76,7 +76,7 @@ export function Homepage(props) {
   return (
     <>
       <Link href={hrefLinkImport} style={{ textDecoration: 'none' }}>
-        <ImportButton variant='contained'>Import Words From File or text </ImportButton>
+        <ImportButton disabled="true" variant='contained'>Import Words From File or text </ImportButton>
       </Link>
 
       <div className='wrapperTextBlock'>

@@ -12,7 +12,7 @@ import {
   Box,
   Typography,
 } from "@mui/material"
-const path = require("path")
+// const path = require("path")
 // const dataFolderPath = './data' // Путь к папке с данными
 const totalPages = 150 // Общее количество страниц
 
@@ -23,18 +23,13 @@ export function TehilimPage(props) {
 
   const [currentPage, setCurrentPage] = useState(Number(router.query.id))
   const [textData, setTextData] = useState()
-  const [availableFiles, setAvailableFiles] = useState([])
 
   useEffect(() => {
     setTextData(props.data)
-    setAvailableFiles(props.files)
   }, [props])
 
   const handlePageChange = (event) => {
     const selectedPage = Number(event.target.value)
-
-    console.log("typeof(selectedPage) :>> ", typeof selectedPage)
-
     setCurrentPage(selectedPage)
     router.push(`/tehilim/${selectedPage}`)
     console.log("selectedPage :>> ", selectedPage)
@@ -50,10 +45,6 @@ export function TehilimPage(props) {
 
   const handleNextPage = () => {
     const nextPage = currentPage + 1
-
-    console.log("typeof(nextPage) :>> ", typeof nextPage)
-    console.log("typeof(currentPage) :>> ", typeof currentPage)
-
     if (nextPage <= totalPages) {
       setCurrentPage(nextPage)
       router.push(`/tehilim/${nextPage}`)
